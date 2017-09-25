@@ -1,0 +1,40 @@
+01/04/2014 Isa�as Mart�nez Yelmo
+
+El c�digo hereda ahora directamente de INET. Ver README en el directorio raiz
+
+
+14/10/2013
+	Se han añadido las partes "EXTRA" de EtherMACNew a EtherMACFullDuplex y se ha generado así EtherMACFullDuplexNew,
+	que se utilizará para hosts normalmente. El condicional para elegir uno u otro está en EthernetInterfaceNew y depende 
+	de la variable 'csmacdSupport'.
+
+02/11/2012
+	EthernetInterfaceNew cambia mucho en inet2.0.0:
+		- Simplemente le añadimos el uso de EtherMACNew, así como incluimos esta interfaz en NodeBaseNew.ned
+	EtherMACNew.ned, añadimos "queueLengthInterval" (que faltaba)
+
+28/09/2012
+	EtherMACBaseNew y EtherMACNew pasan a ser un unico fichero EtherMACNew
+		- A la hora de actualizar el codigo a inet2.0.0 se descubrio que EtherMACBase en inet2.0.0 no solo
+		tenia muchisimos cambios realizados, sino que algunas funciones habian desaparecido, y entre
+		ellas se encontraban las funciones modificadas en la libgist.
+		- Estas funciones "desaparecidas" se habian pasado a las clases EtherMAC y EtherMACFullDuplex (que
+		es igual a EtherMAC, pero simplificada, solo para uso en full duplex sin CSMA/CD), dado que segun
+		su ChangeLog era "lo logico" ahora.
+		- Antes en libgist teniamos ambas clases como New, porque se modificaba EtherMACBase, que a su vez
+		modificaba EtherMAC y a su vez el EtherSwitchAPB. Como ahora EtherMACBase no varia, no es necesario
+		tenerla como clase New, se actualizara solo EtherMAC.
+		- Una duda que queda es que EtherSwitch en inet2.0.0 no hace referencia a EtherMAC.ned como antes, sino
+		a IEtherMAC.ned, que es la base (si miramos, ahora EtherMAC.ned deriva del IEtherMAC.ned cuando
+		antes no derivaba de nada). Sin embargo, en EtherSwitchAPB.ned hemos dejado la referencia a EtherMAC.ned
+		mejor...
+	
+	EtherMACNew
+		- Del codigo actualizado, se ha cambiado la medida de las colas, que ahora se tratan de otra forma,
+		ya no con txQueue, sino con txQueue.innerQueue, y ademas el pop se hace en otro lugar, etc... Ademas
+		de algun otro cambio sutil.
+		
+	A la hora de futuras actualizaciones...
+		- EtherMACNew.ned es copiado tal cual de EtherMAC.ned (sin cambios)
+		- EtherMACNew.h y .cc difieren en los puntos marcados con /*EXTRA*/ que basicamente
+		son el codigo anadido por Diego y Elisa en los antiguos ficheros EtherMACBaseNew.h y .cc

@@ -1,0 +1,3 @@
+package libgist;
+
+@license(LGPL);

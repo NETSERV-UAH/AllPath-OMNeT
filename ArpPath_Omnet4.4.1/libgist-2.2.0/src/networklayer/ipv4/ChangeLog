@@ -1,0 +1,11 @@
+01/04/2014 Isaías Martínez Yelmo
+
+El código hereda ahora directamente de INET. Ver README en el directorio raiz
+
+31/10/2012
+	IPv4New.ned se copia tal cual est√° de inet2.0.0, que ahora es IPv4, en vez de IP
+	ARPNew.h y .cc, cambia solo en la clase ARPPacketRoute (para grabar rutas):
+		- Los cambios se indican con //EXTRA y con /*EXTRA*/
+		- Antes habia mas cambios, pero eran de variables netDelay, etc... que en la practica nunca se usaron (y que fueron despues bien implementadas a nivel 2)
+	
+	

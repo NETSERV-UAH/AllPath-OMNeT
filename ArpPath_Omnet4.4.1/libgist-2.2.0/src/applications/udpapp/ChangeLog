@@ -1,0 +1,12 @@
+01/04/2014 Isa’as Mart’nez Yelmo
+
+El c—digo hereda ahora directamente de INET. Ver README en el directorio raiz
+
+28/09/2012
+	UDPBasicAppNew
+		- Se ha tomado el UDPBasicAppNew mas reciente en libgist y se ha actualizado a inet2.0.0.
+		Como ya existian startTime y stopTime, la unica diferencia respecto a UDPBasicApp actualmente
+		es el parametro numberOfMessages incluido por Diego en versiones anteriores.
+	
+	A la hora de futuras actualizaciones...
+		- Solo es necesario anadir dicho parametro numberOfMessages a lo ya existente

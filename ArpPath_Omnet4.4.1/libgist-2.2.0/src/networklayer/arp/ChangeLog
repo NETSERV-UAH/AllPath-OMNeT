@@ -1,0 +1,9 @@
+01/04/2014 Isaías Martínez Yelmo
+
+El código hereda ahora directamente de INET. Ver README en el directorio raiz
+
+31/10/2012
+	ARPNew.ned se copia tal cual est√° de inet2.0.0
+	ARPNew.h y .cc, se han a√±adido las funciones de UDPFlowGenerator y ARPPacketRoute (para grabar rutas):
+		- Los cambios se indican con //EXTRA y con /*EXTRA*/
+	ARPPacketRoute esta copiado tal cual de ARPPacket de inet2.0.0 y solo se le ha a√±adido el parametro 'route' (string)

@@ -1,0 +1,34 @@
+01/04/2014 - Actualizado por Isaías Martínez Yemo
+
+Actualización a Omnet-2.2.0. Cambios en la gestión de la interfaces obliga a adaptar el código.
+Nuevo código más modular. El código se hereda desde la librería INET, no redefine desde 0 todo (copiando la mayoría del código).
+Solo se declaran las funciones modificadas y se añaden las funciones módulos nececarios.
+Para que funcionen los NED extendidos es necesario incluir la directiva @class con la nueva clase que hereda de INET
+
+
+28/02/2012
+	Esta librer√≠a 'libgist' evoluciona directamente de inet (actualmente la versi√≥n 2.0.0), siempre a√±adiendo funcionalidades 
+	a clases ya existentes, nunca quitando.
+	Para su uso, se necesita incluir el INET Framework por tanto.
+	
+	Adem√°s, INET posee actualmente un bug (para nuestros desarrollos) que es el siguiente:
+		MACAddress MACAddress::generateAutoAddress()
+		{
+    		++autoAddressCtr;
+
+    		uint64 intAddr = 0x0AAA00000000L + (autoAddressCtr & 0xffffffffL);
+    		MACAddress addr(intAddr);
+    		return addr;
+		}
+	Es decir, en inet/src/linklayer/contract/MACAddress.cc se asignan autom√°ticamente las direcciones MAC, y si necesitamos usar
+	el bit U/L, nos dar√° por defecto que es una direcci√≥n local (al ser valor 0A), cuando no lo es. Por tanto se ha cambiado el c√≥digo
+	de inet a lo siguiente (no se ha hecho en libgist porque es un bug y afectar√≠a a muchas clases y deber√≠amos a√±adir mucho c√≥digo sin
+	a√±adir funcionalidad alguna...), pero s√≥lo es necesario para proyectos que utilicen el bit U/L, como Torii-HLMAC
+		MACAddress MACAddress::generateAutoAddress()
+		{
+    		++autoAddressCtr;
+
+    		uint64 intAddr = 0x0CAA00000000L + (autoAddressCtr & 0xffffffffL);
+    		MACAddress addr(intAddr);
+    		return addr;
+		}
