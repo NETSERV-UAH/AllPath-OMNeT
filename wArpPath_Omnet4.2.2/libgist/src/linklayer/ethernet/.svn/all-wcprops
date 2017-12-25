@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/arppath-omnet4.2.2/!svn/ver/52/libgist/src/linklayer/ethernet
+END
+EtherMACNew.h
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/arppath-omnet4.2.2/!svn/ver/125/libgist/src/linklayer/ethernet/EtherMACNew.h
+END
+EtherMACFullDuplexNew.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/arppath-omnet4.2.2/!svn/ver/125/libgist/src/linklayer/ethernet/EtherMACFullDuplexNew.h
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/arppath-omnet4.2.2/!svn/ver/115/libgist/src/linklayer/ethernet/ChangeLog
+END
+EtherMACNew.ned
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/arppath-omnet4.2.2/!svn/ver/114/libgist/src/linklayer/ethernet/EtherMACNew.ned
+END
+EtherMACFullDuplexNew.cc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/arppath-omnet4.2.2/!svn/ver/125/libgist/src/linklayer/ethernet/EtherMACFullDuplexNew.cc
+END
+EtherMACNew.cc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/arppath-omnet4.2.2/!svn/ver/125/libgist/src/linklayer/ethernet/EtherMACNew.cc
+END
+EtherMACFullDuplexNew.ned
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/arppath-omnet4.2.2/!svn/ver/114/libgist/src/linklayer/ethernet/EtherMACFullDuplexNew.ned
+END
+EthernetInterfaceNew.ned
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/arppath-omnet4.2.2/!svn/ver/114/libgist/src/linklayer/ethernet/EthernetInterfaceNew.ned
+END

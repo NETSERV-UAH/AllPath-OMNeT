@@ -1,0 +1,669 @@
+version 2
+run SwitchedWlans-0-20140414-13:00:42-3942
+attr configname SwitchedWlans
+attr datetime 20140414-13:00:42
+attr experiment SwitchedWlans
+attr inifile prueba3.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network arppathbridgesunidireccional.src.topologies.Prueba2
+attr processid 3942
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar Prueba2.accessPoint1.relayUnit 	"processed frames" 	5
+scalar Prueba2.accessPoint1.relayUnit 	"dropped frames" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"ARP requests rcvd" 	1
+scalar Prueba2.accessPoint1.relayUnit 	"ARP replies rcvd" 	1
+scalar Prueba2.accessPoint1.relayUnit 	"number of repairs started" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"Hellos rcvd" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"PathFails rcvd" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"PathRequests rcvd" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"PathReplies rcvd" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"LinkFails rcvd" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"LinkReplies rcvd" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"number of lost packets" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"average PathFail time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"max PathFail time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"min PathFail time" 	100
+scalar Prueba2.accessPoint1.relayUnit 	"PathFails rcvd at destination" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"average PathRequest time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"max PathRequest time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"min PathRequest time" 	100
+scalar Prueba2.accessPoint1.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"average PathReply time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"max PathReply time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"min PathReply time" 	100
+scalar Prueba2.accessPoint1.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"average LinkFail time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"max LinkFail time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"min LinkFail time" 	100
+scalar Prueba2.accessPoint1.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"average LinkReply time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"max LinkReply time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"min LinkReply time" 	100
+scalar Prueba2.accessPoint1.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"average repair time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"max repair time" 	0
+scalar Prueba2.accessPoint1.relayUnit 	"min repair time" 	100
+scalar Prueba2.accessPoint1.relayUnit 	"number of repairs finished" 	0
+scalar Prueba2.accessPoint1.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar Prueba2.accessPoint1.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar Prueba2.accessPoint1.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar Prueba2.accessPoint1.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar Prueba2.accessPoint1.wlan[0].mac 	"number of received packets" 	6
+scalar Prueba2.accessPoint1.wlan[0].mac 	"number of collisions" 	0
+scalar Prueba2.accessPoint1.wlan[0].mac 	"number of internal collisions" 	0
+scalar Prueba2.accessPoint1.wlan[0].mac 	"number of retry for AC 0" 	0
+scalar Prueba2.accessPoint1.wlan[0].mac 	"sent and receive bites" 	15824
+scalar Prueba2.accessPoint1.wlan[0].mac 	"sent packet within AC 0" 	6
+scalar Prueba2.accessPoint1.wlan[0].mac 	"sent in TXOP " 	0
+scalar Prueba2.accessPoint1.wlan[0].mac 	"sentWithoutRetry AC 0" 	6
+scalar Prueba2.accessPoint1.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar Prueba2.accessPoint1.wlan[0].mac 	"numDropped AC 0" 	0
+scalar Prueba2.accessPoint1.wlan[0].radio 	lossRate:min 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar Prueba2.accessPoint1.wlan[0].radio 	lossRate:max 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar Prueba2.accessPoint1.wlan[0].radio 	lossRate:timeavg 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar Prueba2.accessPoint1.wlan[0].radio 	radioState:count 	193
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic Prueba2.accessPoint1.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar Prueba2.accessPoint1.wlan[0].radio 	bitrate:min 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar Prueba2.accessPoint1.wlan[0].radio 	bitrate:max 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar Prueba2.accessPoint1.wlan[0].radio 	bitrate:timeavg 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar Prueba2.accessPoint1.mac[0] 	"simulated time" 	2.004434033562
+scalar Prueba2.accessPoint1.mac[0] 	full-duplex 	1
+scalar Prueba2.accessPoint1.mac[0] 	"frames/sec sent" 	1.4966818312643
+scalar Prueba2.accessPoint1.mac[0] 	"frames/sec rcvd" 	0.99778788750951
+scalar Prueba2.accessPoint1.mac[0] 	"bits/sec sent" 	4470.0897360426
+scalar Prueba2.accessPoint1.mac[0] 	"bits/sec rcvd" 	510.86739840487
+scalar Prueba2.accessPoint1.mac[0] 	"rx channel idle (%)" 	99.999425274177
+scalar Prueba2.accessPoint1.mac[0] 	"rx channel utilization (%)" 	0.00057472582320548
+scalar Prueba2.accessPoint1.mac[0] 	"rx channel collision (%)" 	0
+scalar Prueba2.accessPoint1.mac[0] 	collisions 	0
+scalar Prueba2.accessPoint1.mac[0] 	backoffs 	0
+scalar Prueba2.accessPoint1.mac[0] 	"average latency" 	0
+scalar Prueba2.accessPoint1.mac[0] 	"max latency" 	0
+scalar Prueba2.accessPoint1.mac[0] 	"min latency" 	100
+scalar Prueba2.accessPoint1.mac[0] 	"average processing time" 	2.002283804611
+scalar Prueba2.accessPoint1.mac[0] 	"max processing time" 	2.003827069909
+scalar Prueba2.accessPoint1.mac[0] 	"min processing time" 	2.000280165981
+scalar Prueba2.accessPoint1.mac[0] 	"debug time" 	2.003827069909
+scalar Prueba2.accessPoint1.mac[0] 	"ARP requests rcvd" 	0
+scalar Prueba2.accessPoint1.mac[0] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar Prueba2.accessPoint1.mac[0] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar Prueba2.accessPoint1.mac[0] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar Prueba2.accessPoint1.mac[0] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar Prueba2.accessPoint1.mac[0] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar Prueba2.accessPoint1.mac[0] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar Prueba2.accessPoint1.mac[0] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar Prueba2.accessPoint1.mac[0] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar Prueba2.accessPoint1.mac[0] 	rxPkFromHL:count 	3
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar Prueba2.accessPoint1.mac[0] 	rxPkFromHL:sum(packetBytes) 	1120
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar Prueba2.accessPoint1.mac[0] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar Prueba2.accessPoint1.mac[0] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar Prueba2.accessPoint1.mac[0] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar Prueba2.accessPoint1.mac[0] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar Prueba2.accessPoint1.mac[0] 	passedUpPk:count 	2
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar Prueba2.accessPoint1.mac[0] 	passedUpPk:sum(packetBytes) 	128
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar Prueba2.accessPoint1.mac[0] 	rxPkOk:count 	2
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar Prueba2.accessPoint1.mac[0] 	rxPkOk:sum(packetBytes) 	128
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar Prueba2.accessPoint1.mac[0] 	txPk:count 	3
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar Prueba2.accessPoint1.mac[0] 	txPk:sum(packetBytes) 	1120
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar Prueba2.accessPoint2.relayUnit 	"processed frames" 	5
+scalar Prueba2.accessPoint2.relayUnit 	"dropped frames" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"ARP requests rcvd" 	1
+scalar Prueba2.accessPoint2.relayUnit 	"ARP replies rcvd" 	1
+scalar Prueba2.accessPoint2.relayUnit 	"number of repairs started" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"Hellos rcvd" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"PathFails rcvd" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"PathRequests rcvd" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"PathReplies rcvd" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"LinkFails rcvd" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"LinkReplies rcvd" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"number of lost packets" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"average PathFail time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"max PathFail time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"min PathFail time" 	100
+scalar Prueba2.accessPoint2.relayUnit 	"PathFails rcvd at destination" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"average PathRequest time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"max PathRequest time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"min PathRequest time" 	100
+scalar Prueba2.accessPoint2.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"average PathReply time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"max PathReply time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"min PathReply time" 	100
+scalar Prueba2.accessPoint2.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"average LinkFail time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"max LinkFail time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"min LinkFail time" 	100
+scalar Prueba2.accessPoint2.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"average LinkReply time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"max LinkReply time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"min LinkReply time" 	100
+scalar Prueba2.accessPoint2.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"average repair time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"max repair time" 	0
+scalar Prueba2.accessPoint2.relayUnit 	"min repair time" 	100
+scalar Prueba2.accessPoint2.relayUnit 	"number of repairs finished" 	0
+scalar Prueba2.accessPoint2.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar Prueba2.accessPoint2.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar Prueba2.accessPoint2.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar Prueba2.accessPoint2.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar Prueba2.accessPoint2.wlan[0].mac 	"number of received packets" 	5
+scalar Prueba2.accessPoint2.wlan[0].mac 	"number of collisions" 	0
+scalar Prueba2.accessPoint2.wlan[0].mac 	"number of internal collisions" 	0
+scalar Prueba2.accessPoint2.wlan[0].mac 	"number of retry for AC 0" 	0
+scalar Prueba2.accessPoint2.wlan[0].mac 	"sent and receive bites" 	19824
+scalar Prueba2.accessPoint2.wlan[0].mac 	"sent packet within AC 0" 	6
+scalar Prueba2.accessPoint2.wlan[0].mac 	"sent in TXOP " 	0
+scalar Prueba2.accessPoint2.wlan[0].mac 	"sentWithoutRetry AC 0" 	6
+scalar Prueba2.accessPoint2.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar Prueba2.accessPoint2.wlan[0].mac 	"numDropped AC 0" 	0
+scalar Prueba2.accessPoint2.wlan[0].radio 	lossRate:min 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar Prueba2.accessPoint2.wlan[0].radio 	lossRate:max 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar Prueba2.accessPoint2.wlan[0].radio 	lossRate:timeavg 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar Prueba2.accessPoint2.wlan[0].radio 	radioState:count 	181
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic Prueba2.accessPoint2.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 1
+field stddev -nan
+field sum 1
+field sqrsum 1
+field min 1
+field max 1
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	0	0
+bin	1	1
+bin	2	0
+scalar Prueba2.accessPoint2.wlan[0].radio 	bitrate:min 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar Prueba2.accessPoint2.wlan[0].radio 	bitrate:max 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar Prueba2.accessPoint2.wlan[0].radio 	bitrate:timeavg 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar Prueba2.accessPoint2.mac[0] 	"simulated time" 	2.004434033562
+scalar Prueba2.accessPoint2.mac[0] 	full-duplex 	1
+scalar Prueba2.accessPoint2.mac[0] 	"frames/sec sent" 	0.99778788750951
+scalar Prueba2.accessPoint2.mac[0] 	"frames/sec rcvd" 	1.4966818312643
+scalar Prueba2.accessPoint2.mac[0] 	"bits/sec sent" 	510.86739840487
+scalar Prueba2.accessPoint2.mac[0] 	"bits/sec rcvd" 	4470.0897360426
+scalar Prueba2.accessPoint2.mac[0] 	"rx channel idle (%)" 	99.995434122627
+scalar Prueba2.accessPoint2.mac[0] 	"rx channel utilization (%)" 	0.0045658773732435
+scalar Prueba2.accessPoint2.mac[0] 	"rx channel collision (%)" 	0
+scalar Prueba2.accessPoint2.mac[0] 	collisions 	0
+scalar Prueba2.accessPoint2.mac[0] 	backoffs 	0
+scalar Prueba2.accessPoint2.mac[0] 	"average latency" 	0
+scalar Prueba2.accessPoint2.mac[0] 	"max latency" 	0
+scalar Prueba2.accessPoint2.mac[0] 	"min latency" 	100
+scalar Prueba2.accessPoint2.mac[0] 	"average processing time" 	2.002596081598
+scalar Prueba2.accessPoint2.mac[0] 	"max processing time" 	2.00412958758
+scalar Prueba2.accessPoint2.mac[0] 	"min processing time" 	2.001062575616
+scalar Prueba2.accessPoint2.mac[0] 	"debug time" 	2.00412958758
+scalar Prueba2.accessPoint2.mac[0] 	"ARP requests rcvd" 	1
+scalar Prueba2.accessPoint2.mac[0] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar Prueba2.accessPoint2.mac[0] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar Prueba2.accessPoint2.mac[0] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar Prueba2.accessPoint2.mac[0] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar Prueba2.accessPoint2.mac[0] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar Prueba2.accessPoint2.mac[0] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar Prueba2.accessPoint2.mac[0] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar Prueba2.accessPoint2.mac[0] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar Prueba2.accessPoint2.mac[0] 	rxPkFromHL:count 	2
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar Prueba2.accessPoint2.mac[0] 	rxPkFromHL:sum(packetBytes) 	128
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar Prueba2.accessPoint2.mac[0] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar Prueba2.accessPoint2.mac[0] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar Prueba2.accessPoint2.mac[0] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar Prueba2.accessPoint2.mac[0] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar Prueba2.accessPoint2.mac[0] 	passedUpPk:count 	3
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar Prueba2.accessPoint2.mac[0] 	passedUpPk:sum(packetBytes) 	1120
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar Prueba2.accessPoint2.mac[0] 	rxPkOk:count 	3
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar Prueba2.accessPoint2.mac[0] 	rxPkOk:sum(packetBytes) 	1120
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar Prueba2.accessPoint2.mac[0] 	txPk:count 	2
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar Prueba2.accessPoint2.mac[0] 	txPk:sum(packetBytes) 	128
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar Prueba2.host2.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar Prueba2.host2.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar Prueba2.host2.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar Prueba2.host2.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar Prueba2.host2.wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar Prueba2.host2.wlan[0].agent 	acceptConfirm:count 	3
+attr title  "accepted confirms, count"
+scalar Prueba2.host2.wlan[0].agent 	sentRequest:count 	3
+attr title  "sent requests, count"
+scalar Prueba2.host2.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar Prueba2.host2.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar Prueba2.host2.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar Prueba2.host2.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar Prueba2.host2.wlan[0].mac 	"number of received packets" 	6
+scalar Prueba2.host2.wlan[0].mac 	"number of collisions" 	0
+scalar Prueba2.host2.wlan[0].mac 	"number of internal collisions" 	0
+scalar Prueba2.host2.wlan[0].mac 	"number of retry for AC 0" 	0
+scalar Prueba2.host2.wlan[0].mac 	"sent and receive bites" 	2880
+scalar Prueba2.host2.wlan[0].mac 	"sent packet within AC 0" 	5
+scalar Prueba2.host2.wlan[0].mac 	"sent in TXOP " 	0
+scalar Prueba2.host2.wlan[0].mac 	"sentWithoutRetry AC 0" 	5
+scalar Prueba2.host2.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar Prueba2.host2.wlan[0].mac 	"numDropped AC 0" 	0
+scalar Prueba2.host2.wlan[0].radio 	lossRate:min 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar Prueba2.host2.wlan[0].radio 	lossRate:max 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar Prueba2.host2.wlan[0].radio 	lossRate:timeavg 	-nan
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar Prueba2.host2.wlan[0].radio 	radioState:count 	209
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic Prueba2.host2.wlan[0].radio 	channelNo:histogram
+field count 2
+field mean 0.5
+field stddev 0.70710678118655
+field sum 1
+field sqrsum 1
+field min 0
+field max 1
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-1	0
+bin	0	1
+bin	1	1
+bin	2	0
+scalar Prueba2.host2.wlan[0].radio 	bitrate:min 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar Prueba2.host2.wlan[0].radio 	bitrate:max 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar Prueba2.host2.wlan[0].radio 	bitrate:timeavg 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar Prueba2.host2.udpGen 	"packets sent" 	0
+scalar Prueba2.host2.udpGen 	"packets received" 	0
+scalar Prueba2.host2.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar Prueba2.host2.udp 	droppedPkWrongPort:count 	1
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar Prueba2.host2.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar Prueba2.host2.udp 	rcvdPk:count 	1
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar Prueba2.host2.udp 	rcvdPk:sum(packetBytes) 	508
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar Prueba2.host2.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar Prueba2.host2.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar Prueba2.host1.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar Prueba2.host1.networkLayer.arp 	initiatedResolution:count 	1
+attr title  "ARP initiated resolutions, count"
+scalar Prueba2.host1.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar Prueba2.host1.networkLayer.arp 	sentReq:count 	2
+attr title  "ARP request sent, count"
+scalar Prueba2.host1.wlan[0].agent 	dropConfirm:count 	0
+attr title  "dropped confirms, count"
+scalar Prueba2.host1.wlan[0].agent 	acceptConfirm:count 	3
+attr title  "accepted confirms, count"
+scalar Prueba2.host1.wlan[0].agent 	sentRequest:count 	3
+attr title  "sent requests, count"
+scalar Prueba2.host1.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar Prueba2.host1.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar Prueba2.host1.wlan[0].mgmt 	dataQueueLen:max 	17
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar Prueba2.host1.wlan[0].mgmt 	dataQueueLen:timeavg 	0.022509496000635
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar Prueba2.host1.wlan[0].mac 	"number of received packets" 	7
+scalar Prueba2.host1.wlan[0].mac 	"number of collisions" 	0
+scalar Prueba2.host1.wlan[0].mac 	"number of internal collisions" 	0
+scalar Prueba2.host1.wlan[0].mac 	"number of retry for AC 0" 	0
+scalar Prueba2.host1.wlan[0].mac 	"sent and receive bites" 	11216
+scalar Prueba2.host1.wlan[0].mac 	"sent packet within AC 0" 	6
+scalar Prueba2.host1.wlan[0].mac 	"sent in TXOP " 	0
+scalar Prueba2.host1.wlan[0].mac 	"sentWithoutRetry AC 0" 	6
+scalar Prueba2.host1.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar Prueba2.host1.wlan[0].mac 	"numDropped AC 0" 	0
+scalar Prueba2.host1.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar Prueba2.host1.wlan[0].radio 	lossRate:max 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar Prueba2.host1.wlan[0].radio 	lossRate:timeavg 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar Prueba2.host1.wlan[0].radio 	radioState:count 	267
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic Prueba2.host1.wlan[0].radio 	channelNo:histogram
+field count 3
+field mean 0.33333333333333
+field stddev 0.57735026918963
+field sum 1
+field sqrsum 1
+field min 0
+field max 1
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-1	0
+bin	0	2
+bin	1	1
+bin	2	0
+scalar Prueba2.host1.wlan[0].radio 	bitrate:min 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar Prueba2.host1.wlan[0].radio 	bitrate:max 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar Prueba2.host1.wlan[0].radio 	bitrate:timeavg 	11000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar Prueba2.host1.udpApp[0] 	"packets sent" 	19
+scalar Prueba2.host1.udpApp[0] 	"packets received" 	0
+scalar Prueba2.host1.udpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar Prueba2.host1.udpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic Prueba2.host1.udpApp[0] 	rcvdPkLifetime:stats
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar Prueba2.host1.udpApp[0] 	sentPk:count 	19
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar Prueba2.host1.udpApp[0] 	sentPk:sum(packetBytes) 	9500
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar Prueba2.host1.udpGen 	"packets sent" 	0
+scalar Prueba2.host1.udpGen 	"packets received" 	0
+scalar Prueba2.host1.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar Prueba2.host1.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar Prueba2.host1.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar Prueba2.host1.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar Prueba2.host1.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar Prueba2.host1.udp 	sentPk:count 	19
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar Prueba2.host1.udp 	sentPk:sum(packetBytes) 	9652
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"

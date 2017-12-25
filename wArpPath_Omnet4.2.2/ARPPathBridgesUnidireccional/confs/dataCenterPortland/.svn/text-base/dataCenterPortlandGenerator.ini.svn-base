@@ -1,0 +1,34 @@
+[General]
+network = arppathbridgesunidireccional.src.topologies.dataCenterPortland.dataCenterPortlandGenerator
+
+#semillas aleatorias:
+num-rngs = 1
+seed-0-mt = 11
+**.relayUnit.broadcastSeed = 11
+
+sim-time-limit = 10000s
+#cpu-time-limit = 6000s
+total-stack = 2MiB
+**.relayUnit.addressTableSize = 300
+**.relayUnit.addressTableFile = ""
+**.relayUnit.numCPUs = 1
+
+#tiempo de expiración de caché en hosts:
+**.arp.cacheTimeout = 120s
+
+#tiempo de bloqueo:
+**.relayUnit.blockingTime = 2s
+#tiempo de aprendizaje:
+**.relayUnit.agingTime = 120s
+#tiempo de proceso por switch:
+**.relayUnit.processingTime = 2us
+
+# Number of UDP apps (1) and which type of UDP traffic, for the UDPFlowGenerator					
+**.udpGenType = "UDPFlowHost"
+**.generatorFreq = exponential(0.4s) # para 100Mbps
+**.stopTime = 10000s #250s #1600s 
+
+#otros parámetros:
+**.vector-recording=false
+#**.rx channel utilization (%).scalar-recording=true
+**.scalar-recording=true

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/arppath-omnet4.2.2/!svn/ver/15/libgist/src/networklayer/ipv4
+END
+IPv4New.cc
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/arppath-omnet4.2.2/!svn/ver/15/libgist/src/networklayer/ipv4/IPv4New.cc
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/arppath-omnet4.2.2/!svn/ver/15/libgist/src/networklayer/ipv4/ChangeLog
+END
+IPv4New.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/arppath-omnet4.2.2/!svn/ver/15/libgist/src/networklayer/ipv4/IPv4New.h
+END
+IPv4New.ned
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/arppath-omnet4.2.2/!svn/ver/15/libgist/src/networklayer/ipv4/IPv4New.ned
+END

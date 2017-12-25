@@ -1,0 +1,1544 @@
+version 2
+run General-0-20140720-19:43:43-3971
+attr configname General
+attr datetime 20140720-19:43:43
+attr experiment General
+attr inifile pruebaAdHoc4.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network arppathbridgesunidireccional.src.topologies.PruebaAdHoc4
+attr processid 3971
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar PruebaAdHoc4.host1.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host1.networkLayer.arp 	initiatedResolution:count 	1
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host1.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host1.networkLayer.arp 	sentReq:count 	1
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host1.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host1.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host1.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host1.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"number of received packets" 	71
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"number of collisions" 	10
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"number of retry for AC 0" 	36
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"sent and receive bites" 	324880
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"sent packet within AC 0" 	71
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"sentWithoutRetry AC 0" 	61
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host1.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host1.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host1.wlan[0].radio 	lossRate:max 	0.12
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host1.wlan[0].radio 	lossRate:timeavg 	0.032452302018909
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host1.wlan[0].radio 	radioState:count 	1945
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host1.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host1.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host1.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host1.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host1.udpApp[0] 	"packets sent" 	71
+scalar PruebaAdHoc4.host1.udpApp[0] 	"packets received" 	0
+scalar PruebaAdHoc4.host1.udpApp[0] 	sentPk:count 	71
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host1.udpApp[0] 	sentPk:sum(packetBytes) 	35500
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host1.udpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host1.udpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic PruebaAdHoc4.host1.udpApp[0] 	rcvdPkLifetime:stats
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar PruebaAdHoc4.host1.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host1.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host1.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host1.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host1.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host1.udp 	sentPk:count 	71
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host1.udp 	sentPk:sum(packetBytes) 	36068
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host1.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host1.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host1.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"ARP requests rcvd" 	1
+scalar PruebaAdHoc4.host1.relayUnit 	"ARP replies rcvd" 	1
+scalar PruebaAdHoc4.host1.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host1.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host1.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host1.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host1.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host1.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host1.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host1.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host2.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host2.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host2.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host2.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host2.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host2.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host2.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host2.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"number of received packets" 	1
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"number of collisions" 	44
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"number of retry for AC 0" 	2
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"sent and receive bites" 	1904
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"sent packet within AC 0" 	2
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"sentWithoutRetry AC 0" 	1
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host2.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host2.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host2.wlan[0].radio 	lossRate:max 	0.18
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host2.wlan[0].radio 	lossRate:timeavg 	0.09433861896304
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host2.wlan[0].radio 	radioState:count 	1951
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host2.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host2.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host2.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host2.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host2.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host2.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host2.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host2.udp 	droppedPkWrongPort:count 	1
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host2.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host2.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host2.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host2.udp 	rcvdPk:count 	1
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host2.udp 	rcvdPk:sum(packetBytes) 	508
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host2.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"ARP requests rcvd" 	2
+scalar PruebaAdHoc4.host2.relayUnit 	"ARP replies rcvd" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host2.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host2.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host2.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host2.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host2.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host2.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host2.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host3.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host3.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host3.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host3.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host3.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host3.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host3.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host3.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"number of received packets" 	0
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"number of collisions" 	46
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"number of retry for AC 0" 	0
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"sent and receive bites" 	1120
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"sent packet within AC 0" 	0
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"sentWithoutRetry AC 0" 	0
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host3.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host3.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host3.wlan[0].radio 	lossRate:max 	0.2
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host3.wlan[0].radio 	lossRate:timeavg 	0.097595536965491
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host3.wlan[0].radio 	radioState:count 	1951
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host3.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host3.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host3.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host3.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host3.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host3.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host3.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host3.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host3.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host3.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host3.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host3.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host3.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host3.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"ARP requests rcvd" 	2
+scalar PruebaAdHoc4.host3.relayUnit 	"ARP replies rcvd" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host3.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host3.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host3.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host3.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host3.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host3.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host3.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host4.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host4.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host4.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host4.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host4.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host4.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host4.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host4.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"number of received packets" 	145
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"number of collisions" 	42
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"number of retry for AC 0" 	6
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"sent and receive bites" 	382784
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"sent packet within AC 0" 	144
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"sentWithoutRetry AC 0" 	141
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host4.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host4.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host4.wlan[0].radio 	lossRate:max 	0.22
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host4.wlan[0].radio 	lossRate:timeavg 	0.080364646865921
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host4.wlan[0].radio 	radioState:count 	3091
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host4.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host4.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host4.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host4.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host4.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host4.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host4.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host4.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host4.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host4.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host4.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host4.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host4.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host4.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"ARP requests rcvd" 	4
+scalar PruebaAdHoc4.host4.relayUnit 	"ARP replies rcvd" 	2
+scalar PruebaAdHoc4.host4.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host4.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host4.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host4.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host4.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host4.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host4.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host4.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host5.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host5.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host5.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host5.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host5.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host5.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host5.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host5.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"number of received packets" 	70
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"number of collisions" 	21
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"number of retry for AC 0" 	7
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"sent and receive bites" 	56000
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"sent packet within AC 0" 	71
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"sentWithoutRetry AC 0" 	68
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host5.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host5.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host5.wlan[0].radio 	lossRate:max 	0.16
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host5.wlan[0].radio 	lossRate:timeavg 	0.083104766492612
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host5.wlan[0].radio 	radioState:count 	1897
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host5.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host5.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host5.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host5.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host5.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host5.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host5.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host5.udp 	droppedPkWrongPort:count 	70
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host5.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host5.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host5.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host5.udp 	rcvdPk:count 	70
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host5.udp 	rcvdPk:sum(packetBytes) 	35560
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host5.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"ARP requests rcvd" 	2
+scalar PruebaAdHoc4.host5.relayUnit 	"ARP replies rcvd" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host5.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host5.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host5.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host5.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host5.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host5.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host5.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host6.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host6.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host6.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host6.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host6.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host6.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host6.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host6.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"number of received packets" 	0
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"number of collisions" 	53
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"number of retry for AC 0" 	0
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"sent and receive bites" 	1120
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"sent packet within AC 0" 	0
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"sentWithoutRetry AC 0" 	0
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host6.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host6.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host6.wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host6.wlan[0].radio 	lossRate:timeavg 	0.042441303705961
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host6.wlan[0].radio 	radioState:count 	4189
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host6.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host6.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host6.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host6.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host6.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host6.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host6.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host6.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host6.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host6.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host6.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host6.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host6.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host6.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"ARP requests rcvd" 	2
+scalar PruebaAdHoc4.host6.relayUnit 	"ARP replies rcvd" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host6.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host6.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host6.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host6.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host6.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host6.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host6.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host7.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host7.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host7.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host7.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host7.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host7.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host7.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host7.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"number of received packets" 	0
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"number of collisions" 	46
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"number of retry for AC 0" 	0
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"sent and receive bites" 	1120
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"sent packet within AC 0" 	0
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"sentWithoutRetry AC 0" 	0
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host7.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host7.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host7.wlan[0].radio 	lossRate:max 	0.12
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host7.wlan[0].radio 	lossRate:timeavg 	0.036687776307358
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host7.wlan[0].radio 	radioState:count 	4179
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host7.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host7.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host7.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host7.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host7.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host7.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host7.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host7.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host7.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host7.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host7.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host7.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host7.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host7.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"ARP requests rcvd" 	2
+scalar PruebaAdHoc4.host7.relayUnit 	"ARP replies rcvd" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host7.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host7.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host7.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host7.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host7.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host7.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host7.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host8.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host8.networkLayer.arp 	initiatedResolution:count 	1
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host8.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host8.networkLayer.arp 	sentReq:count 	1
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host8.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host8.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host8.wlan[0].mgmt 	dataQueueLen:max 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host8.wlan[0].mgmt 	dataQueueLen:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"number of received packets" 	143
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"number of collisions" 	22
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"number of retry for AC 0" 	17
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"sent and receive bites" 	380880
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"sent packet within AC 0" 	142
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"sentWithoutRetry AC 0" 	135
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host8.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host8.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host8.wlan[0].radio 	lossRate:max 	0.16
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host8.wlan[0].radio 	lossRate:timeavg 	0.04590541857944
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host8.wlan[0].radio 	radioState:count 	3637
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host8.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host8.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host8.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host8.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host8.udpApp[0] 	"packets sent" 	1
+scalar PruebaAdHoc4.host8.udpApp[0] 	"packets received" 	0
+scalar PruebaAdHoc4.host8.udpApp[0] 	sentPk:count 	1
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host8.udpApp[0] 	sentPk:sum(packetBytes) 	500
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host8.udpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host8.udpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic PruebaAdHoc4.host8.udpApp[0] 	rcvdPkLifetime:stats
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar PruebaAdHoc4.host8.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host8.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host8.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host8.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host8.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host8.udp 	sentPk:count 	1
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host8.udp 	sentPk:sum(packetBytes) 	508
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host8.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host8.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host8.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"ARP requests rcvd" 	2
+scalar PruebaAdHoc4.host8.relayUnit 	"ARP replies rcvd" 	2
+scalar PruebaAdHoc4.host8.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host8.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host8.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host8.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host8.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host8.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host8.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host8.relayUnit 	"number of repairs finished" 	0
+scalar PruebaAdHoc4.host9.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar PruebaAdHoc4.host9.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar PruebaAdHoc4.host9.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar PruebaAdHoc4.host9.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar PruebaAdHoc4.host9.wlan[0].mgmt 	dropPkByQueue:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, count"
+scalar PruebaAdHoc4.host9.wlan[0].mgmt 	dropPkByQueue:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "packets dropped by queue, sum(packetBytes)"
+scalar PruebaAdHoc4.host9.wlan[0].mgmt 	dataQueueLen:max 	1
+attr interpolationmode  sample-hold
+attr title  "data queue length, max"
+scalar PruebaAdHoc4.host9.wlan[0].mgmt 	dataQueueLen:timeavg 	0.00085605198550437
+attr interpolationmode  sample-hold
+attr title  "data queue length, timeavg"
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"number of received packets" 	141
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"number of collisions" 	23
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"number of internal collisions" 	0
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"number of retry for AC 0" 	19
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"sent and receive bites" 	376320
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"sent packet within AC 0" 	141
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"sent in TXOP " 	0
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"sentWithoutRetry AC 0" 	133
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"numGivenUp AC 0" 	0
+scalar PruebaAdHoc4.host9.wlan[0].mac 	"numDropped AC 0" 	0
+scalar PruebaAdHoc4.host9.wlan[0].radio 	lossRate:min 	0
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, min"
+scalar PruebaAdHoc4.host9.wlan[0].radio 	lossRate:max 	0.14
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, max"
+scalar PruebaAdHoc4.host9.wlan[0].radio 	lossRate:timeavg 	0.047059857962026
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, timeavg"
+scalar PruebaAdHoc4.host9.wlan[0].radio 	radioState:count 	3033
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), count"
+statistic PruebaAdHoc4.host9.wlan[0].radio 	channelNo:histogram
+field count 1
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  sample-hold
+attr title  "channel no, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	-6.9388939039072e-18	1
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar PruebaAdHoc4.host9.wlan[0].radio 	bitrate:min 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, min"
+attr unit  bps
+scalar PruebaAdHoc4.host9.wlan[0].radio 	bitrate:max 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, max"
+attr unit  bps
+scalar PruebaAdHoc4.host9.wlan[0].radio 	bitrate:timeavg 	54000000
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, timeavg"
+attr unit  bps
+scalar PruebaAdHoc4.host9.udpGen 	"packets sent" 	0
+scalar PruebaAdHoc4.host9.udpGen 	"packets received" 	0
+scalar PruebaAdHoc4.host9.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar PruebaAdHoc4.host9.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar PruebaAdHoc4.host9.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar PruebaAdHoc4.host9.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar PruebaAdHoc4.host9.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar PruebaAdHoc4.host9.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar PruebaAdHoc4.host9.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar PruebaAdHoc4.host9.relayUnit 	"processed frames" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"dropped frames" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"ARP requests rcvd" 	3
+scalar PruebaAdHoc4.host9.relayUnit 	"ARP replies rcvd" 	1
+scalar PruebaAdHoc4.host9.relayUnit 	"number of repairs started" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"Hellos rcvd" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"PathFails rcvd" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"PathRequests rcvd" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"PathReplies rcvd" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"LinkFails rcvd" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"LinkReplies rcvd" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"number of lost packets" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"average PathFail time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"max PathFail time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"min PathFail time" 	100
+scalar PruebaAdHoc4.host9.relayUnit 	"PathFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"average PathRequest time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"max PathRequest time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"min PathRequest time" 	100
+scalar PruebaAdHoc4.host9.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"average PathReply time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"max PathReply time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"min PathReply time" 	100
+scalar PruebaAdHoc4.host9.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"average LinkFail time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"max LinkFail time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"min LinkFail time" 	100
+scalar PruebaAdHoc4.host9.relayUnit 	"LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"addresses repaired by LinkFails rcvd at destination" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"average LinkReply time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"max LinkReply time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"min LinkReply time" 	100
+scalar PruebaAdHoc4.host9.relayUnit 	"LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"addresses repaired by LinkReplies rcvd at destination" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"average repair time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"max repair time" 	0
+scalar PruebaAdHoc4.host9.relayUnit 	"min repair time" 	100
+scalar PruebaAdHoc4.host9.relayUnit 	"number of repairs finished" 	0

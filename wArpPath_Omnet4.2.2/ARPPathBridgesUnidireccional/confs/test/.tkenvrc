@@ -1,0 +1,9 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "PruebaAdHoc4" "PruebaAdHoc4" "2" "639x337+865+89:normal"
+inspector "PruebaAdhoc3" "PruebaAdhoc3" "2" "638x337+360+236:normal"
+inspector "rombo" "rombo" "2" "607x337+671+631:normal"
+inspector "AdHocARPPath" "AdHocARPPath" "2" "645x337+65+24:normal"
+inspector "Prueba_Wireless" "Prueba_Wireless" "2" "656x337+65+24:normal"
+inspector "dataCenter250" "dataCenter250" "2" "646x342+0+51:normal"
+inspector "pruebaTCP" "pruebaTCP" "2" "607x337+477+255:normal"
+

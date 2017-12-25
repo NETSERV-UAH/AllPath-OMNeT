@@ -1,0 +1,4 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "gridfullhost" "gridfullhost" "2" "711x606+545+239:normal"
+inspector "grid" "grid" "2" "607x342+0+51:normal"
+

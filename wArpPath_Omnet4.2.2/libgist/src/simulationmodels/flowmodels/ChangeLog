@@ -1,0 +1,26 @@
+
+09/01/2014
+	UDPFlowGenerator/TCPFlowGenerator:
+		- Se ha añadido un "modelo" de ratones/elefantes (data center), que se activa o no con un booleano (elige entre modelo data center o JAC).
+			- TODO: Añadir a TCPFlowGenerator?
+		- Redefinido statsPeriod como parámetro (para que se pueda desactivar si está a 0 y no consuma memoria)
+
+21/05/2013
+	Se ha creado la nueva clase FlowGeneratorBase, de la cual ahora deriva UDPFlowGenerator y de la que también derivará la futura TCPFlowGenerator
+
+31/10/2012
+	UDPFlowHost.ned 
+		- Ahora hereda de IUDPApp, porque UDPApp ya no existe en inet2.0.0
+		- Añadimos todos los parámetros necesarios para crear sockets (aunque en la práctica ninguno se usará...)
+	UDPFlowHost.h/.cc (Para los cambios nos basamos en UDPBasicAppNew, como se hizo al crear la clase...)
+		- Ya no existe UDPAppBase, así que se elimina #include "UDPAppBase.h"
+			- Ahora hereda de cSimpleModule, en vez de UDPAppBase, como UDPBasicAppNew
+		- FlowInfo ahora añade el parámetro 'socket'.
+			- Por cada flujo se abre un socket... esto antes en inet era una chapuza y no estaba implementado
+			y en la práctica no se usaba y siempre daba error. Ahora parece que en inet2.0.0 ya está bien,
+			así que habrá que usarlo y añadirlo al crear flujos.
+		- Se añaden las señales sentPkSignal; y rcvdPkSignal;
+		- Se añade la función setSocketOptions(), pero con el parámetro de socket (pues no es único como en UDPBasicApp)
+	UDPFlowGenerator.h/.cc (Para los cambios nos basamos en parte en FlatNetworkConfigurator, como se hizo al crear la clase...)
+		- Ya no se usa IPAddressResolver (no existe), sino IPvXAddressResolver
+		- Ya no se usa IPAddress (no existe), sino IPv4Address

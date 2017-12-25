@@ -1,0 +1,29 @@
+
+
+
+28/02/2012
+	Esta librería 'libgist' evoluciona directamente de inet (actualmente la versión 2.0.0), siempre añadiendo funcionalidades 
+	a clases ya existentes, nunca quitando.
+	Para su uso, se necesita incluir el INET Framework por tanto.
+	
+	Además, INET posee actualmente un bug (para nuestros desarrollos) que es el siguiente:
+		MACAddress MACAddress::generateAutoAddress()
+		{
+    		++autoAddressCtr;
+
+    		uint64 intAddr = 0x0AAA00000000L + (autoAddressCtr & 0xffffffffL);
+    		MACAddress addr(intAddr);
+    		return addr;
+		}
+	Es decir, en inet/src/linklayer/contract/MACAddress.cc se asignan automáticamente las direcciones MAC, y si necesitamos usar
+	el bit U/L, nos dará por defecto que es una dirección local (al ser valor 0A), cuando no lo es. Por tanto se ha cambiado el código
+	de inet a lo siguiente (no se ha hecho en libgist porque es un bug y afectaría a muchas clases y deberíamos añadir mucho código sin
+	añadir funcionalidad alguna...), pero sólo es necesario para proyectos que utilicen el bit U/L, como Torii-HLMAC
+		MACAddress MACAddress::generateAutoAddress()
+		{
+    		++autoAddressCtr;
+
+    		uint64 intAddr = 0x0CAA00000000L + (autoAddressCtr & 0xffffffffL);
+    		MACAddress addr(intAddr);
+    		return addr;
+		}

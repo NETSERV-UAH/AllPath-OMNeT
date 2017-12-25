@@ -1,0 +1,3 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "dataCenter250" "dataCenter250" "2" "646x342+0+51:normal"
+

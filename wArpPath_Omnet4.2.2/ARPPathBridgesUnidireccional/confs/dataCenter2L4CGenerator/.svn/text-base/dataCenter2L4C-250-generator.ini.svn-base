@@ -1,0 +1,71 @@
+[General]
+#topología:
+network = arppathbridgesunidireccional.src.topologies.dataCenter2L4CGenerator.dataCenter2L4Cgenerator
+
+#semillas aleatorias:
+num-rngs = 1
+seed-0-mt = 12
+**.relayUnit.broadcastSeed = 12
+
+#tiempo de simulación:
+sim-time-limit = 200s
+
+#tiempo de expiración de caché en hosts:
+**.arp.cacheTimeout = 120s
+
+#tiempo de bloqueo:
+**.relayUnit.blockingTime = 2s
+
+#tiempo de aprendizaje:
+**.relayUnit.agingTime = 120s
+
+#tiempo de proceso por switch:
+**.relayUnit.processingTime = 2us
+
+#capacidad de colas de transmisión (switches):
+**.txQueueLimit =  100000
+
+#capacidad de colas de cada host:
+**.frameCapacity = 100000
+
+# Queues
+**.ppp[*].queueType = "DropTailQueue"
+**.eth[*].queueType = "DropTailQueue"
+
+#direcciones MAC de cada switch:
+**.s1.relayUnit.address = "00-00-00-00-0C-01"
+**.s2.relayUnit.address = "00-00-00-00-0C-02"
+**.s3.relayUnit.address = "00-00-00-00-0C-03"
+**.s4.relayUnit.address = "00-00-00-00-0C-04"
+
+**.switch[0].relayUnit.address = "00-00-00-00-01-00"			
+**.switch[1].relayUnit.address = "00-00-00-00-01-01"			
+**.switch[2].relayUnit.address = "00-00-00-00-01-02"			
+**.switch[3].relayUnit.address = "00-00-00-00-01-03"
+**.switch[4].relayUnit.address = "00-00-00-00-01-04"			
+**.switch[5].relayUnit.address = "00-00-00-00-01-05"			
+**.switch[6].relayUnit.address = "00-00-00-00-01-06"			
+**.switch[7].relayUnit.address = "00-00-00-00-01-07"
+**.switch[8].relayUnit.address = "00-00-00-00-01-08"
+**.switch[9].relayUnit.address = "00-00-00-00-01-09"			
+
+# Number of UDP apps (1) and which type of UDP traffic, for the UDPFlowGenerator					
+**.udpGenType = "UDPFlowHost"
+**.generatorFreq = exponential(0.2s) # para 100Mbps
+**.stopTime = 200s #250s #1600s 
+
+# Weights and routing for the generator
+#**.hostsWeights = "host[150] 4 host[151] 4 host[152] 4 host[153] 4 host[154] 4 host[155] 4 host[156] 4 host[157] 4 host[158] 4 host[159] 4 host[160] 4 host[161] 4 host[162] 4 host[163] 4 host[164] 4 host[165] 4 host[166] 4 host[167] 4 host[168] 4 host[169] 4 host[170] 4 host[171] 4 host[172] 4 host[173] 4 host[174] 4"
+**.hostsWeights = "host[150] 50"
+**.routeHosts = "host[1] host[200] host[200] host[1]"
+**.routeSwitches = "switch[1] switch[8] switch[8] switch[1]"
+
+#otros parámetros:
+**.vector-recording=false
+#**.rx channel utilization (%).scalar-recording=true
+**.scalar-recording=true
+#cpu-time-limit = 6000s
+total-stack = 2MiB
+**.relayUnit.addressTableSize = 300
+**.relayUnit.addressTableFile = ""
+**.relayUnit.numCPUs = 1

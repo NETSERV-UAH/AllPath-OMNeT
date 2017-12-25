@@ -1,0 +1,5 @@
+
+
+02/11/2012
+	Ya no existen los canales "ideales" de transmisión, por lo que se ha de utilizar siempre un canal real:
+		- Por lo tanto en los .ini, **.mac[*].txrate = desaparece!! (ahora se define en el .ned)

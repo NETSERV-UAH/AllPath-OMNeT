@@ -1,0 +1,10 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "triangle_pruebaGenerator" "triangle_pruebaGenerator" "2" "762x342+0+51:normal"
+inspector "gridfullhost" "gridfullhost" "2" "607x342+0+51:normal"
+inspector "DataCenter250_tree" "DataCenter250_tree" "2" "710x342+0+51:normal"
+inspector "dataCenter250Recortado" "dataCenter250Recortado" "2" "764x342+0+51:normal"
+inspector "dataCenter250" "dataCenter250" "2" "650x342+128+69:normal"
+inspector "triangle" "triangle" "2" "607x342+0+51:normal"
+inspector "dataCenter250.hosts_s13" "dataCenter250_area" "2" "737x342+366+53:normal"
+inspector "simulation.scheduled-events.:" "cMessage" "1" "460x315+570+292:normal"
+

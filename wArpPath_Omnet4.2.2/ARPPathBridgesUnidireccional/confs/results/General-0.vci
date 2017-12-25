@@ -1,0 +1,389 @@
+file 2778686 1405878380                                         
+version 2
+run General-0-20140720-19:43:43-3971
+attr configname General
+attr datetime 20140720-19:43:43
+attr experiment General
+attr inifile pruebaAdHoc4.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network arppathbridgesunidireccional.src.topologies.PruebaAdHoc4
+attr processid 3971
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 12  PruebaAdHoc4.host1.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 27  PruebaAdHoc4.host2.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 42  PruebaAdHoc4.host3.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 57  PruebaAdHoc4.host4.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 72  PruebaAdHoc4.host5.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 87  PruebaAdHoc4.host6.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 102  PruebaAdHoc4.host7.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 120  PruebaAdHoc4.host8.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 135  PruebaAdHoc4.host9.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 142  PruebaAdHoc4.host1.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 141  PruebaAdHoc4.host1.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 150  PruebaAdHoc4.host2.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 149  PruebaAdHoc4.host2.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 158  PruebaAdHoc4.host3.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 157  PruebaAdHoc4.host3.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 166  PruebaAdHoc4.host4.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 165  PruebaAdHoc4.host4.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 174  PruebaAdHoc4.host5.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 173  PruebaAdHoc4.host5.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 182  PruebaAdHoc4.host6.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 181  PruebaAdHoc4.host6.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 190  PruebaAdHoc4.host7.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 189  PruebaAdHoc4.host7.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 198  PruebaAdHoc4.host8.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 197  PruebaAdHoc4.host8.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 206  PruebaAdHoc4.host9.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 205  PruebaAdHoc4.host9.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 14  PruebaAdHoc4.host1.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 16  PruebaAdHoc4.host1.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 15  PruebaAdHoc4.host1.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 29  PruebaAdHoc4.host2.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 31  PruebaAdHoc4.host2.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 30  PruebaAdHoc4.host2.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 44  PruebaAdHoc4.host3.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 46  PruebaAdHoc4.host3.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 45  PruebaAdHoc4.host3.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 59  PruebaAdHoc4.host4.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 61  PruebaAdHoc4.host4.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 60  PruebaAdHoc4.host4.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 74  PruebaAdHoc4.host5.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 76  PruebaAdHoc4.host5.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 75  PruebaAdHoc4.host5.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 89  PruebaAdHoc4.host6.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 91  PruebaAdHoc4.host6.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 90  PruebaAdHoc4.host6.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 104  PruebaAdHoc4.host7.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 106  PruebaAdHoc4.host7.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 105  PruebaAdHoc4.host7.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 122  PruebaAdHoc4.host8.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 124  PruebaAdHoc4.host8.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 123  PruebaAdHoc4.host8.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 137  PruebaAdHoc4.host9.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 139  PruebaAdHoc4.host9.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 138  PruebaAdHoc4.host9.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 1  PruebaAdHoc4.host1.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 3  PruebaAdHoc4.host1.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 8  PruebaAdHoc4.host1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 10  PruebaAdHoc4.host1.networkLayer.arp  initiatedResolution:vector  ETV
+attr title  "ARP initiated resolutions, vector"
+vector 144  PruebaAdHoc4.host1.wlan[0].mac  "throughput AC0"  ETV
+vector 152  PruebaAdHoc4.host2.wlan[0].mac  "throughput AC0"  ETV
+vector 160  PruebaAdHoc4.host3.wlan[0].mac  "throughput AC0"  ETV
+vector 168  PruebaAdHoc4.host4.wlan[0].mac  "throughput AC0"  ETV
+vector 154  PruebaAdHoc4.host2.wlan[0].radio  snirVector  ETV
+vector 162  PruebaAdHoc4.host3.wlan[0].radio  snirVector  ETV
+vector 170  PruebaAdHoc4.host4.wlan[0].radio  snirVector  ETV
+vector 184  PruebaAdHoc4.host6.wlan[0].mac  "throughput AC0"  ETV
+vector 192  PruebaAdHoc4.host7.wlan[0].mac  "throughput AC0"  ETV
+vector 200  PruebaAdHoc4.host8.wlan[0].mac  "throughput AC0"  ETV
+vector 176  PruebaAdHoc4.host5.wlan[0].mac  "throughput AC0"  ETV
+vector 208  PruebaAdHoc4.host9.wlan[0].mac  "throughput AC0"  ETV
+vector 146  PruebaAdHoc4.host1.wlan[0].radio  snirVector  ETV
+vector 186  PruebaAdHoc4.host6.wlan[0].radio  snirVector  ETV
+vector 194  PruebaAdHoc4.host7.wlan[0].radio  snirVector  ETV
+vector 202  PruebaAdHoc4.host8.wlan[0].radio  snirVector  ETV
+vector 210  PruebaAdHoc4.host9.wlan[0].radio  snirVector  ETV
+vector 178  PruebaAdHoc4.host5.wlan[0].radio  snirVector  ETV
+vector 177  PruebaAdHoc4.host5.wlan[0].mac  "Mac delay AC0"  ETV
+vector 209  PruebaAdHoc4.host9.wlan[0].mac  "Mac delay AC0"  ETV
+vector 201  PruebaAdHoc4.host8.wlan[0].mac  "Mac delay AC0"  ETV
+vector 169  PruebaAdHoc4.host4.wlan[0].mac  "Mac delay AC0"  ETV
+vector 145  PruebaAdHoc4.host1.wlan[0].mac  "Mac delay AC0"  ETV
+vector 64  PruebaAdHoc4.host5.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 66  PruebaAdHoc4.host5.udp  droppedPkWrongPort:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), vector(count)"
+vector 107  PruebaAdHoc4.host7.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 92  PruebaAdHoc4.host6.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 125  PruebaAdHoc4.host8.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 32  PruebaAdHoc4.host2.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 47  PruebaAdHoc4.host3.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 143  PruebaAdHoc4.host1.wlan[0].mac  "jitter AC0"  ETV
+vector 167  PruebaAdHoc4.host4.wlan[0].mac  "jitter AC0"  ETV
+vector 199  PruebaAdHoc4.host8.wlan[0].mac  "jitter AC0"  ETV
+vector 207  PruebaAdHoc4.host9.wlan[0].mac  "jitter AC0"  ETV
+vector 175  PruebaAdHoc4.host5.wlan[0].mac  "jitter AC0"  ETV
+vector 140  PruebaAdHoc4.host9.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 62  PruebaAdHoc4.host4.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 17  PruebaAdHoc4.host1.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 77  PruebaAdHoc4.host5.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 109  PruebaAdHoc4.host8.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 111  PruebaAdHoc4.host8.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 116  PruebaAdHoc4.host8.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 118  PruebaAdHoc4.host8.networkLayer.arp  initiatedResolution:vector  ETV
+attr title  "ARP initiated resolutions, vector"
+vector 153  PruebaAdHoc4.host2.wlan[0].mac  "Mac delay AC0"  ETV
+vector 19  PruebaAdHoc4.host2.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 21  PruebaAdHoc4.host2.udp  droppedPkWrongPort:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), vector(count)"
+vector 151  PruebaAdHoc4.host2.wlan[0].mac  "jitter AC0"  ETV
+1	13654 1874 3 37202 1 4.07786510642 71 500 500 35500 17750000
+3	15528 1874 4 37203 1 4.07786510642 71 508 508 36068 18322544
+8	17402 8 6 6 1 1 1 1 1 1 1
+10	17410 9 6 6 1 1 1 1 1 1 1
+12	17419 9 0 0 0 0 1 0 0 0 0
+14	17428 16 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+15	17444 9 0 0 0 0 1 0 0 0 0
+16	17453 49709 0 37255 0 4.07826640753 1945 0 2 1332 2052
+17	67162 165 5876 37039 1.328212798212 4.005224316586 6 0 0.12 0.22 0.018
+19	67327 28 37028 37028 4.005224084028 4.005224084028 1 508 508 508 258064
+21	67355 26 37028 37028 4.005224084028 4.005224084028 1 1 1 1 1
+27	67381 9 0 0 0 0 1 0 0 0 0
+29	67390 16 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+30	67406 9 0 0 0 0 1 0 0 0 0
+31	67415 49949 0 37249 0 4.078266174972 1951 0 2 988 1012
+32	117364 253 3867 35120 1.059242712193 3.955826752011 9 0 0.18 0.8 0.1136
+42	117617 9 0 0 0 0 1 0 0 0 0
+44	117626 16 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+45	117642 9 0 0 0 0 1 0 0 0 0
+46	117651 49903 0 37247 0 4.078266131689 1951 0 2 980 988
+47	167554 251 3869 35123 1.059242750922 3.95582679074 9 0 0.2 0.82 0.1212
+57	167805 9 0 0 0 0 1 0 0 0 0
+59	167814 16 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+60	167830 9 0 0 0 0 1 0 0 0 0
+61	167839 79097 0 37264 0 4.078329756975 3091 0 2 2152 3352
+62	246936 251 4223 35450 1.105415571627 3.957930349339 9 0 0.22 0.78 0.1116
+64	247187 1933 907 36105 1.006686587854 3.975004822953 70 508 508 35560 18064480
+66	249120 1854 907 36105 1.006686587854 3.975004822953 70 1 70 2485 116795
+72	250974 9 0 0 0 0 1 0 0 0 0
+74	250983 16 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+75	250999 9 0 0 0 0 1 0 0 0 0
+76	251008 48491 0 36890 0 4.003824317814 1897 0 2 1246 1842
+77	299499 169 5987 35711 1.329130968528 3.95986321711 6 0 0.16 0.46 0.0532
+87	299668 9 0 0 0 0 1 0 0 0 0
+89	299677 16 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+90	299693 9 0 0 0 0 1 0 0 0 0
+91	299702 107187 0 37251 0 4.078266182872 4189 0 2 2100 2108
+92	406889 546 2153 35476 1.016878651039 3.958188775236 20 0 0.14 1 0.1016
+102	407435 10 0 0 0 0 1 0 0 0 0
+104	407445 17 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+105	407462 10 0 0 0 0 1 0 0 0 0
+106	407472 111074 0 37253 0 4.078266286681 4179 0 2 2094 2102
+107	518546 563 2107 35389 1.016620140246 3.957457577935 20 0 0.12 0.86 0.0748
+109	519109 16 36383 36383 4 4 1 500 500 500 250000
+111	519125 16 36384 36384 4 4 1 508 508 508 258064
+116	519141 14 36386 36386 4 4 1 1 1 1 1
+118	519155 14 36386 36386 4 4 1 1 1 1 1
+120	519169 10 0 0 0 0 1 0 0 0 0
+122	519179 17 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+123	519196 10 0 0 0 0 1 0 0 0 0
+124	519206 96706 0 37257 0 4.078266493603 3637 0 2 2432 3652
+125	615912 307 3330 34020 1.032662870865 3.796862879366 11 0 0.16 0.46 0.0532
+135	616219 218 0 9462 0 1.597913086503 9 0 1 4 4
+137	616437 17 0 0 0 0 1 54000000 54000000 54000000 2.916e+15
+138	616454 10 0 0 0 0 1 0 0 0 0
+139	616464 80618 0 37188 0 4.006211799446 3033 0 2 2126 3342
+140	697082 255 4221 36883 1.105415395792 4.003824000301 9 0 0.14 0.48 0.0512
+141	697337 103902 0 37262 0 4.07829440753 3914 0 7 7237 27675
+142	801239 51664 0 37255 0 4.07826640753 1946 0 2 1332 2052
+143	852903 629 3885 37207 1.10296627933 4.07786510642 20 0 0.005994264763 0.029172758161 0.00012851972999263
+144	853532 820 8 37207 1 4.07786510642 21 0 273115.09304765 2335766.2229519 375165481637.71
+145	854352 2750 530 37256 1.003977790449 4.07826640753 71 0.00040130111 0.006395565873 0.061756111057 0.00017699030604687
+146	857102 38 87 87 1.001000851794 1.001000851794 1 -1.037171509671 -1.037171509671 -1.037171509671 1.0757247404733
+149	857140 105814 0 37250 0 4.078266174972 3978 0 7 268 956
+150	962954 51910 0 37249 0 4.078266174972 1952 0 2 988 1012
+151	1014864 40 37210 37210 4.077893532317 4.077893532317 1 0.000493130258 0.000493130258 0.000493130258 2.4317745135515e-07
+152	1014904 588 11 37210 1.000028425897 4.077893532317 21 0 9221.8790540276 14660.552798907 114622225.39035
+153	1015492 80 36686 37123 4.002144120877 4.005873920022 2 0.000649835994 0.001142966252 0.001792802246 1.7286586723089e-06
+154	1015572 38 21 21 1.000500425897 1.000500425897 1 30.372185095446 30.372185095446 30.372185095446 922.46962747206
+157	1015610 105972 0 37248 0 4.078266131689 3988 0 5 158 430
+158	1121582 51864 0 37247 0 4.078266131689 1952 0 2 980 988
+160	1173446 588 12 37211 1.000028464626 4.077893571046 21 0 5438.6737448795 9281.1233507243 44343591.076699
+162	1174034 38 28 28 1.000500464626 1.000500464626 1 29.616212512161 29.616212512161 29.616212512161 877.12004356549
+165	1174072 156902 0 37264 0 4.078329756975 5900 0 7 12702 49142
+166	1330974 82198 0 37264 0 4.078329756975 3092 0 2 2150 3348
+167	1413172 776 3890 37212 1.102994929885 4.077893756975 20 4.5172146e-05 0.004388813888 0.006667912516 1.9748366104718e-05
+168	1413948 834 13 37212 1.000028650555 4.077893756975 21 0 327718.9407986 2786584.8708797 532372397992.26
+169	1414782 5639 465 37191 1.003559139894 4.006211975281 144 0.00058730111 0.004976114998 0.101535810378 9.2319320374734e-05
+170	1420421 38 35 35 1.000500650555 1.000500650555 1 26.692607268308 26.692607268308 26.692607268308 712.49528278013
+173	1420459 96490 0 36890 0 4.003824317814 3632 0 7 6620 24952
+174	1516949 50398 0 36890 0 4.003824317814 1898 0 2 1246 1842
+175	1567347 615 4036 34486 1.104010750756 3.933205214941 19 0 0.001347 0.0042110469 4.6626605875996e-06
+176	1567962 796 73 34486 1.000529499135 3.933205214941 20 0 50869.118004867 383322.81843784 10953959938.073
+177	1568758 2670 253 36191 1.002372586868 3.975636869853 71 0.0003250469 0.0019790469 0.0470143768 3.5073686284771e-05
+178	1571428 38 187 187 1.002047539968 1.002047539968 1 28.58078627232 28.58078627232 28.58078627232 816.86134394406
+181	1571466 224806 0 37252 0 4.078266182872 8456 0 5 228 608
+182	1796272 111386 0 37251 0 4.078266182872 4190 0 2 2100 2108
+184	1907658 587 58 37238 1.000528922104 4.078018182872 21 0 5458.5986229249 9301.0482287697 44560717.899655
+186	1908245 80 89 35506 1.001000922104 3.958339775236 2 -2.4534227038762 30.372185095447 27.91876239157 928.48891043596
+189	1908325 224038 0 37254 0 4.078266286681 8430 0 5 220 564
+190	2132363 111084 0 37253 0 4.078266286681 4180 0 2 2094 2102
+192	2243447 586 65 37239 1.000529180261 4.078018286681 21 0 5458.6068354357 9301.0564412806 44560807.557323
+194	2244033 80 102 35478 1.001001180261 3.958188879045 2 1.1775660817857 28.477587207577 29.655153289363 812.35963504212
+197	2244113 189050 0 37258 0 4.078266493603 7112 0 7 13352 50584
+198	2433163 96716 0 37257 0 4.078266493603 3638 0 2 2432 3652
+199	2529879 760 3919 37241 1.103119666513 4.078018493603 20 4.464833e-05 0.00286664833 0.011897208257 2.4235123203362e-05
+200	2530639 836 71 37241 1.000529387183 4.078018493603 21 0 328920.05188383 2775680.7062381 528667192965.5
+201	2531475 5621 388 37004 1.003049097467 4.005073402659 142 0.000587473256 0.003490121586 0.106112136857 0.00010282637466238
+202	2537096 41 114 114 1.001001387183 1.001001387183 1 0.068689216145512 0.068689216145512 0.068689216145512 0.0047182084146848
+205	2537137 153892 0 37189 0 4.006211799446 5790 0 7 12762 49238
+206	2691029 80628 0 37188 0 4.006211799446 3034 0 2 2126 3342
+207	2771657 746 3977 34427 1.103574227306 3.932741691491 19 2.6925314e-05 0.007893624985 0.0167825847 9.1498833834612e-05
+208	2772403 796 76 34427 1.000529658946 3.932741691491 20 0 327469.95340997 2594346.2292443 497137043467.34
+209	2773199 5448 314 36248 1.002697185004 3.976001467989 141 0.000583121586 0.008498746571 0.118173916976 0.00020960860743464
+210	2778647 39 152 152 1.001547016518 1.001547016518 1 27.982238839261 27.982238839261 27.982238839261 783.00569045746

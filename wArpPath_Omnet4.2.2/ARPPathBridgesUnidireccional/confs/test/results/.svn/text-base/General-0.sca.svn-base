@@ -1,0 +1,1763 @@
+version 2
+run General-0-20131008-18:23:35-18783
+attr configname General
+attr datetime 20131008-18:23:35
+attr experiment General
+attr inifile triangle.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network arppathbridgesunidireccional.src.topologies.triangle
+attr processid 18783
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+scalar triangle.switchA.relayUnit 	"processed frames" 	53
+scalar triangle.switchA.relayUnit 	"dropped frames" 	0
+scalar triangle.switchA.relayUnit 	"ARP requests rcvd" 	1
+scalar triangle.switchA.relayUnit 	"ARP replies rcvd" 	1
+scalar triangle.switchA.relayUnit 	"number of repairs started" 	1
+scalar triangle.switchA.relayUnit 	"Hellos rcvd" 	2
+scalar triangle.switchA.relayUnit 	"PathFails rcvd" 	0
+scalar triangle.switchA.relayUnit 	"PathRequests rcvd" 	0
+scalar triangle.switchA.relayUnit 	"PathReplies rcvd" 	1
+scalar triangle.switchA.relayUnit 	"average PathFail time" 	0
+scalar triangle.switchA.relayUnit 	"max PathFail time" 	0
+scalar triangle.switchA.relayUnit 	"min PathFail time" 	100
+scalar triangle.switchA.relayUnit 	"PathFails rcvd at destination" 	0
+scalar triangle.switchA.relayUnit 	"average PathRequest time" 	0
+scalar triangle.switchA.relayUnit 	"max PathRequest time" 	0
+scalar triangle.switchA.relayUnit 	"min PathRequest time" 	100
+scalar triangle.switchA.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar triangle.switchA.relayUnit 	"average PathReply time" 	1.7539998e-05
+scalar triangle.switchA.relayUnit 	"max PathReply time" 	1.7539998e-05
+scalar triangle.switchA.relayUnit 	"min PathReply time" 	1.7539998e-05
+scalar triangle.switchA.relayUnit 	"PathReplies rcvd at destination" 	1
+scalar triangle.switchA.relayUnit 	"average repair time" 	3.5079996e-05
+scalar triangle.switchA.relayUnit 	"max repair time" 	3.5079996e-05
+scalar triangle.switchA.relayUnit 	"min repair time" 	3.5079996e-05
+scalar triangle.switchA.relayUnit 	"number of repairs finished" 	1
+scalar triangle.switchA.mac[0] 	"simulated time" 	2.272484468459
+scalar triangle.switchA.mac[0] 	full-duplex 	1
+scalar triangle.switchA.mac[0] 	"frames/sec sent" 	11.00117529822
+scalar triangle.switchA.mac[0] 	"frames/sec rcvd" 	11.441222310149
+scalar triangle.switchA.mac[0] 	"bits/sec sent" 	6442.2882546377
+scalar triangle.switchA.mac[0] 	"bits/sec rcvd" 	48278.437772733
+scalar triangle.switchA.mac[0] 	"rx channel idle (%)" 	99.950989323999
+scalar triangle.switchA.mac[0] 	"rx channel utilization (%)" 	0.049010676000583
+scalar triangle.switchA.mac[0] 	"rx channel collision (%)" 	0
+scalar triangle.switchA.mac[0] 	collisions 	0
+scalar triangle.switchA.mac[0] 	backoffs 	0
+scalar triangle.switchA.mac[0] 	"average latency" 	0
+scalar triangle.switchA.mac[0] 	"max latency" 	0
+scalar triangle.switchA.mac[0] 	"min latency" 	100
+scalar triangle.switchA.mac[0] 	"average processing time" 	9.375993e-06
+scalar triangle.switchA.mac[0] 	"max processing time" 	9.519999e-06
+scalar triangle.switchA.mac[0] 	"min processing time" 	6.719999e-06
+scalar triangle.switchA.mac[0] 	"ARP requests rcvd" 	1
+scalar triangle.switchA.mac[0] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchA.mac[0] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchA.mac[0] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchA.mac[0] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchA.mac[0] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchA.mac[0] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchA.mac[0] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchA.mac[0] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchA.mac[0] 	rxPkFromHL:count 	25
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchA.mac[0] 	rxPkFromHL:sum(packetBytes) 	1830
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchA.mac[0] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchA.mac[0] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchA.mac[0] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchA.mac[0] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchA.mac[0] 	passedUpPk:count 	26
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchA.mac[0] 	passedUpPk:sum(packetBytes) 	13714
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchA.mac[0] 	rxPkOk:count 	26
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchA.mac[0] 	rxPkOk:sum(packetBytes) 	13714
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchA.mac[0] 	txPk:count 	25
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchA.mac[0] 	txPk:sum(packetBytes) 	1830
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchA.mac[1] 	"simulated time" 	2.272484468459
+scalar triangle.switchA.mac[1] 	full-duplex 	1
+scalar triangle.switchA.mac[1] 	"frames/sec sent" 	9.6810342624337
+scalar triangle.switchA.mac[1] 	"frames/sec rcvd" 	9.6810342624337
+scalar triangle.switchA.mac[1] 	"bits/sec sent" 	38893.115102315
+scalar triangle.switchA.mac[1] 	"bits/sec rcvd" 	5660.7647614521
+scalar triangle.switchA.mac[1] 	"rx channel idle (%)" 	99.993719649046
+scalar triangle.switchA.mac[1] 	"rx channel utilization (%)" 	0.0062803509542479
+scalar triangle.switchA.mac[1] 	"rx channel collision (%)" 	0
+scalar triangle.switchA.mac[1] 	collisions 	0
+scalar triangle.switchA.mac[1] 	backoffs 	0
+scalar triangle.switchA.mac[1] 	"average latency" 	0
+scalar triangle.switchA.mac[1] 	"max latency" 	0
+scalar triangle.switchA.mac[1] 	"min latency" 	100
+scalar triangle.switchA.mac[1] 	"average processing time" 	4.368363e-05
+scalar triangle.switchA.mac[1] 	"max processing time" 	4.7279999e-05
+scalar triangle.switchA.mac[1] 	"min processing time" 	6.719999e-06
+scalar triangle.switchA.mac[1] 	"ARP requests rcvd" 	0
+scalar triangle.switchA.mac[1] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchA.mac[1] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchA.mac[1] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchA.mac[1] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchA.mac[1] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchA.mac[1] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchA.mac[1] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchA.mac[1] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchA.mac[1] 	rxPkFromHL:count 	22
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchA.mac[1] 	rxPkFromHL:sum(packetBytes) 	11048
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchA.mac[1] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchA.mac[1] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchA.mac[1] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchA.mac[1] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchA.mac[1] 	passedUpPk:count 	22
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchA.mac[1] 	passedUpPk:sum(packetBytes) 	1608
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchA.mac[1] 	rxPkOk:count 	22
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchA.mac[1] 	rxPkOk:sum(packetBytes) 	1608
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchA.mac[1] 	txPk:count 	22
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchA.mac[1] 	txPk:sum(packetBytes) 	11048
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchA.mac[2] 	"simulated time" 	2.272484468459
+scalar triangle.switchA.mac[2] 	full-duplex 	1
+scalar triangle.switchA.mac[2] 	"frames/sec sent" 	3.0803290835016
+scalar triangle.switchA.mac[2] 	"frames/sec rcvd" 	2.200235059644
+scalar triangle.switchA.mac[2] 	"bits/sec sent" 	8364.4136027427
+scalar triangle.switchA.mac[2] 	"bits/sec rcvd" 	1232.1316334007
+scalar triangle.switchA.mac[2] 	"rx channel idle (%)" 	99.998627053323
+scalar triangle.switchA.mac[2] 	"rx channel utilization (%)" 	0.0013729466772179
+scalar triangle.switchA.mac[2] 	"rx channel collision (%)" 	0
+scalar triangle.switchA.mac[2] 	collisions 	0
+scalar triangle.switchA.mac[2] 	backoffs 	0
+scalar triangle.switchA.mac[2] 	"average latency" 	0
+scalar triangle.switchA.mac[2] 	"max latency" 	0
+scalar triangle.switchA.mac[2] 	"min latency" 	100
+scalar triangle.switchA.mac[2] 	"average processing time" 	0.295188526846
+scalar triangle.switchA.mac[2] 	"max processing time" 	2.066115127938
+scalar triangle.switchA.mac[2] 	"min processing time" 	6.719999e-06
+scalar triangle.switchA.mac[2] 	"ARP requests rcvd" 	0
+scalar triangle.switchA.mac[2] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchA.mac[2] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchA.mac[2] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchA.mac[2] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchA.mac[2] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchA.mac[2] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchA.mac[2] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchA.mac[2] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchA.mac[2] 	rxPkFromHL:count 	7
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchA.mac[2] 	rxPkFromHL:sum(packetBytes) 	2376
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchA.mac[2] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchA.mac[2] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchA.mac[2] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchA.mac[2] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchA.mac[2] 	passedUpPk:count 	5
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchA.mac[2] 	passedUpPk:sum(packetBytes) 	350
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchA.mac[2] 	rxPkOk:count 	5
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchA.mac[2] 	rxPkOk:sum(packetBytes) 	350
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchA.mac[2] 	txPk:count 	7
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchA.mac[2] 	txPk:sum(packetBytes) 	2376
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchB.relayUnit 	"processed frames" 	52
+scalar triangle.switchB.relayUnit 	"dropped frames" 	0
+scalar triangle.switchB.relayUnit 	"ARP requests rcvd" 	2
+scalar triangle.switchB.relayUnit 	"ARP replies rcvd" 	1
+scalar triangle.switchB.relayUnit 	"number of repairs started" 	0
+scalar triangle.switchB.relayUnit 	"Hellos rcvd" 	2
+scalar triangle.switchB.relayUnit 	"PathFails rcvd" 	0
+scalar triangle.switchB.relayUnit 	"PathRequests rcvd" 	1
+scalar triangle.switchB.relayUnit 	"PathReplies rcvd" 	0
+scalar triangle.switchB.relayUnit 	"average PathFail time" 	0
+scalar triangle.switchB.relayUnit 	"max PathFail time" 	0
+scalar triangle.switchB.relayUnit 	"min PathFail time" 	100
+scalar triangle.switchB.relayUnit 	"PathFails rcvd at destination" 	0
+scalar triangle.switchB.relayUnit 	"average PathRequest time" 	1.7539998e-05
+scalar triangle.switchB.relayUnit 	"max PathRequest time" 	1.7539998e-05
+scalar triangle.switchB.relayUnit 	"min PathRequest time" 	1.7539998e-05
+scalar triangle.switchB.relayUnit 	"PathRequests rcvd at destination" 	1
+scalar triangle.switchB.relayUnit 	"average PathReply time" 	0
+scalar triangle.switchB.relayUnit 	"max PathReply time" 	0
+scalar triangle.switchB.relayUnit 	"min PathReply time" 	100
+scalar triangle.switchB.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar triangle.switchB.relayUnit 	"average repair time" 	0
+scalar triangle.switchB.relayUnit 	"max repair time" 	0
+scalar triangle.switchB.relayUnit 	"min repair time" 	100
+scalar triangle.switchB.relayUnit 	"number of repairs finished" 	0
+scalar triangle.switchB.mac[0] 	"simulated time" 	2.272484468459
+scalar triangle.switchB.mac[0] 	full-duplex 	1
+scalar triangle.switchB.mac[0] 	"frames/sec sent" 	11.00117529822
+scalar triangle.switchB.mac[0] 	"frames/sec rcvd" 	10.561128286291
+scalar triangle.switchB.mac[0] 	"bits/sec sent" 	44659.49114663
+scalar triangle.switchB.mac[0] 	"bits/sec rcvd" 	6216.9841845301
+scalar triangle.switchB.mac[0] 	"rx channel idle (%)" 	99.993107103605
+scalar triangle.switchB.mac[0] 	"rx channel utilization (%)" 	0.0068928963948528
+scalar triangle.switchB.mac[0] 	"rx channel collision (%)" 	0
+scalar triangle.switchB.mac[0] 	collisions 	0
+scalar triangle.switchB.mac[0] 	backoffs 	0
+scalar triangle.switchB.mac[0] 	"average latency" 	0
+scalar triangle.switchB.mac[0] 	"max latency" 	0
+scalar triangle.switchB.mac[0] 	"min latency" 	100
+scalar triangle.switchB.mac[0] 	"average processing time" 	4.4115192e-05
+scalar triangle.switchB.mac[0] 	"max processing time" 	4.7279999e-05
+scalar triangle.switchB.mac[0] 	"min processing time" 	6.719999e-06
+scalar triangle.switchB.mac[0] 	"ARP requests rcvd" 	0
+scalar triangle.switchB.mac[0] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchB.mac[0] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchB.mac[0] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchB.mac[0] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchB.mac[0] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchB.mac[0] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchB.mac[0] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchB.mac[0] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchB.mac[0] 	rxPkFromHL:count 	25
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchB.mac[0] 	rxPkFromHL:sum(packetBytes) 	12686
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchB.mac[0] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchB.mac[0] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchB.mac[0] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchB.mac[0] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchB.mac[0] 	passedUpPk:count 	24
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchB.mac[0] 	passedUpPk:sum(packetBytes) 	1766
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchB.mac[0] 	rxPkOk:count 	24
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchB.mac[0] 	rxPkOk:sum(packetBytes) 	1766
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchB.mac[0] 	txPk:count 	25
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchB.mac[0] 	txPk:sum(packetBytes) 	12686
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchB.mac[1] 	"simulated time" 	2.272484468459
+scalar triangle.switchB.mac[1] 	full-duplex 	1
+scalar triangle.switchB.mac[1] 	"frames/sec sent" 	9.6810342624337
+scalar triangle.switchB.mac[1] 	"frames/sec rcvd" 	9.6810342624337
+scalar triangle.switchB.mac[1] 	"bits/sec sent" 	5660.7647614521
+scalar triangle.switchB.mac[1] 	"bits/sec rcvd" 	38893.115102315
+scalar triangle.switchB.mac[1] 	"rx channel idle (%)" 	99.960487298705
+scalar triangle.switchB.mac[1] 	"rx channel utilization (%)" 	0.039512701295111
+scalar triangle.switchB.mac[1] 	"rx channel collision (%)" 	0
+scalar triangle.switchB.mac[1] 	collisions 	0
+scalar triangle.switchB.mac[1] 	backoffs 	0
+scalar triangle.switchB.mac[1] 	"average latency" 	0
+scalar triangle.switchB.mac[1] 	"max latency" 	0
+scalar triangle.switchB.mac[1] 	"min latency" 	100
+scalar triangle.switchB.mac[1] 	"average processing time" 	9.356358e-06
+scalar triangle.switchB.mac[1] 	"max processing time" 	9.519999e-06
+scalar triangle.switchB.mac[1] 	"min processing time" 	6.719999e-06
+scalar triangle.switchB.mac[1] 	"ARP requests rcvd" 	1
+scalar triangle.switchB.mac[1] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchB.mac[1] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchB.mac[1] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchB.mac[1] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchB.mac[1] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchB.mac[1] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchB.mac[1] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchB.mac[1] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchB.mac[1] 	rxPkFromHL:count 	22
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchB.mac[1] 	rxPkFromHL:sum(packetBytes) 	1608
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchB.mac[1] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchB.mac[1] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchB.mac[1] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchB.mac[1] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchB.mac[1] 	passedUpPk:count 	22
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchB.mac[1] 	passedUpPk:sum(packetBytes) 	11048
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchB.mac[1] 	rxPkOk:count 	22
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchB.mac[1] 	rxPkOk:sum(packetBytes) 	11048
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchB.mac[1] 	txPk:count 	22
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchB.mac[1] 	txPk:sum(packetBytes) 	1608
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchB.mac[2] 	"simulated time" 	2.272484468459
+scalar triangle.switchB.mac[2] 	full-duplex 	1
+scalar triangle.switchB.mac[2] 	"frames/sec sent" 	2.6402820715728
+scalar triangle.switchB.mac[2] 	"frames/sec rcvd" 	2.6402820715728
+scalar triangle.switchB.mac[2] 	"bits/sec sent" 	1457.4357035082
+scalar triangle.switchB.mac[2] 	"bits/sec rcvd" 	6442.2882546377
+scalar triangle.switchB.mac[2] 	"rx channel idle (%)" 	99.993388733693
+scalar triangle.switchB.mac[2] 	"rx channel utilization (%)" 	0.0066112663072184
+scalar triangle.switchB.mac[2] 	"rx channel collision (%)" 	0
+scalar triangle.switchB.mac[2] 	collisions 	0
+scalar triangle.switchB.mac[2] 	backoffs 	0
+scalar triangle.switchB.mac[2] 	"average latency" 	0
+scalar triangle.switchB.mac[2] 	"max latency" 	0
+scalar triangle.switchB.mac[2] 	"min latency" 	100
+scalar triangle.switchB.mac[2] 	"average processing time" 	0.344362777988
+scalar triangle.switchB.mac[2] 	"max processing time" 	2.066132667936
+scalar triangle.switchB.mac[2] 	"min processing time" 	6.719999e-06
+scalar triangle.switchB.mac[2] 	"ARP requests rcvd" 	1
+scalar triangle.switchB.mac[2] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchB.mac[2] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchB.mac[2] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchB.mac[2] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchB.mac[2] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchB.mac[2] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchB.mac[2] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchB.mac[2] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchB.mac[2] 	rxPkFromHL:count 	6
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchB.mac[2] 	rxPkFromHL:sum(packetBytes) 	414
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchB.mac[2] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchB.mac[2] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchB.mac[2] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchB.mac[2] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchB.mac[2] 	passedUpPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchB.mac[2] 	passedUpPk:sum(packetBytes) 	1830
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchB.mac[2] 	rxPkOk:count 	6
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchB.mac[2] 	rxPkOk:sum(packetBytes) 	1830
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchB.mac[2] 	txPk:count 	6
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchB.mac[2] 	txPk:sum(packetBytes) 	414
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchC.relayUnit 	"processed frames" 	12
+scalar triangle.switchC.relayUnit 	"dropped frames" 	0
+scalar triangle.switchC.relayUnit 	"ARP requests rcvd" 	2
+scalar triangle.switchC.relayUnit 	"ARP replies rcvd" 	0
+scalar triangle.switchC.relayUnit 	"number of repairs started" 	0
+scalar triangle.switchC.relayUnit 	"Hellos rcvd" 	2
+scalar triangle.switchC.relayUnit 	"PathFails rcvd" 	0
+scalar triangle.switchC.relayUnit 	"PathRequests rcvd" 	1
+scalar triangle.switchC.relayUnit 	"PathReplies rcvd" 	1
+scalar triangle.switchC.relayUnit 	"average PathFail time" 	0
+scalar triangle.switchC.relayUnit 	"max PathFail time" 	0
+scalar triangle.switchC.relayUnit 	"min PathFail time" 	100
+scalar triangle.switchC.relayUnit 	"PathFails rcvd at destination" 	0
+scalar triangle.switchC.relayUnit 	"average PathRequest time" 	0
+scalar triangle.switchC.relayUnit 	"max PathRequest time" 	0
+scalar triangle.switchC.relayUnit 	"min PathRequest time" 	100
+scalar triangle.switchC.relayUnit 	"PathRequests rcvd at destination" 	0
+scalar triangle.switchC.relayUnit 	"average PathReply time" 	0
+scalar triangle.switchC.relayUnit 	"max PathReply time" 	0
+scalar triangle.switchC.relayUnit 	"min PathReply time" 	100
+scalar triangle.switchC.relayUnit 	"PathReplies rcvd at destination" 	0
+scalar triangle.switchC.relayUnit 	"average repair time" 	0
+scalar triangle.switchC.relayUnit 	"max repair time" 	0
+scalar triangle.switchC.relayUnit 	"min repair time" 	100
+scalar triangle.switchC.relayUnit 	"number of repairs finished" 	0
+scalar triangle.switchC.mac[0] 	"simulated time" 	2.272484468459
+scalar triangle.switchC.mac[0] 	full-duplex 	1
+scalar triangle.switchC.mac[0] 	"frames/sec sent" 	0.88009402385761
+scalar triangle.switchC.mac[0] 	"frames/sec rcvd" 	0
+scalar triangle.switchC.mac[0] 	"bits/sec sent" 	450.6081402151
+scalar triangle.switchC.mac[0] 	"bits/sec rcvd" 	0
+scalar triangle.switchC.mac[0] 	"rx channel idle (%)" 	100
+scalar triangle.switchC.mac[0] 	"rx channel utilization (%)" 	0
+scalar triangle.switchC.mac[0] 	"rx channel collision (%)" 	0
+scalar triangle.switchC.mac[0] 	collisions 	0
+scalar triangle.switchC.mac[0] 	backoffs 	0
+scalar triangle.switchC.mac[0] 	"average latency" 	0
+scalar triangle.switchC.mac[0] 	"max latency" 	0
+scalar triangle.switchC.mac[0] 	"min latency" 	100
+scalar triangle.switchC.mac[0] 	"average processing time" 	7.719999e-06
+scalar triangle.switchC.mac[0] 	"max processing time" 	8.719999e-06
+scalar triangle.switchC.mac[0] 	"min processing time" 	6.719999e-06
+scalar triangle.switchC.mac[0] 	"ARP requests rcvd" 	0
+scalar triangle.switchC.mac[0] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchC.mac[0] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchC.mac[0] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchC.mac[0] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchC.mac[0] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchC.mac[0] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchC.mac[0] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchC.mac[0] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchC.mac[0] 	rxPkFromHL:count 	2
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchC.mac[0] 	rxPkFromHL:sum(packetBytes) 	128
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchC.mac[0] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchC.mac[0] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchC.mac[0] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchC.mac[0] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchC.mac[0] 	passedUpPk:count 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchC.mac[0] 	passedUpPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchC.mac[0] 	rxPkOk:count 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchC.mac[0] 	rxPkOk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchC.mac[0] 	txPk:count 	2
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchC.mac[0] 	txPk:sum(packetBytes) 	128
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchC.mac[1] 	"simulated time" 	2.272484468459
+scalar triangle.switchC.mac[1] 	full-duplex 	1
+scalar triangle.switchC.mac[1] 	"frames/sec sent" 	2.200235059644
+scalar triangle.switchC.mac[1] 	"frames/sec rcvd" 	3.0803290835016
+scalar triangle.switchC.mac[1] 	"bits/sec sent" 	1232.1316334007
+scalar triangle.switchC.mac[1] 	"bits/sec rcvd" 	8364.4136027427
+scalar triangle.switchC.mac[1] 	"rx channel idle (%)" 	99.991438445336
+scalar triangle.switchC.mac[1] 	"rx channel utilization (%)" 	0.0085615546640868
+scalar triangle.switchC.mac[1] 	"rx channel collision (%)" 	0
+scalar triangle.switchC.mac[1] 	collisions 	0
+scalar triangle.switchC.mac[1] 	backoffs 	0
+scalar triangle.switchC.mac[1] 	"average latency" 	0
+scalar triangle.switchC.mac[1] 	"max latency" 	0
+scalar triangle.switchC.mac[1] 	"min latency" 	100
+scalar triangle.switchC.mac[1] 	"average processing time" 	8.799999e-06
+scalar triangle.switchC.mac[1] 	"max processing time" 	9.519999e-06
+scalar triangle.switchC.mac[1] 	"min processing time" 	6.719999e-06
+scalar triangle.switchC.mac[1] 	"ARP requests rcvd" 	1
+scalar triangle.switchC.mac[1] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchC.mac[1] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchC.mac[1] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchC.mac[1] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchC.mac[1] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchC.mac[1] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchC.mac[1] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchC.mac[1] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchC.mac[1] 	rxPkFromHL:count 	5
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchC.mac[1] 	rxPkFromHL:sum(packetBytes) 	350
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchC.mac[1] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchC.mac[1] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchC.mac[1] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchC.mac[1] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchC.mac[1] 	passedUpPk:count 	7
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchC.mac[1] 	passedUpPk:sum(packetBytes) 	2376
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchC.mac[1] 	rxPkOk:count 	7
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchC.mac[1] 	rxPkOk:sum(packetBytes) 	2376
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchC.mac[1] 	txPk:count 	5
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchC.mac[1] 	txPk:sum(packetBytes) 	350
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.switchC.mac[2] 	"simulated time" 	2.272484468459
+scalar triangle.switchC.mac[2] 	full-duplex 	1
+scalar triangle.switchC.mac[2] 	"frames/sec sent" 	2.6402820715728
+scalar triangle.switchC.mac[2] 	"frames/sec rcvd" 	2.6402820715728
+scalar triangle.switchC.mac[2] 	"bits/sec sent" 	6442.2882546377
+scalar triangle.switchC.mac[2] 	"bits/sec rcvd" 	1457.4357035082
+scalar triangle.switchC.mac[2] 	"rx channel idle (%)" 	99.998373586244
+scalar triangle.switchC.mac[2] 	"rx channel utilization (%)" 	0.0016264137560889
+scalar triangle.switchC.mac[2] 	"rx channel collision (%)" 	0
+scalar triangle.switchC.mac[2] 	collisions 	0
+scalar triangle.switchC.mac[2] 	backoffs 	0
+scalar triangle.switchC.mac[2] 	"average latency" 	0
+scalar triangle.switchC.mac[2] 	"max latency" 	0
+scalar triangle.switchC.mac[2] 	"min latency" 	100
+scalar triangle.switchC.mac[2] 	"average processing time" 	2.7666664e-05
+scalar triangle.switchC.mac[2] 	"max processing time" 	4.7279999e-05
+scalar triangle.switchC.mac[2] 	"min processing time" 	6.719999e-06
+scalar triangle.switchC.mac[2] 	"ARP requests rcvd" 	1
+scalar triangle.switchC.mac[2] 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.switchC.mac[2] 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.switchC.mac[2] 	droppedPkNotForUs:count 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.switchC.mac[2] 	droppedPkNotForUs:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.switchC.mac[2] 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.switchC.mac[2] 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.switchC.mac[2] 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.switchC.mac[2] 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.switchC.mac[2] 	rxPkFromHL:count 	6
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.switchC.mac[2] 	rxPkFromHL:sum(packetBytes) 	1830
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.switchC.mac[2] 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.switchC.mac[2] 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.switchC.mac[2] 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.switchC.mac[2] 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.switchC.mac[2] 	passedUpPk:count 	6
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.switchC.mac[2] 	passedUpPk:sum(packetBytes) 	414
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.switchC.mac[2] 	rxPkOk:count 	6
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.switchC.mac[2] 	rxPkOk:sum(packetBytes) 	414
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.switchC.mac[2] 	txPk:count 	6
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.switchC.mac[2] 	txPk:sum(packetBytes) 	1830
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.host1.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar triangle.host1.networkLayer.arp 	initiatedResolution:count 	1
+attr title  "ARP initiated resolutions, count"
+scalar triangle.host1.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar triangle.host1.networkLayer.arp 	sentReq:count 	1
+attr title  "ARP request sent, count"
+scalar triangle.host1.eth[0].queue.pauseQueue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar triangle.host1.eth[0].queue.pauseQueue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+statistic triangle.host1.eth[0].queue.pauseQueue 	queueingTime:histogram
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar triangle.host1.eth[0].queue.pauseQueue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar triangle.host1.eth[0].queue.pauseQueue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar triangle.host1.eth[0].queue.pauseQueue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar triangle.host1.eth[0].queue.pauseQueue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar triangle.host1.eth[0].queue.dataQueue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar triangle.host1.eth[0].queue.dataQueue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+statistic triangle.host1.eth[0].queue.dataQueue 	queueingTime:histogram
+field count 26
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	26
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar triangle.host1.eth[0].queue.dataQueue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar triangle.host1.eth[0].queue.dataQueue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar triangle.host1.eth[0].queue.dataQueue 	rcvdPk:count 	26
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar triangle.host1.eth[0].queue.dataQueue 	rcvdPk:sum(packetBytes) 	13714
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar triangle.host1.eth[0].mac 	"simulated time" 	2.272484468459
+scalar triangle.host1.eth[0].mac 	full-duplex 	1
+scalar triangle.host1.eth[0].mac 	"frames/sec sent" 	11.441222310149
+scalar triangle.host1.eth[0].mac 	"frames/sec rcvd" 	10.561128286291
+scalar triangle.host1.eth[0].mac 	"bits/sec sent" 	48278.437772733
+scalar triangle.host1.eth[0].mac 	"bits/sec rcvd" 	6216.9841845301
+scalar triangle.host1.eth[0].mac 	"rx channel idle (%)" 	99.992853636526
+scalar triangle.host1.eth[0].mac 	"rx channel utilization (%)" 	0.0071463634737238
+scalar triangle.host1.eth[0].mac 	"rx channel collision (%)" 	0
+scalar triangle.host1.eth[0].mac 	collisions 	0
+scalar triangle.host1.eth[0].mac 	backoffs 	0
+scalar triangle.host1.eth[0].mac 	"average latency" 	2.7806242e-05
+scalar triangle.host1.eth[0].mac 	"max latency" 	3.6279996e-05
+scalar triangle.host1.eth[0].mac 	"min latency" 	2.4309997e-05
+scalar triangle.host1.eth[0].mac 	"average processing time" 	0
+scalar triangle.host1.eth[0].mac 	"max processing time" 	0
+scalar triangle.host1.eth[0].mac 	"min processing time" 	100
+scalar triangle.host1.eth[0].mac 	"ARP requests rcvd" 	0
+scalar triangle.host1.eth[0].mac 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.host1.eth[0].mac 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.host1.eth[0].mac 	droppedPkNotForUs:count 	1
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.host1.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	72
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.host1.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.host1.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.host1.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.host1.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.host1.eth[0].mac 	rxPkFromHL:count 	26
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.host1.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	13714
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.host1.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.host1.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.host1.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.host1.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.host1.eth[0].mac 	passedUpPk:count 	24
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.host1.eth[0].mac 	passedUpPk:sum(packetBytes) 	1766
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.host1.eth[0].mac 	rxPkOk:count 	24
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.host1.eth[0].mac 	rxPkOk:sum(packetBytes) 	1766
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.host1.eth[0].mac 	txPk:count 	26
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.host1.eth[0].mac 	txPk:sum(packetBytes) 	13714
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.host1.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar triangle.host1.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar triangle.host1.eth[0].encap 	decapPk:count 	24
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar triangle.host1.eth[0].encap 	decapPk:sum(packetBytes) 	1316
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar triangle.host1.eth[0].encap 	encapPk:count 	26
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar triangle.host1.eth[0].encap 	encapPk:sum(packetBytes) 	13228
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar triangle.host1.udpApp[0] 	"packets sent" 	25
+scalar triangle.host1.udpApp[0] 	"packets received" 	0
+scalar triangle.host1.udpApp[0] 	sentPk:count 	25
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar triangle.host1.udpApp[0] 	sentPk:sum(packetBytes) 	12500
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar triangle.host1.udpApp[0] 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar triangle.host1.udpApp[0] 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+statistic triangle.host1.udpApp[0] 	rcvdPkLifetime:stats
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr source  messageAge(rcvdPk)
+attr title  "received packet lifetime, stats"
+attr unit  s
+scalar triangle.host1.udpGen 	"packets sent" 	0
+scalar triangle.host1.udpGen 	"packets received" 	0
+scalar triangle.host1.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar triangle.host1.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar triangle.host1.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar triangle.host1.udp 	sentPk:count 	25
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar triangle.host1.udp 	sentPk:sum(packetBytes) 	12700
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar triangle.host1.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar triangle.host1.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar triangle.host2.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar triangle.host2.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar triangle.host2.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar triangle.host2.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar triangle.host2.eth[0].queue.pauseQueue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar triangle.host2.eth[0].queue.pauseQueue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+statistic triangle.host2.eth[0].queue.pauseQueue 	queueingTime:histogram
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar triangle.host2.eth[0].queue.pauseQueue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar triangle.host2.eth[0].queue.pauseQueue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar triangle.host2.eth[0].queue.pauseQueue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar triangle.host2.eth[0].queue.pauseQueue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar triangle.host2.eth[0].queue.dataQueue 	queueLength:max 	1
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar triangle.host2.eth[0].queue.dataQueue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+statistic triangle.host2.eth[0].queue.dataQueue 	queueingTime:histogram
+field count 24
+field mean 0
+field stddev 0
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	24
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar triangle.host2.eth[0].queue.dataQueue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar triangle.host2.eth[0].queue.dataQueue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar triangle.host2.eth[0].queue.dataQueue 	rcvdPk:count 	24
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar triangle.host2.eth[0].queue.dataQueue 	rcvdPk:sum(packetBytes) 	1766
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar triangle.host2.eth[0].mac 	"simulated time" 	2.272484468459
+scalar triangle.host2.eth[0].mac 	full-duplex 	1
+scalar triangle.host2.eth[0].mac 	"frames/sec sent" 	10.561128286291
+scalar triangle.host2.eth[0].mac 	"frames/sec rcvd" 	10.561128286291
+scalar triangle.host2.eth[0].mac 	"bits/sec sent" 	6216.9841845301
+scalar triangle.host2.eth[0].mac 	"bits/sec rcvd" 	44434.187076523
+scalar triangle.host2.eth[0].mac 	"rx channel idle (%)" 	99.954636433634
+scalar triangle.host2.eth[0].mac 	"rx channel utilization (%)" 	0.045363566365717
+scalar triangle.host2.eth[0].mac 	"rx channel collision (%)" 	0
+scalar triangle.host2.eth[0].mac 	collisions 	0
+scalar triangle.host2.eth[0].mac 	backoffs 	0
+scalar triangle.host2.eth[0].mac 	"average latency" 	0.000146163474
+scalar triangle.host2.eth[0].mac 	"max latency" 	0.000187319996
+scalar triangle.host2.eth[0].mac 	"min latency" 	0.000139989997
+scalar triangle.host2.eth[0].mac 	"average processing time" 	0
+scalar triangle.host2.eth[0].mac 	"max processing time" 	0
+scalar triangle.host2.eth[0].mac 	"min processing time" 	100
+scalar triangle.host2.eth[0].mac 	"ARP requests rcvd" 	1
+scalar triangle.host2.eth[0].mac 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.host2.eth[0].mac 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.host2.eth[0].mac 	droppedPkNotForUs:count 	1
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.host2.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	72
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.host2.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.host2.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.host2.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.host2.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.host2.eth[0].mac 	rxPkFromHL:count 	24
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.host2.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	1766
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.host2.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.host2.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.host2.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.host2.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.host2.eth[0].mac 	passedUpPk:count 	24
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.host2.eth[0].mac 	passedUpPk:sum(packetBytes) 	12622
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.host2.eth[0].mac 	rxPkOk:count 	24
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.host2.eth[0].mac 	rxPkOk:sum(packetBytes) 	12622
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.host2.eth[0].mac 	txPk:count 	24
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.host2.eth[0].mac 	txPk:sum(packetBytes) 	1766
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.host2.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar triangle.host2.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar triangle.host2.eth[0].encap 	decapPk:count 	24
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar triangle.host2.eth[0].encap 	decapPk:sum(packetBytes) 	12172
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar triangle.host2.eth[0].encap 	encapPk:count 	24
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar triangle.host2.eth[0].encap 	encapPk:sum(packetBytes) 	1316
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar triangle.host2.udpGen 	"packets sent" 	0
+scalar triangle.host2.udpGen 	"packets received" 	0
+scalar triangle.host2.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar triangle.host2.udp 	droppedPkWrongPort:count 	23
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar triangle.host2.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar triangle.host2.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar triangle.host2.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar triangle.host2.udp 	rcvdPk:count 	23
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar triangle.host2.udp 	rcvdPk:sum(packetBytes) 	11684
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"
+scalar triangle.host3.networkLayer.arp 	failedResolution:count 	0
+attr title  "ARP failed resolutions, count"
+scalar triangle.host3.networkLayer.arp 	initiatedResolution:count 	0
+attr title  "ARP initiated resolutions, count"
+scalar triangle.host3.networkLayer.arp 	sentReplies:count 	0
+attr title  "ARP replies sent, count"
+scalar triangle.host3.networkLayer.arp 	sentReq:count 	0
+attr title  "ARP request sent, count"
+scalar triangle.host3.eth[0].queue.pauseQueue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar triangle.host3.eth[0].queue.pauseQueue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+statistic triangle.host3.eth[0].queue.pauseQueue 	queueingTime:histogram
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar triangle.host3.eth[0].queue.pauseQueue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar triangle.host3.eth[0].queue.pauseQueue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar triangle.host3.eth[0].queue.pauseQueue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar triangle.host3.eth[0].queue.pauseQueue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar triangle.host3.eth[0].queue.dataQueue 	queueLength:max 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, max"
+scalar triangle.host3.eth[0].queue.dataQueue 	queueLength:timeavg 	0
+attr interpolationmode  sample-hold
+attr title  "queue length, timeavg"
+statistic triangle.host3.eth[0].queue.dataQueue 	queueingTime:histogram
+field count 0
+field mean 0
+field stddev -nan
+field sum 0
+field sqrsum 0
+field min 0
+field max 0
+attr interpolationmode  none
+attr title  "queueing time, histogram"
+bin	-INF	0
+bin	-0.5	0
+bin	-0.46666666666667	0
+bin	-0.43333333333333	0
+bin	-0.4	0
+bin	-0.36666666666667	0
+bin	-0.33333333333333	0
+bin	-0.3	0
+bin	-0.26666666666667	0
+bin	-0.23333333333333	0
+bin	-0.2	0
+bin	-0.16666666666667	0
+bin	-0.13333333333333	0
+bin	-0.1	0
+bin	-0.066666666666667	0
+bin	-0.033333333333333	0
+bin	0	0
+bin	0.033333333333333	0
+bin	0.066666666666667	0
+bin	0.1	0
+bin	0.13333333333333	0
+bin	0.16666666666667	0
+bin	0.2	0
+bin	0.23333333333333	0
+bin	0.26666666666667	0
+bin	0.3	0
+bin	0.33333333333333	0
+bin	0.36666666666667	0
+bin	0.4	0
+bin	0.43333333333333	0
+bin	0.46666666666667	0
+bin	0.5	0
+scalar triangle.host3.eth[0].queue.dataQueue 	dropPk:count 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, count"
+scalar triangle.host3.eth[0].queue.dataQueue 	dropPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkByQueue
+attr title  "dropped packets, sum(packetBytes)"
+scalar triangle.host3.eth[0].queue.dataQueue 	rcvdPk:count 	0
+attr interpolationmode  none
+attr title  "received packets, count"
+scalar triangle.host3.eth[0].queue.dataQueue 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr title  "received packets, sum(packetBytes)"
+scalar triangle.host3.eth[0].mac 	"simulated time" 	2.272484468459
+scalar triangle.host3.eth[0].mac 	full-duplex 	1
+scalar triangle.host3.eth[0].mac 	"frames/sec sent" 	0
+scalar triangle.host3.eth[0].mac 	"frames/sec rcvd" 	0.4400470119288
+scalar triangle.host3.eth[0].mac 	"bits/sec sent" 	0
+scalar triangle.host3.eth[0].mac 	"bits/sec rcvd" 	225.30407010755
+scalar triangle.host3.eth[0].mac 	"rx channel idle (%)" 	99.999493065842
+scalar triangle.host3.eth[0].mac 	"rx channel utilization (%)" 	0.00050693415774198
+scalar triangle.host3.eth[0].mac 	"rx channel collision (%)" 	0
+scalar triangle.host3.eth[0].mac 	collisions 	0
+scalar triangle.host3.eth[0].mac 	backoffs 	0
+scalar triangle.host3.eth[0].mac 	"average latency" 	0
+scalar triangle.host3.eth[0].mac 	"max latency" 	0
+scalar triangle.host3.eth[0].mac 	"min latency" 	100
+scalar triangle.host3.eth[0].mac 	"average processing time" 	0
+scalar triangle.host3.eth[0].mac 	"max processing time" 	0
+scalar triangle.host3.eth[0].mac 	"min processing time" 	100
+scalar triangle.host3.eth[0].mac 	"ARP requests rcvd" 	1
+scalar triangle.host3.eth[0].mac 	backoff:count 	0
+attr interpolationmode  none
+attr title  "backoff, count"
+scalar triangle.host3.eth[0].mac 	collision:count 	0
+attr interpolationmode  none
+attr title  "collision, count"
+scalar triangle.host3.eth[0].mac 	droppedPkNotForUs:count 	1
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, count"
+scalar triangle.host3.eth[0].mac 	droppedPkNotForUs:sum(packetBytes) 	72
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, sum(packetBytes)"
+scalar triangle.host3.eth[0].mac 	droppedPkBitError:count 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, count"
+scalar triangle.host3.eth[0].mac 	droppedPkBitError:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkBitError
+attr title  "packets dropped/bit error, sum(packetBytes)"
+scalar triangle.host3.eth[0].mac 	droppedPkIfaceDown:count 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, count"
+scalar triangle.host3.eth[0].mac 	droppedPkIfaceDown:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  dropPkIfaceDown
+attr title  "packets dropped/interface down, sum(packetBytes)"
+scalar triangle.host3.eth[0].mac 	rxPkFromHL:count 	0
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, count"
+scalar triangle.host3.eth[0].mac 	rxPkFromHL:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, sum(packetBytes)"
+scalar triangle.host3.eth[0].mac 	rxPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units received, count"
+scalar triangle.host3.eth[0].mac 	rxPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units received, sum"
+scalar triangle.host3.eth[0].mac 	txPausePkUnits:count 	0
+attr interpolationmode  none
+attr title  "pause units sent, count"
+scalar triangle.host3.eth[0].mac 	txPausePkUnits:sum 	0
+attr interpolationmode  none
+attr title  "pause units sent, sum"
+scalar triangle.host3.eth[0].mac 	passedUpPk:count 	1
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, count"
+scalar triangle.host3.eth[0].mac 	passedUpPk:sum(packetBytes) 	64
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, sum(packetBytes)"
+scalar triangle.host3.eth[0].mac 	rxPkOk:count 	1
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, count"
+scalar triangle.host3.eth[0].mac 	rxPkOk:sum(packetBytes) 	64
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, sum(packetBytes)"
+scalar triangle.host3.eth[0].mac 	txPk:count 	0
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, count"
+scalar triangle.host3.eth[0].mac 	txPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, sum(packetBytes)"
+scalar triangle.host3.eth[0].encap 	pauseSent:count 	0
+attr title  "pause sent, count"
+scalar triangle.host3.eth[0].encap 	pauseSent:sum 	0
+attr title  "pause sent, sum"
+scalar triangle.host3.eth[0].encap 	decapPk:count 	1
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, count"
+scalar triangle.host3.eth[0].encap 	decapPk:sum(packetBytes) 	28
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, sum(packetBytes)"
+scalar triangle.host3.eth[0].encap 	encapPk:count 	0
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, count"
+scalar triangle.host3.eth[0].encap 	encapPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, sum(packetBytes)"
+scalar triangle.host3.udpGen 	"packets sent" 	0
+scalar triangle.host3.udpGen 	"packets received" 	0
+scalar triangle.host3.udp 	droppedPkBadChecksum:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (checksum error), count"
+scalar triangle.host3.udp 	droppedPkWrongPort:count 	0
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), count"
+scalar triangle.host3.udp 	passedUpPk:count 	0
+attr interpolationmode  none
+attr title  "packets passed up, count"
+scalar triangle.host3.udp 	sentPk:count 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, count"
+scalar triangle.host3.udp 	sentPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, sum(packetBytes)"
+scalar triangle.host3.udp 	rcvdPk:count 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, count"
+scalar triangle.host3.udp 	rcvdPk:sum(packetBytes) 	0
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, sum(packetBytes)"

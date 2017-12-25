@@ -1,0 +1,10 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "pruebareparto" "pruebareparto" "2" "638x342+1751+165:normal"
+inspector "dataCenter250Recortado" "dataCenter250Recortado" "2" "686x620+1823+261:normal"
+inspector "pingTest.switch" "EtherSwitchAPB" "2" "618x342+147+164:normal"
+inspector "triangle" "triangle" "2" "939x595+443+156:normal"
+inspector "pingTest" "pingTest" "2" "607x342+803+466:normal"
+inspector "dataCenter250" "dataCenter250" "2" "646x342+2016+279:normal"
+inspector "grid.switch[1]" "EtherSwitchAPB" "2" "1440x872+1600+28:normal"
+inspector "grid" "grid" "2" "1440x872+1600+28:normal"
+

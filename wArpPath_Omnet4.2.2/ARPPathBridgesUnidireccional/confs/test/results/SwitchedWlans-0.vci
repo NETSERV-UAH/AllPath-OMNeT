@@ -1,0 +1,247 @@
+file 99868 1397473713                                           
+version 2
+run SwitchedWlans-0-20140414-13:00:42-3942
+attr configname SwitchedWlans
+attr datetime 20140414-13:00:42
+attr experiment SwitchedWlans
+attr inifile prueba3.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network arppathbridgesunidireccional.src.topologies.Prueba2
+attr processid 3942
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 11  Prueba2.accessPoint1.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 28  Prueba2.accessPoint2.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 46  Prueba2.host2.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 67  Prueba2.host1.wlan[0].mgmt  dataQueueLen:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "data queue length, vector"
+vector 76  Prueba2.accessPoint1.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 75  Prueba2.accessPoint1.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 88  Prueba2.accessPoint2.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 87  Prueba2.accessPoint2.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 98  Prueba2.host2.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 97  Prueba2.host2.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 104  Prueba2.host1.wlan[0].mac  RadioState  ETV
+attr enum  "IDLE=0, RECV=1, SLEEP=3, TRANSMIT=2"
+attr enumname  RadioState
+vector 103  Prueba2.host1.wlan[0].mac  State  ETV
+attr enum  "BACKOFF=3, DEFER=1, IDLE=0, RECEIVE=8, WAITACK=4, WAITAIFS=2, WAITCTS=6, WAITMULTICAST=5, WAITSIFS=7"
+attr enumname  Ieee80211Mac
+vector 13  Prueba2.accessPoint1.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 15  Prueba2.accessPoint1.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 14  Prueba2.accessPoint1.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 30  Prueba2.accessPoint2.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 32  Prueba2.accessPoint2.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 31  Prueba2.accessPoint2.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 48  Prueba2.host2.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 50  Prueba2.host2.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 49  Prueba2.host2.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 69  Prueba2.host1.wlan[0].radio  bitrate:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "tx bitrate, vector"
+attr unit  bps
+vector 71  Prueba2.host1.wlan[0].radio  radioState:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "radio state (enum), vector"
+vector 70  Prueba2.host1.wlan[0].radio  channelNo:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "channel no, vector"
+vector 108  Prueba2.host1.wlan[0].radio  snirVector  ETV
+vector 102  Prueba2.host2.wlan[0].radio  snirVector  ETV
+vector 78  Prueba2.accessPoint1.wlan[0].mac  "throughput AC0"  ETV
+vector 106  Prueba2.host1.wlan[0].mac  "throughput AC0"  ETV
+vector 100  Prueba2.host2.wlan[0].mac  "throughput AC0"  ETV
+vector 43  Prueba2.host2.wlan[0].agent  sentRequest:vector  ETV
+attr title  "sent requests, vector"
+vector 90  Prueba2.accessPoint2.wlan[0].mac  "throughput AC0"  ETV
+vector 64  Prueba2.host1.wlan[0].agent  sentRequest:vector  ETV
+attr title  "sent requests, vector"
+vector 80  Prueba2.accessPoint1.wlan[0].radio  snirVector  ETV
+vector 79  Prueba2.accessPoint1.wlan[0].mac  "Mac delay AC0"  ETV
+vector 77  Prueba2.accessPoint1.wlan[0].mac  "jitter AC0"  ETV
+vector 92  Prueba2.accessPoint2.wlan[0].radio  snirVector  ETV
+vector 91  Prueba2.accessPoint2.wlan[0].mac  "Mac delay AC0"  ETV
+vector 89  Prueba2.accessPoint2.wlan[0].mac  "jitter AC0"  ETV
+vector 44  Prueba2.host2.wlan[0].agent  acceptConfirm:vector  ETV
+attr title  "accepted confirms, vector"
+vector 101  Prueba2.host2.wlan[0].mac  "Mac delay AC0"  ETV
+vector 53  Prueba2.host1.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 55  Prueba2.host1.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 60  Prueba2.host1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 62  Prueba2.host1.networkLayer.arp  initiatedResolution:vector  ETV
+attr title  "ARP initiated resolutions, vector"
+vector 65  Prueba2.host1.wlan[0].agent  acceptConfirm:vector  ETV
+attr title  "accepted confirms, vector"
+vector 107  Prueba2.host1.wlan[0].mac  "Mac delay AC0"  ETV
+vector 99  Prueba2.host2.wlan[0].mac  "jitter AC0"  ETV
+vector 105  Prueba2.host1.wlan[0].mac  "jitter AC0"  ETV
+vector 74  Prueba2.accessPoint1.relayUnit  "queue length"  ETV
+vector 73  Prueba2.accessPoint1.relayUnit  "buffer level"  ETV
+vector 5  Prueba2.accessPoint1.mac[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 83  Prueba2.accessPoint1.mac[0]  "queue length"  ETV
+vector 0  Prueba2.accessPoint1.mac[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 82  Prueba2.accessPoint1.mac[0]  "processing times"  ETV
+vector 18  Prueba2.accessPoint2.mac[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 19  Prueba2.accessPoint2.mac[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 86  Prueba2.accessPoint2.relayUnit  "queue length"  ETV
+vector 85  Prueba2.accessPoint2.relayUnit  "buffer level"  ETV
+vector 22  Prueba2.accessPoint2.mac[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 95  Prueba2.accessPoint2.mac[0]  "queue length"  ETV
+vector 17  Prueba2.accessPoint2.mac[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 94  Prueba2.accessPoint2.mac[0]  "processing times"  ETV
+vector 1  Prueba2.accessPoint1.mac[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 2  Prueba2.accessPoint1.mac[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 72  Prueba2.host1.wlan[0].radio  lossRate:vector  ETV
+attr interpolationmode  backward-sample-hold
+attr title  "packet loss rate, vector"
+vector 35  Prueba2.host2.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 37  Prueba2.host2.udp  droppedPkWrongPort:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), vector(count)"
+0	8408 77 1015 1180 2.000280165981 2.003827069909 3 64 528 1120 561664
+1	8485 49 1058 1204 2.001062575616 2.00412958758 2 64 64 128 8192
+2	8534 49 1058 1204 2.001062575616 2.00412958758 2 64 64 128 8192
+5	8583 76 1012 1173 2.000273445982 2.00378322991 3 64 528 1120 561664
+11	8659 9 0 0 0 0 1 0 0 0 0
+13	8668 16 0 0 0 0 1 11000000 11000000 11000000 1.21e+14
+14	8684 9 0 0 0 0 1 0 0 0 0
+15	8693 4617 0 1220 0 2.00442358758 193 0 2 164 300
+17	13310 51 1057 1203 2.001062575616 2.00412958758 2 64 64 128 8192
+18	13361 80 1016 1181 2.000280165981 2.003827069909 3 64 528 1120 561664
+19	13441 80 1016 1181 2.000280165981 2.003827069909 3 64 528 1120 561664
+22	13521 52 1054 1200 2.001055855617 2.004122867581 2 64 64 128 8192
+28	13573 9 0 0 0 0 1 0 0 0 0
+30	13582 16 0 0 0 0 1 11000000 11000000 11000000 1.21e+14
+31	13598 9 0 0 0 0 1 1 1 1 1
+32	13607 4345 0 1215 0 2.004378867581 181 0 2 154 282
+35	17952 27 1154 1154 2.003381522763 2.003381522763 1 508 508 508 258064
+37	17979 25 1154 1154 2.003381522763 2.003381522763 1 1 1 1 1
+43	18004 71 42 491 0.163464953214 0.965400332486 3 1 4 7 21
+44	18075 72 405 543 0.963464953214 0.966609022122 3 1 4 7 21
+46	18147 9 0 0 0 0 1 0 0 0 0
+48	18156 16 0 0 0 0 1 11000000 11000000 11000000 1.21e+14
+49	18172 33 0 228 0 0.563464953214 2 0 1 1 1
+50	18205 4987 0 1216 0 2.004379212399 209 0 2 130 182
+53	23192 478 575 947 1 1.794078695998 19 500 500 9500 4750000
+55	23670 478 576 948 1 1.794078695998 19 508 508 9652 4903216
+60	24148 22 578 999 1 2 2 1 1 2 2
+62	24170 11 578 578 1 1 1 1 1 1 1
+64	24181 71 54 645 0.254175521177 1.056165305105 3 1 4 7 21
+65	24252 72 585 686 1.054175521177 1.057491197069 3 1 4 7 21
+67	24324 494 0 1191 0 2.004039675892 20 0 17 184 2266
+69	24818 16 0 0 0 0 1 11000000 11000000 11000000 1.21e+14
+70	24834 57 0 589 0 1.054175521177 3 0 1 1 1
+71	24891 6347 0 1228 0 2.004434033562 267 0 2 164 224
+72	31238 25 1142 1142 2.002956783928 2.002956783928 1 0 0 0 0
+73	31263 253 1009 1209 2.000271445982 2.00413158758 10 0 528 1248 569856
+74	31516 123 1009 1205 2.000271445982 2.00412958758 5 0 0 0 0
+75	31639 11658 0 1220 0 2.00442358758 488 0 7 1244 4820
+76	43297 4626 0 1220 0 2.00442358758 194 0 2 164 300
+77	47923 66 166 700 0.360808337037 1.060808337037 2 1.037054e-06 0.000222 0.000223037054 4.9285075480999e-08
+78	47989 641 27 986 0.160276337037 1.960908337037 17 3132.1527526804 24834.83244448 138136.41811651 1723199965.5015
+79	48630 221 108 1113 0.26438284674 2.001928337946 6 0.000535891963 0.000983891964 0.004453259202 3.4643555098229e-06
+80	48851 37 82 82 0.263845917723 0.263845917723 1 33.729740338405 33.729740338405 33.729740338405 1137.6953832962
+82	48888 114 1015 1180 2.000280165981 2.003827069909 3 2.000280165981 2.003827069909 6.006851413835 12.02742791081
+83	49002 99 1012 1173 2.000273445982 2.00378322991 4 0 1 1 1
+85	49101 257 1017 1199 2.000280165981 2.004122867581 10 0 528 1248 569856
+86	49358 125 1017 1198 2.000280165981 2.004120867581 5 0 0 0 0
+87	49483 11414 0 1218 0 2.004406867581 476 0 7 1221 4659
+88	60897 4354 0 1215 0 2.004378867581 182 0 2 154 282
+89	65251 79 306 561 0.686579561984 0.985822561984 3 0 0.000168 0.000168 2.8224e-08
+90	65330 642 47 1023 0.185794561984 2.000282165981 17 3130.173062453 15995.521254049 133841.15776585 1275377168.4906
+91	65972 222 285 1164 0.664380987667 2.003639867581 6 0.000535689635 0.000929689636 0.00446464309 3.46946501265e-06
+92	66194 38 260 260 0.663845298032 0.663845298032 1 42.664048259944 42.664048259944 42.664048259944 1820.2210139268
+94	66232 74 1057 1203 2.001062575616 2.00412958758 2 2.001062575616 2.00412958758 4.005192163196 8.0207868353445
+95	66306 75 1054 1200 2.001055855617 2.004122867581 3 0 1 1 1
+97	66381 8538 0 1219 0 2.004407212399 358 0 7 489 1955
+98	74919 5044 0 1216 0 2.004379212399 212 0 2 130 182
+99	79963 31 711 711 1.085822906802 1.085822906802 1 0.000393 0.000393 0.000393 1.54449e-07
+100	79994 390 31 991 0.160305301546 1.985822906802 14 0 4491.3181216666 8710.637783746 29584566.080741
+101	80384 191 428 1217 0.96396864285 2.004379212399 5 0.000503689636 0.000997689636 0.00372344818 2.9668332698291e-06
+102	80575 38 13 13 0.060809301546 0.060809301546 1 33.729740338405 33.729740338405 33.729740338405 1137.6953832962
+103	80613 11830 0 1228 0 2.004434033562 478 0 7 581 2301
+104	92443 6724 0 1228 0 2.004434033562 272 0 2 162 220
+105	99167 32 735 735 1.160304783019 1.160304783019 1 0.000483 0.000483 0.000483 2.33289e-07
+106	99199 400 30 1001 0.160304783019 2 15 0 8442.5349281513 12662.463129508 80692206.992235
+107	99599 231 603 1191 1.054679413141 2.004039675892 6 0.000503891964 0.002369783928 0.006536243748 9.518310551742e-06
+108	99830 38 10 10 0.060808783019 0.060808783019 1 40.429518974887 40.429518974887 40.429518974887 1634.5460045407

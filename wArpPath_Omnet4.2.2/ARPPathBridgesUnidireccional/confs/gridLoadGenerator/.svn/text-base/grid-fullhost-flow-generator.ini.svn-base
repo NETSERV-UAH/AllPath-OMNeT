@@ -1,0 +1,122 @@
+[General]
+network = arppathbridgesunidireccional.src.topologies.gridLoadGenerator.gridfullhost
+
+#semillas aleatorias:			
+num-rngs = 1 #4			
+seed-0-mt = 11			
+#seed-1-mt = 4			
+#seed-2-mt = 7			
+#seed-3-mt = 19	
+**.relayUnit.broadcastSeed = 11
+
+#tiempo de simulación:			
+sim-time-limit = 100s #20000s
+
+#tiempo de expiración de caché en hosts:			
+#**.arp.cacheTimeout = 120s
+
+#tiempo de bloqueo:			
+**.relayUnit.blockingTime = 1s						
+#tiempo de aprendizaje:			
+**.relayUnit.agingTime = 100s
+#tiempo de Hello
+**.relayUnit.helloTime = 10s			
+			
+#tiempo de proceso por switch:			
+**.relayUnit.processingTime = 2us	
+
+#tasa de transmisión	
+**.switch[*].mac[*].txrate = 100Mbps 
+
+#capacidad de colas de transmisión (switches):			
+**.txQueueLimit =  100000		
+			
+#capacidad de colas de cada host:			
+**.frameCapacity = 100000			
+
+# Queues
+**.ppp[*].queueType = "DropTailQueue"
+**.eth[*].queueType = "DropTailQueue"
+
+#direcciones MAC de cada switch:
+**.switch[0].relayUnit.address = "00-00-00-00-01-00"			
+**.switch[1].relayUnit.address = "00-00-00-00-01-01"			
+**.switch[2].relayUnit.address = "00-00-00-00-01-02"			
+**.switch[3].relayUnit.address = "00-00-00-00-01-03"
+**.switch[4].relayUnit.address = "00-00-00-00-01-04"			
+**.switch[5].relayUnit.address = "00-00-00-00-01-05"			
+**.switch[6].relayUnit.address = "00-00-00-00-01-06"			
+**.switch[7].relayUnit.address = "00-00-00-00-01-07"
+**.switch[8].relayUnit.address = "00-00-00-00-01-08"
+
+# Number of UDP apps (1) and which type of UDP traffic, for the UDPFlowGenerator					
+**.udpGenType = "UDPFlowHost"
+#**.generatorFreq = exponential(${0.16,0.08,0.04,0.02}s) # para 1Gbps
+**.generatorFreq = exponential(1.6s) # para 100Mbps
+#**.generatorFreq = exponential(${1.6,0.8,0.4,0.2}s) # para 100Mbps
+#**.generatorFreq = exponential(${0.016,0.008,0.004,0.002}s)  
+#**.generatorFreq = exponential(${0.032,0.016,0.008,0.004}s) 
+**.stopTime = 100s #20000s #250s #1600s 
+
+# Weights and routing for the generator
+#**.hostsWeights = "host[150] 4 host[151] 4 host[152] 4 host[153] 4 host[154] 4 host[155] 4 host[156] 4 host[157] 4 host[158] 4 host[159] 4 host[160] 4 host[161] 4 host[162] 4 host[163] 4 host[164] 4 host[165] 4 host[166] 4 host[167] 4 host[168] 4 host[169] 4 host[170] 4 host[171] 4 host[172] 4 host[173] 4 host[174] 4"
+#**.hostsWeights = "host[150] 4 host[151] 4 host[152] 4 host[153] 4 host[154] 4 host[155] 4 host[156] 4 host[157] 4 host[158] 4 host[159] 4 host[160] 4 host[161] 4 host[162] 4 host[163] 4 host[164] 4 host[165] 4 host[166] 4 host[167] 4 host[168] 4 host[169] 4 host[170] 4 host[171] 4 host[172] 4 host[173] 4 host[174] 4 host[50] 4 host[51] 4 host[52] 4 host[53] 4 host[54] 4 host[55] 4 host[56] 4 host[57] 4 host[58] 4 host[59] 4 host[60] 4 host[61] 4 host[62] 4 host[63] 4 host[64] 4 host[65] 4 host[66] 4 host[67] 4 host[68] 4 host[69] 4 host[70] 4 host[71] 4 host[72] 4 host[73] 4 host[74] 4"
+#**.routeHosts = "host[1] host[200] host[200] host[1]"
+#**.routeSwitches = "switch[0] switch[8] switch[8] switch[0]"
+
+#tamaño de la topología:
+**.columns = 3
+**.rows = 3
+**.hostNumber = 25
+
+#Protocol version
+**.protocolVersion = 3
+#Repair version
+**.repairType = 3
+# con las 2 siguientes líneas se cae el enlace entre A y B entre los segundos 2 y 3, y probamos v1:PathRequest+PathReply; v2:PathFail+PathRequest (desde host1) y PathFail+PathRequest (desde host2)
+#**.switch[3].**.portLinkDown = "2:100-103" 
+#**.switch[4].**.portLinkDown = "1:100-103" 
+#**.switchC.**.switchDown = "4-5" #**.switchC.**.switchDown = "3-4" prueba un caso particular en el que las entradas todavía están 'locked' si se ha puesto la caída de enlace de A a B primero con repairType = 1 y con el 2 más particular aún, primero 'locked' y segundo 'learnt' (el primer PR se descarta y el segundo se acepta)
+
+#5 CAÍDAS de 1 SEGUNDO (cada ~2000s..): 3-4, 1-4, 7-8, 8-9, 2-5
+#**.switch[3].**.portLinkDown = "2:890-891" 
+#**.switch[4].**.portLinkDown = "1:890-891;0:3452-3453" 
+#**.switch[1].**.portLinkDown = "1:3452-3453" 
+#**.switch[7].**.portLinkDown = "1:5144-5145" 
+#**.switch[8].**.portLinkDown = "1:5144-5145;2:7868-7869" 
+#**.switch[9].**.portLinkDown = "1:7868-7869"
+#**.switch[2].**.portLinkDown = "1:9617-9618" 
+#**.switch[5].**.portLinkDown = "0:9617-9618"
+# Event #3927726848   T=3498.721325128412   Elapsed: 53205.213s (14h 46m)  34% completed
+
+#5 CAÍDAS de 1 SEGUNDO (cada ~200s..): 3-4, 1-4, 7-8, 8-9, 2-5
+#**.switch[3].**.portLinkDown = "2:89-90" 
+#**.switch[4].**.portLinkDown = "1:89-90;0:345-346" 
+#**.switch[1].**.portLinkDown = "1:345-346" 
+#**.switch[7].**.portLinkDown = "1:514-515" 
+#**.switch[8].**.portLinkDown = "1:514-515;2:788-789" 
+#**.switch[9].**.portLinkDown = "1:788-789"
+#**.switch[2].**.portLinkDown = "1:967-968" 
+#**.switch[5].**.portLinkDown = "0:967-968" 
+
+#5 CAÍDAS de 1 SEGUNDO (cada ~20s..): 3-4, 1-4, 7-8, 8-9, 2-5
+**.switch[3].**.portLinkDown = "2:8-9" 
+**.switch[4].**.portLinkDown = "1:8-9;0:35-36" 
+**.switch[1].**.portLinkDown = "1:35-36" 
+**.switch[7].**.portLinkDown = "1:54-55" 
+**.switch[8].**.portLinkDown = "1:54-55;2:78-79" 
+**.switch[9].**.portLinkDown = "1:78-79"
+**.switch[2].**.portLinkDown = "1:97-98" 
+**.switch[5].**.portLinkDown = "0:97-98"
+
+#otros parámetros:			
+**.vector-recording=false 		
+**.scalar-recording=true
+**.useColors = false			
+total-stack = 2MiB			
+**.relayUnit.addressTableSize = 300			
+**.relayUnit.addressTableFile = ""			
+**.relayUnit.numCPUs = 1			
+**.mac[*].duplexEnabled = true			
+
+

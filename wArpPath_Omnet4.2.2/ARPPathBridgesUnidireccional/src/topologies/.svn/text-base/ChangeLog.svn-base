@@ -1,0 +1,6 @@
+
+
+
+02/11/2012
+	Ya no existen los canales "ideales" de transmisión, por lo que se ha de utilizar siempre un canal real:
+		- Véase "extends DatarateChannel"

@@ -1,0 +1,186 @@
+
+La version vieja de unidireccional de Diego era la siguiente parte (borrada de los comentarios el 26/06):
+NOTA: Esta version comenzo a fallar al usar el generador, el refresco no estaba bien hecho forward, etc...
+	Pero contiene partes del coloreado de enlaces y otras cosas que en la nueva version no se incluyeron
+
+	/*
+	AddressEntry entry, destEntry;
+	AddressEntryBasic entryBasic;
+
+	if (simTime()>deleteAddressTableAt and !done){
+		removeAllEntriesFromTable();
+		done = true;
+	}
+
+	if (linkDownFor(frame->getDest()) && !done){
+		cGate* gate = getParentModule()->gate("ethg$o",linkDownPort);
+		gate->setDisplayString("ls=red,4,d");
+		removeAllEntriesFromTable();
+		done = true;
+	}
+
+	//frame is arp req.
+	if (!strcmp(frame->getFullName(),"arpREQ")){
+
+		entry = findEntry(frame->getSrc());
+		if (entry.port != -1) {
+
+			if (!strcmp(entry.status,"blocked")) {
+				if (inputport == entry.port){
+
+//					entry.inTime = simTime(); no se deberían refrescar entradas en estado de bloqueo.
+					addressTable[frame->getSrc()] = entry;
+					broadcastFrame(frame, inputport);
+				} else {
+					delete (frame);
+				}
+			} else {
+				entry.inTime = simTime();
+				entry.port = inputport;
+				status = "blocked";
+				entry.status = (char*) status;
+				addressTable[frame->getSrc()] = entry;
+
+				broadcastFrame(frame,inputport);
+			}
+		} else {
+
+			entry.inTime = simTime();
+			entry.port = inputport;
+			status = "blocked";
+			entry.status = (char*) status;
+			ev << "status: " << entry.status << endl;
+			addressTable[frame->getSrc()] = entry;
+
+			colorLinks(useColors, inputport, frame->getSrc());
+
+			broadcastFrame(frame,inputport);
+		}
+	}
+
+	//frame is broadcast or multicast but no arp
+	else if (frame->getDest().isBroadcast() || frame->getDest().isMulticast())
+	{
+		if (!repairingAddress.compareTo(frame->getDest())){
+			ev << "repairing frame received" << endl;
+			handlePathRepairFrame(frame,inputport);
+			return;
+		} else {
+			ev << "not repairing frame received" << endl;
+			entryBasic = findEntryBasic(frame->getSrc());
+				if (entryBasic.port == -1)
+				{
+					entryBasic.inTime = simTime();
+					entryBasic.port = inputport;
+					addressTableBasic[frame->getSrc()] = entryBasic;
+					colorLinks(useColors, inputport, frame->getSrc());
+					broadcastFrame(frame,inputport);
+				} else {
+					if (entryBasic.port == inputport){
+						entryBasic.inTime = simTime();
+						entryBasic.port = inputport;
+						addressTableBasic[frame->getSrc()] = entryBasic;
+						colorLinks(useColors, inputport, frame->getSrc());
+						broadcastFrame(frame,inputport);
+					} else {
+						ev << "different port blocked, discarding frame" << endl;
+						delete (frame);
+					}
+
+				}
+
+			}
+		//frame is unicast
+		//frame is ARP reply
+	} else if (!strcmp(frame->getFullName(),"arpREPLY")){
+
+		entry = findEntry(frame->getSrc());
+
+		if (entry.port != inputport && !strcmp(entry.status,"blocked")){
+			delete (frame);
+		} else {
+			entry.inTime = simTime();
+			entry.port = inputport;
+			status = "learnt";
+			entry.status = (char*) status;
+			addressTable[frame->getSrc()] = entry;
+
+			colorLinks(useColors, inputport, frame->getSrc());
+			colorLinks(useColors, destEntry.port,frame->getDest());
+
+			destEntry = findEntry(frame->getDest());
+			if (destEntry.port !=-1){
+				send(frame,"lowerLayerOut",destEntry.port);
+			} else {
+				//...add different reparation systems to choose.
+
+				if (!inRepairTable(frame->getDest())){
+					ev << "beginning reparation" << endl;
+					numRep++;
+					RepairEntry rEntry;
+					rEntry.inTime = simTime();
+					repairTable[frame->getDest()] = rEntry;
+					if (connectedToHost(frame->getDest())){
+						broadcastRepFrame(encapsulateFrame(frame,3),-1);
+					} else {
+						if (useFRM) {
+							ev << "using new reparation system" << endl;
+							send (frame,"lowerLayerOut",inputport); //...search in table instead of using inputport!
+						} else broadcastRepFrame(encapsulateFrame(frame,2),-1);
+					}
+				} else {
+					ev << "already repairing this path, deleting frame." << endl;
+					delete(frame);
+				}
+			}
+		}
+
+		//frame is unicast not arp reply
+	} else {
+
+		if (!connectedToHost(frame->getSrc())){
+			if (notIntoNotHostList(inputport)){
+				updateConnectedHostTable(frame->getSrc(),inputport);
+			}
+		}
+
+		entry = findEntry(frame->getSrc());
+		if (entry.port != -1){
+			if (!strcmp(entry.status,"learnt")){
+				//...update table for src if inputport!=srcEntry port.
+			}
+		}
+
+		destEntry = findEntry(frame->getDest());
+		if (destEntry.port != -1) {
+
+			if (!strcmp(destEntry.status,"learnt")){
+
+				destEntry.inTime = simTime();
+				addressTable[frame->getDest()] = destEntry;
+			}
+			//colorNumberEntries(destEntry.port);
+			send (frame,"lowerLayerOut",destEntry.port);
+		} else if (!inRepairTable(frame->getDest())){
+			ev << "beginning reparation" << endl;
+			numRep++;
+			RepairEntry rEntry;
+			rEntry.inTime = simTime();
+			repairTable[frame->getDest()] = rEntry;
+			if (connectedToHost(frame->getDest())){
+				broadcastRepFrame(encapsulateFrame(frame,3),-1);
+			} else {
+				if (useFRM) {
+					ev << "using new reparation system" << endl;
+					if (connectedToHost(frame->getSrc())){//is src edge switch.
+						broadcastRepFrame(encapsulateFrame(frame,3),-1);
+					} else {
+						send (frame,"lowerLayerOut",inputport); //...search in table instead of using inputport!
+					}
+				} else broadcastRepFrame(encapsulateFrame(frame,2),-1);
+			}
+		} else {
+			ev << "already repairing this path, deleting frame." << endl;
+			delete(frame);
+		}
+	}*/

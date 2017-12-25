@@ -1,0 +1,7 @@
+# Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "triangle" "triangle" "2" "607x337+671+631:normal"
+inspector "triangle_pruebaGenerator" "triangle_pruebaGenerator" "2" "767x337+497+379:normal"
+inspector "rombo" "rombo" "2" "607x337+671+631:normal"
+inspector "dataCenter250" "dataCenter250" "2" "646x342+0+51:normal"
+inspector "pruebaTCP" "pruebaTCP" "2" "607x337+477+255:normal"
+

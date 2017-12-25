@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/arppath-omnet4.2.2/!svn/ver/52/libgist/src/applications/udpapp
+END
+UDPBasicAppNew.cc
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/arppath-omnet4.2.2/!svn/ver/52/libgist/src/applications/udpapp/UDPBasicAppNew.cc
+END
+ChangeLog
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/arppath-omnet4.2.2/!svn/ver/11/libgist/src/applications/udpapp/ChangeLog
+END
+UDPBasicAppNew.h
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/arppath-omnet4.2.2/!svn/ver/11/libgist/src/applications/udpapp/UDPBasicAppNew.h
+END
+UDPBasicAppNew.ned
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/arppath-omnet4.2.2/!svn/ver/11/libgist/src/applications/udpapp/UDPBasicAppNew.ned
+END

@@ -1,0 +1,395 @@
+file 61099 1381249444                                           
+version 2
+run General-0-20131008-18:23:35-18783
+attr configname General
+attr datetime 20131008-18:23:35
+attr experiment General
+attr inifile triangle.ini
+attr iterationvars ""
+attr iterationvars2 $repetition=0
+attr measurement ""
+attr network arppathbridgesunidireccional.src.topologies.triangle
+attr processid 18783
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+
+vector 128  triangle.host1.eth[0].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 132  triangle.host1.eth[0].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 159  triangle.host2.eth[0].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 163  triangle.host2.eth[0].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 190  triangle.host3.eth[0].queue.pauseQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 194  triangle.host3.eth[0].queue.dataQueue  queueLength:vector  ETV
+attr interpolationmode  sample-hold
+attr title  "queue length, vector"
+vector 5  triangle.switchA.mac[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 199  triangle.switchA.mac[0]  "queue length"  ETV
+vector 16  triangle.switchA.mac[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 203  triangle.switchA.mac[1]  "queue length"  ETV
+vector 27  triangle.switchA.mac[2]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 207  triangle.switchA.mac[2]  "queue length"  ETV
+vector 38  triangle.switchB.mac[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 213  triangle.switchB.mac[0]  "queue length"  ETV
+vector 49  triangle.switchB.mac[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 217  triangle.switchB.mac[1]  "queue length"  ETV
+vector 60  triangle.switchB.mac[2]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 221  triangle.switchB.mac[2]  "queue length"  ETV
+vector 71  triangle.switchC.mac[0]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 227  triangle.switchC.mac[0]  "queue length"  ETV
+vector 82  triangle.switchC.mac[1]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 231  triangle.switchC.mac[1]  "queue length"  ETV
+vector 93  triangle.switchC.mac[2]  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 235  triangle.switchC.mac[2]  "queue length"  ETV
+vector 0  triangle.switchA.mac[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 198  triangle.switchA.mac[0]  "processing times"  ETV
+vector 11  triangle.switchA.mac[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 202  triangle.switchA.mac[1]  "processing times"  ETV
+vector 22  triangle.switchA.mac[2]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 206  triangle.switchA.mac[2]  "processing times"  ETV
+vector 33  triangle.switchB.mac[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 212  triangle.switchB.mac[0]  "processing times"  ETV
+vector 44  triangle.switchB.mac[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 216  triangle.switchB.mac[1]  "processing times"  ETV
+vector 55  triangle.switchB.mac[2]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 220  triangle.switchB.mac[2]  "processing times"  ETV
+vector 66  triangle.switchC.mac[0]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 226  triangle.switchC.mac[0]  "processing times"  ETV
+vector 77  triangle.switchC.mac[1]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 230  triangle.switchC.mac[1]  "processing times"  ETV
+vector 88  triangle.switchC.mac[2]  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 234  triangle.switchC.mac[2]  "processing times"  ETV
+vector 119  triangle.host1.eth[0].mac  droppedPkNotForUs:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, vector(packetBytes)"
+vector 45  triangle.switchB.mac[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 46  triangle.switchB.mac[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 78  triangle.switchC.mac[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 79  triangle.switchC.mac[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 150  triangle.host2.eth[0].mac  droppedPkNotForUs:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, vector(packetBytes)"
+vector 12  triangle.switchA.mac[1]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 13  triangle.switchA.mac[1]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 89  triangle.switchC.mac[2]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 90  triangle.switchC.mac[2]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 181  triangle.host3.eth[0].mac  droppedPkNotForUs:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  dropPkNotForUs
+attr title  "packets dropped/not for us, vector(packetBytes)"
+vector 23  triangle.switchA.mac[2]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 24  triangle.switchA.mac[2]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 56  triangle.switchB.mac[2]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 57  triangle.switchB.mac[2]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 210  triangle.switchB.relayUnit  "queue length"  ETV
+vector 209  triangle.switchB.relayUnit  "buffer level"  ETV
+vector 224  triangle.switchC.relayUnit  "queue length"  ETV
+vector 223  triangle.switchC.relayUnit  "buffer level"  ETV
+vector 196  triangle.switchA.relayUnit  "queue length"  ETV
+vector 195  triangle.switchA.relayUnit  "buffer level"  ETV
+vector 100  triangle.host1.udpApp[0]  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 102  triangle.host1.udp  sentPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  sentPk
+attr title  "packets sent, vector(packetBytes)"
+vector 107  triangle.host1.networkLayer.arp  sentReq:vector  ETV
+attr title  "ARP request sent, vector"
+vector 109  triangle.host1.networkLayer.arp  initiatedResolution:vector  ETV
+attr title  "ARP initiated resolutions, vector"
+vector 122  triangle.host1.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 129  triangle.host1.eth[0].queue.dataQueue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 131  triangle.host1.eth[0].queue.dataQueue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 116  triangle.host1.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 111  triangle.host1.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 1  triangle.switchA.mac[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 2  triangle.switchA.mac[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 174  triangle.host3.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 175  triangle.host3.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 143  triangle.host2.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 144  triangle.host2.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 185  triangle.host3.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 154  triangle.host2.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 153  triangle.host2.eth[0].encap  encapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  encapPk
+attr title  "packets encapsulated, vector(packetBytes)"
+vector 160  triangle.host2.eth[0].queue.dataQueue  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr title  "received packets, vector(packetBytes)"
+vector 162  triangle.host2.eth[0].queue.dataQueue  queueingTime:vector  ETV
+attr interpolationmode  none
+attr title  "queueing time, vector"
+vector 147  triangle.host2.eth[0].mac  rxPkFromHL:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkFromHL
+attr title  "packet bytes from higher layer, vector(packetBytes)"
+vector 142  triangle.host2.eth[0].mac  txPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  txPk
+attr title  "packets transmitted, vector(packetBytes)"
+vector 34  triangle.switchB.mac[0]  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 35  triangle.switchB.mac[0]  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 112  triangle.host1.eth[0].mac  rxPkOk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rxPkOk
+attr title  "packets received OK, vector(packetBytes)"
+vector 237  triangle.host1.eth[0].mac  "latency times"  ETV
+vector 113  triangle.host1.eth[0].mac  passedUpPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  packetSentToUpper
+attr title  "packets passed to higher layer, vector(packetBytes)"
+vector 123  triangle.host1.eth[0].encap  decapPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  decapPk
+attr title  "packets decapsulated, vector(packetBytes)"
+vector 241  triangle.host2.eth[0].mac  "latency times"  ETV
+vector 134  triangle.host2.udp  rcvdPk:vector(packetBytes)  ETV
+attr interpolationmode  none
+attr source  rcvdPk
+attr title  "packets received, vector(packetBytes)"
+vector 136  triangle.host2.udp  droppedPkWrongPort:vector(count)  ETV
+attr interpolationmode  none
+attr title  "packets dropped (wrong port), vector(count)"
+0	13869 605 29 1576 0.000006719999 2.215818411368 25 64 74 1830 134140
+1	14474 655 71 1594 1.000006769999 2.27243713846 26 64 546 13714 7456996
+2	15129 655 71 1594 1.000006769999 2.27243713846 26 64 546 13714 7456996
+5	15784 592 1 1573 0 2.215810891369 25 64 74 1830 134140
+11	16376 570 30 1279 0.000006719999 1.964109077143 22 64 546 11048 5970512
+12	16946 554 42 1308 0.000006769999 1.96417359714 22 64 74 1608 117712
+13	17500 554 42 1308 0.000006769999 1.96417359714 22 64 74 1608 117712
+16	18054 557 2 1276 0 1.964063797144 22 64 546 11048 5970512
+22	18611 182 31 1600 0.000006719999 2.272484418459 7 64 546 2376 1204752
+23	18793 127 45 1570 0.000006769999 2.215808891369 5 64 74 350 24620
+24	18920 127 45 1570 0.000006769999 2.215808891369 5 64 74 350 24620
+27	19047 167 3 1597 0 2.27243913846 7 64 546 2376 1204752
+33	19214 655 32 1541 0.000006719999 2.215782131372 25 64 546 12686 6864860
+34	19869 607 126 1556 1.000031079996 2.215789751371 24 64 74 1766 130044
+35	20476 607 126 1556 1.000031079996 2.215789751371 24 64 74 1766 130044
+38	21083 636 4 1538 0 2.215736851373 25 64 546 12686 6864860
+44	21719 554 33 1307 0.000006719999 1.96417354714 22 64 74 1608 117712
+45	22273 570 39 1280 0.000006769999 1.964109127143 22 64 546 11048 5970512
+46	22843 570 39 1280 0.000006769999 1.964109127143 22 64 546 11048 5970512
+49	23413 539 5 1304 0 1.964166027141 22 64 74 1608 117712
+55	23952 152 34 1562 0.000006719999 2.21579927137 6 64 74 414 28716
+56	24104 155 46 1535 0.000006769999 2.215734851373 6 64 546 1830 906636
+57	24259 155 46 1535 0.000006769999 2.215734851373 6 64 546 1830 906636
+60	24414 138 6 1559 0 2.215791751371 6 64 74 414 28716
+66	24552 49 35 100 0.000006719999 1.000024259997 2 64 64 128 8192
+71	24601 34 7 88 0 1.000017539998 2 64 64 128 8192
+77	24635 127 36 1569 0.000006719999 2.215808841369 5 64 74 350 24620
+78	24762 182 40 1601 0.000006769999 2.272484468459 7 64 546 2376 1204752
+79	24944 182 40 1601 0.000006769999 2.272484468459 7 64 546 2376 1204752
+82	25126 113 8 1566 0 2.21580132137 5 64 74 350 24620
+88	25239 155 37 1534 0.000006719999 2.215734801373 6 64 546 1830 906636
+89	25394 152 43 1563 0.000006769999 2.21579932137 6 64 74 414 28716
+90	25546 152 43 1563 0.000006769999 2.21579932137 6 64 74 414 28716
+93	25698 141 9 1531 0 2.215689521374 6 64 546 1830 906636
+100	25839 666 59 1582 1 2.272391808461 25 500 500 12500 6250000
+102	26505 666 60 1583 1 2.272391808461 25 508 508 12700 6451600
+107	27171 11 62 62 1 1 1 1 1 1 1
+109	27182 11 62 62 1 1 1 1 1 1 1
+111	27193 707 70 1593 1.000006719999 2.27243708846 26 64 546 13714 7456996
+112	27900 630 140 1577 1.000048619994 2.215818461368 24 64 74 1766 130044
+113	28530 630 140 1577 1.000048619994 2.215818461368 24 64 74 1766 130044
+116	29160 692 67 1590 1 2.272391808461 26 64 546 13714 7456996
+119	29852 25 38 38 0.000006769999 0.000006769999 1 72 72 72 5184
+122	29877 692 63 1586 1 2.272391808461 26 28 528 13228 6970384
+123	30569 630 141 1578 1.000048619994 2.215818461368 24 28 56 1316 72912
+128	31199 10 0 0 0 0 1 0 0 0 0
+129	31209 692 65 1588 1 2.272391808461 26 64 546 13714 7456996
+131	31901 641 65 1588 1 2.272391808461 26 0 0 0 0
+132	32542 1292 0 1588 0 2.272391808461 53 0 1 26 26
+134	33834 629 169 1545 1.000188609991 2.215782181372 23 508 508 11684 5935472
+136	34463 597 169 1545 1.000188609991 2.215782181372 23 1 23 276 4324
+142	35060 631 125 1555 1.000031029996 2.215789701371 24 64 74 1766 130044
+143	35691 655 106 1542 1.000024309997 2.215782181372 24 64 546 12622 6860764
+144	36346 655 106 1542 1.000024309997 2.215782181372 24 64 546 12622 6860764
+147	37001 633 120 1552 1.000024309997 2.215782181372 24 64 74 1766 130044
+150	37634 25 41 41 0.000006769999 0.000006769999 1 72 72 72 5184
+153	37659 632 116 1548 1.000024309997 2.215782181372 24 28 56 1316 72912
+154	38291 655 110 1543 1.000024309997 2.215782181372 24 28 528 12172 6412816
+159	38946 10 0 0 0 0 1 0 0 0 0
+160	38956 633 118 1550 1.000024309997 2.215782181372 24 64 74 1766 130044
+162	39589 609 118 1550 1.000024309997 2.215782181372 24 0 0 0 0
+163	40198 1228 0 1550 0 2.215782181372 49 0 1 24 24
+174	41426 26 104 104 1.000024309997 1.000024309997 1 64 64 64 4096
+175	41452 26 104 104 1.000024309997 1.000024309997 1 64 64 64 4096
+181	41478 25 44 44 0.000006769999 0.000006769999 1 72 72 72 5184
+185	41503 26 108 108 1.000024309997 1.000024309997 1 28 28 28 784
+190	41529 10 0 0 0 0 1 0 0 0 0
+194	41539 10 0 0 0 0 1 0 0 0 0
+195	41549 2754 49 1596 0.000006769999 2.27243913846 106 0 546 15800 7615712
+196	44303 1337 49 1595 0.000006769999 2.27243713846 53 0 0 0 0
+198	45640 905 29 1576 0.000006719999 2.215818411368 25 6.719999e-06 9.519999e-06 0.000234399975 2.2056955312e-09
+199	46545 919 1 1573 0 2.215810891369 37 0 1 12 12
+202	47464 812 30 1279 0.000006719999 1.964109077143 22 6.719999e-06 4.7279999e-05 0.000961039978 4.482916287792e-08
+203	48276 813 2 1276 0 1.964063797144 33 0 1 11 11
+206	49089 261 31 1600 0.000006719999 2.272484418459 7 6.719999e-06 2.066115127938 2.066319687932 4.268831730957
+207	49350 239 3 1597 0 2.27243913846 10 0 1 3 3
+209	49589 2695 47 1558 0.000006769999 2.215791751371 104 0 546 14772 7023576
+210	52284 1309 47 1557 0.000006769999 2.215789751371 52 0 0 0 0
+212	53593 930 32 1541 0.000006719999 2.215782131372 25 6.719999e-06 4.7279999e-05 0.001102879975 5.153535779424e-08
+213	54523 914 4 1538 0 2.215736851373 37 0 1 12 12
+216	55437 796 33 1307 0.000006719999 1.96417354714 22 6.719999e-06 9.519999e-06 0.000205839978 1.93380438832e-09
+217	56233 816 5 1304 0 1.964166027141 33 0 1 11 11
+220	57049 220 34 1562 0.000006719999 2.21579927137 6 6.719999e-06 2.066132667936 2.066176667931 4.2689042019054
+221	57269 214 6 1559 0 2.215791751371 9 0 1 3 3
+223	57483 625 48 1565 0.000006769999 2.21580132137 24 0 546 2372 951736
+224	58108 304 48 1564 0.000006769999 2.21579932137 12 0 0 0 0
+226	58412 71 35 100 0.000006719999 1.000024259997 2 6.719999e-06 8.719999e-06 1.5439998e-05 1.2119676912e-10
+227	58483 58 7 88 0 1.000017539998 3 0 1 1 1
+230	58541 182 36 1569 0.000006719999 2.215808841369 5 6.719999e-06 9.519999e-06 4.3999995e-05 3.93087912e-10
+231	58723 165 8 1566 0 2.21580132137 7 0 1 2 2
+234	58888 221 37 1534 0.000006719999 2.215734801373 6 6.719999e-06 4.7279999e-05 0.000165999994 6.903430068e-09
+235	59109 214 9 1531 0 2.215689521374 9 0 1 3 3
+237	59323 894 140 1577 1.000048619994 2.215818461368 24 2.4309997e-05 3.6279996e-05 0.000667349925 1.880816907822e-08
+241	60217 882 166 1542 1.000188609991 2.215782181372 23 0.000139989997 0.000187319996 0.003361759928 4.9721032790552e-07

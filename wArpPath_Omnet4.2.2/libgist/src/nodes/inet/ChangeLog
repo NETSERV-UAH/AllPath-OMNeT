@@ -1,0 +1,11 @@
+
+
+
+31/10/2012
+	NetworkLayerNew.ned se copia tal cual de inet2.0.0, pero actualizando a ARPNew y IPv4New (que eran los únicos cambios que había antes)
+	RouterNew.ned se elimina porque no se usaba y lo unico que "supuestamente" actualizaba era el NetworkLayerNew, pero en la practica seguía usando NetworkLayer normal...
+	StandardHostNew.ned se copia tal cual de inet2.0.0, pero actualizando a NodeBaseNew y añadiendo el generador UDP
+		- Se añade el módulo udpGen, conectado a la misma altura que udpApp y los cambios con //EXTRA
+		- Necesario comentar las líneas que dicen que no hay conexión si no hay aplicaciones UDP
+	NodeBaseNew.ned aparece nuevo como base en inet2.0.0 y se copia tal cual de inet2.0.0 pero actualizando a NetworkLayerNew
+		- Antes NodeBaseNew no estaba, sino que NetworkLayerNew se cambiaba directamente en cada nodo, en este caso StandardHostNew sería el afectado

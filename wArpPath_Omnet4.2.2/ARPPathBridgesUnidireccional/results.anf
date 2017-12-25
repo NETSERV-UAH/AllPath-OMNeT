@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-0.sca"/>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-1.sca"/>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-2.sca"/>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-3.sca"/>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-4.sca"/>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-5.sca"/>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-6.sca"/>
+    <inputs name="/ARPPathBridgesUnidireccional/results/General-7.sca"/>
+  </inputs>
+  <datasets/>
+  <chartSheets/>
+</scave:Analysis>
