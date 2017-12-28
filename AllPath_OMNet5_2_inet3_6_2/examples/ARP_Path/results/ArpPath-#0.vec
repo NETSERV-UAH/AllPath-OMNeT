@@ -1,0 +1,1623 @@
+version 2
+run ArpPath-0-20171103-23:35:53-9168
+attr configname ArpPath
+attr datetime 20171103-23:35:53
+attr experiment ArpPath
+attr inifile MySwitchedLAN.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MySwitchedLAN
+attr processid 9168
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.switch*.relayUnitType "\"MACRelayUnitAPB\""
+param *.switch*.relayUnit.isArpPath true
+param *.switch*.relayUnit.isArpPathLinkFail false
+param *.switch*.relayUnit.isIndependentPath false
+param *.switch*.relayUnit.isRerouteArpPath false
+param *.switch*.relayUnit.isLowResArpPath false
+param *.switch*.relayUnit.isUsingL3inL2 false
+param *.client*.numPingApps 1
+param *.client*.pingApp[*].destAddr "\"server\""
+param *.client.pingApp[*].startTime 1s
+param *.host1.pingApp[*].startTime 2s
+param *.host2.pingApp[*].startTime 3s
+param *.client*.pingApp[*].printPing true
+param **.eth[*].mac.duplexMode true
+param *.switch*.macType "\"EtherMACFullDuplexNew\""
+param **.eth[*].queueType "\"DropTailQueue\""
+param **.switch*.relayUnitType "\"MACRelayUnitAPB\""
+param *.client*.networkLayer.arp.cacheTimeout 120s
+param **.ip.independentofARP false
+
+vector 0 MySwitchedLAN.client.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 MySwitchedLAN.client.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 MySwitchedLAN.host1.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 MySwitchedLAN.host1.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 MySwitchedLAN.host2.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 5 MySwitchedLAN.host2.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 6 MySwitchedLAN.switchA.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 MySwitchedLAN.switchA.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 8 MySwitchedLAN.switchA.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 9 MySwitchedLAN.switchA.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 10 MySwitchedLAN.switchA.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 11 MySwitchedLAN.switchA.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 12 MySwitchedLAN.switchA.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 13 MySwitchedLAN.switchA.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 14 MySwitchedLAN.switchA.eth[4].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 15 MySwitchedLAN.switchA.eth[4].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 16 MySwitchedLAN.switchB.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 17 MySwitchedLAN.switchB.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 18 MySwitchedLAN.switchB.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 19 MySwitchedLAN.switchB.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 20 MySwitchedLAN.switchB.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 21 MySwitchedLAN.switchB.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 22 MySwitchedLAN.switchB.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 23 MySwitchedLAN.switchB.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 24 MySwitchedLAN.switchC.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 25 MySwitchedLAN.switchC.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 26 MySwitchedLAN.switchC.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 27 MySwitchedLAN.switchC.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 28 MySwitchedLAN.switchC.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 29 MySwitchedLAN.switchC.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 30 MySwitchedLAN.switchC.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 31 MySwitchedLAN.switchC.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 32 MySwitchedLAN.switchD.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 33 MySwitchedLAN.switchD.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 34 MySwitchedLAN.switchD.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 35 MySwitchedLAN.switchD.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 36 MySwitchedLAN.switchD.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 37 MySwitchedLAN.switchD.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 38 MySwitchedLAN.switchD.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 39 MySwitchedLAN.switchD.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 40 MySwitchedLAN.switchE.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 41 MySwitchedLAN.switchE.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 42 MySwitchedLAN.switchE.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 43 MySwitchedLAN.switchE.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 44 MySwitchedLAN.switchE.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 45 MySwitchedLAN.switchE.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 46 MySwitchedLAN.switchE.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 47 MySwitchedLAN.switchE.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 48 MySwitchedLAN.switchF.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 49 MySwitchedLAN.switchF.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 50 MySwitchedLAN.switchF.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 51 MySwitchedLAN.switchF.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 52 MySwitchedLAN.switchF.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 53 MySwitchedLAN.switchF.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 54 MySwitchedLAN.switchF.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 55 MySwitchedLAN.switchF.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 56 MySwitchedLAN.switchG.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 57 MySwitchedLAN.switchG.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 58 MySwitchedLAN.switchG.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 59 MySwitchedLAN.switchG.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 60 MySwitchedLAN.switchG.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 61 MySwitchedLAN.switchG.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 62 MySwitchedLAN.switchG.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 63 MySwitchedLAN.switchG.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 64 MySwitchedLAN.switchH.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 65 MySwitchedLAN.switchH.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 66 MySwitchedLAN.switchH.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 67 MySwitchedLAN.switchH.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 68 MySwitchedLAN.switchH.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 69 MySwitchedLAN.switchH.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 70 MySwitchedLAN.switchH.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 71 MySwitchedLAN.switchH.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 72 MySwitchedLAN.switchI.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 73 MySwitchedLAN.switchI.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 74 MySwitchedLAN.switchI.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 75 MySwitchedLAN.switchI.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 76 MySwitchedLAN.switchI.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 77 MySwitchedLAN.switchI.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 78 MySwitchedLAN.server.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 79 MySwitchedLAN.server.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 80 MySwitchedLAN.client.pingApp[0] pingTxSeq:vector ETV
+attr interpolationmode none
+attr title "ping tx seq, vector"
+vector 81 MySwitchedLAN.client.networkLayer.arp sentReq:vector ETV
+attr title "ARP request sent, vector"
+vector 82 MySwitchedLAN.client.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 83 MySwitchedLAN.client.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 84 MySwitchedLAN.client.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 85 MySwitchedLAN.client.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 86 MySwitchedLAN.client.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 87 MySwitchedLAN.switchA.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 88 MySwitchedLAN.switchA.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 89 MySwitchedLAN.switchA.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 90 MySwitchedLAN.switchA.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 91 MySwitchedLAN.switchA.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 92 MySwitchedLAN.switchA.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 93 MySwitchedLAN.switchA.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 94 MySwitchedLAN.switchA.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 95 MySwitchedLAN.switchA.eth[4].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 96 MySwitchedLAN.switchA.eth[4].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 97 MySwitchedLAN.switchA.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 98 MySwitchedLAN.switchA.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 99 MySwitchedLAN.switchA.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 100 MySwitchedLAN.switchA.eth[4].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 101 MySwitchedLAN.switchA.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 102 MySwitchedLAN.switchA.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 103 MySwitchedLAN.switchA.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 104 MySwitchedLAN.switchA.eth[4].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 105 MySwitchedLAN.host1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 106 MySwitchedLAN.host1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 107 MySwitchedLAN.host2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 108 MySwitchedLAN.host2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 109 MySwitchedLAN.switchB.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 110 MySwitchedLAN.switchB.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 111 MySwitchedLAN.switchC.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 112 MySwitchedLAN.switchC.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 113 MySwitchedLAN.host1.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 114 MySwitchedLAN.host2.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 115 MySwitchedLAN.switchB.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 116 MySwitchedLAN.switchB.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 117 MySwitchedLAN.switchB.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 118 MySwitchedLAN.switchB.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 119 MySwitchedLAN.switchB.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 120 MySwitchedLAN.switchB.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 121 MySwitchedLAN.switchC.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 122 MySwitchedLAN.switchC.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 123 MySwitchedLAN.switchC.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 124 MySwitchedLAN.switchC.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 125 MySwitchedLAN.switchC.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 126 MySwitchedLAN.switchC.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 127 MySwitchedLAN.switchB.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 128 MySwitchedLAN.switchB.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 129 MySwitchedLAN.switchB.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 130 MySwitchedLAN.switchC.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 131 MySwitchedLAN.switchC.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 132 MySwitchedLAN.switchC.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 133 MySwitchedLAN.switchB.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 134 MySwitchedLAN.switchB.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 135 MySwitchedLAN.switchB.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 136 MySwitchedLAN.switchC.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 137 MySwitchedLAN.switchC.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 138 MySwitchedLAN.switchC.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 139 MySwitchedLAN.switchD.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 140 MySwitchedLAN.switchD.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 141 MySwitchedLAN.switchE.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 142 MySwitchedLAN.switchE.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 143 MySwitchedLAN.switchF.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 144 MySwitchedLAN.switchF.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 145 MySwitchedLAN.switchD.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 146 MySwitchedLAN.switchD.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 147 MySwitchedLAN.switchE.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 148 MySwitchedLAN.switchE.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 149 MySwitchedLAN.switchF.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 150 MySwitchedLAN.switchF.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 151 MySwitchedLAN.switchD.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 152 MySwitchedLAN.switchD.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 153 MySwitchedLAN.switchD.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 154 MySwitchedLAN.switchD.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 155 MySwitchedLAN.switchD.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 156 MySwitchedLAN.switchD.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 157 MySwitchedLAN.switchE.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 158 MySwitchedLAN.switchE.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 159 MySwitchedLAN.switchE.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 160 MySwitchedLAN.switchE.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 161 MySwitchedLAN.switchE.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 162 MySwitchedLAN.switchE.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 163 MySwitchedLAN.switchF.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 164 MySwitchedLAN.switchF.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 165 MySwitchedLAN.switchF.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 166 MySwitchedLAN.switchF.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 167 MySwitchedLAN.switchF.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 168 MySwitchedLAN.switchF.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 169 MySwitchedLAN.switchD.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 170 MySwitchedLAN.switchD.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 171 MySwitchedLAN.switchD.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 172 MySwitchedLAN.switchE.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 173 MySwitchedLAN.switchE.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 174 MySwitchedLAN.switchE.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 175 MySwitchedLAN.switchF.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 176 MySwitchedLAN.switchF.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 177 MySwitchedLAN.switchF.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 178 MySwitchedLAN.switchD.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 179 MySwitchedLAN.switchD.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 180 MySwitchedLAN.switchD.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 181 MySwitchedLAN.switchE.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 182 MySwitchedLAN.switchE.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 183 MySwitchedLAN.switchE.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 184 MySwitchedLAN.switchF.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 185 MySwitchedLAN.switchF.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 186 MySwitchedLAN.switchF.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 187 MySwitchedLAN.switchC.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 188 MySwitchedLAN.switchC.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 189 MySwitchedLAN.switchG.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 190 MySwitchedLAN.switchG.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 191 MySwitchedLAN.switchH.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 192 MySwitchedLAN.switchH.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 193 MySwitchedLAN.switchC.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 194 MySwitchedLAN.switchC.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 195 MySwitchedLAN.switchG.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 196 MySwitchedLAN.switchG.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 197 MySwitchedLAN.switchH.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 198 MySwitchedLAN.switchH.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 199 MySwitchedLAN.switchC.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 200 MySwitchedLAN.switchC.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 201 MySwitchedLAN.switchG.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 202 MySwitchedLAN.switchG.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 203 MySwitchedLAN.switchH.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 204 MySwitchedLAN.switchH.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 205 MySwitchedLAN.switchG.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 206 MySwitchedLAN.switchG.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 207 MySwitchedLAN.switchG.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 208 MySwitchedLAN.switchG.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 209 MySwitchedLAN.switchG.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 210 MySwitchedLAN.switchG.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 211 MySwitchedLAN.switchH.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 212 MySwitchedLAN.switchH.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 213 MySwitchedLAN.switchH.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 214 MySwitchedLAN.switchH.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 215 MySwitchedLAN.switchH.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 216 MySwitchedLAN.switchH.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 217 MySwitchedLAN.switchG.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 218 MySwitchedLAN.switchG.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 219 MySwitchedLAN.switchG.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 220 MySwitchedLAN.switchH.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 221 MySwitchedLAN.switchH.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 222 MySwitchedLAN.switchH.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 223 MySwitchedLAN.switchG.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 224 MySwitchedLAN.switchG.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 225 MySwitchedLAN.switchG.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 226 MySwitchedLAN.switchH.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 227 MySwitchedLAN.switchH.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 228 MySwitchedLAN.switchH.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 229 MySwitchedLAN.switchI.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 230 MySwitchedLAN.switchI.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 231 MySwitchedLAN.switchE.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 232 MySwitchedLAN.switchE.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 233 MySwitchedLAN.switchF.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 234 MySwitchedLAN.switchF.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 235 MySwitchedLAN.switchI.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 236 MySwitchedLAN.switchI.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 237 MySwitchedLAN.switchE.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 238 MySwitchedLAN.switchE.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 239 MySwitchedLAN.switchF.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 240 MySwitchedLAN.switchF.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 241 MySwitchedLAN.switchI.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 242 MySwitchedLAN.switchI.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 243 MySwitchedLAN.switchI.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 244 MySwitchedLAN.switchI.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 245 MySwitchedLAN.switchI.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 246 MySwitchedLAN.switchI.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 247 MySwitchedLAN.switchI.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 248 MySwitchedLAN.switchI.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 249 MySwitchedLAN.server.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 250 MySwitchedLAN.server.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 251 MySwitchedLAN.switchH.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 252 MySwitchedLAN.switchH.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 253 MySwitchedLAN.server.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 254 MySwitchedLAN.server.networkLayer.arp sentReply:vector ETV
+attr title "ARP replies sent, vector"
+vector 255 MySwitchedLAN.server.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 256 MySwitchedLAN.server.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 257 MySwitchedLAN.server.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 258 MySwitchedLAN.server.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 259 MySwitchedLAN.server.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 260 MySwitchedLAN.switchI.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 261 MySwitchedLAN.switchI.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 262 MySwitchedLAN.switchI.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 263 MySwitchedLAN.switchI.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 264 MySwitchedLAN.switchI.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 265 MySwitchedLAN.switchI.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 266 MySwitchedLAN.switchG.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 267 MySwitchedLAN.switchG.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 268 MySwitchedLAN.switchG.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 269 MySwitchedLAN.switchG.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 270 MySwitchedLAN.switchG.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 271 MySwitchedLAN.switchG.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 272 MySwitchedLAN.switchD.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 273 MySwitchedLAN.switchD.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 274 MySwitchedLAN.switchD.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 275 MySwitchedLAN.switchD.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 276 MySwitchedLAN.switchD.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 277 MySwitchedLAN.switchD.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 278 MySwitchedLAN.switchB.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 279 MySwitchedLAN.switchB.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 280 MySwitchedLAN.switchB.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 281 MySwitchedLAN.switchB.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 282 MySwitchedLAN.switchB.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 283 MySwitchedLAN.switchB.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 284 MySwitchedLAN.switchA.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 285 MySwitchedLAN.switchA.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 286 MySwitchedLAN.switchA.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 287 MySwitchedLAN.switchA.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 288 MySwitchedLAN.switchA.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 289 MySwitchedLAN.switchA.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 290 MySwitchedLAN.client.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 291 MySwitchedLAN.client.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 292 MySwitchedLAN.client.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 293 MySwitchedLAN.client.pingApp[0] pingRxSeq:vector ETV
+attr interpolationmode none
+attr title "ping rx seq, vector"
+vector 294 MySwitchedLAN.client.pingApp[0] rtt:vector ETV
+attr interpolationmode none
+attr title "ping round-trip time, vector"
+attr unit s
+0	0	0	0
+1	0	0	0
+1	15	1	1
+1	15	1	0
+1	297	1.00007032	1
+1	297	1.00007032	0
+1	405	2	1
+1	405	2	0
+2	0	0	0
+3	0	0	0
+4	0	0	0
+5	0	0	0
+6	0	0	0
+7	0	0	0
+7	25	1.00000586	1
+7	25	1.00000586	0
+8	0	0	0
+9	0	0	0
+9	26	1.00000586	1
+9	26	1.00000586	0
+10	0	0	0
+11	0	0	0
+11	286	1.00006446	1
+11	286	1.00006446	0
+11	389	1.00016822	1
+11	389	1.00016822	0
+11	496	2.0000979	1
+11	496	2.0000979	0
+12	0	0	0
+13	0	0	0
+13	27	1.00000586	1
+13	27	1.00000586	0
+13	305	1.00007922	1
+13	305	1.00007922	0
+13	412	2.0000089	1
+13	412	2.0000089	0
+14	0	0	0
+15	0	0	0
+15	28	1.00000586	1
+15	28	1.00000586	0
+16	0	0	0
+17	0	0	0
+17	278	1.0000586	1
+17	278	1.0000586	0
+17	381	1.00015932	1
+17	381	1.00015932	0
+17	488	2.000089	1
+17	488	2.000089	0
+18	0	0	0
+19	0	0	0
+19	60	1.00001172	1
+19	60	1.00001172	0
+19	313	1.00008812	1
+19	313	1.00008812	0
+19	420	2.0000178	1
+19	420	2.0000178	0
+20	0	0	0
+21	0	0	0
+21	61	1.00001172	1
+21	61	1.00001172	0
+22	0	0	0
+23	0	0	0
+23	62	1.00001172	1
+23	62	1.00001172	0
+24	0	0	0
+25	0	0	0
+26	0	0	0
+27	0	0	0
+27	63	1.00001172	1
+27	63	1.00001172	0
+28	0	0	0
+29	0	0	0
+29	64	1.00001172	1
+29	64	1.00001172	0
+30	0	0	0
+31	0	0	0
+31	65	1.00001172	1
+31	65	1.00001172	0
+32	0	0	0
+33	0	0	0
+33	270	1.00005274	1
+33	270	1.00005274	0
+33	373	1.00015042	1
+33	373	1.00015042	0
+33	480	2.0000801	1
+33	480	2.0000801	0
+34	0	0	0
+35	0	0	0
+35	109	1.00001758	1
+35	109	1.00001758	0
+36	0	0	0
+37	0	0	0
+37	110	1.00001758	1
+37	110	1.00001758	0
+37	321	1.00009702	1
+37	321	1.00009702	0
+37	428	2.0000267	1
+37	428	2.0000267	0
+38	0	0	0
+39	0	0	0
+39	111	1.00001758	1
+39	111	1.00001758	0
+40	0	0	0
+41	0	0	0
+42	0	0	0
+43	0	0	0
+43	112	1.00001758	1
+43	112	1.00001758	0
+44	0	0	0
+45	0	0	0
+45	113	1.00001758	1
+45	113	1.00001758	0
+46	0	0	0
+47	0	0	0
+47	114	1.00001758	1
+47	114	1.00001758	0
+48	0	0	0
+49	0	0	0
+50	0	0	0
+51	0	0	0
+51	115	1.00001758	1
+51	115	1.00001758	0
+52	0	0	0
+53	0	0	0
+53	116	1.00001758	1
+53	116	1.00001758	0
+54	0	0	0
+55	0	0	0
+55	117	1.00001758	1
+55	117	1.00001758	0
+56	0	0	0
+57	0	0	0
+57	175	1.00002344	1
+57	175	1.00002344	0
+57	329	1.00010592	1
+57	329	1.00010592	0
+57	436	2.0000356	1
+57	436	2.0000356	0
+58	0	0	0
+59	0	0	0
+59	262	1.00004688	1
+59	262	1.00004688	0
+59	365	1.00014152	1
+59	365	1.00014152	0
+59	472	2.0000712	1
+59	472	2.0000712	0
+60	0	0	0
+61	0	0	0
+61	176	1.00002344	1
+61	176	1.00002344	0
+62	0	0	0
+63	0	0	0
+63	177	1.00002344	1
+63	177	1.00002344	0
+64	0	0	0
+65	0	0	0
+65	178	1.00002344	1
+65	178	1.00002344	0
+66	0	0	0
+67	0	0	0
+68	0	0	0
+69	0	0	0
+69	179	1.00002344	1
+69	179	1.00002344	0
+70	0	0	0
+71	0	0	0
+71	180	1.00002344	1
+71	180	1.00002344	0
+72	0	0	0
+73	0	0	0
+73	222	1.0000293	1
+73	222	1.0000293	0
+73	337	1.00011482	1
+73	337	1.00011482	0
+73	444	2.0000445	1
+73	444	2.0000445	0
+74	0	0	0
+75	0	0	0
+75	223	1.0000293	1
+75	223	1.0000293	0
+76	0	0	0
+77	0	0	0
+77	254	1.00004102	1
+77	254	1.00004102	0
+77	357	1.00013262	1
+77	357	1.00013262	0
+77	464	2.0000623	1
+77	464	2.0000623	0
+78	0	0	0
+79	0	0	0
+79	245	1.00003516	1
+79	245	1.00003516	0
+79	349	1.00012372	1
+79	349	1.00012372	0
+79	456	2.0000534	1
+79	456	2.0000534	0
+80	9	1	0
+80	400	2	1
+81	11	1	1
+82	13	1	28
+82	295	1.00007032	84
+82	403	2	84
+83	15	1	64
+83	297	1.00007032	102
+83	405	2	102
+84	15	1	0
+84	297	1.00007032	0
+84	405	2	0
+85	17	1	64
+85	299	1.00007032	102
+85	407	2	102
+86	18	1.00000576	64
+86	301	1.00007912	102
+86	408	2.0000088	102
+87	19	1.00000586	64
+87	302	1.00007922	102
+87	409	2.0000089	102
+88	19	1.00000586	64
+88	302	1.00007922	102
+88	409	2.0000089	102
+89	25	1.00000586	64
+90	25	1.00000586	0
+91	26	1.00000586	64
+92	26	1.00000586	0
+93	27	1.00000586	64
+93	305	1.00007922	102
+93	412	2.0000089	102
+94	27	1.00000586	0
+94	305	1.00007922	0
+94	412	2.0000089	0
+95	28	1.00000586	64
+96	28	1.00000586	0
+97	33	1.00000586	64
+98	34	1.00000586	64
+99	35	1.00000586	64
+99	307	1.00007922	102
+99	414	2.0000089	102
+100	36	1.00000586	64
+101	38	1.00001162	64
+102	39	1.00001162	64
+103	40	1.00001162	64
+103	309	1.00008802	102
+103	416	2.0000177	102
+104	41	1.00001162	64
+105	42	1.00001172	64
+106	42	1.00001172	64
+107	43	1.00001172	64
+108	43	1.00001172	64
+109	44	1.00001172	64
+109	310	1.00008812	102
+109	417	2.0000178	102
+110	44	1.00001172	64
+110	310	1.00008812	102
+110	417	2.0000178	102
+111	45	1.00001172	64
+112	45	1.00001172	64
+113	46	1.00001172	28
+114	47	1.00001172	28
+115	60	1.00001172	64
+115	313	1.00008812	102
+115	420	2.0000178	102
+116	60	1.00001172	0
+116	313	1.00008812	0
+116	420	2.0000178	0
+117	61	1.00001172	64
+118	61	1.00001172	0
+119	62	1.00001172	64
+120	62	1.00001172	0
+121	63	1.00001172	64
+122	63	1.00001172	0
+123	64	1.00001172	64
+124	64	1.00001172	0
+125	65	1.00001172	64
+126	65	1.00001172	0
+127	72	1.00001172	64
+127	315	1.00008812	102
+127	422	2.0000178	102
+128	73	1.00001172	64
+129	74	1.00001172	64
+130	75	1.00001172	64
+131	76	1.00001172	64
+132	77	1.00001172	64
+133	82	1.00001748	64
+133	317	1.00009692	102
+133	424	2.0000266	102
+134	83	1.00001748	64
+135	84	1.00001748	64
+136	85	1.00001748	64
+137	86	1.00001748	64
+138	87	1.00001748	64
+139	88	1.00001758	64
+139	318	1.00009702	102
+139	425	2.0000267	102
+140	88	1.00001758	64
+140	318	1.00009702	102
+140	425	2.0000267	102
+141	89	1.00001758	64
+142	89	1.00001758	64
+143	90	1.00001758	64
+144	90	1.00001758	64
+145	91	1.00001758	64
+146	91	1.00001758	64
+147	92	1.00001758	64
+148	92	1.00001758	64
+149	93	1.00001758	64
+150	93	1.00001758	64
+151	109	1.00001758	64
+152	109	1.00001758	0
+153	110	1.00001758	64
+153	321	1.00009702	102
+153	428	2.0000267	102
+154	110	1.00001758	0
+154	321	1.00009702	0
+154	428	2.0000267	0
+155	111	1.00001758	64
+156	111	1.00001758	0
+157	112	1.00001758	64
+158	112	1.00001758	0
+159	113	1.00001758	64
+160	113	1.00001758	0
+161	114	1.00001758	64
+162	114	1.00001758	0
+163	115	1.00001758	64
+164	115	1.00001758	0
+165	116	1.00001758	64
+166	116	1.00001758	0
+167	117	1.00001758	64
+168	117	1.00001758	0
+169	127	1.00001758	64
+170	128	1.00001758	64
+170	323	1.00009702	102
+170	430	2.0000267	102
+171	129	1.00001758	64
+172	130	1.00001758	64
+173	131	1.00001758	64
+174	132	1.00001758	64
+175	133	1.00001758	64
+176	134	1.00001758	64
+177	135	1.00001758	64
+178	142	1.00002334	64
+179	143	1.00002334	64
+179	325	1.00010582	102
+179	432	2.0000355	102
+180	144	1.00002334	64
+181	145	1.00002334	64
+182	146	1.00002334	64
+183	147	1.00002334	64
+184	148	1.00002334	64
+185	149	1.00002334	64
+186	150	1.00002334	64
+187	151	1.00002344	64
+188	151	1.00002344	64
+189	152	1.00002344	64
+189	326	1.00010592	102
+189	433	2.0000356	102
+190	152	1.00002344	64
+190	326	1.00010592	102
+190	433	2.0000356	102
+191	153	1.00002344	64
+192	153	1.00002344	64
+193	154	1.00002344	64
+194	154	1.00002344	64
+195	155	1.00002344	64
+196	155	1.00002344	64
+197	156	1.00002344	64
+198	156	1.00002344	64
+199	157	1.00002344	64
+200	157	1.00002344	64
+201	158	1.00002344	64
+202	158	1.00002344	64
+203	159	1.00002344	64
+204	159	1.00002344	64
+205	175	1.00002344	64
+205	329	1.00010592	102
+205	436	2.0000356	102
+206	175	1.00002344	0
+206	329	1.00010592	0
+206	436	2.0000356	0
+207	176	1.00002344	64
+208	176	1.00002344	0
+209	177	1.00002344	64
+210	177	1.00002344	0
+211	178	1.00002344	64
+212	178	1.00002344	0
+213	179	1.00002344	64
+214	179	1.00002344	0
+215	180	1.00002344	64
+216	180	1.00002344	0
+217	187	1.00002344	64
+217	331	1.00010592	102
+217	438	2.0000356	102
+218	188	1.00002344	64
+219	189	1.00002344	64
+220	190	1.00002344	64
+221	191	1.00002344	64
+222	192	1.00002344	64
+223	202	1.0000292	64
+223	333	1.00011472	102
+223	440	2.0000444	102
+224	203	1.0000292	64
+225	204	1.0000292	64
+226	205	1.0000292	64
+227	206	1.0000292	64
+228	207	1.0000292	64
+229	208	1.0000293	64
+229	334	1.00011482	102
+229	441	2.0000445	102
+230	208	1.0000293	64
+230	334	1.00011482	102
+230	441	2.0000445	102
+231	209	1.0000293	64
+232	209	1.0000293	64
+233	210	1.0000293	64
+234	210	1.0000293	64
+235	211	1.0000293	64
+236	211	1.0000293	64
+237	212	1.0000293	64
+238	212	1.0000293	64
+239	213	1.0000293	64
+240	213	1.0000293	64
+241	222	1.0000293	64
+241	337	1.00011482	102
+241	444	2.0000445	102
+242	222	1.0000293	0
+242	337	1.00011482	0
+242	444	2.0000445	0
+243	223	1.0000293	64
+244	223	1.0000293	0
+245	226	1.0000293	64
+245	339	1.00011482	102
+245	446	2.0000445	102
+246	227	1.0000293	64
+247	234	1.00003506	64
+247	341	1.00012362	102
+247	448	2.0000533	102
+248	235	1.00003506	64
+249	236	1.00003516	64
+249	342	1.00012372	102
+249	449	2.0000534	102
+250	236	1.00003516	64
+250	342	1.00012372	102
+250	449	2.0000534	102
+251	237	1.00003516	64
+252	237	1.00003516	64
+253	238	1.00003516	28
+253	343	1.00012372	84
+253	450	2.0000534	84
+254	241	1.00003516	1
+255	243	1.00003516	28
+255	347	1.00012372	84
+255	454	2.0000534	84
+256	245	1.00003516	64
+256	349	1.00012372	102
+256	456	2.0000534	102
+257	245	1.00003516	0
+257	349	1.00012372	0
+257	456	2.0000534	0
+258	247	1.00003516	64
+258	351	1.00012372	102
+258	458	2.0000534	102
+259	250	1.00004092	64
+259	353	1.00013252	102
+259	460	2.0000622	102
+260	251	1.00004102	64
+260	354	1.00013262	102
+260	461	2.0000623	102
+261	251	1.00004102	64
+261	354	1.00013262	102
+261	461	2.0000623	102
+262	254	1.00004102	64
+262	357	1.00013262	102
+262	464	2.0000623	102
+263	254	1.00004102	0
+263	357	1.00013262	0
+263	464	2.0000623	0
+264	256	1.00004102	64
+264	359	1.00013262	102
+264	466	2.0000623	102
+265	258	1.00004678	64
+265	361	1.00014142	102
+265	468	2.0000711	102
+266	259	1.00004688	64
+266	362	1.00014152	102
+266	469	2.0000712	102
+267	259	1.00004688	64
+267	362	1.00014152	102
+267	469	2.0000712	102
+268	262	1.00004688	64
+268	365	1.00014152	102
+268	472	2.0000712	102
+269	262	1.00004688	0
+269	365	1.00014152	0
+269	472	2.0000712	0
+270	264	1.00004688	64
+270	367	1.00014152	102
+270	474	2.0000712	102
+271	266	1.00005264	64
+271	369	1.00015032	102
+271	476	2.00008	102
+272	267	1.00005274	64
+272	370	1.00015042	102
+272	477	2.0000801	102
+273	267	1.00005274	64
+273	370	1.00015042	102
+273	477	2.0000801	102
+274	270	1.00005274	64
+274	373	1.00015042	102
+274	480	2.0000801	102
+275	270	1.00005274	0
+275	373	1.00015042	0
+275	480	2.0000801	0
+276	272	1.00005274	64
+276	375	1.00015042	102
+276	482	2.0000801	102
+277	274	1.0000585	64
+277	377	1.00015922	102
+277	484	2.0000889	102
+278	275	1.0000586	64
+278	378	1.00015932	102
+278	485	2.000089	102
+279	275	1.0000586	64
+279	378	1.00015932	102
+279	485	2.000089	102
+280	278	1.0000586	64
+280	381	1.00015932	102
+280	488	2.000089	102
+281	278	1.0000586	0
+281	381	1.00015932	0
+281	488	2.000089	0
+282	280	1.0000586	64
+282	383	1.00015932	102
+282	490	2.000089	102
+283	282	1.00006436	64
+283	385	1.00016812	102
+283	492	2.0000978	102
+284	283	1.00006446	64
+284	386	1.00016822	102
+284	493	2.0000979	102
+285	283	1.00006446	64
+285	386	1.00016822	102
+285	493	2.0000979	102
+286	286	1.00006446	64
+286	389	1.00016822	102
+286	496	2.0000979	102
+287	286	1.00006446	0
+287	389	1.00016822	0
+287	496	2.0000979	0
+288	288	1.00006446	64
+288	391	1.00016822	102
+288	498	2.0000979	102
+289	290	1.00007022	64
+289	393	1.00017702	102
+290	291	1.00007032	64
+290	394	1.00017712	102
+291	291	1.00007032	64
+291	394	1.00017712	102
+292	292	1.00007032	28
+292	395	1.00017712	84
+293	398	1.00017712	0
+294	398	1.00017712	0.00017712
+

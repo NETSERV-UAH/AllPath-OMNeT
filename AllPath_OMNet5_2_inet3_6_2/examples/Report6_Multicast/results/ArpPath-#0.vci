@@ -1,0 +1,1991 @@
+file 79258 1513718443                                           
+version 2
+run ArpPath-0-20171220-00:48:14-5428
+attr configname ArpPath
+attr datetime 20171220-00:48:14
+attr experiment ArpPath
+attr inifile Tree.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TreeLAN
+attr processid 5428
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.switch*.relayUnit.isArpPath true
+param *.switch*.relayUnit.isArpPathLinkFail false
+param *.switch*.relayUnit.isIndependentPath false
+param *.switch*.relayUnit.isRerouteArpPath false
+param *.switch*.relayUnit.isLowResArpPath false
+param *.switch*.relayUnit.isUsingL3inL2 false
+param *.switch*.relayUnit.isOurFlowPath false
+param *.switch*.relayUnit.isMulticastPath false
+param **.ip.independentofARP false
+param *.host1.numPingApps 2
+param *.host1.pingApp[0].destAddr "\"server1\""
+param *.host1.pingApp[1].destAddr "\"server2\""
+param *.host1.pingApp[0].startTime 1s
+param *.host1.pingApp[1].startTime 2s
+param *.host1.pingApp[*].sendInterval 3s
+param **.eth[*].mac.duplexMode true
+param **.eth[*].macType "\"EtherMACFullDuplexNew\""
+param **.eth[*].queueType "\"DropTailQueue\""
+param **.switch*.relayUnitType "\"MACRelayUnitAPB\""
+param **.macTable.agingTime 120s
+param **.relayUnit.learningTableAgingTime 120s
+param **.relayUnit.blockingTableAgingTime 120s
+
+vector 0 TreeLAN.host1.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 TreeLAN.host1.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 TreeLAN.host2.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 TreeLAN.host2.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 TreeLAN.host3.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 5 TreeLAN.host3.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 6 TreeLAN.host4.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 TreeLAN.host4.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 8 TreeLAN.host5.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 9 TreeLAN.host5.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 10 TreeLAN.host6.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 11 TreeLAN.host6.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 12 TreeLAN.server2.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 13 TreeLAN.server2.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 14 TreeLAN.server1.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 15 TreeLAN.server1.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 16 TreeLAN.switch7.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 17 TreeLAN.switch7.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 18 TreeLAN.switch7.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 19 TreeLAN.switch7.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 20 TreeLAN.switch7.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 21 TreeLAN.switch7.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 22 TreeLAN.switch7.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 23 TreeLAN.switch7.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 24 TreeLAN.switch7.eth[4].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 25 TreeLAN.switch7.eth[4].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 26 TreeLAN.switch8.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 27 TreeLAN.switch8.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 28 TreeLAN.switch8.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 29 TreeLAN.switch8.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 30 TreeLAN.switch8.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 31 TreeLAN.switch8.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 32 TreeLAN.switch8.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 33 TreeLAN.switch8.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 34 TreeLAN.switch8.eth[4].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 35 TreeLAN.switch8.eth[4].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 36 TreeLAN.switch3.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 37 TreeLAN.switch3.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 38 TreeLAN.switch3.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 39 TreeLAN.switch3.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 40 TreeLAN.switch3.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 41 TreeLAN.switch3.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 42 TreeLAN.switch3.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 43 TreeLAN.switch3.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 44 TreeLAN.switch4.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 45 TreeLAN.switch4.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 46 TreeLAN.switch4.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 47 TreeLAN.switch4.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 48 TreeLAN.switch4.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 49 TreeLAN.switch4.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 50 TreeLAN.switch4.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 51 TreeLAN.switch4.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 52 TreeLAN.switch1.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 53 TreeLAN.switch1.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 54 TreeLAN.switch1.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 55 TreeLAN.switch1.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 56 TreeLAN.switch1.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 57 TreeLAN.switch1.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 58 TreeLAN.switch1.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 59 TreeLAN.switch1.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 60 TreeLAN.switch2.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 61 TreeLAN.switch2.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 62 TreeLAN.switch2.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 63 TreeLAN.switch2.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 64 TreeLAN.switch2.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 65 TreeLAN.switch2.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 66 TreeLAN.switch2.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 67 TreeLAN.switch2.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 68 TreeLAN.switch5.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 69 TreeLAN.switch5.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 70 TreeLAN.switch5.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 71 TreeLAN.switch5.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 72 TreeLAN.switch5.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 73 TreeLAN.switch5.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 74 TreeLAN.switch5.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 75 TreeLAN.switch5.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 76 TreeLAN.switch6.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 77 TreeLAN.switch6.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 78 TreeLAN.switch6.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 79 TreeLAN.switch6.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 80 TreeLAN.switch6.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 81 TreeLAN.switch6.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 82 TreeLAN.switch6.eth[3].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 83 TreeLAN.switch6.eth[3].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 84 TreeLAN.switch9.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 85 TreeLAN.switch9.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 86 TreeLAN.switch9.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 87 TreeLAN.switch9.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 88 TreeLAN.switch9.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 89 TreeLAN.switch9.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 90 TreeLAN.switch10.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 91 TreeLAN.switch10.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 92 TreeLAN.switch10.eth[1].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 93 TreeLAN.switch10.eth[1].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 94 TreeLAN.switch10.eth[2].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 95 TreeLAN.switch10.eth[2].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 96 TreeLAN.host1.pingApp[0] pingTxSeq:vector ETV
+attr interpolationmode none
+attr title "ping tx seq, vector"
+vector 97 TreeLAN.host1.networkLayer.arp sentReq:vector ETV
+attr title "ARP request sent, vector"
+vector 98 TreeLAN.host1.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 99 TreeLAN.host1.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 100 TreeLAN.host1.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 101 TreeLAN.host1.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 102 TreeLAN.host1.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 103 TreeLAN.switch7.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 104 TreeLAN.switch7.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 105 TreeLAN.switch7.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 106 TreeLAN.switch7.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 107 TreeLAN.switch7.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 108 TreeLAN.switch7.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 109 TreeLAN.switch7.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 110 TreeLAN.switch7.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 111 TreeLAN.switch7.eth[4].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 112 TreeLAN.switch7.eth[4].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 113 TreeLAN.switch7.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 114 TreeLAN.switch7.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 115 TreeLAN.switch7.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 116 TreeLAN.switch7.eth[4].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 117 TreeLAN.switch7.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 118 TreeLAN.switch7.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 119 TreeLAN.switch7.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 120 TreeLAN.switch7.eth[4].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 121 TreeLAN.host2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 122 TreeLAN.host2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 123 TreeLAN.host3.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 124 TreeLAN.host3.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 125 TreeLAN.switch3.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 126 TreeLAN.switch3.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 127 TreeLAN.switch4.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 128 TreeLAN.switch4.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 129 TreeLAN.host2.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 130 TreeLAN.host3.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 131 TreeLAN.switch3.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 132 TreeLAN.switch3.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 133 TreeLAN.switch3.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 134 TreeLAN.switch3.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 135 TreeLAN.switch3.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 136 TreeLAN.switch3.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 137 TreeLAN.switch4.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 138 TreeLAN.switch4.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 139 TreeLAN.switch4.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 140 TreeLAN.switch4.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 141 TreeLAN.switch4.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 142 TreeLAN.switch4.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 143 TreeLAN.switch3.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 144 TreeLAN.switch3.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 145 TreeLAN.switch3.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 146 TreeLAN.switch4.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 147 TreeLAN.switch4.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 148 TreeLAN.switch4.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 149 TreeLAN.switch3.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 150 TreeLAN.switch3.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 151 TreeLAN.switch3.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 152 TreeLAN.switch4.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 153 TreeLAN.switch4.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 154 TreeLAN.switch4.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 155 TreeLAN.switch8.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 156 TreeLAN.switch8.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 157 TreeLAN.switch1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 158 TreeLAN.switch1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 159 TreeLAN.switch2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 160 TreeLAN.switch2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 161 TreeLAN.switch8.eth[4].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 162 TreeLAN.switch8.eth[4].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 163 TreeLAN.switch1.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 164 TreeLAN.switch1.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 165 TreeLAN.switch2.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 166 TreeLAN.switch2.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 167 TreeLAN.switch8.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 168 TreeLAN.switch8.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 169 TreeLAN.switch8.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 170 TreeLAN.switch8.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 171 TreeLAN.switch8.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 172 TreeLAN.switch8.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 173 TreeLAN.switch8.eth[4].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 174 TreeLAN.switch8.eth[4].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 175 TreeLAN.switch1.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 176 TreeLAN.switch1.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 177 TreeLAN.switch1.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 178 TreeLAN.switch1.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 179 TreeLAN.switch1.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 180 TreeLAN.switch1.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 181 TreeLAN.switch2.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 182 TreeLAN.switch2.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 183 TreeLAN.switch2.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 184 TreeLAN.switch2.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 185 TreeLAN.switch2.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 186 TreeLAN.switch2.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 187 TreeLAN.switch8.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 188 TreeLAN.switch8.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 189 TreeLAN.switch8.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 190 TreeLAN.switch8.eth[4].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 191 TreeLAN.switch1.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 192 TreeLAN.switch1.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 193 TreeLAN.switch1.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 194 TreeLAN.switch2.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 195 TreeLAN.switch2.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 196 TreeLAN.switch2.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 197 TreeLAN.switch8.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 198 TreeLAN.switch8.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 199 TreeLAN.switch8.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 200 TreeLAN.switch1.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 201 TreeLAN.switch1.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 202 TreeLAN.switch2.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 203 TreeLAN.switch2.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 204 TreeLAN.host4.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 205 TreeLAN.host4.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 206 TreeLAN.host5.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 207 TreeLAN.host5.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 208 TreeLAN.host6.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 209 TreeLAN.host6.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 210 TreeLAN.switch5.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 211 TreeLAN.switch5.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 212 TreeLAN.switch6.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 213 TreeLAN.switch6.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 214 TreeLAN.switch5.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 215 TreeLAN.switch5.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 216 TreeLAN.switch6.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 217 TreeLAN.switch6.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 218 TreeLAN.host4.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 219 TreeLAN.host5.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 220 TreeLAN.host6.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 221 TreeLAN.switch5.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 222 TreeLAN.switch5.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 223 TreeLAN.switch5.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 224 TreeLAN.switch5.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 225 TreeLAN.switch5.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 226 TreeLAN.switch5.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 227 TreeLAN.switch6.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 228 TreeLAN.switch6.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 229 TreeLAN.switch6.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 230 TreeLAN.switch6.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 231 TreeLAN.switch6.eth[3].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 232 TreeLAN.switch6.eth[3].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 233 TreeLAN.switch5.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 234 TreeLAN.switch5.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 235 TreeLAN.switch5.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 236 TreeLAN.switch6.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 237 TreeLAN.switch6.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 238 TreeLAN.switch6.eth[3].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 239 TreeLAN.switch8.eth[4].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 240 TreeLAN.switch1.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 241 TreeLAN.switch2.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 242 TreeLAN.switch4.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 243 TreeLAN.switch4.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 244 TreeLAN.switch4.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 245 TreeLAN.switch4.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 246 TreeLAN.switch4.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 247 TreeLAN.switch4.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 248 TreeLAN.switch5.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 249 TreeLAN.switch5.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 250 TreeLAN.switch6.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 251 TreeLAN.switch6.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 252 TreeLAN.switch9.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 253 TreeLAN.switch9.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 254 TreeLAN.switch10.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 255 TreeLAN.switch10.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 256 TreeLAN.switch9.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 257 TreeLAN.switch9.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 258 TreeLAN.switch10.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 259 TreeLAN.switch10.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 260 TreeLAN.switch9.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 261 TreeLAN.switch9.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 262 TreeLAN.switch9.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 263 TreeLAN.switch9.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 264 TreeLAN.switch10.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 265 TreeLAN.switch10.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 266 TreeLAN.switch10.eth[2].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 267 TreeLAN.switch10.eth[2].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 268 TreeLAN.switch9.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 269 TreeLAN.switch9.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 270 TreeLAN.switch10.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 271 TreeLAN.switch10.eth[2].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 272 TreeLAN.switch5.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 273 TreeLAN.switch6.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 274 TreeLAN.switch2.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 275 TreeLAN.switch2.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 276 TreeLAN.switch2.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 277 TreeLAN.switch2.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 278 TreeLAN.switch9.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 279 TreeLAN.switch10.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 280 TreeLAN.server1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 281 TreeLAN.server1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 282 TreeLAN.server2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 283 TreeLAN.server2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 284 TreeLAN.server1.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 285 TreeLAN.server2.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 286 TreeLAN.server1.networkLayer.arp sentReply:vector ETV
+attr title "ARP replies sent, vector"
+vector 287 TreeLAN.server1.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 288 TreeLAN.server1.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 289 TreeLAN.server1.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 290 TreeLAN.server1.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 291 TreeLAN.switch9.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 292 TreeLAN.switch10.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 293 TreeLAN.switch6.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 294 TreeLAN.switch6.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 295 TreeLAN.switch6.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 296 TreeLAN.switch6.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 297 TreeLAN.server1.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 298 TreeLAN.switch9.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 299 TreeLAN.switch9.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 300 TreeLAN.switch9.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 301 TreeLAN.switch9.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 302 TreeLAN.switch9.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 303 TreeLAN.switch9.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 304 TreeLAN.switch5.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 305 TreeLAN.switch5.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 306 TreeLAN.switch5.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 307 TreeLAN.switch5.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 308 TreeLAN.switch5.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+0	51922 9 0 0 0 0 1 0 0 0 0
+1	51931 29 0 23 0 1 3 0 1 1 1
+2	51960 9 0 0 0 0 1 0 0 0 0
+3	51969 9 0 0 0 0 1 0 0 0 0
+4	51978 9 0 0 0 0 1 0 0 0 0
+5	51987 9 0 0 0 0 1 0 0 0 0
+6	51996 9 0 0 0 0 1 0 0 0 0
+7	52005 9 0 0 0 0 1 0 0 0 0
+8	52014 9 0 0 0 0 1 0 0 0 0
+9	52023 9 0 0 0 0 1 0 0 0 0
+10	52032 10 0 0 0 0 1 0 0 0 0
+11	52042 10 0 0 0 0 1 0 0 0 0
+12	52052 10 0 0 0 0 1 0 0 0 0
+13	52062 10 0 0 0 0 1 0 0 0 0
+14	52072 10 0 0 0 0 1 0 0 0 0
+15	52082 52 0 323 0 1.00003516 3 0 1 1 1
+16	52134 10 0 0 0 0 1 0 0 0 0
+17	52144 10 0 0 0 0 1 0 0 0 0
+18	52154 10 0 0 0 0 1 0 0 0 0
+19	52164 50 0 34 0 1.00000586 3 0 1 1 1
+20	52214 10 0 0 0 0 1 0 0 0 0
+21	52224 50 0 35 0 1.00000586 3 0 1 1 1
+22	52274 10 0 0 0 0 1 0 0 0 0
+23	52284 50 0 36 0 1.00000586 3 0 1 1 1
+24	52334 10 0 0 0 0 1 0 0 0 0
+25	52344 50 0 37 0 1.00000586 3 0 1 1 1
+26	52394 10 0 0 0 0 1 0 0 0 0
+27	52404 52 0 130 0 1.00001758 3 0 1 1 1
+28	52456 10 0 0 0 0 1 0 0 0 0
+29	52466 52 0 131 0 1.00001758 3 0 1 1 1
+30	52518 10 0 0 0 0 1 0 0 0 0
+31	52528 52 0 132 0 1.00001758 3 0 1 1 1
+32	52580 10 0 0 0 0 1 0 0 0 0
+33	52590 10 0 0 0 0 1 0 0 0 0
+34	52600 10 0 0 0 0 1 0 0 0 0
+35	52610 52 0 133 0 1.00001758 3 0 1 1 1
+36	52662 10 0 0 0 0 1 0 0 0 0
+37	52672 10 0 0 0 0 1 0 0 0 0
+38	52682 10 0 0 0 0 1 0 0 0 0
+39	52692 50 0 72 0 1.00001172 3 0 1 1 1
+40	52742 10 0 0 0 0 1 0 0 0 0
+41	52752 50 0 73 0 1.00001172 3 0 1 1 1
+42	52802 10 0 0 0 0 1 0 0 0 0
+43	52812 50 0 74 0 1.00001172 3 0 1 1 1
+44	52862 10 0 0 0 0 1 0 0 0 0
+45	52872 10 0 0 0 0 1 0 0 0 0
+46	52882 10 0 0 0 0 1 0 0 0 0
+47	52892 50 0 75 0 1.00001172 3 0 1 1 1
+48	52942 10 0 0 0 0 1 0 0 0 0
+49	52952 50 0 76 0 1.00001172 3 0 1 1 1
+50	53002 10 0 0 0 0 1 0 0 0 0
+51	53012 50 0 77 0 1.00001172 3 0 1 1 1
+52	53062 10 0 0 0 0 1 0 0 0 0
+53	53072 10 0 0 0 0 1 0 0 0 0
+54	53082 10 0 0 0 0 1 0 0 0 0
+55	53092 52 0 134 0 1.00001758 3 0 1 1 1
+56	53144 10 0 0 0 0 1 0 0 0 0
+57	53154 52 0 135 0 1.00001758 3 0 1 1 1
+58	53206 10 0 0 0 0 1 0 0 0 0
+59	53216 52 0 136 0 1.00001758 3 0 1 1 1
+60	53268 10 0 0 0 0 1 0 0 0 0
+61	53278 10 0 0 0 0 1 0 0 0 0
+62	53288 10 0 0 0 0 1 0 0 0 0
+63	53298 52 0 137 0 1.00001758 3 0 1 1 1
+64	53350 10 0 0 0 0 1 0 0 0 0
+65	53360 52 0 138 0 1.00001758 3 0 1 1 1
+66	53412 10 0 0 0 0 1 0 0 0 0
+67	53422 52 0 139 0 1.00001758 3 0 1 1 1
+68	53474 10 0 0 0 0 1 0 0 0 0
+69	53484 52 0 353 0 1.00004688 3 0 1 1 1
+70	53536 10 0 0 0 0 1 0 0 0 0
+71	53546 52 0 212 0 1.00002344 3 0 1 1 1
+72	53598 10 0 0 0 0 1 0 0 0 0
+73	53608 52 0 213 0 1.00002344 3 0 1 1 1
+74	53660 10 0 0 0 0 1 0 0 0 0
+75	53670 52 0 214 0 1.00002344 3 0 1 1 1
+76	53722 10 0 0 0 0 1 0 0 0 0
+77	53732 10 0 0 0 0 1 0 0 0 0
+78	53742 10 0 0 0 0 1 0 0 0 0
+79	53752 52 0 215 0 1.00002344 3 0 1 1 1
+80	53804 10 0 0 0 0 1 0 0 0 0
+81	53814 52 0 216 0 1.00002344 3 0 1 1 1
+82	53866 10 0 0 0 0 1 0 0 0 0
+83	53876 52 0 217 0 1.00002344 3 0 1 1 1
+84	53928 10 0 0 0 0 1 0 0 0 0
+85	53938 50 0 278 0 1.0000293 3 0 1 1 1
+86	53988 10 0 0 0 0 1 0 0 0 0
+87	53998 52 0 343 0 1.00004102 3 0 1 1 1
+88	54050 10 0 0 0 0 1 0 0 0 0
+89	54060 50 0 279 0 1.0000293 3 0 1 1 1
+90	54110 10 0 0 0 0 1 0 0 0 0
+91	54120 50 0 280 0 1.0000293 3 0 1 1 1
+92	54170 10 0 0 0 0 1 0 0 0 0
+93	54180 10 0 0 0 0 1 0 0 0 0
+94	54190 10 0 0 0 0 1 0 0 0 0
+95	54200 50 0 281 0 1.0000293 3 0 1 1 1
+96	54250 11 17 17 1 1 1 0 0 0 0
+97	54261 11 19 19 1 1 1 1 1 1 1
+98	54272 12 21 21 1 1 1 28 28 28 784
+99	54284 12 23 23 1 1 1 64 64 64 4096
+100	54296 12 23 23 1 1 1 0 0 0 0
+101	54308 13 25 25 1 1 1 64 64 64 4096
+102	54321 22 27 27 1.00000576 1.00000576 1 64 64 64 4096
+103	54343 22 28 28 1.00000586 1.00000586 1 64 64 64 4096
+104	54365 22 28 28 1.00000586 1.00000586 1 64 64 64 4096
+105	54387 22 34 34 1.00000586 1.00000586 1 64 64 64 4096
+106	54409 21 34 34 1.00000586 1.00000586 1 0 0 0 0
+107	54430 22 35 35 1.00000586 1.00000586 1 64 64 64 4096
+108	54452 21 35 35 1.00000586 1.00000586 1 0 0 0 0
+109	54473 22 36 36 1.00000586 1.00000586 1 64 64 64 4096
+110	54495 21 36 36 1.00000586 1.00000586 1 0 0 0 0
+111	54516 22 37 37 1.00000586 1.00000586 1 64 64 64 4096
+112	54538 21 37 37 1.00000586 1.00000586 1 0 0 0 0
+113	54559 22 42 42 1.00000586 1.00000586 1 64 64 64 4096
+114	54581 22 43 43 1.00000586 1.00000586 1 64 64 64 4096
+115	54603 22 44 44 1.00000586 1.00000586 1 64 64 64 4096
+116	54625 22 45 45 1.00000586 1.00000586 1 64 64 64 4096
+117	54647 22 50 50 1.00001162 1.00001162 1 64 64 64 4096
+118	54669 22 51 51 1.00001162 1.00001162 1 64 64 64 4096
+119	54691 22 52 52 1.00001162 1.00001162 1 64 64 64 4096
+120	54713 22 53 53 1.00001162 1.00001162 1 64 64 64 4096
+121	54735 22 54 54 1.00001172 1.00001172 1 64 64 64 4096
+122	54757 22 54 54 1.00001172 1.00001172 1 64 64 64 4096
+123	54779 22 55 55 1.00001172 1.00001172 1 64 64 64 4096
+124	54801 22 55 55 1.00001172 1.00001172 1 64 64 64 4096
+125	54823 22 56 56 1.00001172 1.00001172 1 64 64 64 4096
+126	54845 22 56 56 1.00001172 1.00001172 1 64 64 64 4096
+127	54867 22 57 57 1.00001172 1.00001172 1 64 64 64 4096
+128	54889 22 57 57 1.00001172 1.00001172 1 64 64 64 4096
+129	54911 22 58 58 1.00001172 1.00001172 1 28 28 28 784
+130	54933 22 59 59 1.00001172 1.00001172 1 28 28 28 784
+131	54955 22 72 72 1.00001172 1.00001172 1 64 64 64 4096
+132	54977 21 72 72 1.00001172 1.00001172 1 0 0 0 0
+133	54998 22 73 73 1.00001172 1.00001172 1 64 64 64 4096
+134	55020 21 73 73 1.00001172 1.00001172 1 0 0 0 0
+135	55041 22 74 74 1.00001172 1.00001172 1 64 64 64 4096
+136	55063 21 74 74 1.00001172 1.00001172 1 0 0 0 0
+137	55084 22 75 75 1.00001172 1.00001172 1 64 64 64 4096
+138	55106 21 75 75 1.00001172 1.00001172 1 0 0 0 0
+139	55127 22 76 76 1.00001172 1.00001172 1 64 64 64 4096
+140	55149 21 76 76 1.00001172 1.00001172 1 0 0 0 0
+141	55170 22 77 77 1.00001172 1.00001172 1 64 64 64 4096
+142	55192 21 77 77 1.00001172 1.00001172 1 0 0 0 0
+143	55213 22 84 84 1.00001172 1.00001172 1 64 64 64 4096
+144	55235 22 85 85 1.00001172 1.00001172 1 64 64 64 4096
+145	55257 22 86 86 1.00001172 1.00001172 1 64 64 64 4096
+146	55279 22 87 87 1.00001172 1.00001172 1 64 64 64 4096
+147	55301 22 88 88 1.00001172 1.00001172 1 64 64 64 4096
+148	55323 22 89 89 1.00001172 1.00001172 1 64 64 64 4096
+149	55345 23 102 102 1.00001748 1.00001748 1 64 64 64 4096
+150	55368 23 103 103 1.00001748 1.00001748 1 64 64 64 4096
+151	55391 23 104 104 1.00001748 1.00001748 1 64 64 64 4096
+152	55414 23 105 105 1.00001748 1.00001748 1 64 64 64 4096
+153	55437 23 106 106 1.00001748 1.00001748 1 64 64 64 4096
+154	55460 23 107 107 1.00001748 1.00001748 1 64 64 64 4096
+155	55483 23 108 108 1.00001758 1.00001758 1 64 64 64 4096
+156	55506 23 108 108 1.00001758 1.00001758 1 64 64 64 4096
+157	55529 23 109 109 1.00001758 1.00001758 1 64 64 64 4096
+158	55552 23 109 109 1.00001758 1.00001758 1 64 64 64 4096
+159	55575 23 110 110 1.00001758 1.00001758 1 64 64 64 4096
+160	55598 23 110 110 1.00001758 1.00001758 1 64 64 64 4096
+161	55621 23 111 111 1.00001758 1.00001758 1 64 64 64 4096
+162	55644 23 111 111 1.00001758 1.00001758 1 64 64 64 4096
+163	55667 23 112 112 1.00001758 1.00001758 1 64 64 64 4096
+164	55690 23 112 112 1.00001758 1.00001758 1 64 64 64 4096
+165	55713 23 113 113 1.00001758 1.00001758 1 64 64 64 4096
+166	55736 23 113 113 1.00001758 1.00001758 1 64 64 64 4096
+167	55759 23 130 130 1.00001758 1.00001758 1 64 64 64 4096
+168	55782 22 130 130 1.00001758 1.00001758 1 0 0 0 0
+169	55804 23 131 131 1.00001758 1.00001758 1 64 64 64 4096
+170	55827 22 131 131 1.00001758 1.00001758 1 0 0 0 0
+171	55849 23 132 132 1.00001758 1.00001758 1 64 64 64 4096
+172	55872 22 132 132 1.00001758 1.00001758 1 0 0 0 0
+173	55894 23 133 133 1.00001758 1.00001758 1 64 64 64 4096
+174	55917 22 133 133 1.00001758 1.00001758 1 0 0 0 0
+175	55939 23 134 134 1.00001758 1.00001758 1 64 64 64 4096
+176	55962 22 134 134 1.00001758 1.00001758 1 0 0 0 0
+177	55984 23 135 135 1.00001758 1.00001758 1 64 64 64 4096
+178	56007 22 135 135 1.00001758 1.00001758 1 0 0 0 0
+179	56029 23 136 136 1.00001758 1.00001758 1 64 64 64 4096
+180	56052 22 136 136 1.00001758 1.00001758 1 0 0 0 0
+181	56074 23 137 137 1.00001758 1.00001758 1 64 64 64 4096
+182	56097 22 137 137 1.00001758 1.00001758 1 0 0 0 0
+183	56119 23 138 138 1.00001758 1.00001758 1 64 64 64 4096
+184	56142 22 138 138 1.00001758 1.00001758 1 0 0 0 0
+185	56164 23 139 139 1.00001758 1.00001758 1 64 64 64 4096
+186	56187 22 139 139 1.00001758 1.00001758 1 0 0 0 0
+187	56209 23 150 150 1.00001758 1.00001758 1 64 64 64 4096
+188	56232 23 151 151 1.00001758 1.00001758 1 64 64 64 4096
+189	56255 23 152 152 1.00001758 1.00001758 1 64 64 64 4096
+190	56278 23 153 153 1.00001758 1.00001758 1 64 64 64 4096
+191	56301 23 154 154 1.00001758 1.00001758 1 64 64 64 4096
+192	56324 23 155 155 1.00001758 1.00001758 1 64 64 64 4096
+193	56347 23 156 156 1.00001758 1.00001758 1 64 64 64 4096
+194	56370 23 157 157 1.00001758 1.00001758 1 64 64 64 4096
+195	56393 23 158 158 1.00001758 1.00001758 1 64 64 64 4096
+196	56416 23 159 159 1.00001758 1.00001758 1 64 64 64 4096
+197	56439 23 179 179 1.00002334 1.00002334 1 64 64 64 4096
+198	56462 23 180 180 1.00002334 1.00002334 1 64 64 64 4096
+199	56485 23 181 181 1.00002334 1.00002334 1 64 64 64 4096
+200	56508 23 182 182 1.00002334 1.00002334 1 64 64 64 4096
+201	56531 23 183 183 1.00002334 1.00002334 1 64 64 64 4096
+202	56554 23 184 184 1.00002334 1.00002334 1 64 64 64 4096
+203	56577 23 185 185 1.00002334 1.00002334 1 64 64 64 4096
+204	56600 23 186 186 1.00002344 1.00002344 1 64 64 64 4096
+205	56623 23 186 186 1.00002344 1.00002344 1 64 64 64 4096
+206	56646 23 187 187 1.00002344 1.00002344 1 64 64 64 4096
+207	56669 23 187 187 1.00002344 1.00002344 1 64 64 64 4096
+208	56692 23 188 188 1.00002344 1.00002344 1 64 64 64 4096
+209	56715 23 188 188 1.00002344 1.00002344 1 64 64 64 4096
+210	56738 23 189 189 1.00002344 1.00002344 1 64 64 64 4096
+211	56761 23 189 189 1.00002344 1.00002344 1 64 64 64 4096
+212	56784 23 190 190 1.00002344 1.00002344 1 64 64 64 4096
+213	56807 23 190 190 1.00002344 1.00002344 1 64 64 64 4096
+214	56830 23 191 191 1.00002344 1.00002344 1 64 64 64 4096
+215	56853 23 191 191 1.00002344 1.00002344 1 64 64 64 4096
+216	56876 23 192 192 1.00002344 1.00002344 1 64 64 64 4096
+217	56899 23 192 192 1.00002344 1.00002344 1 64 64 64 4096
+218	56922 23 193 193 1.00002344 1.00002344 1 28 28 28 784
+219	56945 23 194 194 1.00002344 1.00002344 1 28 28 28 784
+220	56968 23 195 195 1.00002344 1.00002344 1 28 28 28 784
+221	56991 23 212 212 1.00002344 1.00002344 1 64 64 64 4096
+222	57014 22 212 212 1.00002344 1.00002344 1 0 0 0 0
+223	57036 23 213 213 1.00002344 1.00002344 1 64 64 64 4096
+224	57059 22 213 213 1.00002344 1.00002344 1 0 0 0 0
+225	57081 23 214 214 1.00002344 1.00002344 1 64 64 64 4096
+226	57104 22 214 214 1.00002344 1.00002344 1 0 0 0 0
+227	57126 23 215 215 1.00002344 1.00002344 1 64 64 64 4096
+228	57149 22 215 215 1.00002344 1.00002344 1 0 0 0 0
+229	57171 23 216 216 1.00002344 1.00002344 1 64 64 64 4096
+230	57194 22 216 216 1.00002344 1.00002344 1 0 0 0 0
+231	57216 23 217 217 1.00002344 1.00002344 1 64 64 64 4096
+232	57239 22 217 217 1.00002344 1.00002344 1 0 0 0 0
+233	57261 23 224 224 1.00002344 1.00002344 1 64 64 64 4096
+234	57284 23 225 225 1.00002344 1.00002344 1 64 64 64 4096
+235	57307 23 226 226 1.00002344 1.00002344 1 64 64 64 4096
+236	57330 23 227 227 1.00002344 1.00002344 1 64 64 64 4096
+237	57353 23 228 228 1.00002344 1.00002344 1 64 64 64 4096
+238	57376 23 229 229 1.00002344 1.00002344 1 64 64 64 4096
+239	57399 22 234 234 1.0000243 1.0000243 1 64 64 64 4096
+240	57421 22 235 235 1.0000243 1.0000243 1 64 64 64 4096
+241	57443 22 236 236 1.0000243 1.0000243 1 64 64 64 4096
+242	57465 22 244 244 1.0000244 1.0000244 1 64 64 64 4096
+243	57487 22 244 244 1.0000244 1.0000244 1 64 64 64 4096
+244	57509 22 245 245 1.0000244 1.0000244 1 64 64 64 4096
+245	57531 22 245 245 1.0000244 1.0000244 1 64 64 64 4096
+246	57553 22 246 246 1.0000244 1.0000244 1 64 64 64 4096
+247	57575 22 246 246 1.0000244 1.0000244 1 64 64 64 4096
+248	57597 22 262 262 1.0000292 1.0000292 1 64 64 64 4096
+249	57619 22 263 263 1.0000292 1.0000292 1 64 64 64 4096
+250	57641 22 264 264 1.0000292 1.0000292 1 64 64 64 4096
+251	57663 22 265 265 1.0000292 1.0000292 1 64 64 64 4096
+252	57685 22 266 266 1.0000293 1.0000293 1 64 64 64 4096
+253	57707 22 266 266 1.0000293 1.0000293 1 64 64 64 4096
+254	57729 22 267 267 1.0000293 1.0000293 1 64 64 64 4096
+255	57751 22 267 267 1.0000293 1.0000293 1 64 64 64 4096
+256	57773 22 268 268 1.0000293 1.0000293 1 64 64 64 4096
+257	57795 22 268 268 1.0000293 1.0000293 1 64 64 64 4096
+258	57817 22 269 269 1.0000293 1.0000293 1 64 64 64 4096
+259	57839 22 269 269 1.0000293 1.0000293 1 64 64 64 4096
+260	57861 22 278 278 1.0000293 1.0000293 1 64 64 64 4096
+261	57883 21 278 278 1.0000293 1.0000293 1 0 0 0 0
+262	57904 22 279 279 1.0000293 1.0000293 1 64 64 64 4096
+263	57926 21 279 279 1.0000293 1.0000293 1 0 0 0 0
+264	57947 22 280 280 1.0000293 1.0000293 1 64 64 64 4096
+265	57969 21 280 280 1.0000293 1.0000293 1 0 0 0 0
+266	57990 22 281 281 1.0000293 1.0000293 1 64 64 64 4096
+267	58012 21 281 281 1.0000293 1.0000293 1 0 0 0 0
+268	58033 22 286 286 1.0000293 1.0000293 1 64 64 64 4096
+269	58055 22 287 287 1.0000293 1.0000293 1 64 64 64 4096
+270	58077 22 288 288 1.0000293 1.0000293 1 64 64 64 4096
+271	58099 22 289 289 1.0000293 1.0000293 1 64 64 64 4096
+272	58121 23 290 290 1.00003016 1.00003016 1 64 64 64 4096
+273	58144 23 291 291 1.00003016 1.00003016 1 64 64 64 4096
+274	58167 23 296 296 1.00003026 1.00003026 1 64 64 64 4096
+275	58190 23 296 296 1.00003026 1.00003026 1 64 64 64 4096
+276	58213 23 297 297 1.00003026 1.00003026 1 64 64 64 4096
+277	58236 23 297 297 1.00003026 1.00003026 1 64 64 64 4096
+278	58259 23 310 310 1.00003506 1.00003506 1 64 64 64 4096
+279	58282 23 311 311 1.00003506 1.00003506 1 64 64 64 4096
+280	58305 23 312 312 1.00003516 1.00003516 1 64 64 64 4096
+281	58328 23 312 312 1.00003516 1.00003516 1 64 64 64 4096
+282	58351 23 313 313 1.00003516 1.00003516 1 64 64 64 4096
+283	58374 23 313 313 1.00003516 1.00003516 1 64 64 64 4096
+284	58397 23 314 314 1.00003516 1.00003516 1 28 28 28 784
+285	58420 23 315 315 1.00003516 1.00003516 1 28 28 28 784
+286	58443 22 318 318 1.00003516 1.00003516 1 1 1 1 1
+287	58465 23 321 321 1.00003516 1.00003516 1 28 28 28 784
+288	58488 23 323 323 1.00003516 1.00003516 1 64 64 64 4096
+289	58511 22 323 323 1.00003516 1.00003516 1 0 0 0 0
+290	58533 23 325 325 1.00003516 1.00003516 1 64 64 64 4096
+291	58556 23 327 327 1.00003602 1.00003602 1 64 64 64 4096
+292	58579 23 328 328 1.00003602 1.00003602 1 64 64 64 4096
+293	58602 23 331 331 1.00003612 1.00003612 1 64 64 64 4096
+294	58625 23 331 331 1.00003612 1.00003612 1 64 64 64 4096
+295	58648 23 332 332 1.00003612 1.00003612 1 64 64 64 4096
+296	58671 23 332 332 1.00003612 1.00003612 1 64 64 64 4096
+297	58694 23 339 339 1.00004092 1.00004092 1 64 64 64 4096
+298	58717 23 340 340 1.00004102 1.00004102 1 64 64 64 4096
+299	58740 23 340 340 1.00004102 1.00004102 1 64 64 64 4096
+300	58763 23 343 343 1.00004102 1.00004102 1 64 64 64 4096
+301	58786 22 343 343 1.00004102 1.00004102 1 0 0 0 0
+302	58808 23 345 345 1.00004102 1.00004102 1 64 64 64 4096
+303	58831 23 349 349 1.00004678 1.00004678 1 64 64 64 4096
+304	58854 23 350 350 1.00004688 1.00004688 1 64 64 64 4096
+305	58877 23 350 350 1.00004688 1.00004688 1 64 64 64 4096
+306	58900 23 353 353 1.00004688 1.00004688 1 64 64 64 4096
+307	58923 22 353 353 1.00004688 1.00004688 1 0 0 0 0
+308	58945 23 355 355 1.00004688 1.00004688 1 64 64 64 4096
+vector 309 TreeLAN.switch5.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 310 TreeLAN.switch1.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 311 TreeLAN.switch1.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 312 TreeLAN.switch1.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 313 TreeLAN.switch1.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 314 TreeLAN.switch1.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 315 TreeLAN.switch1.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 316 TreeLAN.switch3.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 317 TreeLAN.switch3.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 318 TreeLAN.switch3.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 319 TreeLAN.switch3.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 320 TreeLAN.switch3.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 321 TreeLAN.switch3.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 322 TreeLAN.switch7.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 323 TreeLAN.switch7.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 324 TreeLAN.switch7.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 325 TreeLAN.switch7.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 326 TreeLAN.switch7.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 327 TreeLAN.switch7.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+17	62258 42 383 383 1.00006446 1.00006446 2 0 1 1 1
+37	62300 40 373 373 1.0000586 1.0000586 2 0 1 1 1
+53	62340 42 363 363 1.00005274 1.00005274 2 0 1 1 1
+309	62382 23 359 359 1.00005264 1.00005264 1 64 64 64 4096
+310	62405 23 360 360 1.00005274 1.00005274 1 64 64 64 4096
+311	62428 23 360 360 1.00005274 1.00005274 1 64 64 64 4096
+312	62451 23 363 363 1.00005274 1.00005274 1 64 64 64 4096
+313	62474 22 363 363 1.00005274 1.00005274 1 0 0 0 0
+314	62496 23 365 365 1.00005274 1.00005274 1 64 64 64 4096
+315	62519 22 369 369 1.0000585 1.0000585 1 64 64 64 4096
+316	62541 22 370 370 1.0000586 1.0000586 1 64 64 64 4096
+317	62563 22 370 370 1.0000586 1.0000586 1 64 64 64 4096
+318	62585 22 373 373 1.0000586 1.0000586 1 64 64 64 4096
+319	62607 21 373 373 1.0000586 1.0000586 1 0 0 0 0
+320	62628 22 375 375 1.0000586 1.0000586 1 64 64 64 4096
+321	62650 23 379 379 1.00006436 1.00006436 1 64 64 64 4096
+322	62673 23 380 380 1.00006446 1.00006446 1 64 64 64 4096
+323	62696 23 380 380 1.00006446 1.00006446 1 64 64 64 4096
+324	62719 23 383 383 1.00006446 1.00006446 1 64 64 64 4096
+325	62742 22 383 383 1.00006446 1.00006446 1 0 0 0 0
+326	62764 23 385 385 1.00006446 1.00006446 1 64 64 64 4096
+327	62787 23 388 388 1.00007022 1.00007022 1 64 64 64 4096
+vector 328 TreeLAN.host1.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 329 TreeLAN.host1.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 330 TreeLAN.host1.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 331 TreeLAN.host1.pingApp[0] pingRxSeq:vector ETV
+attr interpolationmode none
+attr title "ping rx seq, vector"
+vector 332 TreeLAN.host1.pingApp[0] rtt:vector ETV
+attr interpolationmode none
+attr title "ping round-trip time, vector"
+attr unit s
+vector 333 TreeLAN.host1.pingApp[1] pingTxSeq:vector ETV
+attr interpolationmode none
+attr title "ping tx seq, vector"
+vector 334 TreeLAN.server2.networkLayer.arp sentReply:vector ETV
+attr title "ARP replies sent, vector"
+vector 335 TreeLAN.server2.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 336 TreeLAN.server2.eth[0].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 337 TreeLAN.server2.eth[0].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 338 TreeLAN.server2.eth[0].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 339 TreeLAN.server2.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 340 TreeLAN.switch10.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 341 TreeLAN.switch10.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 342 TreeLAN.switch10.eth[1].queue.dataQueue rcvdPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "received packets, vector(packetBytes)"
+vector 343 TreeLAN.switch10.eth[1].queue.dataQueue queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 344 TreeLAN.switch10.eth[1].mac rxPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkFromHL
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 345 TreeLAN.switch10.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source txPk
+attr title "packets transmitted, vector(packetBytes)"
+vector 346 TreeLAN.switch5.eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 347 TreeLAN.switch5.eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+1	66106 62 395 524 1.00007032 2 4 0 1 2 2
+13	66168 42 824 824 2.00003516 2.00003516 2 0 1 1 1
+15	66210 42 457 457 1.00012372 1.00012372 2 0 1 1 1
+17	66252 42 506 506 1.00016822 1.00016822 2 0 1 1 1
+19	66294 42 535 535 2.00000586 2.00000586 2 0 1 1 1
+21	66336 42 536 536 2.00000586 2.00000586 2 0 1 1 1
+23	66378 84 404 537 1.00007922 2.00000586 4 0 1 2 2
+25	66462 42 538 538 2.00000586 2.00000586 2 0 1 1 1
+27	66504 42 631 631 2.00001758 2.00001758 2 0 1 1 1
+29	66546 42 632 632 2.00001758 2.00001758 2 0 1 1 1
+31	66588 42 633 633 2.00001758 2.00001758 2 0 1 1 1
+35	66630 42 634 634 2.00001758 2.00001758 2 0 1 1 1
+37	66672 82 496 874 1.00015932 2.0000586 4 0 1 2 2
+39	66754 42 573 573 2.00001172 2.00001172 2 0 1 1 1
+41	66796 84 414 574 1.00008812 2.00001172 4 0 1 2 2
+43	66880 42 575 575 2.00001172 2.00001172 2 0 1 1 1
+47	66922 42 576 576 2.00001172 2.00001172 2 0 1 1 1
+49	66964 42 577 577 2.00001172 2.00001172 2 0 1 1 1
+51	67006 42 578 578 2.00001172 2.00001172 2 0 1 1 1
+53	67048 84 486 864 1.00015042 2.00005274 4 0 1 2 2
+55	67132 42 635 635 2.00001758 2.00001758 2 0 1 1 1
+57	67174 84 424 636 1.00009702 2.00001758 4 0 1 2 2
+59	67258 42 637 637 2.00001758 2.00001758 2 0 1 1 1
+63	67300 42 638 638 2.00001758 2.00001758 2 0 1 1 1
+65	67342 42 639 639 2.00001758 2.00001758 2 0 1 1 1
+67	67384 42 640 640 2.00001758 2.00001758 2 0 1 1 1
+69	67426 84 476 854 1.00014152 2.00004688 4 0 1 2 2
+71	67510 42 713 713 2.00002344 2.00002344 2 0 1 1 1
+73	67552 84 434 714 1.00010592 2.00002344 4 0 1 2 2
+75	67636 42 715 715 2.00002344 2.00002344 2 0 1 1 1
+79	67678 42 716 716 2.00002344 2.00002344 2 0 1 1 1
+81	67720 42 717 717 2.00002344 2.00002344 2 0 1 1 1
+83	67762 42 718 718 2.00002344 2.00002344 2 0 1 1 1
+85	67804 82 444 779 1.00011482 2.0000293 4 0 1 2 2
+87	67886 42 466 466 1.00013262 1.00013262 2 0 1 1 1
+89	67928 40 780 780 2.0000293 2.0000293 2 0 1 1 1
+91	67968 40 781 781 2.0000293 2.0000293 2 0 1 1 1
+93	68008 42 844 844 2.00004102 2.00004102 2 0 1 1 1
+95	68050 40 782 782 2.0000293 2.0000293 2 0 1 1 1
+97	68090 12 520 520 2 2 1 1 1 1 1
+98	68102 35 393 522 1.00007032 2 2 28 84 112 7840
+99	68137 36 395 524 1.00007032 2 2 64 102 166 14500
+100	68173 35 395 524 1.00007032 2 2 0 0 0 0
+101	68208 38 397 526 1.00007032 2 2 64 102 166 14500
+102	68246 47 400 528 1.00007912 2.00000576 2 64 102 166 14500
+103	68293 47 401 529 1.00007922 2.00000586 2 64 102 166 14500
+104	68340 47 401 529 1.00007922 2.00000586 2 64 102 166 14500
+105	68387 23 535 535 2.00000586 2.00000586 1 64 64 64 4096
+106	68410 22 535 535 2.00000586 2.00000586 1 0 0 0 0
+107	68432 23 536 536 2.00000586 2.00000586 1 64 64 64 4096
+108	68455 22 536 536 2.00000586 2.00000586 1 0 0 0 0
+109	68477 47 404 537 1.00007922 2.00000586 2 64 102 166 14500
+110	68524 44 404 537 1.00007922 2.00000586 2 0 0 0 0
+111	68568 23 538 538 2.00000586 2.00000586 1 64 64 64 4096
+112	68591 22 538 538 2.00000586 2.00000586 1 0 0 0 0
+113	68613 23 543 543 2.00000586 2.00000586 1 64 64 64 4096
+114	68636 23 544 544 2.00000586 2.00000586 1 64 64 64 4096
+115	68659 47 406 545 1.00007922 2.00000586 2 64 102 166 14500
+116	68706 23 546 546 2.00000586 2.00000586 1 64 64 64 4096
+117	68729 23 551 551 2.00001162 2.00001162 1 64 64 64 4096
+118	68752 23 552 552 2.00001162 2.00001162 1 64 64 64 4096
+119	68775 47 410 553 1.00008802 2.00001162 2 64 102 166 14500
+120	68822 23 554 554 2.00001162 2.00001162 1 64 64 64 4096
+121	68845 23 555 555 2.00001172 2.00001172 1 64 64 64 4096
+122	68868 23 555 555 2.00001172 2.00001172 1 64 64 64 4096
+123	68891 23 556 556 2.00001172 2.00001172 1 64 64 64 4096
+124	68914 23 556 556 2.00001172 2.00001172 1 64 64 64 4096
+125	68937 47 411 557 1.00008812 2.00001172 2 64 102 166 14500
+126	68984 47 411 557 1.00008812 2.00001172 2 64 102 166 14500
+127	69031 23 558 558 2.00001172 2.00001172 1 64 64 64 4096
+128	69054 23 558 558 2.00001172 2.00001172 1 64 64 64 4096
+129	69077 23 559 559 2.00001172 2.00001172 1 28 28 28 784
+130	69100 23 560 560 2.00001172 2.00001172 1 28 28 28 784
+131	69123 23 573 573 2.00001172 2.00001172 1 64 64 64 4096
+132	69146 22 573 573 2.00001172 2.00001172 1 0 0 0 0
+133	69168 47 414 574 1.00008812 2.00001172 2 64 102 166 14500
+134	69215 44 414 574 1.00008812 2.00001172 2 0 0 0 0
+135	69259 23 575 575 2.00001172 2.00001172 1 64 64 64 4096
+136	69282 22 575 575 2.00001172 2.00001172 1 0 0 0 0
+137	69304 23 576 576 2.00001172 2.00001172 1 64 64 64 4096
+138	69327 22 576 576 2.00001172 2.00001172 1 0 0 0 0
+139	69349 23 577 577 2.00001172 2.00001172 1 64 64 64 4096
+140	69372 22 577 577 2.00001172 2.00001172 1 0 0 0 0
+141	69394 23 578 578 2.00001172 2.00001172 1 64 64 64 4096
+142	69417 22 578 578 2.00001172 2.00001172 1 0 0 0 0
+143	69439 23 585 585 2.00001172 2.00001172 1 64 64 64 4096
+144	69462 47 416 586 1.00008812 2.00001172 2 64 102 166 14500
+145	69509 23 587 587 2.00001172 2.00001172 1 64 64 64 4096
+146	69532 23 588 588 2.00001172 2.00001172 1 64 64 64 4096
+147	69555 23 589 589 2.00001172 2.00001172 1 64 64 64 4096
+148	69578 23 590 590 2.00001172 2.00001172 1 64 64 64 4096
+149	69601 23 603 603 2.00001748 2.00001748 1 64 64 64 4096
+150	69624 47 420 604 1.00009692 2.00001748 2 64 102 166 14500
+151	69671 23 605 605 2.00001748 2.00001748 1 64 64 64 4096
+152	69694 23 606 606 2.00001748 2.00001748 1 64 64 64 4096
+153	69717 23 607 607 2.00001748 2.00001748 1 64 64 64 4096
+154	69740 23 608 608 2.00001748 2.00001748 1 64 64 64 4096
+155	69763 23 609 609 2.00001758 2.00001758 1 64 64 64 4096
+156	69786 23 609 609 2.00001758 2.00001758 1 64 64 64 4096
+157	69809 47 421 610 1.00009702 2.00001758 2 64 102 166 14500
+158	69856 47 421 610 1.00009702 2.00001758 2 64 102 166 14500
+159	69903 23 611 611 2.00001758 2.00001758 1 64 64 64 4096
+160	69926 23 611 611 2.00001758 2.00001758 1 64 64 64 4096
+161	69949 23 612 612 2.00001758 2.00001758 1 64 64 64 4096
+162	69972 23 612 612 2.00001758 2.00001758 1 64 64 64 4096
+163	69995 23 613 613 2.00001758 2.00001758 1 64 64 64 4096
+164	70018 23 613 613 2.00001758 2.00001758 1 64 64 64 4096
+165	70041 23 614 614 2.00001758 2.00001758 1 64 64 64 4096
+166	70064 23 614 614 2.00001758 2.00001758 1 64 64 64 4096
+167	70087 23 631 631 2.00001758 2.00001758 1 64 64 64 4096
+168	70110 22 631 631 2.00001758 2.00001758 1 0 0 0 0
+169	70132 23 632 632 2.00001758 2.00001758 1 64 64 64 4096
+170	70155 22 632 632 2.00001758 2.00001758 1 0 0 0 0
+171	70177 23 633 633 2.00001758 2.00001758 1 64 64 64 4096
+172	70200 22 633 633 2.00001758 2.00001758 1 0 0 0 0
+173	70222 23 634 634 2.00001758 2.00001758 1 64 64 64 4096
+174	70245 22 634 634 2.00001758 2.00001758 1 0 0 0 0
+175	70267 23 635 635 2.00001758 2.00001758 1 64 64 64 4096
+176	70290 22 635 635 2.00001758 2.00001758 1 0 0 0 0
+177	70312 47 424 636 1.00009702 2.00001758 2 64 102 166 14500
+178	70359 44 424 636 1.00009702 2.00001758 2 0 0 0 0
+179	70403 23 637 637 2.00001758 2.00001758 1 64 64 64 4096
+180	70426 22 637 637 2.00001758 2.00001758 1 0 0 0 0
+181	70448 23 638 638 2.00001758 2.00001758 1 64 64 64 4096
+182	70471 22 638 638 2.00001758 2.00001758 1 0 0 0 0
+183	70493 23 639 639 2.00001758 2.00001758 1 64 64 64 4096
+184	70516 22 639 639 2.00001758 2.00001758 1 0 0 0 0
+185	70538 23 640 640 2.00001758 2.00001758 1 64 64 64 4096
+186	70561 22 640 640 2.00001758 2.00001758 1 0 0 0 0
+187	70583 23 651 651 2.00001758 2.00001758 1 64 64 64 4096
+188	70606 23 652 652 2.00001758 2.00001758 1 64 64 64 4096
+189	70629 23 653 653 2.00001758 2.00001758 1 64 64 64 4096
+190	70652 23 654 654 2.00001758 2.00001758 1 64 64 64 4096
+191	70675 23 655 655 2.00001758 2.00001758 1 64 64 64 4096
+192	70698 47 426 656 1.00009702 2.00001758 2 64 102 166 14500
+193	70745 23 657 657 2.00001758 2.00001758 1 64 64 64 4096
+194	70768 23 658 658 2.00001758 2.00001758 1 64 64 64 4096
+195	70791 23 659 659 2.00001758 2.00001758 1 64 64 64 4096
+196	70814 23 660 660 2.00001758 2.00001758 1 64 64 64 4096
+197	70837 23 680 680 2.00002334 2.00002334 1 64 64 64 4096
+198	70860 23 681 681 2.00002334 2.00002334 1 64 64 64 4096
+199	70883 23 682 682 2.00002334 2.00002334 1 64 64 64 4096
+200	70906 47 430 683 1.00010582 2.00002334 2 64 102 166 14500
+201	70953 23 684 684 2.00002334 2.00002334 1 64 64 64 4096
+202	70976 23 685 685 2.00002334 2.00002334 1 64 64 64 4096
+203	70999 23 686 686 2.00002334 2.00002334 1 64 64 64 4096
+204	71022 23 687 687 2.00002344 2.00002344 1 64 64 64 4096
+205	71045 23 687 687 2.00002344 2.00002344 1 64 64 64 4096
+206	71068 23 688 688 2.00002344 2.00002344 1 64 64 64 4096
+207	71091 23 688 688 2.00002344 2.00002344 1 64 64 64 4096
+208	71114 23 689 689 2.00002344 2.00002344 1 64 64 64 4096
+209	71137 23 689 689 2.00002344 2.00002344 1 64 64 64 4096
+210	71160 47 431 690 1.00010592 2.00002344 2 64 102 166 14500
+211	71207 47 431 690 1.00010592 2.00002344 2 64 102 166 14500
+212	71254 23 691 691 2.00002344 2.00002344 1 64 64 64 4096
+213	71277 23 691 691 2.00002344 2.00002344 1 64 64 64 4096
+214	71300 23 692 692 2.00002344 2.00002344 1 64 64 64 4096
+215	71323 23 692 692 2.00002344 2.00002344 1 64 64 64 4096
+216	71346 23 693 693 2.00002344 2.00002344 1 64 64 64 4096
+217	71369 23 693 693 2.00002344 2.00002344 1 64 64 64 4096
+218	71392 23 694 694 2.00002344 2.00002344 1 28 28 28 784
+219	71415 23 695 695 2.00002344 2.00002344 1 28 28 28 784
+220	71438 23 696 696 2.00002344 2.00002344 1 28 28 28 784
+221	71461 23 713 713 2.00002344 2.00002344 1 64 64 64 4096
+222	71484 22 713 713 2.00002344 2.00002344 1 0 0 0 0
+223	71506 47 434 714 1.00010592 2.00002344 2 64 102 166 14500
+224	71553 44 434 714 1.00010592 2.00002344 2 0 0 0 0
+225	71597 23 715 715 2.00002344 2.00002344 1 64 64 64 4096
+226	71620 22 715 715 2.00002344 2.00002344 1 0 0 0 0
+227	71642 23 716 716 2.00002344 2.00002344 1 64 64 64 4096
+228	71665 22 716 716 2.00002344 2.00002344 1 0 0 0 0
+229	71687 23 717 717 2.00002344 2.00002344 1 64 64 64 4096
+230	71710 22 717 717 2.00002344 2.00002344 1 0 0 0 0
+231	71732 23 718 718 2.00002344 2.00002344 1 64 64 64 4096
+232	71755 22 718 718 2.00002344 2.00002344 1 0 0 0 0
+233	71777 23 725 725 2.00002344 2.00002344 1 64 64 64 4096
+234	71800 47 436 726 1.00010592 2.00002344 2 64 102 166 14500
+235	71847 23 727 727 2.00002344 2.00002344 1 64 64 64 4096
+236	71870 23 728 728 2.00002344 2.00002344 1 64 64 64 4096
+237	71893 23 729 729 2.00002344 2.00002344 1 64 64 64 4096
+238	71916 23 730 730 2.00002344 2.00002344 1 64 64 64 4096
+239	71939 22 735 735 2.0000243 2.0000243 1 64 64 64 4096
+240	71961 22 736 736 2.0000243 2.0000243 1 64 64 64 4096
+241	71983 22 737 737 2.0000243 2.0000243 1 64 64 64 4096
+242	72005 22 745 745 2.0000244 2.0000244 1 64 64 64 4096
+243	72027 22 745 745 2.0000244 2.0000244 1 64 64 64 4096
+244	72049 22 746 746 2.0000244 2.0000244 1 64 64 64 4096
+245	72071 22 746 746 2.0000244 2.0000244 1 64 64 64 4096
+246	72093 22 747 747 2.0000244 2.0000244 1 64 64 64 4096
+247	72115 22 747 747 2.0000244 2.0000244 1 64 64 64 4096
+248	72137 46 440 763 1.00011472 2.0000292 2 64 102 166 14500
+249	72183 22 764 764 2.0000292 2.0000292 1 64 64 64 4096
+250	72205 22 765 765 2.0000292 2.0000292 1 64 64 64 4096
+251	72227 22 766 766 2.0000292 2.0000292 1 64 64 64 4096
+252	72249 46 441 767 1.00011482 2.0000293 2 64 102 166 14500
+253	72295 46 441 767 1.00011482 2.0000293 2 64 102 166 14500
+254	72341 22 768 768 2.0000293 2.0000293 1 64 64 64 4096
+255	72363 22 768 768 2.0000293 2.0000293 1 64 64 64 4096
+256	72385 22 769 769 2.0000293 2.0000293 1 64 64 64 4096
+257	72407 22 769 769 2.0000293 2.0000293 1 64 64 64 4096
+258	72429 22 770 770 2.0000293 2.0000293 1 64 64 64 4096
+259	72451 22 770 770 2.0000293 2.0000293 1 64 64 64 4096
+260	72473 46 444 779 1.00011482 2.0000293 2 64 102 166 14500
+261	72519 43 444 779 1.00011482 2.0000293 2 0 0 0 0
+262	72562 22 780 780 2.0000293 2.0000293 1 64 64 64 4096
+263	72584 21 780 780 2.0000293 2.0000293 1 0 0 0 0
+264	72605 22 781 781 2.0000293 2.0000293 1 64 64 64 4096
+265	72627 21 781 781 2.0000293 2.0000293 1 0 0 0 0
+266	72648 22 782 782 2.0000293 2.0000293 1 64 64 64 4096
+267	72670 21 782 782 2.0000293 2.0000293 1 0 0 0 0
+268	72691 46 446 787 1.00011482 2.0000293 2 64 102 166 14500
+269	72737 22 788 788 2.0000293 2.0000293 1 64 64 64 4096
+270	72759 22 789 789 2.0000293 2.0000293 1 64 64 64 4096
+271	72781 22 790 790 2.0000293 2.0000293 1 64 64 64 4096
+272	72803 23 791 791 2.00003016 2.00003016 1 64 64 64 4096
+273	72826 23 792 792 2.00003016 2.00003016 1 64 64 64 4096
+274	72849 23 797 797 2.00003026 2.00003026 1 64 64 64 4096
+275	72872 23 797 797 2.00003026 2.00003026 1 64 64 64 4096
+276	72895 23 798 798 2.00003026 2.00003026 1 64 64 64 4096
+277	72918 23 798 798 2.00003026 2.00003026 1 64 64 64 4096
+278	72941 47 449 811 1.00012362 2.00003506 2 64 102 166 14500
+279	72988 23 812 812 2.00003506 2.00003506 1 64 64 64 4096
+280	73011 47 450 813 1.00012372 2.00003516 2 64 102 166 14500
+281	73058 47 450 813 1.00012372 2.00003516 2 64 102 166 14500
+282	73105 23 814 814 2.00003516 2.00003516 1 64 64 64 4096
+283	73128 23 814 814 2.00003516 2.00003516 1 64 64 64 4096
+284	73151 46 451 815 1.00012372 2.00003516 2 28 84 112 7840
+285	73197 23 816 816 2.00003516 2.00003516 1 28 28 28 784
+287	73220 23 455 455 1.00012372 1.00012372 1 84 84 84 7056
+288	73243 24 457 457 1.00012372 1.00012372 1 102 102 102 10404
+289	73267 22 457 457 1.00012372 1.00012372 1 0 0 0 0
+290	73289 24 459 459 1.00012372 1.00012372 1 102 102 102 10404
+291	73313 23 828 828 2.00003602 2.00003602 1 64 64 64 4096
+292	73336 23 829 829 2.00003602 2.00003602 1 64 64 64 4096
+293	73359 23 832 832 2.00003612 2.00003612 1 64 64 64 4096
+294	73382 23 832 832 2.00003612 2.00003612 1 64 64 64 4096
+295	73405 23 833 833 2.00003612 2.00003612 1 64 64 64 4096
+296	73428 23 833 833 2.00003612 2.00003612 1 64 64 64 4096
+297	73451 24 462 462 1.00013252 1.00013252 1 102 102 102 10404
+298	73475 24 463 463 1.00013262 1.00013262 1 102 102 102 10404
+299	73499 24 463 463 1.00013262 1.00013262 1 102 102 102 10404
+300	73523 24 466 466 1.00013262 1.00013262 1 102 102 102 10404
+301	73547 22 466 466 1.00013262 1.00013262 1 0 0 0 0
+302	73569 24 468 468 1.00013262 1.00013262 1 102 102 102 10404
+303	73593 24 472 472 1.00014142 1.00014142 1 102 102 102 10404
+304	73617 24 473 473 1.00014152 1.00014152 1 102 102 102 10404
+305	73641 24 473 473 1.00014152 1.00014152 1 102 102 102 10404
+306	73665 47 476 854 1.00014152 2.00004688 2 64 102 166 14500
+307	73712 44 476 854 1.00014152 2.00004688 2 0 0 0 0
+308	73756 47 478 856 1.00014152 2.00004688 2 64 102 166 14500
+309	73803 47 482 860 1.00015032 2.00005264 2 64 102 166 14500
+310	73850 47 483 861 1.00015042 2.00005274 2 64 102 166 14500
+311	73897 47 483 861 1.00015042 2.00005274 2 64 102 166 14500
+312	73944 47 486 864 1.00015042 2.00005274 2 64 102 166 14500
+313	73991 44 486 864 1.00015042 2.00005274 2 0 0 0 0
+314	74035 47 488 866 1.00015042 2.00005274 2 64 102 166 14500
+315	74082 46 492 870 1.00015922 2.0000585 2 64 102 166 14500
+316	74128 46 493 871 1.00015932 2.0000586 2 64 102 166 14500
+317	74174 46 493 871 1.00015932 2.0000586 2 64 102 166 14500
+318	74220 46 496 874 1.00015932 2.0000586 2 64 102 166 14500
+319	74266 43 496 874 1.00015932 2.0000586 2 0 0 0 0
+320	74309 46 498 876 1.00015932 2.0000586 2 64 102 166 14500
+321	74355 47 502 880 1.00016812 2.00006436 2 64 102 166 14500
+322	74402 24 503 503 1.00016822 1.00016822 1 102 102 102 10404
+323	74426 24 503 503 1.00016822 1.00016822 1 102 102 102 10404
+324	74450 24 506 506 1.00016822 1.00016822 1 102 102 102 10404
+325	74474 22 506 506 1.00016822 1.00016822 1 0 0 0 0
+326	74496 24 508 508 1.00016822 1.00016822 1 102 102 102 10404
+327	74520 24 511 511 1.00017702 1.00017702 1 102 102 102 10404
+328	74544 47 389 512 1.00007032 1.00017712 2 64 102 166 14500
+329	74591 47 389 512 1.00007032 1.00017712 2 64 102 166 14500
+330	74638 46 390 513 1.00007032 1.00017712 2 28 84 112 7840
+331	74684 22 516 516 1.00017712 1.00017712 1 0 0 0 0
+332	74706 31 516 516 1.00017712 1.00017712 1 0.00017712 0.00017712 0.00017712 3.13714944e-008
+333	74737 13 518 518 2 2 1 0 0 0 0
+334	74750 22 820 820 2.00003516 2.00003516 1 1 1 1 1
+335	74772 23 822 822 2.00003516 2.00003516 1 28 28 28 784
+336	74795 23 824 824 2.00003516 2.00003516 1 64 64 64 4096
+337	74818 22 824 824 2.00003516 2.00003516 1 0 0 0 0
+338	74840 23 826 826 2.00003516 2.00003516 1 64 64 64 4096
+339	74863 23 840 840 2.00004092 2.00004092 1 64 64 64 4096
+340	74886 23 841 841 2.00004102 2.00004102 1 64 64 64 4096
+341	74909 23 841 841 2.00004102 2.00004102 1 64 64 64 4096
+342	74932 23 844 844 2.00004102 2.00004102 1 64 64 64 4096
+343	74955 22 844 844 2.00004102 2.00004102 1 0 0 0 0
+344	74977 23 846 846 2.00004102 2.00004102 1 64 64 64 4096
+345	75000 23 850 850 2.00004678 2.00004678 1 64 64 64 4096
+346	75023 23 851 851 2.00004688 2.00004688 1 64 64 64 4096
+347	75046 23 851 851 2.00004688 2.00004688 1 64 64 64 4096
+vector 348 TreeLAN.host1.pingApp[1] pingRxSeq:vector ETV
+attr interpolationmode none
+attr title "ping rx seq, vector"
+vector 349 TreeLAN.host1.pingApp[1] rtt:vector ETV
+attr interpolationmode none
+attr title "ping round-trip time, vector"
+attr unit s
+1	75327 64 896 1024 2.00007032 4 4 0 1 2 2
+13	75391 42 958 958 2.00012372 2.00012372 2 0 1 1 1
+15	75433 42 1085 1085 4.0000534 4.0000534 2 0 1 1 1
+17	75475 86 884 1007 2.00006446 2.00016822 4 0 1 2 2
+23	75561 84 905 1032 2.00007922 4.0000089 4 0 1 2 2
+37	75645 42 997 997 2.00015932 2.00015932 2 0 1 1 1
+41	75687 84 915 1042 2.00008812 4.0000178 4 0 1 2 2
+53	75771 42 987 987 2.00015042 2.00015042 2 0 1 1 1
+57	75813 84 925 1052 2.00009702 4.0000267 4 0 1 2 2
+69	75897 42 977 977 2.00014152 2.00014152 2 0 1 1 1
+73	75939 42 1062 1062 4.0000356 4.0000356 2 0 1 1 1
+75	75981 42 935 935 2.00010592 2.00010592 2 0 1 1 1
+85	76023 42 1072 1072 4.0000445 4.0000445 2 0 1 1 1
+91	76065 42 945 945 2.00011482 2.00011482 2 0 1 1 1
+93	76107 42 967 967 2.00013262 2.00013262 2 0 1 1 1
+96	76149 13 1019 1019 4 4 1 1 1 1 1
+98	76162 36 894 1022 2.00007032 4 2 84 84 168 14112
+99	76198 38 896 1024 2.00007032 4 2 102 102 204 20808
+100	76236 36 896 1024 2.00007032 4 2 0 0 0 0
+101	76272 40 898 1026 2.00007032 4 2 102 102 204 20808
+102	76312 48 901 1028 2.00007912 4.0000088 2 102 102 204 20808
+103	76360 48 902 1029 2.00007922 4.0000089 2 102 102 204 20808
+104	76408 48 902 1029 2.00007922 4.0000089 2 102 102 204 20808
+109	76456 48 905 1032 2.00007922 4.0000089 2 102 102 204 20808
+110	76504 44 905 1032 2.00007922 4.0000089 2 0 0 0 0
+115	76548 48 907 1034 2.00007922 4.0000089 2 102 102 204 20808
+119	76596 48 911 1038 2.00008802 4.0000177 2 102 102 204 20808
+125	76644 48 912 1039 2.00008812 4.0000178 2 102 102 204 20808
+126	76692 48 912 1039 2.00008812 4.0000178 2 102 102 204 20808
+133	76740 48 915 1042 2.00008812 4.0000178 2 102 102 204 20808
+134	76788 44 915 1042 2.00008812 4.0000178 2 0 0 0 0
+144	76832 48 917 1044 2.00008812 4.0000178 2 102 102 204 20808
+150	76880 48 921 1048 2.00009692 4.0000266 2 102 102 204 20808
+157	76928 48 922 1049 2.00009702 4.0000267 2 102 102 204 20808
+158	76976 48 922 1049 2.00009702 4.0000267 2 102 102 204 20808
+177	77024 48 925 1052 2.00009702 4.0000267 2 102 102 204 20808
+178	77072 44 925 1052 2.00009702 4.0000267 2 0 0 0 0
+192	77116 48 927 1054 2.00009702 4.0000267 2 102 102 204 20808
+200	77164 48 931 1058 2.00010582 4.0000355 2 102 102 204 20808
+210	77212 48 932 1059 2.00010592 4.0000356 2 102 102 204 20808
+211	77260 48 932 1059 2.00010592 4.0000356 2 102 102 204 20808
+223	77308 24 1062 1062 4.0000356 4.0000356 1 102 102 102 10404
+224	77332 22 1062 1062 4.0000356 4.0000356 1 0 0 0 0
+225	77354 24 935 935 2.00010592 2.00010592 1 102 102 102 10404
+226	77378 22 935 935 2.00010592 2.00010592 1 0 0 0 0
+234	77400 24 1064 1064 4.0000356 4.0000356 1 102 102 102 10404
+235	77424 24 937 937 2.00010592 2.00010592 1 102 102 102 10404
+248	77448 24 1068 1068 4.0000444 4.0000444 1 102 102 102 10404
+249	77472 24 941 941 2.00011472 2.00011472 1 102 102 102 10404
+252	77496 24 1069 1069 4.0000445 4.0000445 1 102 102 102 10404
+253	77520 24 1069 1069 4.0000445 4.0000445 1 102 102 102 10404
+254	77544 24 942 942 2.00011482 2.00011482 1 102 102 102 10404
+255	77568 24 942 942 2.00011482 2.00011482 1 102 102 102 10404
+260	77592 24 1072 1072 4.0000445 4.0000445 1 102 102 102 10404
+261	77616 22 1072 1072 4.0000445 4.0000445 1 0 0 0 0
+264	77638 24 945 945 2.00011482 2.00011482 1 102 102 102 10404
+265	77662 22 945 945 2.00011482 2.00011482 1 0 0 0 0
+268	77684 24 1074 1074 4.0000445 4.0000445 1 102 102 102 10404
+270	77708 24 947 947 2.00011482 2.00011482 1 102 102 102 10404
+278	77732 24 1077 1077 4.0000533 4.0000533 1 102 102 102 10404
+279	77756 24 950 950 2.00012362 2.00012362 1 102 102 102 10404
+280	77780 24 1078 1078 4.0000534 4.0000534 1 102 102 102 10404
+281	77804 24 1078 1078 4.0000534 4.0000534 1 102 102 102 10404
+282	77828 24 951 951 2.00012372 2.00012372 1 102 102 102 10404
+283	77852 24 951 951 2.00012372 2.00012372 1 102 102 102 10404
+284	77876 23 1079 1079 4.0000534 4.0000534 1 84 84 84 7056
+285	77899 23 952 952 2.00012372 2.00012372 1 84 84 84 7056
+287	77922 23 1083 1083 4.0000534 4.0000534 1 84 84 84 7056
+288	77945 24 1085 1085 4.0000534 4.0000534 1 102 102 102 10404
+289	77969 22 1085 1085 4.0000534 4.0000534 1 0 0 0 0
+290	77991 24 1087 1087 4.0000534 4.0000534 1 102 102 102 10404
+297	78015 24 1090 1090 4.0000622 4.0000622 1 102 102 102 10404
+298	78039 24 1091 1091 4.0000623 4.0000623 1 102 102 102 10404
+299	78063 24 1091 1091 4.0000623 4.0000623 1 102 102 102 10404
+306	78087 24 977 977 2.00014152 2.00014152 1 102 102 102 10404
+307	78111 22 977 977 2.00014152 2.00014152 1 0 0 0 0
+308	78133 24 979 979 2.00014152 2.00014152 1 102 102 102 10404
+309	78157 24 983 983 2.00015032 2.00015032 1 102 102 102 10404
+310	78181 24 984 984 2.00015042 2.00015042 1 102 102 102 10404
+311	78205 24 984 984 2.00015042 2.00015042 1 102 102 102 10404
+312	78229 24 987 987 2.00015042 2.00015042 1 102 102 102 10404
+313	78253 22 987 987 2.00015042 2.00015042 1 0 0 0 0
+314	78275 24 989 989 2.00015042 2.00015042 1 102 102 102 10404
+315	78299 24 993 993 2.00015922 2.00015922 1 102 102 102 10404
+316	78323 24 994 994 2.00015932 2.00015932 1 102 102 102 10404
+317	78347 24 994 994 2.00015932 2.00015932 1 102 102 102 10404
+318	78371 24 997 997 2.00015932 2.00015932 1 102 102 102 10404
+319	78395 22 997 997 2.00015932 2.00015932 1 0 0 0 0
+320	78417 24 999 999 2.00015932 2.00015932 1 102 102 102 10404
+321	78441 25 1003 1003 2.00016812 2.00016812 1 102 102 102 10404
+322	78466 48 881 1004 2.00006446 2.00016822 2 64 102 166 14500
+323	78514 48 881 1004 2.00006446 2.00016822 2 64 102 166 14500
+324	78562 48 884 1007 2.00006446 2.00016822 2 64 102 166 14500
+325	78610 45 884 1007 2.00006446 2.00016822 2 0 0 0 0
+326	78655 48 886 1009 2.00006446 2.00016822 2 64 102 166 14500
+327	78703 48 889 1012 2.00007022 2.00017702 2 64 102 166 14500
+328	78751 48 890 1013 2.00007032 2.00017712 2 64 102 166 14500
+329	78799 48 890 1013 2.00007032 2.00017712 2 64 102 166 14500
+330	78847 47 891 1014 2.00007032 2.00017712 2 28 84 112 7840
+335	78894 23 956 956 2.00012372 2.00012372 1 84 84 84 7056
+336	78917 24 958 958 2.00012372 2.00012372 1 102 102 102 10404
+337	78941 22 958 958 2.00012372 2.00012372 1 0 0 0 0
+338	78963 24 960 960 2.00012372 2.00012372 1 102 102 102 10404
+339	78987 24 963 963 2.00013252 2.00013252 1 102 102 102 10404
+340	79011 24 964 964 2.00013262 2.00013262 1 102 102 102 10404
+341	79035 24 964 964 2.00013262 2.00013262 1 102 102 102 10404
+342	79059 24 967 967 2.00013262 2.00013262 1 102 102 102 10404
+343	79083 22 967 967 2.00013262 2.00013262 1 0 0 0 0
+344	79105 24 969 969 2.00013262 2.00013262 1 102 102 102 10404
+345	79129 24 973 973 2.00014142 2.00014142 1 102 102 102 10404
+346	79153 24 974 974 2.00014152 2.00014152 1 102 102 102 10404
+347	79177 24 974 974 2.00014152 2.00014152 1 102 102 102 10404
+348	79201 23 1017 1017 2.00017712 2.00017712 1 0 0 0 0
+349	79224 32 1017 1017 2.00017712 2.00017712 1 0.00017712 0.00017712 0.00017712 3.13714944e-008
+

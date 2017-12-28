@@ -1,0 +1,56 @@
+version 2
+run ARPpath_TCP_Test2-0-20171107-20:17:59-4672
+attr configname ARPpath_TCP_Test2
+attr datetime 20171107-20:17:59
+attr experiment ARPpath_TCP_Test2
+attr inifile test1.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network test1
+attr processid 4672
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.switch*.macType "\"EtherMAC\""
+param **.eth[*].mac.duplexMode false
+param **.switch*.relayUnitType "\"MACRelayUnitAPB\""
+param *.switch*.relayUnit.isArpPath true
+param *.switch*.relayUnit.learningTableAgingTime 120s
+param *.switch*.relayUnit.blockingTableAgingTime 120s
+param *.client*.networkLayer.arp.cacheTimeout 120s
+param *.client1.numTcpApps 2
+param **.client*.numTcpApps 1
+param **.client*.tcpApp[*].typename "\"TCPSessionApp\""
+param **.client*.tcpApp[*].active true
+param **.client*.tcpApp[*].localAddress "\"\""
+param **.client*.tcpApp[*].localPort -1
+param **.client*.tcpApp[1].connectAddress "\"server2\""
+param **.client*.tcpApp[*].connectAddress "\"server1\""
+param **.client*.tcpApp[*].connectPort 1000
+param **.client1.tcpApp[0].tOpen 0s
+param **.client1.tcpApp[1].tOpen 2s
+param **.client*.tcpApp[*].tOpen uniform(0s,0.5s)
+param **.client*.tcpApp[*].tSend 0s
+param **.client*.tcpApp[*].sendBytes 1MiB
+param **.client*.tcpApp[*].sendScript "\"\""
+param **.client*.tcpApp[*].tClose 2s
+param **.server*.numTcpApps 1
+param **.server*.tcpApp[*].typename "\"TCPEchoApp\""
+param **.server*.tcpApp[0].localAddress "\"\""
+param **.server*.tcpApp[0].localPort 1000
+param **.server*.tcpApp[0].echoFactor 2.0
+param **.server*.tcpApp[0].echoDelay 0
+param **.eth[*].queueType "\"DropTailQueue\""
+
+vector 0 test1.client1.eth[0].queue.pauseQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 test1.client1.eth[0].queue.dataQueue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+0	0	0	0
+1	0	0	0
+

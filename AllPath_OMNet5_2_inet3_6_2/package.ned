@@ -1,0 +1,3 @@
+package allpath;
+
+@license(LGPL);
