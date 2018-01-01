@@ -69,9 +69,6 @@ void MACRelayUnitWAPB::initialize(int stage)
     switchDown = par("switchDown").stringValue(); //Times in which the switch will be down (init time '-' end time, and separated by ';')
     switchIsDown = false; //Initially UP
 
-    relayQueueLimit = par("relayQueueLimit");
-    queueLength.setName("queue length");
-
     broadcastSeed = par("broadcastSeed");
     srand (broadcastSeed); //Seed for the random functions
 
@@ -454,7 +451,9 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV2(EtherFrame *frame, int inputport
                 destEntry.inTime = simTime(); //Refresco sólo si la entrada ya está en estado 'learnt' (si no, estaríamos refrescando el estado 'locked' y eso no se hace con unicast)
                 addressTable->updateTable(dstAddress, destEntry); //addressTable[dstAddress] = destEntry;
             }
-            send(frame,"lowerLayerOut",destEntry.port);
+            emit(LayeredProtocolBase::packetSentToLowerSignal, frame); //new version of inet
+
+            send(frame,"ifOut",destEntry.port);
         }
         else
         {
@@ -528,7 +527,9 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV2(EtherFrame *frame, int inputport
                 destEntry.inTime = simTime(); //Refresco sólo si la entrada ya está en estado 'learnt' (si no, estaríamos refrescando el estado 'locked' y eso no se hace con unicast)
                 addressTable->updateTable(dstAddress, destEntry); //addressTable[dstAddress] = destEntry;
             }
-            send(frame,"lowerLayerOut",destEntry.port);
+            emit(LayeredProtocolBase::packetSentToLowerSignal, frame);  //new version of inet
+
+            send(frame,"ifOut",destEntry.port);
         }
         else
         {
@@ -668,7 +669,9 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV3(EtherFrame* frame, int inputport
                 destEntry.inTime = simTime(); //Refresco sólo si la entrada ya está en estado 'learnt' (si no, estaríamos refrescando el estado 'locked' y eso no se hace con unicast)
                 addressTable->updateTable(dstAddress, destEntry); //addressTable[dstAddress] = destEntry;
             }
-            send(frame,"lowerLayerOut",destEntry.portToSend); //#V3 (Ahora se manda por portToSend, que es el puerto fijo, condicionado en el aprendizaje)
+            emit(LayeredProtocolBase::packetSentToLowerSignal, frame);  //new version of inet
+
+            send(frame,"ifOut",destEntry.portToSend); //#V3 (Ahora se manda por portToSend, que es el puerto fijo, condicionado en el aprendizaje)
         }
         else
         {
@@ -894,7 +897,9 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV3(EtherFrame* frame, int inputport
                 destEntry.inTime = simTime(); //Refresco sólo si la entrada ya está en estado 'learnt' (si no, estaríamos refrescando el estado 'locked' y eso no se hace con unicast)
                 addressTable->updateTable(dstAddress, destEntry); //addressTable[dstAddress] = destEntry;
             }
-            send(frame,"lowerLayerOut",destEntry.portToSend); //#V3 (Ahora se manda por portToSend, que es el puerto fijo, condicionado en el aprendizaje)
+            emit(LayeredProtocolBase::packetSentToLowerSignal, frame);  //new version of inet
+
+            send(frame,"ifOut",destEntry.portToSend); //#V3 (Ahora se manda por portToSend, que es el puerto fijo, condicionado en el aprendizaje)
         }
         else
         {
@@ -1687,7 +1692,9 @@ void MACRelayUnitWAPB::handlePathRepairFrameV2(EtherFrame* frame, int inputport)
                              entry.inTime = simTime();
                              entry.status = locked;     //Update entry to 'locked' (the learning process starts again)
                              addressTable->updateTable(dstAddress, entry);  //addressTable[dstAddress] = entry;
-                             send((EtherFrame*)repairFrame(PathReply, dstAddress, srcAddress, repairTime), "lowerLayerOut", inputport); //Reverse srcAddress/dstAddress to create the PathReply and sent through inputport (the port that received the PathRequest) //Include repairTime for the new PathRepair message
+                             emit(LayeredProtocolBase::packetSentToLowerSignal, (EtherFrame*)repairFrame(PathReply, dstAddress, srcAddress, repairTime));  //new version of inet
+
+                             send((EtherFrame*)repairFrame(PathReply, dstAddress, srcAddress, repairTime), "ifOut", inputport); //Reverse srcAddress/dstAddress to create the PathReply and sent through inputport (the port that received the PathRequest) //Include repairTime for the new PathRepair message
                              EV << "Forwarding through port: " << inputport << endl;
                          }
                          discardFrame = true;
@@ -1747,7 +1754,9 @@ void MACRelayUnitWAPB::handlePathRepairFrameV2(EtherFrame* frame, int inputport)
                     }
                     if(!inHoT(destEntry.port)) //Forward only if destination host is not directly connected (i.e. that port is not in HoT's list)
                     {
-                        send(frame,"lowerLayerOut",destEntry.port);
+                        emit(LayeredProtocolBase::packetSentToLowerSignal, frame);  //new version of inet
+
+                        send(frame,"ifOut",destEntry.port);
                         EV << "Forwarding through port: " << destEntry.port << endl;
                     }
                     else
@@ -1914,7 +1923,9 @@ void MACRelayUnitWAPB::handlePathRepairFrameV3(EtherFrame* frame, int inputport)
                              entry.inTime = simTime();
                              entry.status = locked;     //Update entry to 'locked' (the learning process starts again)
                              addressTable->updateTable(dstAddress, entry);  //addressTable[dstAddress] = entry;
-                             send((EtherFrame*)repairFrame(PathReply, dstAddress, srcAddress, repairTime), "lowerLayerOut", inputport); //Reverse srcAddress/dstAddress to create the PathReply and sent through inputport (the port that received the PathRequest) //Include repairTime for the new PathRepair message
+                             emit(LayeredProtocolBase::packetSentToLowerSignal, (EtherFrame*)repairFrame(PathReply, dstAddress, srcAddress, repairTime));  //new version of inet
+
+                             send((EtherFrame*)repairFrame(PathReply, dstAddress, srcAddress, repairTime), "ifOut", inputport); //Reverse srcAddress/dstAddress to create the PathReply and sent through inputport (the port that received the PathRequest) //Include repairTime for the new PathRepair message
                              EV << "Forwarding through port: " << inputport << endl;
                          }
                          discardFrame = true;
@@ -1975,7 +1986,9 @@ void MACRelayUnitWAPB::handlePathRepairFrameV3(EtherFrame* frame, int inputport)
                     }
                     if(!inHoT(destEntry.port)) //Forward only if destination host is not directly connected (i.e. that port is not in HoT's list)
                     {
-                        send(frame,"lowerLayerOut",destEntry.port);
+                        emit(LayeredProtocolBase::packetSentToLowerSignal, frame);  //new version of inet
+
+                        send(frame,"ifOut",destEntry.port);
                         EV << "Forwarding through port: " << destEntry.port << endl;
                     }
                     else
@@ -2090,7 +2103,9 @@ void MACRelayUnitWAPB::handlePathRepairFrameV3(EtherFrame* frame, int inputport)
                     if(!replyAddressVector.empty()) //If some address is directly connected, send LinkReply
                     {
                         EV << "    Switch is directly connected to some src host -> Forwarding LinkReply (new)!" << endl;
-                        send((EtherFrame*)groupRepairFrame(LinkReply, switchAddress, replyAddressVector, repairTime), "lowerLayerOut", inputport); //LinkReply needs switchAddress (switch that originated the repair) in order to be forwarded //Include repairTime for the new PathRepair message
+                        emit(LayeredProtocolBase::packetSentToLowerSignal, (EtherFrame*)groupRepairFrame(LinkReply, switchAddress, replyAddressVector, repairTime));  //new version of inet
+
+                        send((EtherFrame*)groupRepairFrame(LinkReply, switchAddress, replyAddressVector, repairTime), "ifOut", inputport); //LinkReply needs switchAddress (switch that originated the repair) in order to be forwarded //Include repairTime for the new PathRepair message
                         EV << "Forwarding through port: " << inputport << endl;
 
                         updateRepairStatistics(prf, type, replyAddressVector.size()); //Update repair statistics (LinkFail time) with PathRepair frame - we indicate the number of host directly connected/being repaired
@@ -2154,7 +2169,9 @@ void MACRelayUnitWAPB::handlePathRepairFrameV3(EtherFrame* frame, int inputport)
                             addressTable->updateTable(dstAddress, destEntry); //addressTable[dstAddress] = destEntry;
                         }
 
-                        send(frame,"lowerLayerOut",destEntry.port);
+                        emit(LayeredProtocolBase::packetSentToLowerSignal, frame);  //new version of inet
+
+                        send(frame,"ifOut",destEntry.port);
                         EV << "Forwarding through port: " << destEntry.port << endl;
                     }
                     else
@@ -2307,7 +2324,9 @@ void MACRelayUnitWAPB::multicastFrame(EtherFrame *frame, int inputport, AddressE
             {
                 if (!linkDownForPort(port))
                 {
-                    send((EtherFrame*)frame->dup(), "lowerLayerOut", port);
+                    emit(LayeredProtocolBase::packetSentToLowerSignal, (EtherFrame*)frame->dup());  //new version of inet
+
+                    send((EtherFrame*)frame->dup(), "ifOut", port);
                     EV << "(s) "; //Sent
                 }
                 else EV << "(ld!) "; //Link is down! (not sent)
@@ -2336,7 +2355,9 @@ void MACRelayUnitWAPB::broadcastFrame(EtherFrame *frame, int inputport, bool rep
             {
                 if (!linkDownForPort(port))
                 {
-                    send((EtherFrame*)frame->dup(), "lowerLayerOut", port);
+                    emit(LayeredProtocolBase::packetSentToLowerSignal, (EtherFrame*)frame->dup());  //new version of inet
+
+                    send((EtherFrame*)frame->dup(), "ifOut", port);
                     EV << "(s) "; //Sent
                 }
                 else EV << "(ld!) "; //Link is down! (not sent)

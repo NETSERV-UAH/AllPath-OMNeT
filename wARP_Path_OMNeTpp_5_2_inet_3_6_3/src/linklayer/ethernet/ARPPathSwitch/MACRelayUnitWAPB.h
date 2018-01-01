@@ -43,7 +43,7 @@
 #include "EtherFrame_m.h"
 #include "Ethernet.h"
 #include "inet/linklayer/common/MACAddress.h"
-#include "PathRepair_m.h"
+//#include "PathRepair_m.h"
 #include <sstream>
 #include "ARPPacketRoute_m.h"
 #include "MACRelayUnitRoute.h"
@@ -78,7 +78,6 @@ class MACRelayUnitWAPB : public cSimpleModule, public ILifecycle
       simtime_t blockingTime;     //"Locking Time" for BT(Broadcast/Blocking Table) and LT(Lookup/Learning Table). blockingTime is defined in BlockingTableWAPB module
       simtime_t helloTime;        //"Hello" frequency time and "Locking Time" for HeT = helloTime+lockingTime (not used)
       simtime_t repairingTime;    //"Repairing Time" for RT(Repair Table)
-      int relayQueueLimit;        //Queue Limit
 
       /** LT(Lookup/Learning Table) **/
       enum Status { none = 0, locked = 1, learnt = 2}; //Default: 0,1,2
@@ -143,7 +142,6 @@ class MACRelayUnitWAPB : public cSimpleModule, public ILifecycle
       MACAddress repairingAddress;    //Multicast MAC address used for the repair special messages
 
       // Parameters for statistics collection
-      cOutVector queueLength;         //Vector that saves the evolution of the queue
       long ARPReqRcvd;                //Number of ARP Request messages received
       long ARPRepRcvd;                //Number of ARP Reply messages received
       long nRepairStarted;            //Number of path repairs started (from PathFail)
