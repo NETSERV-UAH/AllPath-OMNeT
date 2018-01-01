@@ -1,5 +1,5 @@
 package wAPB;
 
-@namespace(wAPB);
+//@namespace(wapb);
 
 @license(LGPL);
