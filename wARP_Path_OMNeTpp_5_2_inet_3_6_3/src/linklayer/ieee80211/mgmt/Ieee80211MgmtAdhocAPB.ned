@@ -36,7 +36,7 @@ import inet.linklayer.ieee80211.mgmt.IIeee80211Mgmt;
 simple Ieee80211MgmtAdhocAPB like IIeee80211Mgmt
 {
     parameters:
-        @class(wapb::Ieee80211MgmtAdhocAPB);
+        @class(wapb::ieee80211::Ieee80211MgmtAdhocAPB);
         string macModule;               // The path to the MAC module
         @display("i=block/cogwheel");
     gates:
