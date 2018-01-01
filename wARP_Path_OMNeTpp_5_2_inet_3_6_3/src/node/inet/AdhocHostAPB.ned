@@ -19,11 +19,14 @@ package wAPB.src.node.inet;
 import inet.node.inet.WirelessHost;
 import inet.linklayer.contract.IMACRelayUnit;
 import inet.linklayer.contract.IMACAddressTable;
+
 import wAPB.src.linklayer.ethernet.ARPPathSwitch.MACRelayUnitWAPB;
 import wAPB.src.linklayer.ethernet.ARPPathSwitch.BlockingTableWAPB;
 import wAPB.src.linklayer.ethernet.ARPPathSwitch.LearningTableWAPB;
+import wAPB.src.linklayer.ieee80211.mgmt.Ieee80211MgmtAdhocAPB;
+import wAPB.src.linklayer.ieee80211.Ieee80211NicAPB;
 
-module AdhocHostAPB extends WirelessHost
+module AdhocHostAPB extends WirelessHostAPBW
 {
     parameters:
         @display("i=device/cellphone");
@@ -31,7 +34,7 @@ module AdhocHostAPB extends WirelessHost
         forwarding = default(true);
 
         // EXTRA
-        string relayUnitType = default("MACRelayUnitWAPB");
+        //string relayUnitType = default("MACRelayUnitWAPB");
         //string learningTableType = default("LearningTableWAPB"); 
         //string blockingTableType = default("BlockingTableWAPB"); 
 
@@ -43,7 +46,7 @@ module AdhocHostAPB extends WirelessHost
         LT: LearningTableWAPB { //<macTableType> like IMACAddressTable {
             @display("p=125,250;is=s");
         }
-        relayUnit: <relayUnitType> like IMACRelayUnit {
+        relayUnit: MACRelayUnitWAPB{ //<relayUnitType> like IMACRelayUnit {
             parameters:
                 @display("p=149,300");
             gates:
@@ -52,8 +55,9 @@ module AdhocHostAPB extends WirelessHost
         }
     connections:
         for i=0..numRadios-1 {
-            wlan[i].upperLayerOut --> relayUnit.ifIn[numRadios] if numRadios>1;
-            wlan[i].upperLayerIn <-- relayUnit.ifOut[numRadios] if numRadios>1;
+            wlan[i].upperLayerRelayOut --> relayUnit.ifIn++ ;//if wlan[i] ==  "Ieee80211NicAPB"; //if numRadios>1;
+            wlan[i].upperLayerRelayIn <-- relayUnit.ifOut++; //if numRadios>1;
         }
         //End EXTRA      
 }
+

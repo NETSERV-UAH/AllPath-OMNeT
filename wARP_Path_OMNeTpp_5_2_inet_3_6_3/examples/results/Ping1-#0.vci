@@ -1,0 +1,131 @@
+file 4766 1514833570                                            
+version 2
+run Ping1-0-20180101-22:35:51-7344
+attr configname Ping1
+attr datetime 20180101-22:35:51
+attr experiment Ping1
+attr inifile test1.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Net80211
+attr processid 7344
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.numHosts 2
+param **.constraintAreaMinX 0m
+param **.constraintAreaMinY 0m
+param **.constraintAreaMinZ 0m
+param **.constraintAreaMaxX 600m
+param **.constraintAreaMaxY 400m
+param **.constraintAreaMaxZ 0m
+param **.host*.mobilityType "\"MassMobility\""
+param **.host*.mobility.initFromDisplayString false
+param **.host*.mobility.changeInterval "truncnormal(2s, 0.5s)"
+param **.host*.mobility.changeAngleBy "normal(0deg, 30deg)"
+param **.host*.mobility.speed "truncnormal(20mps, 8mps)"
+param **.host*.mobility.updateInterval 100ms
+param *.host[0].numPingApps 0
+param *.host[*].numPingApps 2
+param *.host[*].pingApp[*].destAddr "\"host[0]\""
+param **.pingApp[0].startTime uniform(1s,5s)
+param **.pingApp[1].startTime 5s+uniform(1s,5s)
+param **.pingApp[*].printPing true
+param **.wlan[*].bitrate 2Mbps
+param **.wlan[*].mgmt.frameCapacity 10
+param **.wlan[*].mac.address "\"auto\""
+param **.wlan[*].mac.maxQueueSize 14
+param **.wlan[*].mac.rtsThresholdBytes 3000B
+param **.wlan[*].mac.retryLimit 7
+param **.wlan[*].mac.cwMinData 7
+param **.wlan[*].mac.cwMinBroadcast 31
+param **.wlan[*].radio.transmitter.power 2mW
+param **.wlan[*].radio.receiver.sensitivity -85dBm
+param **.wlan[*].radio.receiver.snirThreshold 4dB
+param *.host[*].LT.agingTime 120s
+param *.host[*].BT.blockingTime 1s
+
+vector 0 Net80211.host[0].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 Net80211.host[0].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 Net80211.host[1].wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 Net80211.host[1].wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 Net80211.host[0].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 5 Net80211.host[1].wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 6 Net80211.host[0].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 7 Net80211.host[0].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 8 Net80211.host[0].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 9 Net80211.host[0].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 10 Net80211.host[0].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 11 Net80211.host[1].wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 12 Net80211.host[1].wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 13 Net80211.host[1].wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 14 Net80211.host[1].wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 15 Net80211.host[1].wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+0	4500 18 0 0 0 0 2 0 2 2 4
+1	4518 9 0 0 0 0 1 0 0 0 0
+2	4527 18 0 0 0 0 2 0 2 2 4
+3	4545 9 0 0 0 0 1 0 0 0 0
+4	4554 9 0 0 0 0 1 1 1 1 1
+5	4563 9 0 0 0 0 1 1 1 1 1
+6	4572 18 0 0 0 0 2 0 0 0 0
+7	4590 18 0 0 0 0 2 0 0 0 0
+8	4608 18 0 0 0 0 2 0 0 0 0
+9	4626 18 0 0 0 0 2 0 0 0 0
+10	4644 20 0 0 0 0 2 0 0 0 0
+11	4664 20 0 0 0 0 2 0 0 0 0
+12	4684 20 0 0 0 0 2 0 0 0 0
+13	4704 20 0 0 0 0 2 0 0 0 0
+14	4724 20 0 0 0 0 2 0 0 0 0
+15	4744 20 0 0 0 0 2 0 0 0 0
+

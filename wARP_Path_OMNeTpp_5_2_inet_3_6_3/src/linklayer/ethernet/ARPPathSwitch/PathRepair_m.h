@@ -32,7 +32,7 @@ typedef std::vector<MACAddress> MACAddressVector;
 // }}
 
 /**
- * Enum generated from <tt>src/linklayer/ethernet/ARPPathSwitch/PathRepair.msg:30</tt> by nedtool.
+ * Enum generated from <tt>src/linklayer/ethernet/ARPPathSwitch/PathRepair.msg:33</tt> by nedtool.
  * <pre>
  * //Types of repair messages for ARP-Path
  * enum RepairMessageType
@@ -57,7 +57,7 @@ enum RepairMessageType {
 };
 
 /**
- * Class generated from <tt>src/linklayer/ethernet/ARPPathSwitch/PathRepair.msg:44</tt> by nedtool.
+ * Class generated from <tt>src/linklayer/ethernet/ARPPathSwitch/PathRepair.msg:47</tt> by nedtool.
  * <pre>
  * //PathRepair message fields:
  * //	- Type (RepairMessageType)

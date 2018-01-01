@@ -46,4 +46,8 @@ simple Ieee80211MgmtAdhocAPB like IIeee80211Mgmt
         output macOut @labels(Ieee80211Frame);
         input agentIn @loose;   // unused dummy to statisfy the IIeee80211Mgmt interface
         output agentOut @loose; // unused dummy to statisfy the IIeee80211Mgmt interface
+        //EXTRA New
+        input upperLayerRelayIn @labels(EtherFrame);
+        output upperLayerRelayOut @labels(EtherFrame);
+        //EXTRA New End
 }

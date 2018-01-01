@@ -16,10 +16,13 @@ cplusplus {{
 //class noncobject MACAddressVector;
 
 namespace inet;
+
 class noncobject ::MACAddress;
+
 cplusplus {{
 typedef std::vector<MACAddress> MACAddressVector;
 }}
+
 class noncobject MACAddressVector;
 
 message EtherFrame;
