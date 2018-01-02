@@ -31,7 +31,7 @@ simple MACRelayUnitWAPB like IMACRelayUnit
 		int protocolVersion = default(2); //Two versions of ARP-Path are implemented (2 -unidirectional- and 3 -conditional-, not 1 because it didn't work properly)
 		double helloTime @unit("s") = default(10s);		//Hello freq time (and HeT timer = helloTime + blockingTime (not used))
 		double repairingTime @unit("s") = default(1s);	//RT timer
-		int repairType = default(1); //Three types of repair: 1-PathFail+PathReq+PathReply; 2-PathFail+PathReq; 3-PathFail+PathReply -- 0-NoRepair (saves events at executing if we will not use any repair method)
+		int repairType = default(0);  //default(1); for ARP-Path. //Three types of repair: 1-PathFail+PathReq+PathReply; 2-PathFail+PathReq; 3-PathFail+PathReply -- 0-NoRepair (saves events at executing if we will not use any repair method)
 		
         string address = default("00-00-00-00-00-00"); //Set to 00-... by default, if MACRelayUnit watchs the default address (all zeroes), it will assign an automatic MAC address per module ID
 		string portLinkDown = default(""); //Ports which links are down and times (port number ':' init time '-' end time, and separated by ';')
