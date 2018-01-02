@@ -46,13 +46,21 @@ void Ieee80211MgmtAdhocAPB::handleUpperMessage(cPacket *msg)
     //Ieee80211DataFrame *frame = encapsulate(msg);
     //sendDown(frame);
 
+    EV << "->Ieee80211MgmtAdhocAPB::handleUpperMessage()" << endl;
     MACAddress next_hop;
-    Ieee80211DataFrame *frame = encapsulate(msg);
+    inet::ieee80211::Ieee80211DataFrame *frame = encapsulate(msg);
+
+    EV << "Ieee80211DataFrame received from upper layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
     EtherFrame *frame_eth=convertToEtherFrame(frame->dup());
+    EV << "EtherFrame was Generated to send to macRelay, frame.src = " << frame_eth->getSrc() << "frame.dest = " << frame_eth->getDest() << endl;
     MACRelayUnitWAPB *pRelayUnitWAPB = check_and_cast<MACRelayUnitWAPB *>(this->getParentModule()->getParentModule()->getSubmodule("relayUnit"));
     next_hop=pRelayUnitWAPB->handleAndDispatchFrameV2Route(frame_eth);
+    EV << "Next hop received from macRelay = " << next_hop << endl;
+
     frame->setReceiverAddress(next_hop);
+    EV << "Ieee80211DataFrame completed to send to lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
     sendDown(frame);
+    EV << "<- Ieee80211MgmtAdhocAPB::handleUpperMessage()" << endl;
 
 }
 
@@ -71,6 +79,7 @@ Ieee80211DataFrame *Ieee80211MgmtAdhocAPB::encapsulate(cPacket *msg)
     frame->setAddress4(ctrl->getDest());
     //frame->setReceiverAddress(ctrl->getDest());
     frame->setEtherType(ctrl->getEtherType());
+
     int up = ctrl->getUserPriority();
     if (up >= 0) {
         // make it a QoS frame, and set TID
@@ -129,6 +138,9 @@ cPacket *Ieee80211MgmtAdhocAPB::decapsulate(Ieee80211DataFrame *frame)
 
 void Ieee80211MgmtAdhocAPB::handleDataFrame(Ieee80211DataFrame *frame)
 {
+    EV << "->Ieee80211MgmtAdhocAPB::handleDataFrame()" << endl;
+    EV << "Ieee80211DataFrame received from lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
+
     //sendUp(decapsulate(frame));
     if(frame->getAddress3()==myAddress)
     {
