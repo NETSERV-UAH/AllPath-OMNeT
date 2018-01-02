@@ -31,9 +31,12 @@ import inet.power.contract.IEnergyGenerator;
 import inet.power.contract.IEnergyManagement;
 import inet.power.contract.IEnergyStorage;
 
-import wAPB.src.linklayer.contract.IWirelessNic;
+import inet.linklayer.contract.IWirelessNic;
 import wAPB.src.linklayer.ieee80211.Ieee80211NicAPB;
 import inet.node.inet.INetworkNode;
+import wAPB.src.linklayer.ethernet.ARPPathSwitch.MACRelayUnitWAPB;
+import wAPB.src.linklayer.ethernet.ARPPathSwitch.BlockingTableWAPB;
+import wAPB.src.linklayer.ethernet.ARPPathSwitch.LearningTableWAPB;
 
 
 //
@@ -115,9 +118,9 @@ module NodeBaseAPBW like INetworkNode
         pcapRecorder[numPcapRecorders]: PcapRecorder {
             @display("p=53,350,r,10");
         }
-        lo0: LoopbackInterface {
-            @display("p=78,406");
-        }
+      //  lo0: LoopbackInterface {
+        //    @display("p=78,406");
+   //     }
         wlan[numRadios]: Ieee80211NicAPB { //<default("Ieee80211NicAPB")> like IWirelessNic {
             parameters:
                 @display("p=216,406,row,60;q=queue");
@@ -139,11 +142,29 @@ module NodeBaseAPBW like INetworkNode
             parameters:
                 @display("p=213,406,row,10;q=txQueue;i=block/ifcard");
         }
+        //EXTRA
+        BT: BlockingTableWAPB  {  //<macTableType> like IMACAddressTable {
+            parameters:
+                @display("p=180,250;is=s");
+        }
+        LT: LearningTableWAPB { //<macTableType> like IMACAddressTable {
+            parameters:
+                @display("p=125,250;is=s");
+        }
+        relayUnit: MACRelayUnitWAPB{ //<relayUnitType> like IMACRelayUnit {
+            parameters:
+                @display("p=149,300");
+            gates:
+                ifIn[sizeof(radioIn)];
+                ifOut[sizeof(radioIn)];
+        }
+        //EXTRA END
+        
 
     connections allowunconnected:
         // connections to network outside
-        networkLayer.ifOut++ --> lo0.upperLayerIn;
-        lo0.upperLayerOut --> networkLayer.ifIn++;
+    //    networkLayer.ifOut++ --> lo0.upperLayerIn;
+     //   lo0.upperLayerOut --> networkLayer.ifIn++;
 
         for i=0..sizeof(radioIn)-1 {
             radioIn[i] --> { @display("m=s"); } --> wlan[i].radioIn;
@@ -172,5 +193,12 @@ module NodeBaseAPBW like INetworkNode
             tun[i].upperLayerOut --> networkLayer.ifIn++;
             tun[i].upperLayerIn <-- networkLayer.ifOut++;
         }
+        //EXTRA
+        for i=0..sizeof(radioIn)-1 {
+            wlan[i].upperLayerRelayOut --> relayUnit.ifIn++ ;//if wlan[i] ==  "Ieee80211NicAPB"; //if numRadios>1;
+            wlan[i].upperLayerRelayIn <-- relayUnit.ifOut++; //if numRadios>1;
+        }
+        //End EXTRA      
+        
 }
 
