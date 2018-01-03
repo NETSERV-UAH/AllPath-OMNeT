@@ -352,7 +352,7 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV2(EtherFrame *frame, int inputport
      * (in which learning is applied) + 2 (bcast/mcast + ucast) for the rest (in which learning is not applied)
      */
     //1º) If ARP Request (ARP + Broadcast)
-    if(!strcmp("arpREQ",frame->getFullName()))
+    if(!strcmp("arpREQ",frame->getName()))
     {
         EV << "    Frame is ARP Request" << endl;
         ARPReqRcvd++;
@@ -402,7 +402,7 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV2(EtherFrame *frame, int inputport
 
     }
     //2º) If ARP Reply (ARP + Unicast)
-    else if(!strcmp("arpREPLY",frame->getFullName()))
+    else if(!strcmp("arpREPLY",frame->getName()))
     {
         EV << "    Frame is ARP Reply" << endl;
         ARPRepRcvd++;
@@ -559,7 +559,7 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV3(EtherFrame* frame, int inputport
      * (in which learning is applied) + 2 (bcast/mcast + ucast) for the rest (in which learning is not applied)
      */
     //1º) If ARP Request (ARP + Broadcast)
-    if(!strcmp("arpREQ",frame->getFullName()))
+    if(!strcmp("arpREQ",frame->getName()))
     {
         EV << "    Frame is ARP Request" << endl;
         ARPReqRcvd++;
@@ -620,7 +620,7 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV3(EtherFrame* frame, int inputport
 
     }
     //2º) If ARP Reply (ARP + Unicast)
-    else if(!strcmp("arpREPLY",frame->getFullName()))
+    else if(!strcmp("arpREPLY",frame->getName()))
     {
         EV << "    Frame is ARP Reply" << endl;
         ARPRepRcvd++;
@@ -703,8 +703,8 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV3(EtherFrame* frame, int inputport
             EV << "    Frame is MULTICAST" << endl;
 
             //IGMP Report o IGMP Query
-            int IGMPreport = strcmp("IGMPv2 report",frame->getFullName());
-            int IGMPquery = strcmp("IGMPv2 query",frame->getFullName());
+            int IGMPreport = strcmp("IGMPv2 report",frame->getName());
+            int IGMPquery = strcmp("IGMPv2 query",frame->getName());
             if(!IGMPreport || !IGMPquery)
             {
                 EV << "    IGMPreport = " << IGMPreport << "; IGMPquery = " << IGMPquery << endl;
@@ -913,6 +913,8 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV3(EtherFrame* frame, int inputport
 
 void MACRelayUnitWAPB::handleAndDispatchFrameV2Learning(EtherFrame* frame, MACAddress next_h)
 {
+    EV << "->MACRelayUnitWAPB::handleAndDispatchFrameV2Learning" << endl;
+
     EV << "  Protocol version: 2 -> ARP-Path Learning Wireless (v2)" << endl;
 
         MACAddress srcAddress = frame->getSrc();
@@ -928,7 +930,7 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV2Learning(EtherFrame* frame, MACAd
          * (in which learning is applied) + 2 (bcast/mcast + ucast) for the rest (in which learning is not applied)
          */
         //1º) If ARP Request (ARP + Broadcast)
-        if(!strcmp("arpREQ",frame->getFullName()))
+        if(!strcmp("arpREQ",frame->getName()))
         {
             EV << "    Frame is ARP Request" << endl;
             ARPReqRcvd++;
@@ -973,7 +975,7 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV2Learning(EtherFrame* frame, MACAd
             }
         }
         //2º) If ARP Reply (ARP + Unicast)
-        else if(!strcmp("arpREPLY",frame->getFullName()))
+        else if(!strcmp("arpREPLY",frame->getName()))
             {
                 EV << "    Frame is ARP Reply" << endl;
                 ARPRepRcvd++;
@@ -1017,17 +1019,22 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV2Learning(EtherFrame* frame, MACAd
             EV << "Msg not is ARP-REQ/ARP-REPLY,  learnt not allowed" << endl;
             delete (frame);
         }
+        EV << "<-MACRelayUnitWAPB::handleAndDispatchFrameV2Learning" << endl;
 }
 
 
 MACAddress MACRelayUnitWAPB::handleAndDispatchFrameV2Route(EtherFrame* frame)
 {
+    EV << "->MACRelayUnitWAPB::handleAndDispatchFrameV2route" << endl;
+
     EV << "  Protocol version: 2 -> ARP-Path Route Unidirectional  (v2)" << endl;
 
         MACAddress srcAddress = frame->getSrc();
+        EV << "trace1" << endl;
         MACAddress dstAddress = frame->getDest();
         MACAddress noroute;
         bool entryExists;
+        EV << "trace1" << endl;
         EV << "  DEST ADDRESS: " << dstAddress << endl;
         EV << "  SRC ADDRESS: " << srcAddress << endl;
         EV << "  FRAME: " << frame << endl;
@@ -1067,6 +1074,8 @@ MACAddress MACRelayUnitWAPB::handleAndDispatchFrameV2Route(EtherFrame* frame)
             delete (frame);
             return noroute.BROADCAST_ADDRESS;
         }
+        EV << "<-MACRelayUnitWAPB::handleAndDispatchFrameV2route" << endl;
+
 }
 
 
