@@ -45,7 +45,7 @@ module Ieee80211NicAPB like IWirelessNic
         string classifierType = default(""); // needed for EDCA, as the classifier assigns User Priority (UP) to packets; UP determines Access Category via TID
         //string mgmtType = default("Ieee80211MgmtAdhocAPB"); // name of the management module type (implements IIeee80211Mgmt). Ieee80211MgmAdhocAPB for ARP-Path 
         string radioType = default("Ieee80211ScalarRadio");
-        string macType = default("Ieee80211CompatibleMac");   // choose from Ieee80211Mac and Ieee80211CompatibleMac, @see IIeee80211Mac
+        string macType = default("Ieee80211CompatibleMacAPB"); //WARP-PATH  // choose from Ieee80211Mac and Ieee80211CompatibleMac, @see IIeee80211Mac
         string opMode @enum("a", "b", "g(erp)", "g(mixed)", "n", "p") = default("g(mixed)");
         double bitrate @unit("bps") = default(-1bps);
         bool _agentNeeded = default(false); //(mgmtType == "Ieee80211MgmtSTA");   // internal par. do not use, shows if optional agent module is needed
