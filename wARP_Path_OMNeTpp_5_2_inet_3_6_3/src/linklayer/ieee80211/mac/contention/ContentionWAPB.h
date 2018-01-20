@@ -62,7 +62,7 @@ class ContentionWAPB : public cSimpleModule, public IContention
         simtime_t startTime = SIMTIME_ZERO; // XXX: for debugging
 
         //EXTRA
-        int backoffSeed = 0;     //Seed for random backoff (to be configured at the *.ini file)
+        int backoffSeed = 0;     //Seed for random backoff
 
     protected:
         virtual int numInitStages() const override { return NUM_INIT_STAGES; }
