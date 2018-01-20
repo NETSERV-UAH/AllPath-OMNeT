@@ -20,13 +20,11 @@
 #include "inet/linklayer/common/Ieee802Ctrl.h"
 #include "inet/linklayer/ethernet/EtherFrame.h"
 
+namespace wapb {
+namespace ieee80211 {
 
 using namespace inet;
 using namespace inet::ieee80211;
-
-namespace wapb {
-
-namespace ieee80211 {
 
 Define_Module(Ieee80211MgmtAdhocAPB);
 
@@ -169,13 +167,14 @@ void Ieee80211MgmtAdhocAPB::handleDataFrame(Ieee80211DataFrame *frame)
 
        if((!strcmp("arpREQ",frame->getFullName())) || (!strcmp("arpREPLY",frame->getFullName())))   //Step 2 pseudo-code
        {
-           if(previous_resolution_address==frame->getAddress4())
+          /* if(previous_resolution_address==frame->getAddress4())       this part was eliminated because of increasing reliability of unsuccessful broadcasts. in layer 2, broadcast service is an unreliable service
            {
                EV << "It is the previous ARP Resolution, is not necessary forwarding this frame" << endl;
                delete (frame);
            }else
            {
                previous_resolution_address=frame->getAddress4(); //estaba en 4
+         */
            //if(orig_ARPResolution == (frame->getAddress3()))
            //{
                //EV << " Is replicated ARP-Resolution, delete frame" << endl;
@@ -202,7 +201,7 @@ void Ieee80211MgmtAdhocAPB::handleDataFrame(Ieee80211DataFrame *frame)
                    sendDown(frame);
                }
 
-           }
+       /*    }*/
            //}
        }else if((frame->getAddress3())==myAddress)   //Step3 pseudo-code (yes:), it is not arpREQ and arpREPLY (it is data), and it is mine
        {
