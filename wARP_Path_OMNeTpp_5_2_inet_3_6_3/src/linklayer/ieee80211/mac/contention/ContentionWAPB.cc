@@ -16,7 +16,6 @@
 //
 
 #include "ContentionWAPB.h"
-#include <random>
 
 #include "inet/common/FSMA.h"
 #include "inet/common/ModuleAccess.h"
@@ -57,7 +56,8 @@ void ContentionWAPB::initialize(int stage)
         fsm.setState(IDLE, "IDLE");
 
         //EXTRA
-        backoffSeed = this->getId();
+        //backoffSeed = (unsigned int) this->getId();
+        backoffSeed = time(NULL);
         srand (backoffSeed); //Seed for the random functions
 
         WATCH(ifs);
