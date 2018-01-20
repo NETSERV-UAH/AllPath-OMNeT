@@ -24,7 +24,7 @@ import inet.linklayer.ieee80211.mac.contract.IRx;
 import inet.linklayer.ieee80211.mac.contract.IStatistics;
 import inet.linklayer.ieee80211.mac.contract.ITx;
 
-import wAPB.src.linklayer.ieee80211.mac.coordinationfunction.DcfAPB;
+import wAPB.src.linklayer.ieee80211.mac.coordinationfunction.DcfWAPB;
 
 import inet.linklayer.ieee80211.mac.coordinationfunction.Hcf;
 
@@ -110,7 +110,7 @@ module Ieee80211MacAPB extends MACProtocolBase like IIeee80211Mac
 
         @signal[NF_MODESET_CHANGED](type=inet::physicallayer::Ieee80211ModeSet);
     submodules:
-        dcf: DcfAPB {
+        dcf: DcfWAPB {
             parameters:
                 @display("p=100,100");
         }

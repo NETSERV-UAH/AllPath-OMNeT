@@ -17,10 +17,10 @@
 
 package wAPB.src.linklayer.ieee80211.mac.channelaccess;
 
-import wAPB.src.linklayer.ieee80211.mac.contention.ContentionAPB;
+import wAPB.src.linklayer.ieee80211.mac.contention.ContentionWAPB;
 
 
-module DcafAPB
+module DcafWAPB
 {
     parameters:
         double difsTime @unit("s") = default(-1s);
@@ -33,7 +33,7 @@ module DcafAPB
         @class("inet::ieee80211::Dcaf");
         @display("i=block/star");
     submodules:
-        contention: ContentionAPB {
+        contention: ContentionWAPB {
             parameters:
 	            @display("p=100,100");
         }

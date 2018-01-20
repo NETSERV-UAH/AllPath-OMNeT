@@ -17,7 +17,7 @@
 
 package wAPB.src.linklayer.ieee80211.mac.coordinationfunction;
 
-import wAPB.src.linklayer.ieee80211.mac.channelaccess.DcafAPB;
+import wAPB.src.linklayer.ieee80211.mac.channelaccess.DcafWAPB;
 
 import inet.linklayer.ieee80211.mac.contract.IRateControl;
 import inet.linklayer.ieee80211.mac.originator.NonQoSRecoveryProcedure;
@@ -33,7 +33,7 @@ import inet.linklayer.ieee80211.mac.recipient.RecipientMacDataService;
 //
 // IEEE 802.11 Distributed Coordination Function
 //
-module DcfAPB
+module DcfWAPB
 {
     parameters:
         int maxQueueSize = default(100); // -1 means unlimited
@@ -52,7 +52,7 @@ module DcfAPB
         @signal[NF_PACKET_DROP](type=Ieee80211Frame);
 
     submodules:
-        channelAccess: DcafAPB {
+        channelAccess: DcafWAPB {
             parameters:
                 @display("p=150,100");
         }
