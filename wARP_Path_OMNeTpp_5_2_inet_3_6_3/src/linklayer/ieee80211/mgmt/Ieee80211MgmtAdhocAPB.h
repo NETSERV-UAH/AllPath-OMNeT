@@ -22,9 +22,6 @@
 
 #include "inet/linklayer/ieee80211/mgmt/Ieee80211MgmtBase.h"
 
-using namespace inet;
-using namespace inet::ieee80211;
-
 namespace inet{
 
 class EtherFrame;
@@ -32,6 +29,9 @@ class EtherFrame;
 }
 namespace wapb {
 namespace ieee80211 {
+
+using namespace inet;
+using namespace inet::ieee80211;
 
 /**
  * Used in 802.11 ad-hoc mode. See corresponding NED file for a detailed description.
@@ -44,6 +44,7 @@ class Ieee80211MgmtAdhocAPB : public Ieee80211MgmtBase
   protected:
 
     MACAddress previous_resolution_address;
+    const char *implementation;
 
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void initialize(int) override;
@@ -53,6 +54,12 @@ class Ieee80211MgmtAdhocAPB : public Ieee80211MgmtBase
 
     /** Implements abstract Ieee80211MgmtBase method */
     virtual void handleUpperMessage(cPacket *msg) override;
+    // wARP-Path, new version
+    virtual void handleUpperMessageNewWAPB(cPacket *msg);
+    // wARP-Path, new version
+    virtual void handleUpperMessageOldWAPB(cPacket *msg);
+
+
 
     /** Implements abstract Ieee80211MgmtBase method -- throws an error (no commands supported) */
     virtual void handleCommand(int msgkind, cObject *ctrl) override;
@@ -62,9 +69,12 @@ class Ieee80211MgmtAdhocAPB : public Ieee80211MgmtBase
 
     /** Utility method to decapsulate a data frame */
     virtual cPacket *decapsulate(Ieee80211DataFrame *frame);
-
+    // wARP-Path
     virtual EtherFrame *convertToEtherFrame(Ieee80211DataFrame *frame_);
-
+    // wARP-Path, new version
+    virtual void handleDataFrameNewVersionWAPB(Ieee80211DataFrame *frame);
+    // wARP-Path, old version
+    virtual void handleDataFrameOldVersionWAPB(Ieee80211DataFrame *frame);
 
     /** @name Processing of different frame types */
     //@{

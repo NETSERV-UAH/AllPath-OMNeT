@@ -56,8 +56,8 @@ void ContentionWAPB::initialize(int stage)
         fsm.setState(IDLE, "IDLE");
 
         //EXTRA
-        //backoffSeed = (unsigned int) this->getId();
-        backoffSeed = time(NULL);
+        backoffSeed = (unsigned int) this->getId();
+        //backoffSeed = time(NULL);
         srand (backoffSeed); //Seed for the random functions
 
         WATCH(ifs);

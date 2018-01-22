@@ -32,6 +32,8 @@ void Ieee80211MgmtAdhocAPB::initialize(int stage)
 {
     Ieee80211MgmtBase::initialize(stage);
     previous_resolution_address = previous_resolution_address.UNSPECIFIED_ADDRESS;
+    //NEW
+    implementation = par("implementation").stringValue();
 }
 
 void Ieee80211MgmtAdhocAPB::handleTimer(cMessage *msg)
@@ -45,23 +47,55 @@ void Ieee80211MgmtAdhocAPB::handleUpperMessage(cPacket *msg)
     //sendDown(frame);
 
     EV << "->Ieee80211MgmtAdhocAPB::handleUpperMessage()" << endl;
-    MACAddress next_hop;
+    if (strcmp(implementation,"new") == 0)
+        handleUpperMessageNewWAPB(msg);
+    else if (strcmp(implementation,"old") == 0)
+        handleUpperMessageOldWAPB(msg);
+    EV << "<- Ieee80211MgmtAdhocAPB::handleUpperMessage()" << endl;
+}
+
+void Ieee80211MgmtAdhocAPB::handleUpperMessageNewWAPB(cPacket *msg)
+{
+    MACAddress nextHop;
+    inet::ieee80211::Ieee80211DataFrame *frame = encapsulate(msg);
+
+    EV << "Ieee80211DataFrame received from upper layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
+ /*   if (frame->getAddress3() == MACAddress::BROADCAST_ADDRESS)
+    {
+        nextHop = MACAddress::BROADCAST_ADDRESS;
+    }else
+    {*/
+        EtherFrame *frame_eth=convertToEtherFrame(frame->dup());
+        EV << "EtherFrame is Generated to send to macRelay Unit, frame.src = " << frame_eth->getSrc() << "frame.dest = " << frame_eth->getDest() << endl;
+        MACRelayUnitWAPB *pRelayUnitWAPB = check_and_cast<MACRelayUnitWAPB *>(this->getParentModule()->getParentModule()->getSubmodule("relayUnit"));
+        nextHop=pRelayUnitWAPB->handleAndDispatchV2WArpPath(frame_eth,MACAddress::UNSPECIFIED_ADDRESS);
+        EV << "Next hop received from macRelay = " << nextHop << endl;
+ /*   }*/
+
+    frame->setReceiverAddress(nextHop);
+    EV << "Next hop address (" << frame->getReceiverAddress() <<  ") is added to the field of ReceiverAddress" << endl;
+    EV << "Ieee80211DataFrame completed to send to lower layer." << endl;
+    EV << "ReceiverAddress (Physical Receiver) = " << frame->getReceiverAddress() << ", TransmitterAddress (Physical Transmitter) = " << frame->getTransmitterAddress() << ", frame.Address3 (Logical Receiver) = " << frame->getAddress3() << ", frame.Address4 (Logical Transmitter) = "  << frame->getAddress4() << endl;
+    sendDown(frame);
+}
+
+void Ieee80211MgmtAdhocAPB::handleUpperMessageOldWAPB(cPacket *msg)
+{
+    MACAddress nextHop;
     inet::ieee80211::Ieee80211DataFrame *frame = encapsulate(msg);
 
     EV << "Ieee80211DataFrame received from upper layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
     EtherFrame *frame_eth=convertToEtherFrame(frame->dup());
     EV << "EtherFrame is Generated to send to macRelay Unit, frame.src = " << frame_eth->getSrc() << "frame.dest = " << frame_eth->getDest() << endl;
     MACRelayUnitWAPB *pRelayUnitWAPB = check_and_cast<MACRelayUnitWAPB *>(this->getParentModule()->getParentModule()->getSubmodule("relayUnit"));
-    next_hop=pRelayUnitWAPB->handleAndDispatchFrameV2Route(frame_eth);
-    EV << "Next hop received from macRelay = " << next_hop << endl;
+    nextHop=pRelayUnitWAPB->handleAndDispatchFrameV2Route(frame_eth);
+    EV << "Next hop received from macRelay = " << nextHop << endl;
 
-    frame->setReceiverAddress(next_hop);
+    frame->setReceiverAddress(nextHop);
     EV << "Next hop address (" << frame->getReceiverAddress() <<  ") is added to the field of ReceiverAddress" << endl;
     EV << "Ieee80211DataFrame completed to send to lower layer." << endl;
     EV << "ReceiverAddress (Physical Receiver) = " << frame->getReceiverAddress() << ", TransmitterAddress (Physical Transmitter) = " << frame->getTransmitterAddress() << ", frame.Address3 (Logical Receiver) = " << frame->getAddress3() << ", frame.Address4 (Logical Transmitter) = "  << frame->getAddress4() << endl;
     sendDown(frame);
-    EV << "<- Ieee80211MgmtAdhocAPB::handleUpperMessage()" << endl;
-
 }
 
 void Ieee80211MgmtAdhocAPB::handleCommand(int msgkind, cObject *ctrl)
@@ -146,6 +180,58 @@ cPacket *Ieee80211MgmtAdhocAPB::decapsulate(Ieee80211DataFrame *frame)
 
 void Ieee80211MgmtAdhocAPB::handleDataFrame(Ieee80211DataFrame *frame)
 {
+    //sendUp(decapsulate(frame));
+
+    if (strcmp(implementation,"new") == 0)
+        handleDataFrameNewVersionWAPB(frame);
+    else if (strcmp(implementation,"old") == 0)
+        handleDataFrameOldVersionWAPB(frame);
+
+
+}
+
+void Ieee80211MgmtAdhocAPB::handleDataFrameNewVersionWAPB(Ieee80211DataFrame *frame)
+{
+    EV << "->Ieee80211MgmtAdhocAPB::handleDataFrame()" << endl;
+    EV << "Ieee80211DataFrame received from lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
+
+    //Realizamos el aprendizaje ya que los paquetes llegan desde abajo
+    MACAddress previousHop=frame->getTransmitterAddress();
+    EV << "  Previous Hop ADDRESS: " << previousHop << endl;
+
+    if(frame->getAddress4()==myAddress)  //Step 1 pseudo-code (listing 2) // if i am Logical Transmitter!, my frame return back to me!
+    {
+        EV << "  Delete packect, src address (Logical Transmitter address) is my own address (Step 1 pseudo-code), frame is discarded. " << frame->getAddress3() << endl;
+        delete (frame);
+    }
+    else if((frame->getAddress3())==myAddress)   //Step2 pseudo-code (listing 2) (yes:), it is not arpREQ, and it is mine
+    {
+        EtherFrame *frame_eth=convertToEtherFrame(frame->dup());
+        MACRelayUnitWAPB *pRelayUnitWAPB = check_and_cast<MACRelayUnitWAPB *>(this->getParentModule()->getParentModule()->getSubmodule("relayUnit"));
+        MACAddress nextHop = pRelayUnitWAPB->handleAndDispatchV2WArpPath(frame_eth,previousHop); //previous hop must be learned, next hop is not important
+        EV << "frame is sent to upper layer" << endl;
+        sendUp(decapsulate(frame));
+    }
+    else   // ARP-Path mechanism
+    {
+        EtherFrame *frame_eth=convertToEtherFrame(frame->dup());
+        MACRelayUnitWAPB *pRelayUnitWAPB = check_and_cast<MACRelayUnitWAPB *>(this->getParentModule()->getParentModule()->getSubmodule("relayUnit"));
+        MACAddress nextHop = pRelayUnitWAPB->handleAndDispatchV2WArpPath(frame_eth,previousHop);
+        sendUp(decapsulate(frame->dup())); // to check if ip address is mine. // dup() : maybe frame will be deleted in upper layer, then simulation is encountered with error
+        if (!nextHop.isUnspecified())//(nextHop != MACAddress::UNSPECIFIED_ADDRESS)
+        {
+            frame->setReceiverAddress(nextHop);
+            frame->setTransmitterAddress(myAddress);
+            EV << "aaaframe is sent to next hop:" << nextHop << endl;
+            EV << "ReceiverAddress (Physical Receiver): " << frame->getReceiverAddress() << "TransmitterAddress (Physical Transmitte): " << frame->getTransmitterAddress() << ", Address3 (Logical Receiver) :" << frame->getAddress3() << ", Address4 (Logical Transmitter)" << frame->getAddress4() << endl;
+            sendDown(frame);
+        }else
+            delete frame;
+    }
+}
+
+void Ieee80211MgmtAdhocAPB::handleDataFrameOldVersionWAPB(Ieee80211DataFrame *frame)
+{
     EV << "->Ieee80211MgmtAdhocAPB::handleDataFrame()" << endl;
     EV << "Ieee80211DataFrame received from lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
 
@@ -167,14 +253,14 @@ void Ieee80211MgmtAdhocAPB::handleDataFrame(Ieee80211DataFrame *frame)
 
        if((!strcmp("arpREQ",frame->getFullName())) || (!strcmp("arpREPLY",frame->getFullName())))   //Step 2 pseudo-code
        {
-          /* if(previous_resolution_address==frame->getAddress4())       this part was eliminated because of increasing reliability of unsuccessful broadcasts. in layer 2, broadcast service is an unreliable service
+           if(previous_resolution_address==frame->getAddress4())       //this part was eliminated because of increasing reliability of unsuccessful broadcasts. in layer 2, broadcast service is an unreliable service
            {
                EV << "It is the previous ARP Resolution, is not necessary forwarding this frame" << endl;
                delete (frame);
            }else
            {
                previous_resolution_address=frame->getAddress4(); //estaba en 4
-         */
+
            //if(orig_ARPResolution == (frame->getAddress3()))
            //{
                //EV << " Is replicated ARP-Resolution, delete frame" << endl;
@@ -201,7 +287,7 @@ void Ieee80211MgmtAdhocAPB::handleDataFrame(Ieee80211DataFrame *frame)
                    sendDown(frame);
                }
 
-       /*    }*/
+           }
            //}
        }else if((frame->getAddress3())==myAddress)   //Step3 pseudo-code (yes:), it is not arpREQ and arpREPLY (it is data), and it is mine
        {

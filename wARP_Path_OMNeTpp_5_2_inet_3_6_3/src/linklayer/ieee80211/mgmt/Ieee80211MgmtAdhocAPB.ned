@@ -39,6 +39,7 @@ simple Ieee80211MgmtAdhocAPB like IIeee80211Mgmt
         @class(wapb::ieee80211::Ieee80211MgmtAdhocAPB);
         string macModule;               // The path to the MAC module
         @display("i=block/cogwheel");
+        string implementation = default("new"); //EXTRA NEW : there are 2 implementation of wARP-Path (old and new)
     gates:
         input upperLayerIn;
         output upperLayerOut;
