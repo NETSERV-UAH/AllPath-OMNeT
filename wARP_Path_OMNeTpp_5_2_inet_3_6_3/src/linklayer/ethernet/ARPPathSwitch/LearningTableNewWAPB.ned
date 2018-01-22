@@ -25,10 +25,10 @@ import wAPB.src.linklayer.contract.ILearningTableWAPB;
 // If needed, address tables can be pre-loaded from text files at the beginning
 // of the simulation; this controlled by the addressTableFile module parameter.
 //
-simple LearningTableWAPB like ILearningTableWAPB
+simple LearningTableNewWAPB like ILearningTableWAPB
 {
     parameters:
-        @class(wapb::LearningTableWAPB);       
+        @class(wapb::LearningTableNewWAPB);       
         @display("i=block/table2");
         double agingTime @unit("s") = default(120s);
         //string addressTableFile = default("");

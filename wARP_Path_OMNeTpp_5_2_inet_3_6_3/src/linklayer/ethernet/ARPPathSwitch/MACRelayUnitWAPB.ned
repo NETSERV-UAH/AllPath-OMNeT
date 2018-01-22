@@ -28,6 +28,8 @@ simple MACRelayUnitWAPB like IMACRelayUnit
         @signal[packetReceivedFromLower](type=cPacket);
 
         //EXTRA
+        string implementation = default("new");
+        string functionality = default("wARP-Path");
 		int protocolVersion = default(2); //Two versions of ARP-Path are implemented (2 -unidirectional- and 3 -conditional-, not 1 because it didn't work properly)
 		double helloTime @unit("s") = default(10s);		//Hello freq time (and HeT timer = helloTime + blockingTime (not used))
 		double repairingTime @unit("s") = default(1s);	//RT timer

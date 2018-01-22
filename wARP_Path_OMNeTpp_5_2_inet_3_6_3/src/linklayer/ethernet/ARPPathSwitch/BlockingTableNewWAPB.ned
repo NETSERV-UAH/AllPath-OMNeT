@@ -14,7 +14,7 @@
 //
 
 package wAPB.src.linklayer.ethernet.ARPPathSwitch;
-import wAPB.src.linklayer.contract.ILearningTableWAPB;
+import wAPB.src.linklayer.contract.IBlockingTableWAPB;
 
 
 //
@@ -25,11 +25,11 @@ import wAPB.src.linklayer.contract.ILearningTableWAPB;
 // If needed, address tables can be pre-loaded from text files at the beginning
 // of the simulation; this controlled by the addressTableFile module parameter.
 //
-simple LearningTableWAPB like ILearningTableWAPB
+simple BlockingTableNewWAPB like IBlockingTableWAPB
 {
     parameters:
-        @class(wapb::LearningTableWAPB);       
+        @class(wapb::BlockingTableNewWAPB);       
         @display("i=block/table2");
-        double agingTime @unit("s") = default(120s);
+        double blockingTime @unit("s") = default(1s);
         //string addressTableFile = default("");
 }

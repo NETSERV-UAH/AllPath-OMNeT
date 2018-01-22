@@ -52,9 +52,36 @@ void MACRelayUnitWAPB::initialize(int stage)
     }
 
     /*MACRelayUnitWAPB.h*/
+    //new implementation
+    functionality = par("functionality").stringValue();   // (functionality == wARP-Path) ==> this modules handles wARP-Path frames
+    implementation = par("implementation").stringValue();
+
+    // if (implementation == "new") && (functionality == wARP-Path) ==> this module runs handleAndDispatchWArpPath() method
+    // (implementation == "old") && (functionality == wARP-Path) ==> this module runs handleAndDispatchFrameV2Learning() and handleAndDispatchFrameV2Route() methods
+    if ((strcmp(functionality,"wARP-Path") == 0) && (strcmp(implementation,"new") == 0))
+    {
+        LT = check_and_cast<LearningTableNewWAPB *>(getModuleByPath(par("learningTablePath")));
+        BT = check_and_cast<BlockingTableNewWAPB *>(getModuleByPath(par("blockingTablePath")));
+    } else
+    {
+        BT=new BlockingTableNewWAPB;
+        LT=new LearningTableNewWAPB;
+    }
+
+    //old implementation
     // Parameters assigned to variables:
-    addressTable = check_and_cast<LearningTableWAPB *>(getModuleByPath(par("learningTablePath")));
-    addressTableBasic = check_and_cast<BlockingTableWAPB *>(getModuleByPath(par("blockingTablePath")));
+    if (strcmp(implementation,"old") == 0)
+    {
+        addressTable = check_and_cast<LearningTableWAPB *>(getModuleByPath(par("learningTablePath")));
+        addressTableBasic = check_and_cast<BlockingTableWAPB *>(getModuleByPath(par("blockingTablePath")));
+    }
+    else // to prevent the error, TODO: we need an common interface for new and old approaches
+    {
+        addressTable = new (LearningTableWAPB);
+        addressTableBasic = new (BlockingTableWAPB);
+
+    }
+
     protocolVersion = par("protocolVersion");
 
     agingTime = getModuleByPath(par("learningTablePath"))->par("agingTime");
@@ -232,12 +259,45 @@ void MACRelayUnitWAPB::handleAndDispatchFrame(EtherFrame *frame)
     numProcessedFrames++;
 
     EV << "->MACRelayUnitWAPB::handleAndDispatchFrame()" << endl;
-    if(protocolVersion == 2)
-        handleAndDispatchFrameV2(frame, inputport);
-    else if(protocolVersion == 3)
-        handleAndDispatchFrameV3(frame, inputport);
+
+    //new implementation
+    // if (implementation == "new") && (functionality == wARP-Path) ==> this module runs handleAndDispatchWArpPath() method
+    // (implementation == "old") && (functionality == wARP-Path) ==> this module runs handleAndDispatchFrameV2Learning() and handleAndDispatchFrameV2Route() methods
+    if (strcmp(implementation, "old") == 0)
+    {
+        if (strcmp(functionality, "ARP-Path") ==0)
+        {
+            if(protocolVersion == 2)
+                handleAndDispatchFrameV2(frame, inputport);
+            else if(protocolVersion == 3)
+                handleAndDispatchFrameV3(frame, inputport);
+            else
+                EV <<implementation << "  version " << protocolVersion << " for " << functionality << " protocol is not yet implemented! ERROR!" << endl;
+        }
+        else
+            EV << implementation << "version of the " << functionality << " protocol is not yet implemented! ERROR!" << endl;
+
+       //else if (strcmp(functionality, "wARP-Path") ==0)  //
+           //if (protocolVersion == 2)
+           //    handleAndDispatchFrameV2Route(EtherFrame* frame); & handleAndDispatchFrameV2Learning(EtherFrame* frame, MACAddress next_h);
+    }
+    else if (strcmp(implementation, "new") == 0)
+        if (strcmp(functionality, "wARP-Path") == 0)
+        {
+            if(protocolVersion == 2)
+            {
+                //TODO : extract inputHop from frame
+
+                //handleAndDispatchV2WArpPath(frame, inputHop);
+            }
+            else
+                EV << implementation << " version " << protocolVersion << " for " << functionality << " protocol is not yet implemented! ERROR!" << endl;
+        }
+        else
+            EV << implementation << " version " << protocolVersion << " for " << functionality << " protocol is not yet implemented! ERROR!" << endl;
     else
-        EV << "  Protocol version " << protocolVersion << " is not yet implemented! ERROR!" << endl;
+        EV << implementation << " version " << protocolVersion << " for " << functionality << " protocol is not yet implemented! ERROR!" << endl;
+
     EV << "<-MACRelayUnitWAPB::handleAndDispatchFrame()" << endl;
 }
 
@@ -910,6 +970,52 @@ void MACRelayUnitWAPB::handleAndDispatchFrameV3(EtherFrame* frame, int inputport
         }
     }
 }
+
+MACAddress MACRelayUnitWAPB::handleAndDispatchV2WArpPath(EtherFrame* frame, MACAddress inputHop)
+{
+    if (!inputHop.isUnspecified())  //while a source node want to start a transmission, it has not any input hop. source dos not need to learn/block own address
+    {
+        if ((frame->getDest().isBroadcast())||(frame->getDest().isMulticast()))
+            if(((BT->getNextHopForAddress(frame->getSrc()))==MACAddress::UNSPECIFIED_ADDRESS)||(((BT->getNextHopForAddress(frame->getSrc()))!=MACAddress::UNSPECIFIED_ADDRESS)&&((BT->getNextHopForAddress(frame->getSrc()))==inputHop)))
+            {
+                if((strcmp(frame->getName(),"arpREQ")==0)&&((LT->getNextHopForAddress(frame->getSrc()))==MACAddress::UNSPECIFIED_ADDRESS))
+                    LT->updateTableWithAddress(inputHop,frame->getSrc());
+                BT->updateTableWithAddress(inputHop,frame->getSrc());
+                //EV<<"BT update port : #"<<inputport<<"  src address:"<<frame->getSrc();
+                // EV << "Broadcasting broadcast frame " << frame << endl;
+                delete frame;
+                return MACAddress::BROADCAST_ADDRESS;
+            }else
+            {
+                //EV << "Frame received before, " << frame->getFullName()
+                //     << " dest " << frame->getDest() << ", discarding frame\n";
+                // numDiscardedFrames++;
+                delete frame;
+                return MACAddress::UNSPECIFIED_ADDRESS;
+            }else if (!(frame->getDest().isBroadcast())&&!(frame->getDest().isMulticast()))
+            {
+                if((strcmp(frame->getName(),"arpREPLY")==0)&&((LT->getNextHopForAddress(frame->getSrc()))==MACAddress::UNSPECIFIED_ADDRESS))
+                {
+                    LT->updateTableWithAddress(inputHop,frame->getSrc());
+                    //forwaringState++;
+                }
+                MACAddress nextHop = LT->getNextHopForAddress(frame->getDest());
+                LT->refreshTimer(frame->getDest()); //LT->updateTableWithAddress(nextHop,frame->getDest()); //updateTableWithAddress() creates a table entry including source address in source node
+                return nextHop;
+            }
+    }else    // if (inputHop.isUnspecified())  : source only needs next hop address
+    {
+        MACAddress nextHop = LT->getNextHopForAddress(frame->getDest());
+        if (!nextHop.isUnspecified())
+            LT->updateTableWithAddress(nextHop,frame->getDest());  // reftresh timermust be, however there is a condition in previous line
+        else
+            nextHop = MACAddress::BROADCAST_ADDRESS;
+        return nextHop;
+    }
+
+}
+
+
 
 void MACRelayUnitWAPB::handleAndDispatchFrameV2Learning(EtherFrame* frame, MACAddress next_h)
 {

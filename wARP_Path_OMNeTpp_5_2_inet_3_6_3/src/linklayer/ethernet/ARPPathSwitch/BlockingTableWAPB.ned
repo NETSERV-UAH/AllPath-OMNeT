@@ -14,6 +14,7 @@
 //
 
 package wAPB.src.linklayer.ethernet.ARPPathSwitch;
+import wAPB.src.linklayer.contract.IBlockingTableWAPB;
 
 
 //
@@ -24,7 +25,7 @@ package wAPB.src.linklayer.ethernet.ARPPathSwitch;
 // If needed, address tables can be pre-loaded from text files at the beginning
 // of the simulation; this controlled by the addressTableFile module parameter.
 //
-simple BlockingTableWAPB
+simple BlockingTableWAPB like IBlockingTableWAPB
 {
     parameters:
         @class(wapb::BlockingTableWAPB);       

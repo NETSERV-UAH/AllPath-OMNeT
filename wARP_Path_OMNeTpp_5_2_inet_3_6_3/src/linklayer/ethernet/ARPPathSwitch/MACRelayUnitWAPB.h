@@ -31,11 +31,13 @@
 #include "inet/common/INETDefs.h"
 
 #include "inet/common/lifecycle/ILifecycle.h"
+#include "LearningTableNewWAPB.h"
 #include "src/linklayer/ethernet/ARPPathSwitch/BlockingTableWAPB.h"
 #include "src/linklayer/ethernet/ARPPathSwitch/LearningTableWAPB.h"
 #include "src/linklayer/ieee80211/mgmt/Ieee80211MgmtAdhocAPB.h"
+#include "src/linklayer/ethernet/ARPPathswitch/LearningTableNewWAPB.h"
+#include "src/linklayer/ethernet/ARPPathswitch/BlockingTableNewWAPB.h"
 #include "PathRepair_m.h"
-
 
 /*
 #include <omnetpp.h>
@@ -52,8 +54,6 @@
 #define MAX_EVENTS 10 //Maximum number of events for a link = 10 (this is to save memory, but vectors could be bigger if needed)
 #define NPORTS 64 //Number of ports in the switch (for multicast table)
 
-
-using namespace inet;
 namespace inet{
 
 class EtherFrame;
@@ -61,6 +61,7 @@ class EtherFrame;
 }
 
 namespace wapb {
+using namespace inet;
 
 class MACRelayUnitWAPB : public cSimpleModule, public ILifecycle
 {
@@ -69,7 +70,14 @@ class MACRelayUnitWAPB : public cSimpleModule, public ILifecycle
     //friend class BlockingTableWAPB;
 
   protected:
+    //new implementation
+    BlockingTableNewWAPB *BT = nullptr;
+    LearningTableNewWAPB *LT = nullptr;
+    const char *functionality;
+    const char *implementation;
 
+
+    //old implementation
       unsigned int protocolVersion;   //Two versions of ARP-Path are implemented (2 -unidirectional- and 3 -conditional-, not 1 because it didn't work properly)
       unsigned int repairType;        //Type of repair to be applied (1,2,3: PF+PRq+PRp; PF+PRq; PF+PRp) -- 0:NoRepair (saves events at executing if we will not use any repair method)
 
@@ -235,6 +243,7 @@ class MACRelayUnitWAPB : public cSimpleModule, public ILifecycle
 
         virtual void handleAndDispatchFrameV2Learning(EtherFrame* frame, MACAddress next_h);
         virtual MACAddress handleAndDispatchFrameV2Route(EtherFrame* frame);
+        virtual MACAddress handleAndDispatchV2WArpPath(EtherFrame* frame, MACAddress inputHop);
 
 
         virtual void generateSwitchAddress();
