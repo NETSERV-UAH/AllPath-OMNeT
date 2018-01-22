@@ -37,6 +37,10 @@ import inet.node.inet.INetworkNode;
 import wAPB.src.linklayer.ethernet.ARPPathSwitch.MACRelayUnitWAPB;
 import wAPB.src.linklayer.ethernet.ARPPathSwitch.BlockingTableWAPB;
 import wAPB.src.linklayer.ethernet.ARPPathSwitch.LearningTableWAPB;
+import wAPB.src.linklayer.ethernet.ARPPathSwitch.BlockingTableNewWAPB;
+import wAPB.src.linklayer.ethernet.ARPPathSwitch.LearningTableNewWAPB;
+import wAPB.src.linklayer.contract.IBlockingTableWAPB;
+import wAPB.src.linklayer.contract.ILearningTableWAPB;
 
 
 //
@@ -75,6 +79,11 @@ module NodeBaseAPBW like INetworkNode
         *.routingTableModule = default(routingTableType != "" ? absPath(".routingTable") : "");
         *.energySourceModule = default(energyStorageType != "" ? absPath(".energyStorage") : "");
         *.mobilityModule = default(mobilityType != "" ? absPath(".mobility") : "");
+        //EXTRA
+        string implementation = default("new");
+        string BlockingTableType = default(implementation == "new" ? "BlockingTableNewWAPB" : "BlockingTableWAPB"); //default("BlockingTableWAPB"); //default("BlockingTableNewWAPB"); //default(implementation == "new" ? "BlockingTableNewWAPB" : "BlockingTableWAPB");
+        string LearningTableType = default(implementation == "new" ? "LearningTableNewWAPB" : "LearningTableWAPB"); //default("LearningTableWAPB"); //default("LearningTableNewWAPB"); //default(implementation == "new" ? "LearningTableNewWAPB" : "LearningTableWAPB");
+        
     gates:
         input radioIn[numRadios] @directIn;
         inout pppg[] @labels(PPPFrame-conn);
@@ -143,11 +152,11 @@ module NodeBaseAPBW like INetworkNode
                 @display("p=213,406,row,10;q=txQueue;i=block/ifcard");
         }
         //EXTRA
-        BT: BlockingTableWAPB  {  //<macTableType> like IMACAddressTable {
+        BT: <BlockingTableType> like IBlockingTableWAPB  {  //BlockingTableWAPB{ //<BlockingTableType> like IBlockingTableWAPB  {  //<macTableType> like IMACAddressTable {
             parameters:
                 @display("p=180,250;is=s");
         }
-        LT: LearningTableWAPB { //<macTableType> like IMACAddressTable {
+        LT: <LearningTableType> like ILearningTableWAPB { //LearningTableWAPB{ //<LearningTableType> like ILearningTableWAPB { //<macTableType> like IMACAddressTable {
             parameters:
                 @display("p=125,250;is=s");
         }
