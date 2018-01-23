@@ -78,6 +78,10 @@ class ContentionWAPB : public cSimpleModule, public IContention
         virtual void revokeBackoffOptimization();
         virtual void updateDisplayString(simtime_t expectedChannelAccess);
         const char *getEventName(EventType event);
+        //EXTRA
+        int intRand1(const int cw);
+        int intRand2(const int min, const int max);
+        int intRand3(const int min, const int max);
 
     public:
         ContentionWAPB() {}

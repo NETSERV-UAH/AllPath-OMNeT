@@ -16,6 +16,7 @@
 //
 
 #include "ContentionWAPB.h"
+#include <random>
 
 #include "inet/common/FSMA.h"
 #include "inet/common/ModuleAccess.h"
@@ -55,11 +56,6 @@ void ContentionWAPB::initialize(int stage)
         fsm.setName("Backoff procedure");
         fsm.setState(IDLE, "IDLE");
 
-        //EXTRA
-        backoffSeed = (unsigned int) this->getId();
-        //backoffSeed = time(NULL);
-        srand (backoffSeed); //Seed for the random functions
-
         WATCH(ifs);
         WATCH(eifs);
         WATCH(slotTime);
@@ -96,11 +92,44 @@ void ContentionWAPB::startContention(int cw, simtime_t ifs, simtime_t eifs, simt
     this->eifs = eifs;
     this->slotTime = slotTime;
     this->callback = callback;
-    //backoffSlots = intrand(cw + 1);
+    //backoffSlots = intrand(cw + 1);  //OMNeT++ approach
+    //backoffSlots = intRand1(cw);  //approach 1
+    //backoffSlots = intRand2(0,cw); //approach 2
+    //backoffSlots = intRand3(0,cw); //approach 3
+    int ArpDuration = 23;// in this transmission mode, ARP Request duration = 23 time slots (0.448 ms). each time slots = 0.00002 s;
+    int bCastCW = cw / ArpDuration; //ceil(cw / (float)ArpDuration);
+    backoffSlots = intRand3(0,bCastCW) * ArpDuration;
 
-    backoffSlots = rand() % (cw + 1);
-    EV_DETAIL << backoffSeed<<" aaa Starting contention: cw = " << cw << ", slots = " << backoffSlots << endl;
+    EV_DETAIL << bCastCW << " aaa Starting contention: cw = " << cw << ", slots = " << backoffSlots << endl;
     handleWithFSM(START);
+}
+
+//EXTRA
+int ContentionWAPB::intRand3(const int min, const int max) {
+    static std::mt19937* generator = nullptr;
+    if (!generator)
+        generator = new std::mt19937(this->getId()); //(clock() + this->getId());
+    std::uniform_int_distribution<int> distribution(min, max);
+    return distribution(*generator);
+}
+
+int ContentionWAPB::intRand2(const int min, const int max) {
+    static std::default_random_engine *generator = nullptr;
+    if (!generator)
+        generator = new std::default_random_engine(this->getId());
+    std::uniform_int_distribution<int> distribution(min, max);
+    return distribution(*generator);
+}
+
+//EXTRA
+int ContentionWAPB::intRand1(const int cw) {
+    //EXTRA
+    backoffSeed = (unsigned int) this->getId();
+    //backoffSeed = time(NULL);
+    static int i = 0;
+    if (i++ == 0)
+        srand(backoffSeed);
+    return rand() % (cw + 1);
 }
 
 void ContentionWAPB::handleWithFSM(EventType event)
