@@ -181,18 +181,107 @@ cPacket *Ieee80211MgmtAdhocAPB::decapsulate(Ieee80211DataFrame *frame)
 void Ieee80211MgmtAdhocAPB::handleDataFrame(Ieee80211DataFrame *frame)
 {
     //sendUp(decapsulate(frame));
+    EV << "->Ieee80211MgmtAdhocAPB::handleDataFrame()" << endl;
 
     if (strcmp(implementation,"new") == 0)
         handleDataFrameNewVersionWAPB(frame);
     else if (strcmp(implementation,"old") == 0)
         handleDataFrameOldVersionWAPB(frame);
 
-
+    EV << "<-Ieee80211MgmtAdhocAPB::handleDataFrame()" << endl;
 }
 
 void Ieee80211MgmtAdhocAPB::handleDataFrameNewVersionWAPB(Ieee80211DataFrame *frame)
 {
-    EV << "->Ieee80211MgmtAdhocAPB::handleDataFrame()" << endl;
+    EV << "Ieee80211DataFrame received from lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
+
+    //Realizamos el aprendizaje ya que los paquetes llegan desde abajo
+    MACAddress previousHop=frame->getTransmitterAddress();
+    EV << "  Previous Hop ADDRESS: " << previousHop << endl;
+
+    if(frame->getAddress4()==myAddress)  //Line 1 pseudo-code (listing 1) // if i am Logical Transmitter!, my frame return back to me!
+    {
+        EV << "  Delete packect, src address (Logical Transmitter address) is my own address (Step 1 pseudo-code), frame is discarded. " << frame->getAddress3() << endl;
+        delete (frame);
+    }
+    else
+    {
+        //Line 4 pseudo-code (listing 1)
+        EtherFrame *frame_eth=convertToEtherFrame(frame->dup());
+        MACRelayUnitWAPB *pRelayUnitWAPB = check_and_cast<MACRelayUnitWAPB *>(this->getParentModule()->getParentModule()->getSubmodule("relayUnit"));
+        MACAddress nextHop = pRelayUnitWAPB->handleAndDispatchV2WArpPath(frame_eth,previousHop);
+
+        //Line 6 pseudo-code (listing 1)
+        if ((frame->getAddress3())==myAddress)
+        {
+            sendUp(decapsulate(frame->dup()));
+            EV << frame->getName() << "frame is mine and is sent to upper layer. next hop is : " << nextHop << endl;
+        }else if ((frame->getAddress3().isBroadcast()) && (!nextHop.isUnspecified()))// second conditional expression is for preventing extra process on upper layer. for example if a another copy of ARP Request received, This frame does not need to be processed again on a higher layer   // TODO check frame->getReceiverAddress().isBroadcast(), note that this address field is used for hop to hop steps
+        {
+            sendUp(decapsulate(frame->dup()));
+            EV << frame->getName() << "frame is broadcast and a copy of frame is sent to upper layer. next hop is : " << nextHop << endl;
+        } //else is not needed because if frame is a broadcast frame, it must be retransmitted to other hops
+
+            //Line 10 pseudo-code (listing 1)
+        if (!nextHop.isUnspecified())//(nextHop != MACAddress::UNSPECIFIED_ADDRESS)
+        {
+            frame->setReceiverAddress(nextHop);
+            frame->setTransmitterAddress(myAddress);
+            EV << "frame is sent to next hop:" << nextHop << endl;
+            EV << "ReceiverAddress (Physical Receiver): " << frame->getReceiverAddress() << "TransmitterAddress (Physical Transmitte): " << frame->getTransmitterAddress() << ", Address3 (Logical Receiver) :" << frame->getAddress3() << ", Address4 (Logical Transmitter)" << frame->getAddress4() << endl;
+            sendDown(frame);
+        }else
+        {
+            EV << frame->getName() << " frame has not next hop and is deleted. next hop is : " << nextHop << endl;
+            delete frame;
+        }
+
+    }
+
+
+/*    EV << "Ieee80211DataFrame received from lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
+
+    //Realizamos el aprendizaje ya que los paquetes llegan desde abajo
+    MACAddress previousHop=frame->getTransmitterAddress();
+    EV << "  Previous Hop ADDRESS: " << previousHop << endl;
+
+    if(frame->getAddress4()==myAddress)  //Step 1 pseudo-code (listing 2) // if i am Logical Transmitter!, my frame return back to me!
+    {
+        EV << "  Delete packect, src address (Logical Transmitter address) is my own address (Step 1 pseudo-code), frame is discarded. " << frame->getAddress3() << endl;
+        delete (frame);
+    }
+    else
+    {
+        //Step2 pseudo-code (listing 2)
+        EtherFrame *frame_eth=convertToEtherFrame(frame->dup());
+        MACRelayUnitWAPB *pRelayUnitWAPB = check_and_cast<MACRelayUnitWAPB *>(this->getParentModule()->getParentModule()->getSubmodule("relayUnit"));
+        MACAddress nextHop = pRelayUnitWAPB->handleAndDispatchV2WArpPath(frame_eth,previousHop); //previous hop must be learned, next hop is not important
+
+        //Step3 pseudo-code (listing 2)
+        if (((frame->getAddress3())==myAddress) || (frame->getAddress3().isBroadcast()))   // TODO check frame->getReceiverAddress().isBroadcast(), note that this address field is used for hop to hop steps
+        {
+            sendUp(decapsulate(frame->dup()));
+            EV << frame->getName() << "frame is sent to upper layer. next hop is : " << nextHop << endl;
+        } //else is not needed because if frame is a broadcast frame, it must be retransmitted to other hops
+            //Step4 pseudo-code (listing 2)
+        if (!nextHop.isUnspecified())//(nextHop != MACAddress::UNSPECIFIED_ADDRESS)
+        {
+            frame->setReceiverAddress(nextHop);
+            frame->setTransmitterAddress(myAddress);
+            EV << "frame is sent to next hop:" << nextHop << endl;
+            EV << "ReceiverAddress (Physical Receiver): " << frame->getReceiverAddress() << "TransmitterAddress (Physical Transmitte): " << frame->getTransmitterAddress() << ", Address3 (Logical Receiver) :" << frame->getAddress3() << ", Address4 (Logical Transmitter)" << frame->getAddress4() << endl;
+            sendDown(frame);
+        }else
+        {
+            EV << frame->getName() << " frame has not next hop and is deleted. next hop is : " << nextHop << endl;
+            delete frame;
+        }
+
+    }
+*/
+
+
+    /*
     EV << "Ieee80211DataFrame received from lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
 
     //Realizamos el aprendizaje ya que los paquetes llegan desde abajo
@@ -222,17 +311,17 @@ void Ieee80211MgmtAdhocAPB::handleDataFrameNewVersionWAPB(Ieee80211DataFrame *fr
         {
             frame->setReceiverAddress(nextHop);
             frame->setTransmitterAddress(myAddress);
-            EV << "aaaframe is sent to next hop:" << nextHop << endl;
+            EV << "frame is sent to next hop:" << nextHop << endl;
             EV << "ReceiverAddress (Physical Receiver): " << frame->getReceiverAddress() << "TransmitterAddress (Physical Transmitte): " << frame->getTransmitterAddress() << ", Address3 (Logical Receiver) :" << frame->getAddress3() << ", Address4 (Logical Transmitter)" << frame->getAddress4() << endl;
             sendDown(frame);
         }else
             delete frame;
     }
+    */
 }
 
 void Ieee80211MgmtAdhocAPB::handleDataFrameOldVersionWAPB(Ieee80211DataFrame *frame)
 {
-    EV << "->Ieee80211MgmtAdhocAPB::handleDataFrame()" << endl;
     EV << "Ieee80211DataFrame received from lower layer, frame.ReceiverAddress = " << frame->getReceiverAddress() << ", TransmitterAddress = " << frame->getTransmitterAddress() << ", frame.Address3 = " << frame->getAddress3() << ", frame.Address4 = "  << frame->getAddress4() << endl;
 
     //sendUp(decapsulate(frame));
