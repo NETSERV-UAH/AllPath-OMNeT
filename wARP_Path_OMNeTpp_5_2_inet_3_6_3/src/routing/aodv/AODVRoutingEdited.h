@@ -2,6 +2,12 @@
 // Copyright (C) 2014 OpenSim Ltd.
 // Author: Benjamin Seregi
 //
+/*
+ * Copyright (C) 2018 Elisa Rojas(1), Hedayat Hosseini(2);
+ *                    (1) GIST, University of Alcala, Spain.
+ *                    (2) CEIT, Amirkabir University of Technology (Tehran Polytechnic), Iran.
+*/
+//
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -64,7 +70,17 @@ class AODVRoutingEdited : public cSimpleModule, public ILifecycle, public INetfi
       public:
         bool operator()(const RREQIdentifier& lhs, const RREQIdentifier& rhs) const
         {
-            return lhs.rreqID < rhs.rreqID;
+            //return lhs.rreqID < rhs.rreqID;
+            //EXTRA
+            if (lhs.originatorAddr < rhs.originatorAddr)
+              return true;
+            else if (lhs.originatorAddr > rhs.originatorAddr)
+              return false;
+            else
+              if (lhs.rreqID < rhs.rreqID)
+                  return true;
+              else return false;
+
         }
     };
 

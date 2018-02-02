@@ -1,6 +1,11 @@
 //
 // Copyright (C) 2014 OpenSim Ltd.
 // Author: Benjamin Seregi
+/*
+ * Copyright (C) 2018 Elisa Rojas(1), Hedayat Hosseini(2);
+ *                    (1) GIST, University of Alcala, Spain.
+ *                    (2) CEIT, Amirkabir University of Technology (Tehran Polytechnic), Iran.
+*/
 //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
@@ -814,10 +819,7 @@ void AODVRoutingEdited::handleRREQ(AODVRREQ *rreq, const L3Address& sourceAddr, 
     RREQIdentifier rreqIdentifier(rreq->getOriginatorAddr(), rreq->getRreqId());
     auto checkRREQArrivalTime = rreqsArrivalTime.find(rreqIdentifier);
 
-    //EXTRA: before two "if" is instead of commented "if". in an istance, our map of the rreqsArrivalTime has one entry, then it works incorrectly for searching another rreqIdentifier which was not in the map
-    if (checkRREQArrivalTime != rreqsArrivalTime.end())
-        if (((checkRREQArrivalTime->first.originatorAddr == rreqIdentifier.originatorAddr) && (checkRREQArrivalTime->first.rreqID == rreqIdentifier.rreqID)) && (simTime() - checkRREQArrivalTime->second <= pathDiscoveryTime)) {
-    //if (checkRREQArrivalTime != rreqsArrivalTime.end() && (simTime() - checkRREQArrivalTime->second <= pathDiscoveryTime)) {
+    if (checkRREQArrivalTime != rreqsArrivalTime.end() && (simTime() - checkRREQArrivalTime->second <= pathDiscoveryTime)) {
         EV_WARN << "The same packet has arrived within PATH_DISCOVERY_TIME= " << pathDiscoveryTime << ". Discarding it" << endl;
 
         //EXTRA
