@@ -91,7 +91,7 @@ class FlowGeneratorBase : public cSimpleModule
 
    protected:
      // virtual int numInitStages() const  {return 4;} //At least 3 (=4-1) because we need FlatNetworkConfigurator to be initialized (and it does at stage 2)
-      virtual int numInitStages() const  {return NUM_INIT_STAGES;} //EXTRA new, all stages can be used for initialize(int stage)
+      virtual int numInitStages() const  {return NUM_INIT_STAGES;} //All stages can be used for initialize(int stage)
       virtual void initialize(int stage);
       virtual void extractTopology();
       virtual unsigned int getHostWeight(IPv4Address host);

@@ -50,7 +50,7 @@ void FlowGeneratorBase::initialize(int stage)
         const char *token;
         while ((token = tokenizer.nextToken())!=NULL)
             //excludedAddresses.push_back(IPvXAddressResolver().resolve(token).get4());
-            excludedAddresses.push_back(L3AddressResolver().resolve(token).toIPv4());   //EXTRA new
+            excludedAddresses.push_back(L3AddressResolver().resolve(token).toIPv4());
 
         //Host weights (for host whose weight is not 1)
         const char *hWeights = par("hostsWeights");
@@ -59,7 +59,7 @@ void FlowGeneratorBase::initialize(int stage)
         {
             HostWeight newWeight;
             //newWeight.ipAddress = IPvXAddressResolver().resolve(token).get4();
-            newWeight.ipAddress = L3AddressResolver().resolve(token).toIPv4();   //EXTRA new
+            newWeight.ipAddress = L3AddressResolver().resolve(token).toIPv4();
             if((token = tokenizer.nextToken())==NULL)
                 error("'hostsWeights' parameter format is not correct!");
             newWeight.weight = atoi(token);
@@ -105,7 +105,7 @@ void FlowGeneratorBase::extractTopology()
             //Add element to adhocInfo vector
             AdhocInfo newAdhoc;
             //IInterfaceTable *ift = IPvXAddressResolver().interfaceTableOf(mod);
-            IInterfaceTable *ift = L3AddressResolver().interfaceTableOf(mod);   //EXTRA new
+            IInterfaceTable *ift = L3AddressResolver().interfaceTableOf(mod);
 
             int nInterfaces = ift->getNumInterfaces();
             if(nInterfaces > 2) //If host has more than 2 interfaces...
@@ -119,7 +119,7 @@ void FlowGeneratorBase::extractTopology()
                     newAdhoc.fullName = nodeInfo[i].fullName;
                     newAdhoc.ipAddress = ie->ipv4Data()->getIPAddress();
                     newAdhoc.macAddress = ie->getMacAddress();
-                    //EXTRA new: if all Adhoc host have not udpGen, an error will occur in next line
+                    //If all Adhoc host have not udpGen, an error will occur in next line
                     newAdhoc.pUdpFlowHost = check_and_cast<UDPFlowHost *>(mod->getSubmodule("udpGen")); //newAdhoc.pUdpFlowHost = (UDPFlowHost *)mod->getSubmodule("udpGen");
                     //newAdhoc.pARPnew = check_and_cast<ARPNew *>(mod->getSubmodule("networkLayer")->getSubmodule("arp"));
                     newAdhoc.weight = getHostWeight(newAdhoc.ipAddress);
@@ -137,7 +137,7 @@ void FlowGeneratorBase::extractTopology()
             for (unsigned int k=0; k<excludedAddresses.size(); k++)
             {
                 // if (excludedAddresses[k].equals(newHost.ipAddress))
-                if (excludedAddresses[k]==newAdhoc.ipAddress)  //EXTRA new
+                if (excludedAddresses[k]==newAdhoc.ipAddress)
                 {
                     isExcluded = true;
                     EV << "          ...not included!" <<endl;
@@ -221,7 +221,7 @@ void FlowGeneratorBase::handleMessage(cMessage *msg)
     }
 
     //if (ev.isGUI())
-    if (hasGUI())  //EXTRA new
+    if (hasGUI())
     {
         char buf[40];
         sprintf(buf, "rcvd: %d pks\nsent: %d pks", numReceived, numSent);
