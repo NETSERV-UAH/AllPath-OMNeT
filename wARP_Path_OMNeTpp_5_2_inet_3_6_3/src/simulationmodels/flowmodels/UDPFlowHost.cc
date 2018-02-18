@@ -22,12 +22,14 @@
 //
 
 #include "src/simulationmodels/flowmodels/UDPFlowHost.h"
+#include "inet/applications/base/ApplicationPacket_m.h"
 
 #include <stdio.h>
 #include "inet/transportlayer/contract/udp/UDPControlInfo_m.h"
 //#include "InterfaceTableAccess.h"
 #include "inet/common/ModuleAccess.h"  // findModuleFromPar()
 #include "inet/networklayer/common/L3AddressResolver.h"
+#include "src/simulationmodels/flowmodels/UDPFlowGenerator.h"
 
 
 namespace wapb {
@@ -60,16 +62,13 @@ void UDPFlowHost::initialize(int stage)
     if(stage == INITSTAGE_NETWORK_LAYER_3)
 	{
 	    counter = 0;
-		numSent = 0;
-		numReceived = 0;
-	    WATCH(numSent);
-	    WATCH(numReceived);
 	    sentPkSignal = registerSignal("sentPk");
 	    rcvdPkSignal = registerSignal("rcvdPk");
 	}
 }
 
 void UDPFlowHost::startFlow(unsigned int transferRate, unsigned long long flowSize, unsigned int frameSize, const L3Address& destAddr, const L3Address& localAddr) //Kbps, B(KB*1000), B, address
+//void UDPFlowHost::startFlow(unsigned int transferRate, unsigned long long flowSize, unsigned int frameSize, const L3Address& destAddr) //Kbps, B(KB*1000), B, address
 {
 	/*Since this module function is called from another - UDPFlowGenerator - we need to indicate it via Enter_Method
 	 * or Enter_Method_Silent - with no animation -
@@ -139,12 +138,19 @@ void UDPFlowHost::startFlow(unsigned int transferRate, unsigned long long flowSi
 
 		//Assign port numbers
 		flowInfo[i].localPort = 1000+nextFreeIndex; //From 1000 to 1999
-		flowInfo[i].destPort = 2000+nextFreeIndex; //From 2000 to 2999
+		//flowInfo[i].destPort = 2000+nextFreeIndex; //From 2000 to 2999
+
+		//regist socket in dst node
+		UDPFlowHost * pUdpFlowHost = check_and_cast<UDPFlowHost *>(L3AddressResolver().findHostWithAddress(destAddr)->getSubmodule("udpGen"));
+		flowInfo[i].destPort = pUdpFlowHost->registDstSocket(localAddr);
+		EV << "Socket setting : local address " << localAddr << " local port " << flowInfo[i].localPort << "-->" << "dest address " << destAddr << "dest port" << flowInfo[i].destPort << endl;
+
 
 	    //Create socket and bind to localPort
 		flowInfo[i].socket.setOutputGate(gate("udpOut"));
 		//flowInfo[i].socket.bind(flowInfo[i].localPort);
-		flowInfo[i].socket.bind(localAddr, flowInfo[i].localPort);
+		//flowInfo[i].socket.bind(localAddr, flowInfo[i].localPort);
+		flowInfo[i].socket.connect(destAddr, flowInfo[i].destPort);
 		EV <<"my address is :"<<localAddr<<endl;
 		setSocketOptions(flowInfo[i].socket);
 
@@ -178,9 +184,10 @@ cPacket *UDPFlowHost::createPacket(unsigned int frameSize)
 {
     char msgName[32];
     sprintf(msgName,"UDPFlowHost-%d", counter++);
-
     cPacket *payload = new cPacket(msgName);
+    //ApplicationPacket *payload = new ApplicationPacket(msgName); // because its seq# to ignore duplicate packets
     payload->setByteLength(frameSize);
+    //payload->setSequenceNumber(counter++); // for ApplicationPacket. pay attention to ++ in above sprintf. remove ++ there
     return payload;
 }
 
@@ -190,9 +197,10 @@ void UDPFlowHost::sendPacket(unsigned int frameSize, unsigned int nFlow)
 	cPacket *payload = createPacket(frameSize);
 
     emit(sentPkSignal, payload);
-    flowInfo[nFlow].socket.sendTo(payload, flowInfo[nFlow].destAddress, flowInfo[nFlow].destPort);
-    EV <<"aaa"<<endl;
-    numSent++;
+    //flowInfo[nFlow].socket.sendTo(payload, flowInfo[nFlow].destAddress, flowInfo[nFlow].destPort);
+    flowInfo[nFlow].socket.send(payload);
+
+    updateSentStats(frameSize);
 }
 
 void UDPFlowHost::handleMessage(cMessage *msg)
@@ -224,6 +232,7 @@ void UDPFlowHost::handleMessage(cMessage *msg)
 	    	if(flowInfo[i].flowSize > 0)
 	    	{
 	    		double nextTime = double(frameSize*8)/(transferRate*1000); //(B*8)/(Kbps*1000)
+	    		EV <<"BBB next time:" << nextTime << "frame size:"<< frameSize <<"flow size:"<<flowInfo[i].flowSize<<"rate"<<transferRate<<endl;
 	        	if(simTime()+nextTime <= stopTime)
 	        	{
 	        		scheduleAt(simTime()+nextTime, msg);
@@ -279,8 +288,12 @@ void UDPFlowHost::processPacket(cPacket *pk)
 
     emit(rcvdPkSignal, pk);
     EV << "Received packet: " << UDPSocket::getReceivedPacketInfo(pk) << endl;
+
+    updateReceivedStats(simTime(),  pk);
+
+
     delete pk;
-    numReceived++;
+
 }
 
 void UDPFlowHost::setSocketOptions(UDPSocket socket)
@@ -313,6 +326,26 @@ void UDPFlowHost::setSocketOptions(UDPSocket socket)
     if (joinLocalMulticastGroups)
         socket.joinLocalMulticastGroups();
         */
+}
+
+//This method is called from src node to setting up sockets in dst node
+unsigned int UDPFlowHost::registDstSocket(L3Address src)
+{
+    Enter_Method("UDPFlowHost::reqistDstSocket");
+
+    //Finding a free port in destination
+    unsigned int dstPort = 2000 + dstSockets.size();
+
+    auto iter= dstSockets.find(src);
+    if (iter == dstSockets.end())
+    {
+        dstSockets[src] = UDPSocket();
+        dstSockets[src].setOutputGate(gate("udpOut"));
+        dstSockets[src].bind(dstPort);
+    }else
+        throw cRuntimeError("Port number %d is being used by `%s'",dstPort, src);
+    return dstPort;
+
 }
 
 void UDPFlowHost::deleteMessageFromVector(cMessage *msg)
@@ -358,8 +391,13 @@ void UDPFlowHost::finish()
 {
 	EV << "->UDPFlowHost::finish()" << endl;
 
-    recordScalar("packets sent", numSent);
-    recordScalar("packets received", numReceived);
+    recordScalar("total sent packets", numSent);
+    recordScalar("total received packets", numReceived);
+    recordScalar("total sent bytes", numSentInbyte);
+    recordScalar("total received bytes", numReceivedInbyte);
+    recordScalar("total endToEndDelay average", averageEndToEndDelay.dbl());
+    //recordScalar("sumDelay", sumDelay.dbl());
+    recordScalar("lastDelay", lastDelay.dbl());
 
 	//Print statistics...
 	EV << "  Printing some statistics..." << endl;

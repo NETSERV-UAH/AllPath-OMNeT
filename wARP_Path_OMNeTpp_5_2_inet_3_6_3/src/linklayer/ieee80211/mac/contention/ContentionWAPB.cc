@@ -92,15 +92,21 @@ void ContentionWAPB::startContention(int cw, simtime_t ifs, simtime_t eifs, simt
     this->eifs = eifs;
     this->slotTime = slotTime;
     this->callback = callback;
-    //backoffSlots = intrand(cw + 1);  //OMNeT++ approach
+
+    backoffSlots = intrand(cw + 1);  //OMNeT++ approach
+
+    //EXTRA
     //backoffSlots = intRand1(cw);  //approach 1
     //backoffSlots = intRand2(0,cw); //approach 2
     //backoffSlots = intRand3(0,cw); //approach 3
+    /*
     int ArpDuration = 23;// in this transmission mode, ARP Request duration = 23 time slots (0.448 ms). each time slots = 0.00002 s;
     int bCastCW = cw / ArpDuration; //ceil(cw / (float)ArpDuration);
     backoffSlots = intRand3(0,bCastCW) * ArpDuration;
+    EV_DETAIL << bCastCW << "Starting contention: cw = " << cw << ", slots = " << backoffSlots << endl;
+    */
+    EV_DETAIL << "Starting contention: cw = " << cw << ", slots = " << backoffSlots << endl;
 
-    EV_DETAIL << bCastCW << " aaa Starting contention: cw = " << cw << ", slots = " << backoffSlots << endl;
     handleWithFSM(START);
 }
 

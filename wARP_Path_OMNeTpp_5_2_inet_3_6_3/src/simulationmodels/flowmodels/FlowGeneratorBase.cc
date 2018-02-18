@@ -39,10 +39,34 @@ void FlowGeneratorBase::initialize(int stage)
     if(stage == INITSTAGE_NETWORK_LAYER_3) // for preparing IP addresses of interface table
     {
         //Get parameters and initialize variables
-        dataCenterTraffic = par("dataCenterTraffic");
         stopTime = par("stopTime");
+        numSessions = par("numSessions");
         numSent = 0;
         numReceived = 0;
+        numSentInbyte = 0;
+        numSentInPacket = 0;
+        numReceivedInbyte = 0;
+        numReceivedInPacket = 0;
+        goodputRatio = 0;
+        averageendToEndDelay = 0;
+        maxInterval = 1;
+        intvlStartTime = intvlLastPkTime = 0;
+        intvlDelay = 0;
+        intvlNumPackets = 0;
+
+        WATCH(numSent);
+        WATCH(numReceived);
+        WATCH(numSentInbyte);
+        WATCH(numReceivedInbyte);
+        WATCH(numSentInPacket);
+        WATCH(numReceivedInPacket);
+        WATCH(goodputRatio);
+        WATCH(averageendToEndDelay);
+
+        averageEndToEndDelayVector.setName("averageEndToEnd (sec)");
+        averageEndToEndDelayIntervalVector.setName("averageEndToEndInIntrvl (sec)");
+        goodputRatioVector.setName("goodputRatio (%)");
+
 
         //Excluded addresses (from the traffic generation)
         const char *excludedAddrs = par("excludedAddresses");
@@ -196,6 +220,7 @@ void FlowGeneratorBase::startRandomFlow()
 void FlowGeneratorBase::handleMessage(cMessage *msg)
 {
     EV << "->FlowGeneratorBase::handleMessage()" << endl;
+
     if (msg->isSelfMessage())
     {
         // send, then reschedule next sending
@@ -203,8 +228,11 @@ void FlowGeneratorBase::handleMessage(cMessage *msg)
         {
             EV << "  Generating a new flow..." << endl;
             startRandomFlow(); //Generate flow (source, destination, rate, size) + send that info to the source host
-            if(simTime()+(double)par("generatorFreq") <= stopTime)
-                scheduleAt(simTime()+(double)par("generatorFreq"), msg); //Next generation
+            if((simTime()+(double)par("sessionGap") <= stopTime) && (numSent < numSessions))
+            {
+                scheduleAt(simTime()+(double)par("sessionGap"), msg); //Next generation
+            }
+
             else
                 delete msg; //Simulation ended -> delete message associated to flow generation
         }
@@ -239,9 +267,77 @@ void FlowGeneratorBase::processPacket(cPacket *msg)
     numReceived++;
 }
 
+void FlowGeneratorBase::accumulateReceivedData(simtime_t now, simtime_t endToEndDelay, unsigned long long numReceivedInPacket, unsigned long long numReceivedInbyte)
+{
+    Enter_Method("FlowGeneratorBase::accumulateReceivedData()");
+
+    if (this->numSentInbyte != 0)
+    {
+        goodputRatio = (double) this->numReceivedInbyte / this->numSentInbyte * 100;
+        goodputRatioVector.record(goodputRatio);
+    }
+    //this->endToEndDelay = this->endToEndDelay + sumDelay / numReceivedInPacket;
+    this->averageendToEndDelay = (this->averageendToEndDelay * this->numReceivedInPacket + endToEndDelay.dbl() * numReceivedInPacket)/(this->numReceivedInPacket + numReceivedInPacket);
+
+    this->numReceivedInbyte += numReceivedInbyte;
+    this->numReceivedInPacket += numReceivedInPacket;
+
+    averageEndToEndDelayVector.record(this->averageendToEndDelay);
+
+    //statistics of interval
+
+    if (now - intvlStartTime >= maxInterval)
+        beginNewInterval(now, endToEndDelay, numReceivedInPacket);
+
+    intvlNumPackets += numReceivedInPacket;
+    intvlLastPkTime = now;
+    intvlDelay = endToEndDelay.dbl(); // note that endToEndDelay is average delay of numReceivedPacket
+}
+
+void FlowGeneratorBase::beginNewInterval(simtime_t now, simtime_t endToEndDelay, unsigned long long numReceivedPacket)
+{
+    simtime_t duration = now - intvlStartTime;
+
+    // record measurements
+
+    if (intvlNumPackets !=0)
+        intvlDelay = (intvlDelay * intvlNumPackets + endToEndDelay.dbl() * numReceivedPacket) / (intvlNumPackets + numReceivedPacket);
+    else
+        intvlDelay += endToEndDelay.dbl(); // note that endToEndDelay is average delay of numReceivedPacket
+
+        averageEndToEndDelayIntervalVector.recordWithTimestamp(intvlStartTime, intvlDelay);
+
+    // restart counters
+    intvlStartTime = now;    // FIXME this should be *beginning* of tx of this packet, not end!
+    intvlNumPackets = 0;
+}
+
+void FlowGeneratorBase::accumulateSentData(unsigned long long numSentInPacket, unsigned long long numSentInbyte)
+{
+    Enter_Method("FlowGeneratorBase::accumulateSentData()");
+    this->numSentInbyte += numSentInbyte;
+    this->numSentInPacket += numSentInPacket;
+
+    if (this->numSentInbyte != 0)
+    {
+        goodputRatio = (double) this->numReceivedInbyte / this->numSentInbyte * 100;
+        goodputRatioVector.record(goodputRatio);
+    }
+
+}
+
 void FlowGeneratorBase::finish()
 {
     EV << "->FlowGeneratorBase::finish()" << endl;
+
+    recordScalar("total generated sessions", numSent);
+    recordScalar("total sent bytes", numSentInbyte);
+    recordScalar("total sent packets", numSentInPacket);
+    recordScalar("total received bytes", numReceivedInbyte);
+    recordScalar("total sent packets", numReceivedInPacket);
+    recordScalar("goodput ratio", goodputRatio);
+    recordScalar("average end to end delay", averageendToEndDelay);
+
 
     //Print statistics...
     EV << "  Printing some statistics..." << endl;
@@ -258,6 +354,7 @@ void FlowGeneratorBase::finish()
     {
         EV << "      " << generatedFlows[i] << endl;
     }*/
+
 }
 
 

@@ -45,6 +45,7 @@ class Ieee80211MgmtAdhocAPB : public Ieee80211MgmtBase
 
     MACAddress previous_resolution_address;
     const char *implementation;
+    cPar *jitterPar = nullptr;
 
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void initialize(int) override;
@@ -75,6 +76,8 @@ class Ieee80211MgmtAdhocAPB : public Ieee80211MgmtBase
     virtual void handleDataFrameNewVersionWAPB(Ieee80211DataFrame *frame);
     // wARP-Path, old version
     virtual void handleDataFrameOldVersionWAPB(Ieee80211DataFrame *frame);
+    // wARP-Path, to handle RFC 5148 (jitter)
+    virtual void sendDownDelayed(cPacket *frame, double delay);
 
     /** @name Processing of different frame types */
     //@{

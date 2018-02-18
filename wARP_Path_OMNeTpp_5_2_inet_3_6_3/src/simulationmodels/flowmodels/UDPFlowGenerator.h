@@ -39,8 +39,12 @@ using namespace inet;
 
 class UDPFlowGenerator : public FlowGeneratorBase
 {
+protected:
+    const char *trafficType;
+
    protected:
-       virtual void startRandomFlow(); //Redefined, specific for UDP
+    virtual void initialize(int stage) override;
+    virtual void startRandomFlow(); //Redefined, specific for UDP
 };
 
 

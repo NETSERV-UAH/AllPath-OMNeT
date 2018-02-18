@@ -37,8 +37,10 @@ using namespace inet;
 
 class FlowGeneratorBase : public cSimpleModule
 {
+    //friend class UDPFlowHost;
+    friend class StatisticCollector;
+
    protected:
-      bool dataCenterTraffic; //Data center traffic? (default = false)
 
       //To save info about all the nodes in the network
       struct NodeInfo {
@@ -81,13 +83,37 @@ class FlowGeneratorBase : public cSimpleModule
       HostWeightVector hostsWeights;
       simtime_t stopTime;
 
+      simtime_t maxInterval;
+      simtime_t intvlStartTime;
+      simtime_t intvlLastPkTime;
+      double intvlDelay;
+      unsigned long long intvlNumPackets;
+
+
       int numSent;
       int numReceived;
+
+      int numSessions;
+
+      unsigned long long numSentInbyte;
+      unsigned long long numSentInPacket;
+      unsigned long long numReceivedInbyte;
+      unsigned long long numReceivedInPacket;
+
+      double goodputRatio;
+      double averageendToEndDelay;
+
 
       NodeInfoVector nodeInfo; //Vector that contains the topology, it will be of size topo.nodes[]
       AdhocInfoVector adhocInfo; //Vector that contains only the adhoc hosts in the topology and their IP and MAC addresses
 
       //std::vector<std::string> generatedFlows; //Vector that contains the strings of the generated flows
+
+      // statistic vectors
+      cOutVector averageEndToEndDelayVector;
+      cOutVector averageEndToEndDelayIntervalVector;
+      cOutVector goodputRatioVector;
+
 
    protected:
      // virtual int numInitStages() const  {return 4;} //At least 3 (=4-1) because we need FlatNetworkConfigurator to be initialized (and it does at stage 2)
@@ -99,6 +125,11 @@ class FlowGeneratorBase : public cSimpleModule
       virtual void startRandomFlow();
       virtual void handleMessage(cMessage *msg);
       virtual void processPacket(cPacket *msg);
+
+      virtual void accumulateReceivedData(simtime_t now, simtime_t endToEndDelay, unsigned long long numReceivedInPacket, unsigned long long numReceivedInbyte);
+      virtual void beginNewInterval(simtime_t now, simtime_t endToEndDelay, unsigned long long numReceivedPacket);
+      virtual void accumulateSentData(unsigned long long numSentInPacket, unsigned long long numSentInbyte);
+
       virtual void finish();
 };
 

@@ -27,6 +27,8 @@
 #include <omnetpp.h>
 #include <string>
 #include "inet/transportlayer/contract/udp/UDPSocket.h"
+#include "src/simulationmodels/statistic/StatisticCollector.h"
+
 
 namespace wapb {
 using namespace inet;
@@ -37,7 +39,7 @@ using namespace inet;
  * For more info please see the NED file.
  */
 
-class UDPFlowHost : public cSimpleModule
+class UDPFlowHost : public cSimpleModule, public StatisticCollector
 {
 	friend class UDPFlowGenerator;
 
@@ -54,11 +56,19 @@ class UDPFlowHost : public cSimpleModule
     };
     typedef std::vector<UDPFlowInfo> FlowInfoVector;
 
+    //when a source regist a socket, a socket must be registered in dst
+    struct IPV4_compare
+    {
+        bool operator()(const L3Address& u1, const L3Address& u2) const
+        {return u1 < u2;}
+    };
+
+    typedef std::map<L3Address, UDPSocket, IPV4_compare> DSTSockets;
+    DSTSockets dstSockets;
+
     simtime_t stopTime;
 
     static int counter; // counter for generating a global number for each packet
-    int numSent;
-    int numReceived;
     int nHosts; //Number of hosts in the topology
 
     static simsignal_t sentPkSignal;
@@ -88,12 +98,15 @@ class UDPFlowHost : public cSimpleModule
 
     virtual void deleteMessageFromVector(cMessage *msg);
 
+    virtual unsigned int registDstSocket(L3Address src);
+
+
   public:
     virtual void updateHostsInfo(unsigned int n, simtime_t stop); //To update the number of hosts in the network and the flowInfo vector size and binding
 };
 
 
 
+} //namespace wapb
 #endif /* WAPB_SRC_SIMULATIONMODELS_FLOWMODELS_UDPFLOWHOST_H_ */
 
-} //namespace wapb

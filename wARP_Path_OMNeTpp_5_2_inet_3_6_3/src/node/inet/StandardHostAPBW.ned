@@ -1,4 +1,7 @@
 //
+//
+// Copyright (C) 2014 Isaias Martinez Yelmo (Inet 2.2.0 and Inet 2.3.0 adaptation)
+// Copyright (C) 2012 Elisa Rojas (module 'udpGen' added, UDPFlowHost type (for the UDPFlowGenerator), to be used by the generator, and updated to inet2.0.0 with NodeBaseNew)
 // Copyright (C) 2004 Andras Varga
 // Copyright (C) 2000 Institut fuer Telematik, Universitaet Karlsruhe
 //
@@ -16,7 +19,7 @@
 // along with this program; if not, see <http://www.gnu.org/licenses/>.
 //
 
-package wAPB.src.node.inet;
+package wAPB.src.node.inet;  //EXTRA-IMY
 
 import inet.applications.contract.IPingApp;
 import inet.applications.contract.ISCTPApp;
@@ -44,7 +47,7 @@ import inet.applications.contract.ITunApp;
 // - If wireless card is present, node mobility can be set using **.mobilityType
 //   see: inet.mobility and ~IMobility
 //
-module StandardHostAPBW extends NodeBaseAPBW
+module StandardHostAPBW extends NodeBaseAPBW   //EXTRA-IMY
 {
     parameters:
         @display("i=device/pc2");
@@ -52,12 +55,18 @@ module StandardHostAPBW extends NodeBaseAPBW
         int numUdpApps = default(0);  // no of UDP apps. Specify the app types in INI file with udpApp[0..1].typename="UDPVideoStreamCli" syntax
         int numSctpApps = default(0); // no of SCTP apps. Specify the app types in INI file with sctpApp[0..1].typename="SCTPServer" syntax
         int numPingApps = default(0);  // no of PING apps. Specify the app types in INI file with pingApp[0..1].typename="PingApp" syntax
+        //bool hasUDPGen = default(true); //EXTRA new : if you want to run UDP Traffic generator, this must be true
         bool hasTcp = default(numTcpApps > 0);
-        bool hasUdp = default(numUdpApps > 0);
+        
+        //bool hasUdp = default(numUdpApps > 0);
+        //bool hasUdp = default(numUdpApps > 0 || hasUDPGen); //EXTRA new
+        bool hasUdp = default(true); //EXTRA new : UDP trafic generator is active on each host
+        
         bool hasSctp = default(numSctpApps > 0);
         bool hasTun = default(numTunInterfaces > 0);
         string tcpType = default(firstAvailableOrEmpty("TCP", "TCP_lwIP", "TCP_NSC"));  // tcp implementation (e.g. ~TCP, ~TCP_lwIP, ~TCP_NSC) or ~TCPSpoof
         string udpType = default(firstAvailableOrEmpty("UDP"));
+        string udpGenType = default("UDPFlowHost"); //EXTRA: There is always one, so we cannot omit it, other option would be adding a parameter that should be one or zero (host gen or not, but I prefer it this way)
         string sctpType = default(firstAvailableOrEmpty("SCTP"));
         forwarding = default(false);  // disable routing by default
         networkLayer.proxyARP = default(false);
@@ -78,10 +87,28 @@ module StandardHostAPBW extends NodeBaseAPBW
             parameters:
                 @display("p=329,54,row,60");
         }
+        
+        // EXTRA-IMY BEGIN        
+        udpGen: <udpGenType> like IUDPApp {
+            parameters:
+                @display("p=407,129");
+        }    
+        // EXTRA-IMY END        
+        
         udp: <udpType> like IUDP if hasUdp {
             parameters:
                 @display("p=329,141");
         }
+        
+        // EXTRA-IMY BEGIN 
+		// Now we have definition above
+		//
+        // udp: <udpType> like IUDP {//if numUdpApps>0 { //EXTRA
+        //    parameters:
+        //        @display("p=336,141");
+        // }
+        // EXTRA-IMY END
+                
         sctpApp[numSctpApps]: <> like ISCTPApp {
             parameters:
                 @display("p=527,54,row,60");
@@ -106,6 +133,17 @@ module StandardHostAPBW extends NodeBaseAPBW
             udpApp[i].udpOut --> udp.appIn++;
             udpApp[i].udpIn <-- udp.appOut++;
         }
+        
+		udpGen.udpOut --> udp.appIn++; //EXTRA
+        udpGen.udpIn <-- udp.appOut++; //EXTRA
+        
+        //udpGen.udpOut --> udp.appIn++ if hasUDPGen; //EXTRA new
+        //udpGen.udpIn <-- udp.appOut++ if hasUDPGen; //EXTRA new
+         
+        
+        // udp.ipOut --> networkLayer.udpIn; //if numUdpApps>0; //EXTRA
+        // udp.ipIn <-- networkLayer.udpOut; //if numUdpApps>0; //EXTRA
+        // EXTRA-IMT Now exits lines below           
 
         udp.ipOut --> networkLayer.transportIn++ if hasUdp;
         udp.ipIn <-- networkLayer.transportOut++ if hasUdp;

@@ -31,9 +31,11 @@ Define_Module(Ieee80211MgmtAdhocAPB);
 void Ieee80211MgmtAdhocAPB::initialize(int stage)
 {
     Ieee80211MgmtBase::initialize(stage);
+    //EXTRA
     previous_resolution_address = previous_resolution_address.UNSPECIFIED_ADDRESS;
     //NEW
     implementation = par("implementation").stringValue();
+    jitterPar = &par("jitter");
 }
 
 void Ieee80211MgmtAdhocAPB::handleTimer(cMessage *msg)
@@ -216,7 +218,7 @@ void Ieee80211MgmtAdhocAPB::handleDataFrameNewVersionWAPB(Ieee80211DataFrame *fr
         {
             sendUp(decapsulate(frame->dup()));
             EV << frame->getName() << "frame is mine and is sent to upper layer. next hop is : " << nextHop << endl;
-        }else if ((frame->getAddress3().isBroadcast()) && (!nextHop.isUnspecified()))// second conditional expression is for preventing extra process on upper layer. for example if a another copy of ARP Request received, This frame does not need to be processed again on a higher layer   // TODO check frame->getReceiverAddress().isBroadcast(), note that this address field is used for hop to hop steps
+        }else if ((frame->getAddress3().isBroadcast()) && (!nextHop.isUnspecified()))// second conditional expression for preventing extra process on upper layer. for example if another copy of ARP Request received, This frame does not need to be processed again on its higher layer   // TODO check frame->getReceiverAddress().isBroadcast(), note that this address field is used for hop to hop steps
         {
             sendUp(decapsulate(frame->dup()));
             EV << frame->getName() << "frame is broadcast and a copy of frame is sent to upper layer. next hop is : " << nextHop << endl;
@@ -229,7 +231,16 @@ void Ieee80211MgmtAdhocAPB::handleDataFrameNewVersionWAPB(Ieee80211DataFrame *fr
             frame->setTransmitterAddress(myAddress);
             EV << "frame is sent to next hop:" << nextHop << endl;
             EV << "ReceiverAddress (Physical Receiver): " << frame->getReceiverAddress() << "TransmitterAddress (Physical Transmitte): " << frame->getTransmitterAddress() << ", Address3 (Logical Receiver) :" << frame->getAddress3() << ", Address4 (Logical Transmitter)" << frame->getAddress4() << endl;
-            sendDown(frame);
+            //sendDown(frame);
+
+            //using jitter instead of direct senddown()
+            if ((strcmp("arpREQ",frame->getName())==0) || (strcmp("arpREPLY",frame->getName()))==0)
+            {
+                sendDownDelayed(frame, jitterPar->doubleValue());
+                EV << frame->getName() << " Jitter is used for transmiting this frame " << frame->getName() << ", jitter value = " << jitterPar->doubleValue() << endl;
+            }else
+                sendDown(frame);
+
         }else
         {
             EV << frame->getName() << " frame has not next hop and is deleted. next hop is : " << nextHop << endl;
@@ -392,6 +403,12 @@ void Ieee80211MgmtAdhocAPB::handleDataFrameOldVersionWAPB(Ieee80211DataFrame *fr
        }
     }
 
+}
+
+void Ieee80211MgmtAdhocAPB::sendDownDelayed(cPacket *frame, double delay)
+{
+    ASSERT(isOperational);
+    sendDelayed(frame, delay, "macOut");
 }
 
 void Ieee80211MgmtAdhocAPB::handleAuthenticationFrame(Ieee80211AuthenticationFrame *frame)

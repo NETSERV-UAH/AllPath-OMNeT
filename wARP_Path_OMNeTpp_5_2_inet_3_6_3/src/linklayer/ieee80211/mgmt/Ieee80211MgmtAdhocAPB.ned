@@ -39,6 +39,15 @@ simple Ieee80211MgmtAdhocAPB like IIeee80211Mgmt
         @class(wapb::ieee80211::Ieee80211MgmtAdhocAPB);
         string macModule;               // The path to the MAC module
         @display("i=block/cogwheel");
+        //EXTRA
+        // RFC 5148:
+        // need more revise: As well as the decision as to whether
+        // to use jitter being dependent on the medium access control and
+        // lower layers, the selection of the MAXJITTER parameter SHOULD
+        // be appropriate to those mechanisms.
+        double maxJitter @unit("s") = default(5ms);
+        volatile double jitter @unit("s") = default(uniform(0ms, maxJitter)); // jitter for broadcasts
+        
         string implementation = default("new"); //EXTRA NEW : there are 2 implementation of wARP-Path (old and new)
     gates:
         input upperLayerIn;

@@ -30,6 +30,16 @@ using namespace inet;
 
 Define_Module(UDPFlowGenerator);
 
+void UDPFlowGenerator::initialize(int stage)
+{
+    EV << "->FlowGenerator::initialize()" << endl;
+    FlowGeneratorBase::initialize(stage);
+
+    trafficType = par("trafficType");
+    EV << "<-FlowGenerator::initialize()" << endl;
+
+}
+
 void UDPFlowGenerator::startRandomFlow()
 {
     FlowGeneratorBase::startRandomFlow();
@@ -38,6 +48,7 @@ void UDPFlowGenerator::startRandomFlow()
 
     std::string flowInfo, smodel; //String to be saved for final statistics about the flow generator
     std::stringstream ss1, ss2, ss3;
+    bool S_DATA = true;
 
     //We randomly choose a source and a destination for the new flow
     int iSource=0, iDestination=0;
@@ -46,59 +57,73 @@ void UDPFlowGenerator::startRandomFlow()
     adhocInfo[iDestination].nFlowDestination++;
     flowInfo = adhocInfo[iSource].fullName + "->" + adhocInfo[iDestination].fullName;
 
-    //Now a transfer rate and flow size, randomly as well - http://www.omnetpp.org/doc/omnetpp41/api/group__RandomNumbersCont.html
-    /*Tasa de transferencia:
-        30% - 0,5 Mbps
-        60% - 1 Mbps
-        10% - 10 Mbps */
-    unsigned int transferRate = intrand(10); // [0,10)
-    if (transferRate < 3) transferRate = 500; //30%
-    else if (transferRate < 9) transferRate = 1000; //60%
-    else transferRate = 10000; //10%
-    ss1 << transferRate;
-    flowInfo = flowInfo + "; " + ss1.str() + " Kbps";
+    //Now a transfer rate and flow size,
 
-    unsigned long long flowSize;
-    if(dataCenterTraffic)
+    double flowSize, transferRate;
+    unsigned int frameSize = 0;
+    unsigned long long numPackets = 0;
+    if(strcmp(trafficType, "S_DATA") == 0)  //S_DATA traffic
     {
-        /*VL2: 99% are mice < 100MB (around some KB); elephants between 100MB~1GB, but 100MB are common chunks because...
-            Nuestro modelo:
-            95% mice -> 10KB
-            5% elephants -> 100MB
-            Distribución normal: en el intervalo [μ -3σ, μ + 3σ] se encuentra comprendida, aproximadamente, el 99,74% de la distribución */
-        unsigned int percentage = uniform(0,100); //Mice or elephant? (returns a value in the range [0,100)
-        if(percentage < 95) //mice
-        {
-            smodel = "(Data Center -> mouse!)";
-            flowSize = normal(10,3); //Media 10KB, desviación típica 3KB
-            if (flowSize <= 1) flowSize = 1; //Mínimo 1KB
-        }
-        else //elephant
-        {
-            smodel = "(Data Center -> elephant!)";
-            flowSize = normal(100000,10000); //Media 100MB, desviación típica 10MB
-            if (flowSize <= 10000) flowSize = 10000; //Mínimo 10MB
-        }
-    }
-    else
+        /*
+         S_DATA : packet size is 64 Bytes, Inter-arrival time of data packets is 20 ms
+         then 25.6 kbps
+         */
+        transferRate = 25.6;
+        ss1 << transferRate;
+        flowInfo = flowInfo + "; " + ss1.str() + " Kbps";
+
+        /*S_DATA: packet size is 64 Bytes, Inter-arrival time of data packets is 20 ms
+         * then, 50 packets per secend
+         * */
+        smodel = "(Ad-hoc -> S_DATA!)";
+        flowSize = (int)par("sessionInterval") * 50 * 64; //Bytes
+        //Finally, we decide the frames size
+        frameSize = 64; //Bytes
+        numPackets = flowSize / frameSize;
+    }else if(strcmp(trafficType, "VOICE") == 0) //VOICE traffic
     {
-        /*Tamaño: distribución Pareto (alfa=1,3) truncada.
-            Mínimo: 8 MB
-            Máximo (truncado): 8 GB
-            Media: 34,7 MB
-          Omnet++: http://www.omnetpp.org/doc/omnetpp/api/group__RandomNumbersCont.html#gcd24b1b115e588575bd4da594b8581fe
-          Omnet++:http://www.omnetpp.org/listarchive/msg03242.php */
-        smodel = "(JAC)";
-        flowSize = pareto_shifted(1.3,8000,0); //Mínimo 8000, alpha = 1.3
-        if (flowSize > 8000000) flowSize = 8000000; //Truncada si supera 8000000 - ###ERS: Puede suceder que el overflow dé un nuevo valor positivo pequeño y en este caso no se trunca, pero es un caso muy muy muy muy raro (de momento ignorado y no problemático ###)
-    }
+        /*
+         * VOICE : sampling frequency is 8KHz, then 8000 samples (1 Byte * 8000) in each second, 64 kbps
+         *
+         */
+        transferRate = 64;
+        ss1 << transferRate;
+        flowInfo = flowInfo + "; " + ss1.str() + " Kbps";
+
+        /*VOICE : one packet is produced every 20 ms
+         * then, 50 packets per secend
+         * */
+        smodel = "(Ad-hoc -> VOICE!)";
+        flowSize = (int)par("sessionInterval") * 50 * 64; //Bytes
+
+        // 8 KB is produced every 1 second, then packet size (in 20 ms) = 160 Bytes
+        frameSize = 160; //Bytes
+        numPackets = flowSize / frameSize;
+    }else if(strcmp(trafficType, "CUSTOMIZED") == 0)  //CUSTOMIZED traffic
+    {
+        /*
+         S_DATA : packet size is 64 Bytes, Inter-arrival time of data packets is 20 ms
+         then 25.6 kbps
+         */
+        transferRate = 25.6;
+        ss1 << transferRate;
+        flowInfo = flowInfo + "; " + ss1.str() + " Kbps";
+
+        /*S_DATA: packet size is 64 Bytes, Inter-arrival time of data packets is 20 ms
+         * then, 50 packets per secend
+         * */
+        smodel = "(Ad-hoc -> CUSTOMIZED!)";
+        flowSize = (int)par("sessionInterval") * 50 * 64; //Bytes
+        //Finally, we decide the frames size
+        frameSize = par("packetsize"); //256;//512; //1500; //64 //Modificado a 1500 - 05/06/12
+        numPackets = flowSize / frameSize;
+    } else
+        throw cRuntimeError("Type of traffic is undefined");
+
     adhocInfo[iSource].averageSizeSource = (adhocInfo[iSource].averageSizeSource*(adhocInfo[iSource].nFlowSource-1)+flowSize)/adhocInfo[iSource].nFlowSource;
     adhocInfo[iDestination].averageSizeDestination = (adhocInfo[iDestination].averageSizeDestination*(adhocInfo[iDestination].nFlowDestination-1)+flowSize)/adhocInfo[iDestination].nFlowDestination;
     ss2 << flowSize;
     flowInfo = flowInfo + "; " + ss2.str() + " KB";
-
-    //Finally, we decide the frames size //TODO: ###ERS### En el modelo de JAC no es necesario, pero aquí sí, de momento está fijo a 500B (una opción sería hacerlo random o meterlo como parámetro)
-    unsigned int frameSize = 1500; //Modificado a 1500 - 05/06/12
 
     EV << "  Flow info created! " << smodel << endl;
     EV << "    [" << adhocInfo[iSource].fullName << " (" << adhocInfo[iSource].ipAddress << ")" << " -> " << adhocInfo[iDestination].fullName << " (" << adhocInfo[iDestination].ipAddress << ")]" << endl;
