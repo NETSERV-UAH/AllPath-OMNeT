@@ -86,7 +86,8 @@ class FlowGeneratorBase : public cSimpleModule
       simtime_t maxInterval;
       simtime_t intvlStartTime;
       simtime_t intvlLastPkTime;
-      double intvlDelay;
+      double intvlSumDelay; // sum of the delay in each interval
+      double intvlAverageDelay; // average of the delay in each interval
       unsigned long long intvlNumPackets;
 
 
@@ -127,7 +128,7 @@ class FlowGeneratorBase : public cSimpleModule
       virtual void processPacket(cPacket *msg);
 
       virtual void accumulateReceivedData(simtime_t now, simtime_t endToEndDelay, unsigned long long numReceivedInPacket, unsigned long long numReceivedInbyte);
-      virtual void beginNewInterval(simtime_t now, simtime_t endToEndDelay, unsigned long long numReceivedPacket);
+      virtual void beginNewInterval(simtime_t now); //, simtime_t endToEndDelay, unsigned long long numReceivedPacket);
       virtual void accumulateSentData(unsigned long long numSentInPacket, unsigned long long numSentInbyte);
 
       virtual void finish();

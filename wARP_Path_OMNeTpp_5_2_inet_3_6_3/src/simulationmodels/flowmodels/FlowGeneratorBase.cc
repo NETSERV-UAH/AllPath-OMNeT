@@ -51,8 +51,9 @@ void FlowGeneratorBase::initialize(int stage)
         averageendToEndDelay = 0;
         maxInterval = 1;
         intvlStartTime = intvlLastPkTime = 0;
-        intvlDelay = 0;
+        intvlSumDelay = 0;
         intvlNumPackets = 0;
+        intvlAverageDelay = 0;
 
         WATCH(numSent);
         WATCH(numReceived);
@@ -62,6 +63,9 @@ void FlowGeneratorBase::initialize(int stage)
         WATCH(numReceivedInPacket);
         WATCH(goodputRatio);
         WATCH(averageendToEndDelay);
+        WATCH(intvlAverageDelay);
+        //WATCH(intvlSumDelay);
+
 
         averageEndToEndDelayVector.setName("averageEndToEnd (sec)");
         averageEndToEndDelayIntervalVector.setName("averageEndToEndInIntrvl (sec)");
@@ -287,29 +291,31 @@ void FlowGeneratorBase::accumulateReceivedData(simtime_t now, simtime_t endToEnd
     //statistics of interval
 
     if (now - intvlStartTime >= maxInterval)
-        beginNewInterval(now, endToEndDelay, numReceivedInPacket);
+        beginNewInterval(now); //, endToEndDelay, numReceivedInPacket);
 
     intvlNumPackets += numReceivedInPacket;
     intvlLastPkTime = now;
-    intvlDelay = endToEndDelay.dbl(); // note that endToEndDelay is average delay of numReceivedPacket
+    intvlSumDelay += (endToEndDelay.dbl() * numReceivedInPacket); // note that endToEndDelay is average delay of numReceivedPacket, if numReceivedPacket == 1 then it is not average
 }
 
-void FlowGeneratorBase::beginNewInterval(simtime_t now, simtime_t endToEndDelay, unsigned long long numReceivedPacket)
+void FlowGeneratorBase::beginNewInterval(simtime_t now) //, simtime_t endToEndDelay, unsigned long long numReceivedPacket)
 {
     simtime_t duration = now - intvlStartTime;
 
     // record measurements
 
     if (intvlNumPackets !=0)
-        intvlDelay = (intvlDelay * intvlNumPackets + endToEndDelay.dbl() * numReceivedPacket) / (intvlNumPackets + numReceivedPacket);
+       // intvlAverageDelay = (intvlSumDelay * intvlNumPackets + endToEndDelay.dbl() * numReceivedPacket) / (intvlNumPackets + numReceivedPacket);
+        intvlAverageDelay = (intvlSumDelay / intvlNumPackets);
     else
-        intvlDelay += endToEndDelay.dbl(); // note that endToEndDelay is average delay of numReceivedPacket
+        intvlAverageDelay = 0; // we assume that delay is 0.0 (!) if an interval has not a packet.
 
-        averageEndToEndDelayIntervalVector.recordWithTimestamp(intvlStartTime, intvlDelay);
+        averageEndToEndDelayIntervalVector.recordWithTimestamp(intvlStartTime, intvlAverageDelay);
 
     // restart counters
     intvlStartTime = now;    // FIXME this should be *beginning* of tx of this packet, not end!
     intvlNumPackets = 0;
+    intvlSumDelay = 0;
 }
 
 void FlowGeneratorBase::accumulateSentData(unsigned long long numSentInPacket, unsigned long long numSentInbyte)
@@ -337,6 +343,7 @@ void FlowGeneratorBase::finish()
     recordScalar("total sent packets", numReceivedInPacket);
     recordScalar("goodput ratio", goodputRatio);
     recordScalar("average end to end delay", averageendToEndDelay);
+    recordScalar("average last interval end to end delay", intvlAverageDelay);
 
 
     //Print statistics...
