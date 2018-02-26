@@ -61,11 +61,11 @@ void StatisticCollector::updateReceivedStats(simtime_t now, cPacket *pk)
 
     lastDelay = now - pk->getCreationTime();
     sumDelay += lastDelay;
-    averageEndToEndDelay = sumDelay / numReceived;
+    averageEndToEndDelay = sumDelay.dbl() / numReceived;
     numReceivedInbyte += pk->getByteLength(); //Maybe all packets are not the same size
 
     averageEndToEndDelayVector.record(averageEndToEndDelay);
-    endToEndDelayVector.record(lastDelay);
+    endToEndDelayVector.record(lastDelay.dbl());
 
     updateReceivedStatsFlowGenerator(now, lastDelay, 1, pk->getByteLength());
 }

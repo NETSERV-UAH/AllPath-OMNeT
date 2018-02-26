@@ -47,6 +47,7 @@ simple Ieee80211MgmtAdhocAPB like IIeee80211Mgmt
         // be appropriate to those mechanisms.
         double maxJitter @unit("s") = default(5ms);
         volatile double jitter @unit("s") = default(uniform(0ms, maxJitter)); // jitter for broadcasts
+        bool isSlottedJitter = default(false);
         
         string implementation = default("new"); //EXTRA NEW : there are 2 implementation of wARP-Path (old and new)
     gates:

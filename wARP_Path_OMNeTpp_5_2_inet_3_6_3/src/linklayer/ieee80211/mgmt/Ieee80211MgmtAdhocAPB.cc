@@ -36,6 +36,8 @@ void Ieee80211MgmtAdhocAPB::initialize(int stage)
     //NEW
     implementation = par("implementation").stringValue();
     jitterPar = &par("jitter");
+    maxJitter = par("maxJitter").doubleValue();
+    isSlottedJitter = par("isSlottedJitter").boolValue();
 }
 
 void Ieee80211MgmtAdhocAPB::handleTimer(cMessage *msg)
@@ -235,12 +237,17 @@ void Ieee80211MgmtAdhocAPB::handleDataFrameNewVersionWAPB(Ieee80211DataFrame *fr
 
             //using jitter instead of direct senddown()
             if ((strcmp("arpREQ",frame->getName())==0) || (strcmp("arpREPLY",frame->getName()))==0)
-            {
-                sendDownDelayed(frame, jitterPar->doubleValue());
-                EV << frame->getName() << " Jitter is used for transmiting this frame " << frame->getName() << ", jitter value = " << jitterPar->doubleValue() << endl;
-            }else
+                if (!isSlottedJitter)
+                {
+                    sendDownDelayed(frame, jitterPar->doubleValue());
+                    EV << frame->getName() << " Jitter is used for transmiting this frame " << frame->getName() << ", maxJitter = " << maxJitter << ", jitter value = " << jitterPar->doubleValue() << endl;
+                }else    //slotted jitter:
+                {
+                    sendDownSlottedDelayed(frame, maxJitter);
+                    EV << frame->getName() << " Slotted Jitter is used for transmiting this frame " << frame->getName() << ", maxJitter = " << maxJitter << endl<< endl;
+                }
+            else
                 sendDown(frame);
-
         }else
         {
             EV << frame->getName() << " frame has not next hop and is deleted. next hop is : " << nextHop << endl;
@@ -409,6 +416,18 @@ void Ieee80211MgmtAdhocAPB::sendDownDelayed(cPacket *frame, double delay)
 {
     ASSERT(isOperational);
     sendDelayed(frame, delay, "macOut");
+}
+
+void Ieee80211MgmtAdhocAPB::sendDownSlottedDelayed(cPacket *frame, double delay)
+{
+    ASSERT(isOperational);
+    double ArpDuration = 0.000448;// in this transmission mode BPSK + DSSS in IEEE802.11g, ARP Request duration = 23 time slots (0.448 ms). each time slots = 0.00002 s;
+    int numSlots = delay / ArpDuration; //ceil(delay / (float)ArpDuration);
+    int selectedSlot = intrand(numSlots+1);
+    double newSlottedDelay = selectedSlot * ArpDuration;
+    EV_DETAIL << "Starting slotted jitter: numSlots = " << numSlots << ", selectedSlot = " << selectedSlot << ", newSlottedDelay" << newSlottedDelay << endl;
+
+    sendDelayed(frame, newSlottedDelay, "macOut");
 }
 
 void Ieee80211MgmtAdhocAPB::handleAuthenticationFrame(Ieee80211AuthenticationFrame *frame)

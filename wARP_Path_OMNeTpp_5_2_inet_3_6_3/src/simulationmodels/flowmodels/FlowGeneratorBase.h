@@ -108,7 +108,7 @@ class FlowGeneratorBase : public cSimpleModule
       NodeInfoVector nodeInfo; //Vector that contains the topology, it will be of size topo.nodes[]
       AdhocInfoVector adhocInfo; //Vector that contains only the adhoc hosts in the topology and their IP and MAC addresses
 
-      //std::vector<std::string> generatedFlows; //Vector that contains the strings of the generated flows
+      std::vector<std::string> generatedFlows; //Vector that contains the strings of the generated flows
 
       // statistic vectors
       cOutVector averageEndToEndDelayVector;

@@ -78,7 +78,7 @@ void UDPFlowHost::startFlow(unsigned int transferRate, unsigned long long flowSi
 	EV << "->UDPFlowHost::startFlow()" << endl;
 	EV << "  Flow info received at host " << str() << "!" << endl;   //EV << "  Flow info received at host " << info() << "!" << endl;
 	EV << "    [" << str() << " -> " << destAddr << "]" << endl;  //EV << "    [" << info() << " -> " << destAddr << "]" << endl;
-	EV << "    Transfer Rate: " << transferRate << " (Kbps); Flow Size: " << flowSize/1000 << " (KB); Frame Size: " << frameSize << " (B)" << endl;
+	EV << "    Transfer Rate: " << transferRate << " (Kbps); Flow Size: " << flowSize << " (B); Frame Size: " << frameSize << " (B)" << endl;
 
 	//Now we check in there's already a flow started for that destination and add only the size (not transfer rate or frame size)
 	//or not, or if we need to start a new flow because that destination is still not registered at flowInfo
@@ -127,7 +127,7 @@ void UDPFlowHost::startFlow(unsigned int transferRate, unsigned long long flowSi
 			//Add more traffic to the existing flow, but the frame size or transfer rate will not change
 			flowInfo[i].flowSize = flowInfo[i].flowSize + flowSize;
 			//The handler is already active... no need to scheduleAt...
-			EV << "    The flow was already running, we just added " << flowSize << "(KB)"<< endl;
+			EV << "    The flow was already running, we just added " << flowSize << "(B)"<< endl;
 		}
 	}
 	//If not, we register it
@@ -395,7 +395,7 @@ void UDPFlowHost::finish()
     recordScalar("total received packets", numReceived);
     recordScalar("total sent bytes", numSentInbyte);
     recordScalar("total received bytes", numReceivedInbyte);
-    recordScalar("total endToEndDelay average", averageEndToEndDelay.dbl());
+    recordScalar("total endToEndDelay average", averageEndToEndDelay);
     //recordScalar("sumDelay", sumDelay.dbl());
     recordScalar("lastDelay", lastDelay.dbl());
 

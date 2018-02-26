@@ -47,8 +47,7 @@ void UDPFlowGenerator::startRandomFlow()
     EV << "->UDPFlowGenerator::startRandomFlow()" << endl;
 
     std::string flowInfo, smodel; //String to be saved for final statistics about the flow generator
-    std::stringstream ss1, ss2, ss3;
-    bool S_DATA = true;
+    std::stringstream ss1, ss2, ss3, ss4;
 
     //We randomly choose a source and a destination for the new flow
     int iSource=0, iDestination=0;
@@ -62,6 +61,7 @@ void UDPFlowGenerator::startRandomFlow()
     double flowSize, transferRate;
     unsigned int frameSize = 0;
     unsigned long long numPackets = 0;
+    int sessionInterval = (int)par("sessionInterval");
     if(strcmp(trafficType, "S_DATA") == 0)  //S_DATA traffic
     {
         /*
@@ -76,7 +76,7 @@ void UDPFlowGenerator::startRandomFlow()
          * then, 50 packets per secend
          * */
         smodel = "(Ad-hoc -> S_DATA!)";
-        flowSize = (int)par("sessionInterval") * 50 * 64; //Bytes
+        flowSize = sessionInterval * 50 * 64; //Bytes
         //Finally, we decide the frames size
         frameSize = 64; //Bytes
         numPackets = flowSize / frameSize;
@@ -94,7 +94,7 @@ void UDPFlowGenerator::startRandomFlow()
          * then, 50 packets per secend
          * */
         smodel = "(Ad-hoc -> VOICE!)";
-        flowSize = (int)par("sessionInterval") * 50 * 64; //Bytes
+        flowSize = sessionInterval * 50 * 160; //Bytes
 
         // 8 KB is produced every 1 second, then packet size (in 20 ms) = 160 Bytes
         frameSize = 160; //Bytes
@@ -113,7 +113,7 @@ void UDPFlowGenerator::startRandomFlow()
          * then, 50 packets per secend
          * */
         smodel = "(Ad-hoc -> CUSTOMIZED!)";
-        flowSize = (int)par("sessionInterval") * 50 * 64; //Bytes
+        flowSize = sessionInterval * 50 * 64; //Bytes
         //Finally, we decide the frames size
         frameSize = par("packetsize"); //256;//512; //1500; //64 //Modificado a 1500 - 05/06/12
         numPackets = flowSize / frameSize;
@@ -123,20 +123,22 @@ void UDPFlowGenerator::startRandomFlow()
     adhocInfo[iSource].averageSizeSource = (adhocInfo[iSource].averageSizeSource*(adhocInfo[iSource].nFlowSource-1)+flowSize)/adhocInfo[iSource].nFlowSource;
     adhocInfo[iDestination].averageSizeDestination = (adhocInfo[iDestination].averageSizeDestination*(adhocInfo[iDestination].nFlowDestination-1)+flowSize)/adhocInfo[iDestination].nFlowDestination;
     ss2 << flowSize;
-    flowInfo = flowInfo + "; " + ss2.str() + " KB";
+    flowInfo = flowInfo + "; " + ss2.str() + " B";
 
     EV << "  Flow info created! " << smodel << endl;
     EV << "    [" << adhocInfo[iSource].fullName << " (" << adhocInfo[iSource].ipAddress << ")" << " -> " << adhocInfo[iDestination].fullName << " (" << adhocInfo[iDestination].ipAddress << ")]" << endl;
-    EV << "    Transfer Rate: " << transferRate << " (Kbps); Flow Size: " << flowSize << " (KB); Frame Size: " << frameSize << " (B)" << endl;
+    EV << "    Transfer Rate: " << transferRate << " (Kbps); Flow Size: " << flowSize << " (B); Frame Size: " << frameSize << " (B)" << endl;
 
     //The generator indicates the parameters to the source and it's this host that will start and stop the flow
     //adhocInfo[iSource].pUdpFlowHost->startFlow(transferRate, flowSize*1000, frameSize, adhocInfo[iDestination].ipAddress); //Kbps, B(KB*1000), B, address
-    adhocInfo[iSource].pUdpFlowHost->startFlow(transferRate, flowSize*1000, frameSize, adhocInfo[iDestination].ipAddress, adhocInfo[iSource].ipAddress); //Kbps, B(KB*1000), B, dst address, local address
+    adhocInfo[iSource].pUdpFlowHost->startFlow(transferRate, flowSize, frameSize, adhocInfo[iDestination].ipAddress, adhocInfo[iSource].ipAddress); //Kbps, B, B, dst address, local address
     numSent++;
 
     int n = numSent; ss3 << n;
-    flowInfo = ss3.str() + " - " + flowInfo;
-    //generatedFlows.push_back(flowInfo);
+    simtime_t genTime = simTime();
+    ss4 << sessionInterval + genTime;
+    flowInfo = ss3.str() + " - " + flowInfo + "; start at t = " + genTime.str() + " s; end at t = " + ss4.str();
+    generatedFlows.push_back(flowInfo);
 
     EV << "<-UDPFlowGenerator::startRandomFlow()" << endl;
 }

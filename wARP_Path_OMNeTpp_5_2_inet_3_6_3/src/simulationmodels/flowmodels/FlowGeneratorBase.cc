@@ -65,6 +65,7 @@ void FlowGeneratorBase::initialize(int stage)
         WATCH(averageendToEndDelay);
         WATCH(intvlAverageDelay);
         //WATCH(intvlSumDelay);
+        WATCH_VECTOR(generatedFlows);
 
 
         averageEndToEndDelayVector.setName("averageEndToEnd (sec)");
@@ -356,11 +357,21 @@ void FlowGeneratorBase::finish()
         EV << "        # Flow destination = " << adhocInfo[i].nFlowDestination << " [Average size = " << adhocInfo[i].averageSizeDestination << "(KB)]" << endl;
         //EV << "        Average traffic offered to the network (as source) = " << (hostInfo[i].nFlowSource*hostInfo[i].averageSizeSource*8)/stopTime.dbl() << "(Kbps)" << endl; //###Esta estadística considera que se ha enviado todo el tráfico, pero probablemente no, porque en simTime (aprox) se para todo
     }
-    /*EV << "    Generated flows..." << endl;
+    EV << "    Generated flows..." << endl;
+
+    std::string generatedFlowstr;
     for(unsigned int i=0; i<generatedFlows.size(); i++)
     {
         EV << "      " << generatedFlows[i] << endl;
-    }*/
+        generatedFlowstr += "{" + generatedFlows[i] + "} ";
+    }
+
+    FILE *destfp;
+    if((destfp=fopen("GeneratedFlows.txt","w"))!=nullptr)
+    {
+        fputs(generatedFlowstr.c_str(),destfp);
+    }
+
 
 }
 

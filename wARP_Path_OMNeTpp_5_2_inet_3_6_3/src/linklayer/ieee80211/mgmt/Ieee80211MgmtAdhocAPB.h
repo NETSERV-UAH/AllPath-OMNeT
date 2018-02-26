@@ -42,10 +42,13 @@ using namespace inet::ieee80211;
 class Ieee80211MgmtAdhocAPB : public Ieee80211MgmtBase
 {
   protected:
-
+    //EXTRA begin
     MACAddress previous_resolution_address;
     const char *implementation;
     cPar *jitterPar = nullptr;
+    double maxJitter;
+    bool isSlottedJitter = false;
+    //EXTRA end
 
     virtual int numInitStages() const override { return NUM_INIT_STAGES; }
     virtual void initialize(int) override;
@@ -78,6 +81,8 @@ class Ieee80211MgmtAdhocAPB : public Ieee80211MgmtBase
     virtual void handleDataFrameOldVersionWAPB(Ieee80211DataFrame *frame);
     // wARP-Path, to handle RFC 5148 (jitter)
     virtual void sendDownDelayed(cPacket *frame, double delay);
+    // wARP-Path, to handle slotted jitter)
+    virtual void sendDownSlottedDelayed(cPacket *frame, double delay);
 
     /** @name Processing of different frame types */
     //@{

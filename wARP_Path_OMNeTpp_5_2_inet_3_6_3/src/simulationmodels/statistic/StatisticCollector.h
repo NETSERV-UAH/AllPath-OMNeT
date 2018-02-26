@@ -34,7 +34,7 @@ class StatisticCollector
     unsigned long long numSentInbyte;
     unsigned long long numReceivedInbyte;
 
-    simtime_t averageEndToEndDelay;
+    double averageEndToEndDelay;
     simtime_t sumDelay;
     simtime_t lastDelay;
 
